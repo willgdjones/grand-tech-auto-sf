@@ -1,0 +1,110 @@
+[
+  {
+    "name": "brick-soma",
+    "prompt": "A seamless tileable albedo texture of a weathered red-brick wall, San Francisco SoMa converted-warehouse character. Straight orthographic front elevation, no perspective, the brick fills the entire square edge to edge. Realistic modern rendering look: natural red-orange and brown brick with pale mortar courses, subtle colour variation brick to brick, light soot and age staining, worn but clean. Even flat overcast studio lighting, no cast shadows, no highlights baked in, pure surface colour (diffuse albedo map). No windows, no doors, no sky, no ground, no people, no signs, no text, no letters, no numbers, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71001,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/brick-soma.png"
+  },
+  {
+    "name": "stone-fidi",
+    "prompt": "A seamless tileable albedo texture of a warm pale sandstone and limestone ashlar block wall, San Francisco Financial District historic office character. Straight orthographic front elevation, no perspective, cut stone blocks fill the whole square edge to edge in a regular bonded course pattern. Realistic modern rendering look: cream and buff stone with fine mortar joints, gentle natural tonal variation, mild weathering. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71002,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/stone-fidi.png"
+  },
+  {
+    "name": "stucco-mission",
+    "prompt": "A seamless tileable albedo texture of a smooth painted stucco render wall, San Francisco Mission District character. Straight orthographic front elevation, no perspective, the stucco fills the entire square edge to edge. Realistic modern rendering look: warm painted ochre-cream plaster with a fine troweled surface, faint hairline age cracks and gentle patchy weathering, no strong features. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71003,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/stucco-mission.png"
+  },
+  {
+    "name": "clapboard-victorian",
+    "prompt": "A seamless tileable albedo texture of painted horizontal wooden clapboard siding, San Francisco Victorian painted-lady character. Straight orthographic front elevation, no perspective, even horizontal timber lap boards fill the square edge to edge. Realistic modern rendering look: freshly painted sage-green and cream wood with crisp board shadows implied only by colour, fine wood grain, subtle paint wear. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no trim panels, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71004,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/clapboard-victorian.png"
+  },
+  {
+    "name": "glass-curtain",
+    "prompt": "A seamless tileable albedo texture of a modern glass curtain-wall, San Francisco Financial District office tower character. Straight orthographic front elevation, no perspective, a strict uniform rectangular grid of blue-green tinted glazing panels separated by thin pale silver aluminium mullions fills the whole square edge to edge. Realistic modern rendering look: cool tinted glass with faint flat sky-blue gradient in each pane, clean metal frames, no external reflections of objects. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No building silhouette, no sky background, no ground, no people, no signs, no text, no letters, no logos, no watermark. Tiles seamlessly on all four sides.",
+    "seed": 71005,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/glass-curtain.png"
+  },
+  {
+    "name": "concrete-industrial",
+    "prompt": "A seamless tileable albedo texture of a board-formed cast concrete wall, San Francisco industrial character. Straight orthographic front elevation, no perspective, the concrete fills the entire square edge to edge with faint horizontal form-board lines and small tie-hole marks. Realistic modern rendering look: cool neutral grey concrete with subtle blotchy staining and mild age, flat even surface. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71006,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/concrete-industrial.png"
+  },
+  {
+    "name": "storefront-retail",
+    "prompt": "A seamless horizontally tileable albedo texture of a ground-floor shopfront, San Francisco neighbourhood retail character. Straight orthographic front elevation, no perspective, filling the square edge to edge: a tall dark-tinted glass display window with slim dark timber mullions and a low kickplate panel below, slender painted pilasters at the sides, and a plain unmarked painted sign fascia band across the top. Realistic modern rendering look, warm painted timber and clean glazing. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No products, no mannequins, no people, no sky, no pavement, no signs, no text, no letters, no numbers, no logos, no watermark. Tiles seamlessly left and right.",
+    "seed": 71007,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/storefront-retail.png"
+  },
+  {
+    "name": "brick-painted",
+    "prompt": "A seamless tileable albedo texture of a painted brick wall, San Francisco neighbourhood character. Straight orthographic front elevation, no perspective, the brick fills the entire square edge to edge. Realistic modern rendering look: muted sage-grey paint over brick with the mortar courses still reading through, gentle roller texture and light wear at edges. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71008,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/brick-painted.png"
+  },
+  {
+    "name": "mural-mission",
+    "prompt": "A seamless tileable albedo texture of a painted community mural on a flat stucco wall, San Francisco Mission District character. Straight orthographic front elevation, no perspective, the mural fills the entire square edge to edge. Bold original abstract 1970s community-mural shapes in warm saturated colours: a stylised orange sun, pale turquoise rolling waves, terracotta hills, cream rays and simple geometric blocks over painted plaster. No faces, no people, no words, no letters, no symbols, no copyrighted artwork, no logos, no watermark. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). Photoreal painted-wall material, tiles seamlessly on all four sides.",
+    "seed": 71009,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/mural-mission.png"
+  },
+  {
+    "name": "stone-civic",
+    "prompt": "A seamless tileable albedo texture of a grey granite ashlar stone wall, San Francisco civic/bank building character. Straight orthographic front elevation, no perspective, large rusticated cut granite blocks fill the whole square edge to edge in a regular bonded course pattern with deep recessed joints. Realistic modern rendering look: cool mid-grey granite with fine speckle and gentle tonal variation, mild weathering. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71010,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/stone-civic.png"
+  },
+  {
+    "name": "stucco-marina",
+    "prompt": "A seamless tileable albedo texture of a smooth painted stucco render wall, San Francisco Marina flats character. Straight orthographic front elevation, no perspective, the stucco fills the entire square edge to edge. Realistic modern rendering look: pale cream-coral painted plaster with a fine sand-float finish, very subtle patchy sun-fade, no strong features. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71011,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/stucco-marina.png"
+  },
+  {
+    "name": "clapboard-pacheights",
+    "prompt": "A seamless tileable albedo texture of painted horizontal wooden clapboard siding, San Francisco Pacific Heights character. Straight orthographic front elevation, no perspective, even horizontal timber lap boards fill the square edge to edge. Realistic modern rendering look: freshly painted dusty-blue and cream wood with crisp board edges implied only by colour, fine wood grain, light paint sheen. Even flat overcast studio lighting, no cast shadows, pure surface colour (diffuse albedo map). No windows, no doors, no trim panels, no sky, no ground, no people, no signs, no text, no letters, no logos, no watermark. Photoreal material, tiles seamlessly on all four sides.",
+    "seed": 71012,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/facades-pbr/src/clapboard-pacheights.png"
+  }
+]

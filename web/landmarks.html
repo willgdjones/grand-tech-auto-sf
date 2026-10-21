@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#122327" />
+    <title>GTASF — Landmark workshop</title>
+  </head>
+  <body>
+    <canvas id="world" aria-label="Interactive landmark view"></canvas>
+    <header><a class="brand" href="/">GRAND TECH AUTO <small>SAN FRANCISCO</small></a><span class="badge">LANDMARK WORKSHOP</span></header>
+    <main class="panel">
+      <p class="eyebrow">SAN FRANCISCO, IN SHAPE</p>
+      <h1 id="name">Ferry Building</h1>
+      <label class="select-label" for="landmark">Choose a landmark</label>
+      <select id="landmark"></select>
+      <p id="meta"></p>
+      <div class="buttons"><button id="arrival">Arrival view</button><button id="orbit">See whole landmark</button><button id="back">Waterfront side</button></div>
+      <button id="drive" hidden>Drive onto Pier 39</button>
+      <p id="drive-help" hidden>WASD / arrows to drive · Space to brake · Choose an orbit view to stop.</p>
+      <div id="drive-touch" hidden><button data-key="KeyA" aria-label="Steer left">←</button><button data-key="KeyW" aria-label="Accelerate">↑</button><button data-key="KeyS" aria-label="Reverse or brake">↓</button><button data-key="KeyD" aria-label="Steer right">→</button></div>
+      <label class="check"><input type="checkbox" id="visible" checked /> Show landmark</label>
+      <p class="help">Drag to look around · Scroll to zoom · Right-drag to pan</p>
+      <p id="stats" aria-live="polite"></p>
+      <a id="source" target="_blank" rel="noopener noreferrer">Location &amp; reference information ↗</a>
+    </main>
+    <footer><span>LOW POLY · VERTEX COLOURS · REAL-WORLD SCALE</span><a id="game-link" href="/go/ferry-building">Visit in game ↗</a></footer>
+    <script type="module" src="/src/render/landmarks/preview.ts"></script>
+  </body>
+</html>

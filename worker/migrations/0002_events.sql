@@ -1,0 +1,4 @@
+ALTER TABLE events ADD COLUMN address TEXT;
+ALTER TABLE events ADD COLUMN source TEXT NOT NULL DEFAULT 'tech-week';
+ALTER TABLE events ADD COLUMN tags_json TEXT NOT NULL DEFAULT '[]';
+CREATE INDEX IF NOT EXISTS events_url ON events(url);

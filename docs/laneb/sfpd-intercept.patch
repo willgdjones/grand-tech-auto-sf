@@ -1,0 +1,118 @@
+diff --git a/shared/combat/police.ts b/shared/combat/police.ts
+index 72c7fa4c..deb48d7a 100644
+--- a/shared/combat/police.ts
++++ b/shared/combat/police.ts
+@@ -62,6 +62,13 @@ export const OFFICER_COVER_SEARCH_M = 18;
+ export const OFFICER_COVER_OFFSET_M = 1.8;
+ /** sfpdCover: a player who fired within this window counts as 'firing' for the police. */
+ export const SFPD_FIRING_WINDOW_MS = 3000;
++/** sfpdIntercept (N38): a chase cruiser steers for a point this far AHEAD of a moving on-foot player (and parks near it), so
++ *  it pulls up in front, where the chase camera looks, instead of behind the player. */
++export const INTERCEPT_LEAD_M = 14;
++/** sfpdIntercept: park within this of the lead point (the normal on-foot standoff is measured to the player). */
++export const INTERCEPT_PARK_M = 3;
++/** sfpdIntercept: the player counts as moving at or above this speed (m/s); below it cruisers drive at the player as before. */
++export const INTERCEPT_MIN_SPEED = 1.2;
+ 
+ /** Officers a pursuit should field: none until a car has stalled, then one per star up to the cap. */
+ export function officersWanted(level: number, anyCarStalled: boolean): number {
+diff --git a/worker/src/world/police.ts b/worker/src/world/police.ts
+index b44c4263..c2885b8f 100644
+--- a/worker/src/world/police.ts
++++ b/worker/src/world/police.ts
+@@ -13,7 +13,7 @@ import {
+   MAX_POLICE_UNITS, POLICE_CHASE_SPEED, POLICE_FLAG, POLICE_ID_BASE, POLICE_SIGHT_M,
+   POLICE_SPAWN_MAX_M, POLICE_SPAWN_MIN_M, passedRoadblock, roadblockAnchor,
+   roadblockCount, roadblockLine, ROADBLOCK_LEVEL, seek, spawnPoint, SWAT_SPEED, swatCount, POLICE_STANDOFF_M, POLICE_FOOT_STANDOFF_M,
+-  OFFICER_COVER_CAR_M, OFFICER_COVER_HOLD_M, OFFICER_COVER_OFFSET_M, OFFICER_COVER_SEARCH_M, OFFICER_TAKE_COVER_M, OFFICER_DEPLOY_MAX_M, OFFICER_DEPLOY_MIN_M, OFFICER_LEASH_M, OFFICER_SPEED, OFFICER_STALL_MS, OFFICER_STANDOFF_M, officersWanted } from '@gtasf/shared/combat/police';
++  INTERCEPT_LEAD_M, INTERCEPT_MIN_SPEED, INTERCEPT_PARK_M, OFFICER_COVER_CAR_M, OFFICER_COVER_HOLD_M, OFFICER_COVER_OFFSET_M, OFFICER_COVER_SEARCH_M, OFFICER_TAKE_COVER_M, OFFICER_DEPLOY_MAX_M, OFFICER_DEPLOY_MIN_M, OFFICER_LEASH_M, OFFICER_SPEED, OFFICER_STALL_MS, OFFICER_STANDOFF_M, officersWanted } from '@gtasf/shared/combat/police';
+ import { POLICE_FIRE_MIN_LEVEL } from '@gtasf/shared/combat/policeFire';
+ import { SFPD_TUNING } from '@gtasf/shared/combat/sfpdTuning';
+ import { RAM_CONTACT_M, RAM_COOLDOWN_MS, RAM_MAX_DY_M, RAM_SPEED_BONUS, RAM_STANDOFF_M, shouldRam } from '@gtasf/shared/combat/policeRam';
+@@ -80,6 +80,7 @@ export class WorldPolice {
+   // line of sight (and getting away from that spot) is how you escape; `seen` feeds escapedFor.
+   private readonly lastSeen = new Map<number, { x: number; y?: number; z: number }>();
+   private readonly seen = new Map<number, boolean>();
++  private readonly velocity = new Map<number, { x: number; z: number; vx: number; vz: number }>();
+   private lastSeenUsesSight = false;
+   private ramOn = false;
+   private readonly dispatch = new Map<number, Dispatch>();
+@@ -146,6 +147,8 @@ export class WorldPolice {
+     cover?: boolean;
+     /** sfpdCover (gtasf-ex3nf): officers in the open near a player who is shooting run to the far side of a stopped cruiser. */
+     takeCover?: boolean;
++    /** sfpdIntercept (N38): chase cruisers pull up AHEAD of a moving on-foot player (in the chase camera's view). */
++    intercept?: boolean;
+     /** Line of sight from a ground unit (metres) to the player; omitted ⇒ distance-only sight (units always know where you are). */
+     canSee?: (unit: { x: number; y: number; z: number }, target: PursuitTarget) => boolean;
+     /** wantedEscape (gtasf-66lvh): the player is in a hideout — ground units spot them only up close, the helicopter not at all. */
+@@ -159,12 +162,20 @@ export class WorldPolice {
+     for (const id of this.tracks.keys()) if (!wanted.has(id)) this.tracks.delete(id);
+     for (const id of this.lastSeen.keys()) if (!wanted.has(id)) { this.lastSeen.delete(id); this.seen.delete(id); }
+     for (const id of this.dispatch.keys()) if (!wanted.has(id)) this.dispatch.delete(id);
++    for (const id of this.velocity.keys()) if (!wanted.has(id)) this.velocity.delete(id);
++    // sfpdIntercept: a smoothed per-target velocity (the roadblock track's heading never forgets, so it can't say 'moving now').
++    for (const t of wanted.values()) {
++      const v = this.velocity.get(t.id);
++      if (!v || dtSeconds <= 0) { this.velocity.set(t.id, { x: t.x, z: t.z, vx: 0, vz: 0 }); continue; }
++      const k = Math.min(1, dtSeconds / 0.5); // ~0.5 s smoothing
++      v.vx += ((t.x - v.x) / dtSeconds - v.vx) * k; v.vz += ((t.z - v.z) / dtSeconds - v.vz) * k; v.x = t.x; v.z = t.z;
++    }
+ 
+     for (const truth of wanted.values()) {
+       const bucket = this.bucket(truth.id);
+       this.dispatchFor(truth);
+       const t = this.chaseTarget(truth, bucket, options.canSee, options.inCover?.(truth) ?? false);
+-      this.maintainGround(bucket, t, 'chase', desiredUnits(t.level), POLICE_CHASE_SPEED, dtSeconds, truth);
++      this.maintainGround(bucket, t, 'chase', desiredUnits(t.level), POLICE_CHASE_SPEED, dtSeconds, truth, options.intercept ?? false);
+       this.updateRoadblock(truth, bucket);
+       // Combat 5b (flag policeAir): SWAT vans (wanted 5) are heavier/slower ground units; the helicopter (wanted 4)
+       // flies — car GLBs stand in until lane-A art. Both count toward the world cap + per-player bucket.
+@@ -254,7 +265,7 @@ export class WorldPolice {
+   }
+ 
+   /** Keep `want` road-bound seekers of `role` chasing the player at `speed`. */
+-  private maintainGround(bucket: Map<number, Unit>, t: PursuitTarget, role: Role, want: number, speed: number, dt: number, truth: PursuitTarget = t): void {
++  private maintainGround(bucket: Map<number, Unit>, t: PursuitTarget, role: Role, want: number, speed: number, dt: number, truth: PursuitTarget = t, intercept = false): void {
+     const mine = [...bucket.values()].filter(u => u.role === role);
+     const dispatch = this.dispatch.get(t.id);
+     for (let i = mine.length; i < want; i++) {
+@@ -267,6 +278,11 @@ export class WorldPolice {
+     if (mine.length > want) for (const u of mine.slice(want)) this.deleteUnit(bucket, u.id);
+     // Review: only ram a driver the units can SEE, and measure contact to the REAL car (t may be the last-seen spot).
+     const rammable = this.ramOn && shouldRam(truth.level, truth.driving) && (this.seen.get(truth.id) ?? true);
++    // sfpdIntercept (N38): for a SEEN, moving on-foot player, chase cruisers drive for a point ahead of them and park there.
++    const v = this.velocity.get(truth.id), vs = v ? Math.hypot(v.vx, v.vz) : 0;
++    const lead = intercept && role === 'chase' && truth.onFoot && (this.seen.get(truth.id) ?? true) && v && vs >= INTERCEPT_MIN_SPEED
++      ? { x: truth.x + v.vx / vs * INTERCEPT_LEAD_M, z: truth.z + v.vz / vs * INTERCEPT_LEAD_M } : null;
++    const goal = lead ?? t;
+     for (const u of bucket.values()) {
+       if (u.role !== role) continue;
+       // policeRam: a ready unit drives INTO a wanted driver's car; contact is a ram, then it backs off to the standoff.
+@@ -276,21 +292,21 @@ export class WorldPolice {
+         u.ramReadyAt = this.clockMs + RAM_COOLDOWN_MS;
+         ramming = false;
+       }
+-      if (distanceTo(u.x, u.z, t.x, t.z) <= (ramming ? RAM_STANDOFF_M : t.onFoot ? POLICE_FOOT_STANDOFF_M : POLICE_STANDOFF_M)) { u.speedMps = 0; u.parkedMs = (u.parkedMs ?? 0) + dt * 1000; u.stallMs = 0; continue; } // parked beside the player
++      if (distanceTo(u.x, u.z, goal.x, goal.z) <= (ramming ? RAM_STANDOFF_M : lead ? INTERCEPT_PARK_M : t.onFoot ? POLICE_FOOT_STANDOFF_M : POLICE_STANDOFF_M)) { u.speedMps = 0; u.parkedMs = (u.parkedMs ?? 0) + dt * 1000; u.stallMs = 0; continue; } // parked beside the player
+       u.parkedMs = 0;
+-      const next = seek(u.x, u.z, t.x, t.z, ramming ? speed * RAM_SPEED_BONUS : speed, dt);
++      const next = seek(u.x, u.z, goal.x, goal.z, ramming ? speed * RAM_SPEED_BONUS : speed, dt);
+       const moved = Math.hypot(next.x - u.x, next.z - u.z);
+       let road = this.snap(next.x, next.z);
+       // Snapping a straight-line step back onto the nearest road can undo it entirely (a road perpendicular to the
+       // player, or a dead end) and freeze the unit for good. If the snap keeps < 30% of the step's progress, take the
+       // unsnapped step (the cruiser cuts across) so a pursuit closes in — unless a building is in the way.
+       if (road && moved > 0) {
+-        const before = distanceTo(u.x, u.z, t.x, t.z);
+-        if (before - distanceTo(road.x, road.z, t.x, t.z) < 0.3 * moved && !this.offRoadBlocked?.(u.x, u.z, next.x, next.z, u.y)) road = null;
++        const before = distanceTo(u.x, u.z, goal.x, goal.z);
++        if (before - distanceTo(road.x, road.z, goal.x, goal.z) < 0.3 * moved && !this.offRoadBlocked?.(u.x, u.z, next.x, next.z, u.y)) road = null;
+       }
+       u.x = road?.x ?? next.x; u.z = road?.z ?? next.z;
+       if (road) { u.y = road.y; u.yaw = road.yaw; }
+-      else if (moved > 0) u.yaw = Math.round(((Math.atan2(t.x - u.x, t.z - u.z) / (2 * Math.PI) + 1) * 256)) % 256; // face the chase (byte yaw)
++      else if (moved > 0) u.yaw = Math.round(((Math.atan2(goal.x - u.x, goal.z - u.z) / (2 * Math.PI) + 1) * 256)) % 256; // face the chase (byte yaw)
+       u.speedMps = dt > 0 ? moved / dt : 0;
+       // Stall tracking (sfpdOnFoot): out of bust range but within a short run, and barely closing → stalled.
+       const d = distanceTo(u.x, u.z, t.x, t.z);

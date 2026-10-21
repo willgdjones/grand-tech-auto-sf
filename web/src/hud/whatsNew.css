@@ -1,0 +1,46 @@
+/* "What's new" / changelog panel — San Andreas HUD theme (shared module theme/saTheme.css).
+   SA pause-menu look: flat black translucent box, square corners, gold outlined display title,
+   white/blue menu text; no rounded cream/green panel, no serif/italic, no soft shadow. All
+   gt-whatsnew* class names preserved so hud/whatsNew.ts (pane 7) is untouched. Tokens from
+   theme/saTheme.css; every var() carries an inline fallback. */
+.gt-whatsnew {
+  box-sizing: border-box; width: min(440px, calc(100vw - 24px)); max-height: min(80dvh, 640px); padding: 24px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: var(--sa-menu-white, #fff); background: var(--sa-panel-bg-strong, rgba(0,0,0,.82));
+  font: 15px/1.5 var(--sa-sans, Arial, Helvetica, sans-serif); overflow: auto; box-shadow: none;
+}
+.gt-whatsnew::backdrop { background: rgba(0,0,0,.66); }
+.gt-whatsnew-eyebrow {
+  margin: 0 0 2px; letter-spacing: .18em; font-size: 12px; font-weight: 800; text-transform: uppercase;
+  color: var(--sa-bar-blue, #b2cef2); -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-whatsnew h2 {
+  margin: 0; font-size: 28px; line-height: 1.05; text-transform: uppercase; letter-spacing: .02em;
+  font-family: var(--sa-display, 'Haettenschweiler', 'Arial Narrow Bold', 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900; color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 3px var(--sa-ink, #000);
+  paint-order: stroke fill; text-shadow: none;
+}
+.gt-whatsnew-date { margin: 4px 0 0; font-size: 12px; color: #cfcfcf; -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-whatsnew-list { margin: 16px 0 0; padding: 0 0 0 20px; display: grid; gap: 9px; }
+.gt-whatsnew-list li { overflow-wrap: anywhere; -webkit-text-stroke: .6px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-whatsnew-list li::marker { color: var(--sa-title-gold, #f6a81e); }
+.gt-whatsnew-actions { margin-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.gt-whatsnew-more { color: var(--sa-menu-blue, #b2cef2); font-size: 13px; text-decoration: underline; -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-whatsnew-go {
+  min-height: 42px; padding: 9px 20px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  color: #15221a; background: var(--sa-title-gold, #f6a81e);
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif); font-weight: 900; font-size: 16px;
+  letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
+}
+.gt-whatsnew-go:hover { background: #ffc43d; }
+.gt-whatsnew-go:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 2px; }
+@media (max-width: 700px) { .gt-whatsnew { padding: 18px; } .gt-whatsnew h2 { font-size: 22px; } }
+/* Full history (☰ menu / Game options): wider, scrolls inside the panel. */
+.gt-whatsnew--history { width: min(620px, calc(100vw - 24px)); max-height: min(86dvh, 760px); display: flex; flex-direction: column; }
+.gt-whatsnew--history[open] { display: flex; }
+.gt-whatsnew-history { overflow-y: auto; margin-top: 12px; padding-right: 6px; flex: 1 1 auto; min-height: 0; }
+.gt-whatsnew-entry + .gt-whatsnew-entry { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.18); }
+.gt-whatsnew-entry h3 {
+  margin: 0; font: 900 20px/1.1 var(--sa-display, 'Arial Narrow', Impact, sans-serif); text-transform: uppercase;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 2px var(--sa-ink, #000); paint-order: stroke fill;
+}

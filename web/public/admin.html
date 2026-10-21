@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>GTASF · community event admin</title>
+<style>
+  /* San Andreas HUD theme (gtasf-v2-sa-hud-theme): flat black, square corners, gold display titles.
+     Standalone static page, so SA token values are inlined rather than imported from theme/saTheme.css. */
+  :root {
+    color-scheme: dark;
+    --sa-gold: #f0b429; --sa-title-gold: #f6a81e; --sa-money-green: #345f27; --sa-money-red: #a2191c;
+    --sa-ink: #000; --sa-display: 'Haettenschweiler', 'Arial Narrow Bold', 'Arial Narrow', 'Impact', sans-serif;
+    --sa-sans: Arial, Helvetica, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px; min-height: 100vh;
+    font: 15px/1.5 var(--sa-sans); color: #fff; background: #000;
+  }
+  main { max-width: 920px; margin: 0 auto; }
+  h1 {
+    margin: 0 0 4px; font-family: var(--sa-display); font-weight: 900; text-transform: uppercase;
+    letter-spacing: .02em; font-size: 30px; line-height: 1.05;
+    color: var(--sa-title-gold); -webkit-text-stroke: 3px var(--sa-ink); paint-order: stroke fill;
+  }
+  .eyebrow { margin: 0; letter-spacing: .18em; font-size: 12px; font-weight: bold; text-transform: uppercase; color: var(--sa-title-gold); }
+  .blurb { color: #cfcfcf; font-size: 14px; }
+  .auth { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 18px 0; }
+  input[type="password"] {
+    flex: 1 1 260px; min-height: 42px; padding: 9px 12px; border: 2px solid var(--sa-ink); border-radius: 0;
+    background: rgba(0, 0, 0, 0.55); color: #fff; font-size: 15px;
+  }
+  input:focus-visible, button:focus-visible { outline: 2px solid var(--sa-title-gold); outline-offset: 2px; }
+  label.remember { font-size: 13px; color: #b7b7b7; display: inline-flex; gap: 6px; align-items: center; }
+  button {
+    min-height: 42px; padding: 9px 18px; border: 2px solid var(--sa-ink); border-radius: 0;
+    background: var(--sa-title-gold); color: var(--sa-ink); font-family: var(--sa-display); font-weight: 900;
+    text-transform: uppercase; letter-spacing: .03em; font-size: 15px; cursor: pointer;
+  }
+  button:hover { background: var(--sa-gold); }
+  button.ghost { background: transparent; color: #fff; border-color: #555; font-family: var(--sa-sans); font-weight: 700; }
+  button.ghost:hover { background: #ffffff1f; }
+  button.danger { background: var(--sa-money-red); color: #fff; border-color: var(--sa-ink); }
+  button.danger:hover { background: #c0242a; }
+  button:disabled { opacity: .6; cursor: progress; }
+  #status { min-height: 1.4em; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+  #status[data-tone="ok"] { color: #7fe39a; }
+  #status[data-tone="error"] { color: #ff8f8f; }
+  #status[data-tone="working"] { color: var(--sa-title-gold); }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #333; vertical-align: top; font-size: 14px; }
+  th { color: var(--sa-title-gold); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  td.title { font-weight: bold; }
+  td a { color: var(--sa-gold); }
+  .meta { color: #b7b7b7; font-size: 12px; }
+  .empty { color: #b7b7b7; padding: 16px 0; }
+  footer { margin-top: 28px; color: #808080; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">GTASF ADMIN</p>
+  <h1>Community events</h1>
+  <p class="blurb">Player-submitted events (PLAN-v2 decision 9). Review and remove spam or non-SF listings.
+    Only community rows are listed and removable; official Tech Week events are never touched here.</p>
+
+  <div class="auth">
+    <input id="token" type="password" placeholder="Admin token" autocomplete="off" aria-label="Admin token" />
+    <label class="remember"><input id="remember" type="checkbox" /> Remember for this tab</label>
+    <button id="load" type="button">Load community events</button>
+  </div>
+
+  <p id="status" role="status" aria-live="polite"></p>
+  <div id="list"></div>
+
+  <footer>Requires the <code>ADMIN_TOKEN</code> worker secret. The token is sent only to this site's
+    <code>/api/events/admin/*</code> endpoints and, if you tick the box, kept in this tab only (sessionStorage).</footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var TOKEN_KEY = 'gtasf:adminToken';
+  var tokenInput = document.getElementById('token');
+  var remember = document.getElementById('remember');
+  var loadButton = document.getElementById('load');
+  var statusEl = document.getElementById('status');
+  var listEl = document.getElementById('list');
+
+  try {
+    var saved = sessionStorage.getItem(TOKEN_KEY);
+    if (saved) { tokenInput.value = saved; remember.checked = true; }
+  } catch (e) { /* private mode: no prefill */ }
+
+  function setStatus(text, tone) { statusEl.textContent = text; statusEl.dataset.tone = tone || ''; }
+
+  function el(tag, text, className) {
+    var node = document.createElement(tag);
+    if (text != null) node.textContent = text; // textContent: event fields are untrusted player input
+    if (className) node.className = className;
+    return node;
+  }
+
+  function authHeaders() {
+    var token = tokenInput.value.trim();
+    try {
+      if (remember.checked && token) sessionStorage.setItem(TOKEN_KEY, token);
+      else sessionStorage.removeItem(TOKEN_KEY);
+    } catch (e) { /* ignore storage failure */ }
+    return token ? { Authorization: 'Bearer ' + token } : null;
+  }
+
+  function friendlyError(response) {
+    if (response.status === 401) return 'Unauthorized — check the admin token.';
+    if (response.status === 404) return 'Admin endpoints are not available (is ADMIN_TOKEN set on the worker?).';
+    if (response.status === 405) return 'Method not allowed.';
+    return 'Request failed (HTTP ' + response.status + ').';
+  }
+
+  function safeUrl(raw) {
+    try { var u = new URL(raw); return (u.protocol === 'https:' || u.protocol === 'http:') ? u.href : null; }
+    catch (e) { return null; }
+  }
+
+  function fmtTime(iso) {
+    var t = Date.parse(iso);
+    if (!isFinite(t)) return iso || '';
+    try { return new Date(t).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' PT'; }
+    catch (e) { return new Date(t).toISOString(); }
+  }
+
+  function render(events) {
+    listEl.replaceChildren();
+    if (!events.length) { listEl.append(el('p', 'No community events right now.', 'empty')); return; }
+    var table = document.createElement('table');
+    var thead = document.createElement('thead');
+    var hrow = document.createElement('tr');
+    ['Event', 'When (SF)', 'Source', ''].forEach(function (h) { hrow.append(el('th', h)); });
+    thead.append(hrow); table.append(thead);
+    var tbody = document.createElement('tbody');
+    events.forEach(function (ev) {
+      var tr = document.createElement('tr');
+      var titleTd = el('td', null, 'title');
+      titleTd.append(el('div', ev && typeof ev.title === 'string' ? ev.title : '(untitled)'));
+      var sub = (ev && ev.venue ? ev.venue : '') + (ev && ev.host ? (ev.venue ? ' · ' : '') + ev.host : '');
+      if (sub) titleTd.append(el('div', sub, 'meta'));
+      var href = ev ? safeUrl(ev.url) : null;
+      if (href) { var a = document.createElement('a'); a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'Open link ↗'; var wrap = el('div', null, 'meta'); wrap.append(a); titleTd.append(wrap); }
+      tr.append(titleTd);
+      tr.append(el('td', ev ? fmtTime(ev.start) : ''));
+      tr.append(el('td', ev && ev.source ? ev.source : ''));
+      var actionTd = document.createElement('td');
+      var remove = el('button', 'Remove', 'danger');
+      remove.type = 'button';
+      remove.addEventListener('click', function () { removeEvent(ev, remove); });
+      actionTd.append(remove);
+      tr.append(actionTd);
+      tbody.append(tr);
+    });
+    table.append(tbody); listEl.append(table);
+  }
+
+  function load() {
+    var headers = authHeaders();
+    if (!headers) { setStatus('Enter the admin token first.', 'error'); return; }
+    loadButton.disabled = true; setStatus('Loading…', 'working');
+    fetch('/api/events/admin/community', { headers: headers, credentials: 'same-origin', cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error(friendlyError(response));
+        return response.json();
+      })
+      .then(function (data) {
+        var events = (data && Array.isArray(data.events)) ? data.events : [];
+        render(events);
+        setStatus(events.length + ' community event' + (events.length === 1 ? '' : 's') + '.', 'ok');
+      })
+      .catch(function (error) { setStatus(error.message || 'Could not load community events.', 'error'); })
+      .finally(function () { loadButton.disabled = false; });
+  }
+
+  function removeEvent(ev, button) {
+    if (!ev || typeof ev.id !== 'string') return;
+    var headers = authHeaders();
+    if (!headers) { setStatus('Enter the admin token first.', 'error'); return; }
+    if (!window.confirm('Remove "' + (ev.title || ev.id) + '"? This cannot be undone.')) return;
+    button.disabled = true; setStatus('Removing…', 'working');
+    headers['Content-Type'] = 'application/json';
+    fetch('/api/events/admin/remove', { method: 'POST', headers: headers, credentials: 'same-origin', cache: 'no-store', body: JSON.stringify({ id: ev.id }) })
+      .then(function (response) {
+        if (!response.ok) throw new Error(friendlyError(response));
+        return response.json();
+      })
+      .then(function (data) {
+        if (data && data.removed) { setStatus('Removed. Reloading…', 'ok'); load(); }
+        else { setStatus('That event was not a removable community row.', 'error'); button.disabled = false; }
+      })
+      .catch(function (error) { setStatus(error.message || 'Could not remove that event.', 'error'); button.disabled = false; });
+  }
+
+  loadButton.addEventListener('click', load);
+  tokenInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') load(); });
+})();
+</script>
+</body>
+</html>

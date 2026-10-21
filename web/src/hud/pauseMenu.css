@@ -1,0 +1,72 @@
+/* Default play is SA-minimal; secondary controls retain their original DOM in the menu. */
+body.gt-hud-minimal #app>header{display:none}
+body.gt-hud-minimal .gt-hud{top:calc(18px + var(--gt-outbid-bar-height,0px) + env(safe-area-inset-top,0px))!important;right:24px;width:auto;min-width:0}
+body.gt-hud-minimal .gt-hud :is(.gt-hud-zone,.gt-hud-money-label){display:none}
+body.gt-hud-minimal .gt-radar:not([data-expanded=true]){left:24px;bottom:24px}
+body.gt-hud-minimal .gt-radar:not([data-expanded=true]) :is(.gt-radar-head,.gt-radar-legend,.gt-radar-navigation){display:none}
+body.gt-hud-minimal .gt-street-hud{left:24px;right:auto;top:auto;bottom:260px;max-width:min(420px,65vw);text-align:left}
+body.gt-hud-minimal #app>footer{left:50%;right:auto;bottom:90px;width:auto;max-width:60vw;transform:translateX(-50%);text-align:center}
+body.gt-hud-minimal #prompt[hidden]{display:none}
+body.gt-hud-minimal .gt-chat-ambient:not(:has(.gt-chat-inline:not([hidden]))){display:none}
+.gt-pause-launch{position:fixed;z-index:65;top:calc(16px + var(--gt-outbid-bar-height,0px) + env(safe-area-inset-top,0px));left:20px;width:44px;height:44px;background:#111c;border:2px solid #fff7;color:#fff;font-size:23px;cursor:pointer}
+.gt-pause-menu{width:min(580px,calc(100vw - 32px));max-height:calc(100dvh - 40px);box-sizing:border-box;padding:24px;background:#101914f5;color:#fff;border:2px solid #a4a995;font:14px/1.5 Arial,sans-serif;overscroll-behavior:contain}
+.gt-pause-menu::backdrop{background:#0009}
+.gt-pause-menu h2{font:900 34px/1.1 var(--sa-display,Impact,sans-serif);text-transform:uppercase;color:#f6a81e;margin:0 0 16px}
+.gt-pause-group{display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid #ffffff26;margin-top:18px;padding-top:12px}
+.gt-pause-group h3{width:100%;margin:0 0 4px;color:#b2cef2;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+body.gt-hud-minimal .gt-pause-menu :is(#play-controls,.gt-funding-controls,.gt-upcoming-open,.gt-eventsubmit-open,.gt-referral-launch,.gt-chat-launch,aside,.gt-creator--hud,.gt-gps-status,#trip-status,#keyboard-help,.gt-hud-radio,.gt-hud-radio-ticker){position:static!important;inset:auto!important;transform:none!important;width:auto!important;max-width:100%!important;max-height:none!important;margin:0;visibility:visible;pointer-events:auto!important;text-align:left}
+body.gt-hud-minimal .gt-pause-menu :is(#play-controls,.gt-funding-controls){display:flex;flex-wrap:wrap;gap:8px}
+.gt-pause-menu button,.gt-pause-menu a{min-height:44px;padding:8px 12px;border:1px solid #a9b49b;border-radius:0;background:#243429;color:#fff;font:700 12px/1.4 Arial,sans-serif;cursor:pointer}
+.gt-pause-menu :is(button,a):focus-visible,.gt-pause-launch:focus-visible{outline:3px solid #f6a81e;outline-offset:3px}
+.gt-pause-menu [hidden]{display:none!important}
+.gt-pause-menu .trip-label{flex-basis:100%;margin-top:8px}
+.gt-pause-menu #keyboard-help{font:12px/1.7 Arial,sans-serif;color:#bec6b9}
+.gt-pause-events{color:#b2cef2;font-size:12px}
+.gt-pause-hint{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);margin:0;padding:3px 9px;color:#eee9da;background:#0008;font:16px/1.4 var(--sa-display,Impact,sans-serif);letter-spacing:.25px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000;pointer-events:none;white-space:pre-line;text-align:center;box-sizing:border-box;width:min(680px,calc(100vw - 560px))}
+.gt-pause-hint[hidden]{display:none}
+body.gt-hud-minimal.gt-outbid-active{--gt-outbid-bar-height:32px}
+body.gt-hud-minimal .gt-outbid-banner{height:32px;min-height:0;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:2px 12px;white-space:nowrap}
+body.gt-hud-minimal .gt-outbid-winner{display:flex;gap:10px;align-items:center;flex:1;min-width:0;overflow:hidden}
+body.gt-hud-minimal .gt-outbid-name{flex-shrink:0;max-width:35%;overflow:hidden;text-overflow:ellipsis;font-size:12px}
+body.gt-hud-minimal .gt-outbid-message{overflow:hidden;text-overflow:ellipsis;font-size:12px}
+body.gt-hud-minimal .gt-outbid-banner :is(.gt-outbid-target,.gt-outbid-claim){display:none}
+body.gt-hud-minimal .gt-outbid-banner>.gt-outbid-board-button{display:block;min-height:26px;padding:2px 8px;font-size:11px}
+body.gt-hud-minimal .gt-outbid-badge{font-size:10px}
+body.gt-hud-minimal .gtasf-touch button:is([data-action=hail],[data-action=map],[data-action=horn]){display:none}
+body.gt-hud-minimal .gtasf-touch .buttons{grid-template-columns:repeat(2,66px)}
+body.gt-hud-minimal .gtasf-touch .ride-hint{display:none}
+body.gt-hud-minimal.gt-phone-hud .gt-hud{right:12px}
+body.gt-hud-minimal.gt-phone-hud .gt-pause-launch{left:12px}
+body.gt-hud-minimal.gt-phone-hud .gt-radar:not([data-expanded=true]){left:12px;bottom:calc(200px + env(safe-area-inset-bottom))}
+body.gt-hud-minimal.gt-phone-hud .gt-street-hud{left:12px;bottom:calc(342px + env(safe-area-inset-bottom));max-width:65vw}
+body.gt-hud-minimal.gt-phone-hud :is(.gt-pause-hint,.gt-pause-key-legend){display:none}
+body.gt-hud-minimal.gt-phone-hud #app>footer{left:auto;right:12px;bottom:calc(40px + var(--gt-touch-actions-height,60px) + env(safe-area-inset-bottom));transform:none;max-width:45vw}
+body.gt-hud-minimal.gt-phone-hud #prompt:not([hidden]){display:block;font-size:12px}
+body.gt-hud-minimal.gt-landscape-hud .gt-radar:not([data-expanded=true]){left:184px;bottom:12px}
+body.gt-hud-minimal.gt-landscape-hud .gt-street-hud{left:184px;bottom:120px}
+body.gt-hud-minimal.gt-landscape-hud .gt-pause-hint{bottom:12px}
+/* Phone's former duplicate-control suppression must not hide menu actions. Tutorial
+   locks still win through their existing display:none!important rules. */
+body.gt-hud-minimal .gt-pause-menu #play-controls :is(#enter-exit,#hail,#map-toggle){display:block}
+body.gt-hud-minimal .gt-pause-menu :is(#keyboard-help,#trip-status){display:block}
+body.gt-hud-minimal .gt-pause-menu #play-controls .trip-label{display:block;text-align:left}
+body.gt-hud-minimal .gt-pause-menu .gt-gps-status{visibility:visible!important}
+
+/* The tutorial owns its first car prompt; avoid a second E prompt underneath. */
+body.gt-hud-minimal:has(.gt-sa-hint--prompt.gt-sa-show) #app>footer #prompt{display:none}
+
+.gt-pause-key-legend{color:#eee9da;font:16px/1.4 var(--sa-display,Impact,sans-serif);text-shadow:1px 1px #000}
+/* Narrow desktop windows put hints above the 228px radar instead of over it. */
+@media(max-width:1000px){
+  body.gt-hud-minimal:not(.gt-phone-hud) .gt-pause-hint{bottom:280px;width:calc(100vw - 48px);max-width:680px}
+  body.gt-hud-minimal:not(.gt-phone-hud) #app>footer{bottom:348px}
+}
+/* Between READY and the pause menu's creation, keep the static index.html controls hidden (no raw-HUD flash). */
+body.gt-hud-pending:not(.gt-hud-minimal) :is(#play-controls,#app>aside,#app>header,#app>footer){visibility:hidden}
+/* hudMenuFold (critique #6): the Privacy control lives in the pause menu; the ticker sits in its Tech Week group. */
+body.gt-hud-fold .gt-privacy-launch{display:none!important}
+.gt-pause-menu .gt-radar-ticker{width:auto;max-width:100%;margin:0}
+/* Critic R5 (hudMenuFold): the phone's STATION button lives in the ☰ Radio group; the touch hold-to-talk 🎙 only shows
+   while another player is within 40 m (main.ts sets body[data-voice-near]) — nobody to talk to, no button. */
+.gt-pause-menu .gt-radio-next{position:static;transform:none;margin:0}
+@media (pointer:coarse){body.gt-hud-fold:not([data-voice-near]) .gt-voice-ptt--touch{display:none!important}}

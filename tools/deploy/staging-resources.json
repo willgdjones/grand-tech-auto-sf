@@ -1,0 +1,14 @@
+{
+  "accountId": "YOUR_CLOUDFLARE_ACCOUNT_ID",
+  "accountName": "Will",
+  "evidence": "Founder confirmation in gtasf-i8y comment, 2026-10-03T03:53:54Z",
+  "deploymentStatus": "deferred-until-after-local-playtest",
+  "worker": "gtasf-staging",
+  "pagesProject": "gtasf-staging",
+  "hostname": "staging.gtasf.com",
+  "d1": { "name": "gtasf-staging", "id": null },
+  "r2": "gtasf-assets-staging",
+  "queue": "gtasf-jobs-staging",
+  "durableObjects": ["WorldDO", "LedgerDO"],
+  "cronWhenReady": ["0 */3 * * *", "0 8 * * *"]
+}

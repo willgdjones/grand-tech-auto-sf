@@ -1,0 +1,28 @@
+/* "Buy this billboard" ad-slot dialog — San Andreas HUD theme (gtasf-v2-sa-restyle-tracker-ni5k;
+   shared module theme/saTheme.css). Flat black SA panel, square corners, no soft shadow; SA display
+   gold title, white outlined body, money-green price, square flat buttons. Classes + layout preserved
+   (CSS-only; the owning pane's TS is untouched). Tokens from theme/saTheme.css. */
+.gt-adslot {
+  box-sizing: border-box; width: min(440px, calc(100vw - 24px)); max-height: min(86dvh, 640px); padding: 22px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0; color: var(--sa-menu-white, #fff);
+  background: var(--sa-panel-bg-strong, rgba(0,0,0,.82)); font: 700 15px/1.5 var(--sa-sans, Arial, sans-serif);
+  overflow: auto; box-shadow: none;
+}
+.gt-adslot::backdrop { background: rgba(0,0,0,.72); }
+.gt-adslot-eyebrow { margin: 0 0 2px; letter-spacing: .18em; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-adslot-title { margin: 0; font-size: 28px; line-height: 1.02; text-transform: uppercase; letter-spacing: .02em; color: var(--sa-title-gold, #f6a81e); font-family: var(--sa-display, 'Haettenschweiler', 'Arial Narrow Bold', Impact, sans-serif); font-weight: 900; -webkit-text-stroke: 3px var(--sa-ink, #000); paint-order: stroke fill; text-shadow: none; }
+.gt-adslot-sub { margin: 4px 0 0; font-size: 13px; color: var(--sa-menu-white, #fff); letter-spacing: .04em; -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-adslot-price { margin: 12px 0 0; font-size: 18px; font-weight: 900; font-family: var(--sa-display, Impact, sans-serif); letter-spacing: .04em; color: var(--sa-money-green, #345f27); -webkit-text-stroke: 2px var(--sa-ink, #000); paint-order: stroke fill; font-variant-numeric: tabular-nums; }
+.gt-adslot-list { margin: 10px 0 0; padding: 0 0 0 20px; display: grid; gap: 6px; font-size: 14px; }
+.gt-adslot-list li::marker { color: var(--sa-title-gold, #f6a81e); }
+.gt-adslot-id { margin: 12px 0 0; font-size: 12px; color: var(--sa-clock-grey, #dcdcdc); font-family: ui-monospace, monospace; }
+.gt-adslot-status { min-height: 16px; margin: 10px 0 0; font-size: 13px; color: var(--sa-title-gold, #f6a81e); }
+.gt-adslot-actions { margin-top: 18px; display: flex; justify-content: flex-end; gap: 10px; }
+.gt-adslot-close, .gt-adslot-buy { min-height: 42px; padding: 9px 18px; border-radius: 0; font-weight: 700; font-size: 14px; cursor: pointer; font-family: var(--sa-sans, Arial, sans-serif); text-transform: uppercase; letter-spacing: .03em; }
+.gt-adslot-close { border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); background: rgba(0,0,0,.35); color: var(--sa-menu-white, #fff); }
+.gt-adslot-close:hover { background: rgba(0,0,0,.6); color: var(--sa-menu-blue, #b2cef2); }
+.gt-adslot-buy { border: 2px solid var(--sa-ink, #000); background: var(--sa-money-green, #345f27); color: var(--sa-menu-white, #fff); }
+.gt-adslot-buy:hover:not(:disabled) { background: #3f7230; }
+.gt-adslot-buy:disabled { opacity: .55; cursor: default; }
+.gt-adslot-close:focus-visible, .gt-adslot-buy:focus-visible { outline: 2px solid var(--sa-menu-white, #fff); outline-offset: 2px; }
+@media (max-width: 700px) { .gt-adslot { padding: 16px; } .gt-adslot-title { font-size: 23px; } }

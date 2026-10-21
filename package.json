@@ -1,0 +1,47 @@
+{
+  "name": "gtasf",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "web",
+    "worker",
+    "tools"
+  ],
+  "engines": {
+    "node": ">=24.21.0"
+  },
+  "scripts": {
+    "dev": "node tools/dev.mjs",
+    "dev:web": "npm run dev -w @gtasf/web",
+    "dev:worker": "npm run dev -w @gtasf/worker",
+    "build": "npm run build -w @gtasf/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "test:smoke": "node tools/smoke.mjs",
+    "check": "npm run typecheck && npm test && npm run build",
+    "deploy": "node tools/deploy/production/deploy.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.22.0",
+    "@cloudflare/workers-types": "5.20260928.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.19.0",
+    "fast-check": "4.10.2",
+    "miniflare": "5.20260815.0-alpha",
+    "nodemailer": "7.0.13",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "8.3.1",
+    "vitest": "4.1.11",
+    "wrangler": "4.124.0"
+  },
+  "overrides": {
+    "miniflare": {
+      "sharp": "0.35.5",
+      "undici": "7.29.1",
+      "workerd": "1.20260928.1"
+    }
+  }
+}

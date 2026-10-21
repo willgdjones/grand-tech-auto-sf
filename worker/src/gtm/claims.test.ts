@@ -1,0 +1,45 @@
+import { DatabaseSync } from 'node:sqlite';
+import { readFileSync } from 'node:fs';
+import { expect,test,vi } from 'vitest';
+import { handleGtmRequest } from './routes';
+import { randomToken,tokenHash } from './tokens';
+vi.mock('@gtasf/shared/flags',()=>({flags:{gtmSpawns:true,gtmCatalogue:true,officeClaims:true,officeClaimDelivery:false}}));
+test('claim -> domain-only draft -> confirm once; public spawn, catalogue and durable opt-out',async()=>{
+  const sqlite=new DatabaseSync(':memory:');
+  for(const migration of ['0003_gtm.sql','0004_gtm_claims.sql'])sqlite.exec(readFileSync(new URL(`../../migrations/${migration}`,import.meta.url),'utf8'));
+  const db={prepare(sql:string){const s=sqlite.prepare(sql);let bindings:(string|number|null)[]=[];
+    const w={bind(...v:(string|number|null)[]){bindings=v;return w;},async first(){return s.get(...bindings)??null;},async run(){const r=s.run(...bindings);return {meta:{changes:Number(r.changes)}};}};return w;}} as unknown as D1Database;
+  try {
+    const now=Date.now(),claim=randomToken(),unsub=randomToken();
+    sqlite.prepare("INSERT INTO leads(slug,company,domain,source)VALUES('example','Example','example.com','fixture')").run();
+    sqlite.prepare('INSERT INTO office_offers VALUES(?,?,?,?,?,?,?,?)').run(await tokenHash(claim),'example','Example','example.com','building-1',now+86400000,now,0);
+    sqlite.prepare('INSERT INTO gtm_spawns VALUES(?,?,?,?,?,?)').run('example',37.8,-122.41,180,'building-1','fixture-map');
+    sqlite.prepare('INSERT INTO gtm_unsubscribe_tokens VALUES(?,?,?)').run(await tokenHash(unsub),'founder@example.com',now);
+    const env={DB:db,ENVIRONMENT:'local'};
+    const get=(path:string)=>handleGtmRequest(new Request('https://gtasf.com'+path),env);
+    const post=(path:string,email:string)=>handleGtmRequest(new Request('https://gtasf.com'+path,{method:'POST',headers:{Origin:'https://gtasf.com','Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({email})}),env);
+    expect((await get('/api/gtm/catalogue'))!.status).toBe(200);
+    expect(await (await get('/api/gtm/spawns/example'))!.json()).toEqual({slug:'example',lat:37.8,lon:-122.41,heading:180,headingUnit:'degrees',building_id:'building-1'});
+    expect((await get(`/claim/${claim}`))!.status).toBe(200);
+    expect((await post(`/claim/${claim}/verify`,'founder@example.com.attacker.test'))!.status).toBe(400);
+    const draft=await post(`/claim/${claim}/verify`,'founder@example.com');expect(draft!.status).toBe(202);
+    expect(await draft!.text()).toContain('No email has been sent');
+    expect((await post(`/claim/${claim}/verify`,'founder@example.com'))!.status).toBe(429);
+    const body=sqlite.prepare('SELECT body FROM office_verification_drafts').get()!.body as string;
+    const token=/\/claim\/verify\/([a-f0-9]{64})/.exec(body)![1]!;
+    expect((await get(`/claim/verify/${token}`))!.status).toBe(200);
+    expect(sqlite.prepare('SELECT used_at FROM office_verifications').get()!.used_at).toBeNull();
+    const verified=await post(`/claim/verify/${token}`,'');expect(verified!.status).toBe(200);
+    expect(verified!.headers.get('Set-Cookie')).toContain('HttpOnly; Secure; SameSite=Strict');
+    expect((await post(`/claim/verify/${token}`,''))!.status).toBe(410);
+    expect(sqlite.prepare('SELECT body FROM office_verification_drafts').get()!.body).toBe('');
+    const session=sqlite.prepare('SELECT session_hash FROM office_verifications').get()!.session_hash as string;
+    const booking=sqlite.prepare("INSERT INTO office_wrap_bookings VALUES(?,?,?,?,?,'held',NULL,NULL)");
+    booking.run('building-1','2026-10-05',await tokenHash(claim),session,10000);
+    const claimHash=await tokenHash(claim);
+    expect(()=>booking.run('building-1','2026-10-05',claimHash,session,10000)).toThrow(/UNIQUE/);
+    expect((await get(`/unsubscribe/${unsub}`))!.status).toBe(200);
+    expect((await get(`/unsubscribe/${unsub}`))!.status).toBe(200);
+    expect(sqlite.prepare('SELECT COUNT(*) AS count FROM gtm_suppressions').get()!.count).toBe(1);
+  } finally {sqlite.close();}
+});

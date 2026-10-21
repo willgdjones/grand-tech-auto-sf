@@ -1,0 +1,28 @@
+/* GTASF incoming phone call — a small ringing card, bottom-right above the jobs phone's spot. Tech-noir like the phone. */
+.gt-phone-call {
+  position: fixed;
+  right: 16px;
+  bottom: 96px;
+  width: 280px;
+  max-width: calc(100vw - 32px);
+  z-index: 41;
+  background: #0c1813f2;
+  border: 2px solid #f0b429;
+  border-radius: 18px;
+  padding: 12px 14px 14px;
+  font-family: Arial, sans-serif;
+  color: #f6edda;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.5));
+  animation: gt-phone-call-ring 1.2s ease-in-out infinite;
+}
+.gt-phone-call[hidden] { display: none; }
+.gt-phone-call-kicker { font: 900 13px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: 0.12em; color: #f0b429; }
+.gt-phone-call-from { font: 700 15px Arial, sans-serif; margin-top: 4px; }
+.gt-phone-call-line { font-size: 12px; line-height: 1.35; color: #d8d2c2; margin: 6px 0 10px; }
+.gt-phone-call-actions { display: flex; gap: 8px; }
+.gt-phone-call-actions button { flex: 1; border-radius: 9px; padding: 8px; font: 700 13px Arial, sans-serif; cursor: pointer; }
+.gt-phone-call-answer { background: #3fbf6a; color: #08130d; border: none; }
+.gt-phone-call-decline { background: none; color: #f6edda; border: 1px solid #ffffff44; }
+@keyframes gt-phone-call-ring { 0%, 100% { transform: translateX(0); } 4% { transform: translateX(-3px); } 8% { transform: translateX(3px); } 12% { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) { .gt-phone-call { animation: none; } }
+@media (pointer: coarse) { .gt-phone-call { right: 10px; bottom: 120px; width: min(86vw, 300px); } }

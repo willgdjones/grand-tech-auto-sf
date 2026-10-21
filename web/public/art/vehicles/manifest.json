@@ -1,0 +1,44 @@
+{
+  "provider": "Scenario",
+  "recipe": "tools/art/recipes/vehicles.json",
+  "assets": [
+    {
+      "id": "paint",
+      "path": "/art/vehicles/paint.tile.png",
+      "selected": true,
+      "width": 256,
+      "height": 256,
+      "palette": 32,
+      "colorSpace": "srgb",
+      "bytes": 12717,
+      "sha256": "dff7e87b06f6a6e600ae567da38b52839f484598c0ea316f76eb5befc96ecbdb",
+      "generationId": "013126c8-56b8-4a22-a5cd-1da50de6513b",
+      "sourceSha256": "ce79774edf161574c32e1185bd661722a7e87eabe03047fd9b8838bae28ca863",
+      "model": "model_bfl-flux-1-dev",
+      "actualCredits": 9,
+      "review": "Neutral worn enamel; tint comes from the licensed vehicle vertex palette."
+    },
+    {
+      "id": "chrome",
+      "path": "/art/vehicles/chrome.tile.png",
+      "selected": true,
+      "width": 256,
+      "height": 256,
+      "palette": 32,
+      "colorSpace": "srgb",
+      "bytes": 12502,
+      "sha256": "788276641ee1bf2cfaca228b0a02928362902c16f713baf956ad4f34d4d4efeb",
+      "generationId": "3f510069-8486-49c9-9a0a-4f5c34e1df96",
+      "sourceSha256": "181af221b8f97a6fff9e97b872318600f746ba464f33478d96c927c87be14e2e",
+      "model": "model_bfl-flux-1-dev",
+      "actualCredits": 9,
+      "review": "Selected abstract brushed silver bands. Original bumper candidate rejected because it pictured a car."
+    }
+  ],
+  "rejected": [
+    {
+      "generationId": "3fd45cd4-cf13-412a-bc46-ab9e76f7a870",
+      "reason": "Depicted a car front instead of a material swatch; archived outside public payload."
+    }
+  ]
+}

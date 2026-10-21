@@ -1,0 +1,45 @@
+:root{font-family:Arial,Helvetica,sans-serif;color:#fffce9;background:#c5cdc5;font-synthesis:none}*{box-sizing:border-box}body{margin:0;overflow:hidden}#world{width:100vw;height:100dvh;display:block;outline:none}header,aside,footer{position:fixed;z-index:1;pointer-events:none;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}header{top:34px;left:36px}.eyebrow{font-size:11px;letter-spacing:.3em;margin:0 0 8px;font-weight:700}h1{font-family:var(--sa-display,'Arial Narrow Bold','Arial Narrow',Impact,sans-serif);font-size:clamp(28px,5vw,56px);font-weight:900;letter-spacing:0;margin:0;line-height:1;color:var(--sa-title-gold,#f6a81e);text-transform:uppercase}.build{font-size:12px;margin-top:12px;opacity:.85}aside{top:38px;right:36px;display:flex;gap:10px;align-items:center;font-size:12px;background:var(--sa-panel-bg,rgba(0,0,0,.62));padding:10px 14px;border-radius:0}.status-dot{width:6px;height:6px;background:#b8e998;border-radius:50%}#population{border-left:1px solid #ffffff44;padding-left:10px}footer{bottom:30px;left:36px;right:24px}footer strong{font-size:23px;letter-spacing:-.04em}footer p{font-size:12px;line-height:1.5;margin-bottom:0}#error{position:fixed;inset:40% 10%;padding:24px;background:#422;color:white}@media(max-width:600px){header{left:20px;top:22px}aside{top:130px;left:20px;right:auto}footer{left:20px}.build{max-width:220px}}
+#world{visibility:hidden}#play-controls{position:fixed;z-index:30;right:24px;top:94px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:760px}#play-controls button{padding:7px 9px;font-size:11px}button{cursor:pointer;font:700 12px var(--sa-sans,Arial,sans-serif);color:#fff;background:var(--sa-panel-bg,rgba(0,0,0,.62));border:2px solid var(--sa-gold,#f0b429);border-radius:0;padding:10px 12px;touch-action:manipulation;text-transform:uppercase;letter-spacing:.02em;-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill}button:hover{background:var(--sa-panel-bg-strong,rgba(0,0,0,.82));color:var(--sa-menu-blue,#b2cef2)}button:focus-visible,a:focus-visible{outline:3px solid #f7d98e;outline-offset:3px}#trip-status{color:#eedcac;font-weight:700}#destinations{position:fixed;z-index:35;right:24px;top:155px;width:280px;padding:20px;background:var(--sa-panel-bg-strong,rgba(0,0,0,.82));border:2px solid var(--sa-panel-edge,#000);border-radius:0}#destinations h2{margin:0 0 14px;font-size:20px}#destinations button{display:block;width:100%;margin:8px 0}#destinations p{font-size:12px;line-height:1.5}#loading{position:fixed;inset:0;z-index:200;background:linear-gradient(140deg,#071a19,#293d31 70%,#a69462);display:flex;align-items:center;justify-content:center;padding:24px}#loading[hidden],#destinations[hidden]{display:none}.loading-card{width:min(520px,95vw);background:#101c16ed;border:2px solid #d3c096;padding:44px 36px;box-shadow:12px 12px 0 #09171088;transform:rotate(-1deg)}.loading-card h2{font-size:clamp(36px,7vw,70px);letter-spacing:-.07em;margin:14px 0;color:#f9e8ba;text-shadow:3px 3px 0 #050e0a;line-height:.95}.loading-rule{height:6px;background:#ccab61;width:35%;margin:24px 0;animation:loading-pulse 1.5s ease-in-out infinite alternate}#loading-detail{font-size:14px;line-height:1.6}#loading-back{color:#f6de99}.failed .loading-rule{background:#bd6458;animation:none}@keyframes loading-pulse{to{width:100%}}#loading[data-stage] .loading-rule{animation:none;width:var(--load,12%);transition:width .8s ease-out}@media(max-width:600px){#play-controls{top:180px;left:20px;right:20px;max-width:none;justify-content:flex-start}#play-controls button{padding:8px;font-size:10px}#destinations{top:270px;right:20px}footer{bottom:198px;pointer-events:none}footer strong{font-size:18px}footer p:last-child{display:none}header h1{font-size:34px}}
+
+@media(min-width:601px){footer{left:280px;bottom:36px;max-width:calc(100vw - 320px)}#play-controls .trip-label{display:none}}#play-controls .trip-label{flex-basis:100%;font-size:10px;text-align:right;opacity:.8;margin-top:4px}.gt-radar{z-index:40}
+
+@media(max-width:600px){
+  body #app>header,body.gt-outbid-active #app>header{top:calc(12px + var(--gt-outbid-bar-height,0px));left:12px;max-width:220px}
+  #app>header h1{font-size:24px}#app>header .eyebrow,#app>header .build{display:none}
+  body #app>aside,body.gt-outbid-active #app>aside{top:calc(42px + var(--gt-outbid-bar-height,0px));left:12px;right:auto;font-size:10px;padding:6px 8px;gap:7px}
+  body #app #play-controls{top:calc(78px + var(--gt-outbid-bar-height,0px));left:12px;right:auto;width:220px;max-width:calc(100vw - 174px);gap:6px;justify-content:flex-start}
+  #play-controls .trip-label{text-align:left;margin-top:2px}
+  body:has(.gtasf-touch.on) #play-controls :is(#enter-exit,#hail,#map-toggle){display:none}
+  body .gt-hud,body.gt-outbid-active .gt-hud{top:calc(12px + var(--gt-outbid-bar-height,0px))}
+}
+
+/* Touch actions replace keyboard hints. Real trip notices share the GPS slot. */
+@media(max-width:700px){
+  body:has(.gtasf-touch.on) #app>footer{left:auto;right:12px;bottom:calc(264px + env(safe-area-inset-bottom));width:calc(100vw - 210px);max-width:220px;z-index:14}
+  body:has(.gtasf-touch.on) #prompt,body:has(.gtasf-touch.on) #app>footer>p:not(#trip-status){display:none}
+  body:has(.gtasf-touch.on) #trip-status{display:block;margin:0;padding:8px 10px;max-height:80px;overflow:auto;overscroll-behavior:contain;overflow-wrap:anywhere;pointer-events:auto;touch-action:pan-y;border:1px solid #b99b56;border-radius:5px;background:#13251ef5;color:#ffe2a3;font:700 11px/1.35 Arial,sans-serif}
+  body:has(.gtasf-touch.on):is(:has(.gt-gps-status:not([hidden])),:has(.gt-funding-room:not([hidden]))) #trip-status:not([data-notice=true]){display:none}
+  body:has(.gtasf-touch.on) #trip-status[data-notice=true]{display:block}
+  body:has(.gtasf-touch.on) :is(.gt-gps-status,.gt-funding-room){bottom:calc(264px + env(safe-area-inset-bottom))!important}
+  body:has(.gtasf-touch.on):has(#trip-status[data-notice=true]) .gt-gps-status{visibility:hidden}
+  /* Keep the earned-funding progress visible; long notices remain scrollable below it. */
+  body:has(.gtasf-touch.on):has(.gt-funding-room:not([hidden])) #app>footer{bottom:calc(228px + env(safe-area-inset-bottom))}
+  body:has(.gtasf-touch.on):has(.gt-funding-room:not([hidden])) #trip-status{max-height:34px;padding:2px 6px;line-height:14px}
+}
+@media(max-width:360px){
+  body:has(.gtasf-touch.on) .gt-funding-room{padding:6px 8px!important;font-size:11px!important;line-height:1.2!important;max-height:80px;overflow:auto;overscroll-behavior:contain;pointer-events:auto;touch-action:pan-y}
+  body:has(.gtasf-touch.on) .gt-radar:not([data-expanded=true]){width:min(168px,calc(100vw - 176px))}
+  body:has(.gtasf-touch.on) .gt-radar:not([data-expanded=true]) canvas{width:100%;height:auto;aspect-ratio:1}
+}
+
+/* Keep desktop instructions between the radar and the funding/events column. */
+@media(min-width:701px){
+  #app>footer{left:280px;right:320px;bottom:20px;max-width:none}
+  #app>footer strong{display:block;font-size:clamp(14px,1.6vw,23px);line-height:1.2}
+  #app>footer p{margin:6px 0 0;line-height:1.4;max-height:2.8em;overflow:auto;overflow-wrap:anywhere;pointer-events:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#e5d4a2 #18281f}
+}
+@media(min-width:701px) and (max-width:960px){
+  #app>footer{left:260px;right:310px}
+  #app>footer p{margin-top:4px;font-size:11px;line-height:1.35;max-height:2.7em}
+}
+#app>footer p:focus-visible{outline:2px solid #f7d98e;outline-offset:3px}

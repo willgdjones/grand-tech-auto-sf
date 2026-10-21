@@ -1,0 +1,98 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "gtasf-production",
+  "account_id": "YOUR_CLOUDFLARE_ACCOUNT_ID",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-28",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "vars": {
+    "ENVIRONMENT": "production",
+    "LAUNCH_MODE": "open",
+    "WORLD_CAPACITY": "150",
+    "WORLD_ROAD_GRAPH_KEY": "map/lombard/manifest.json",
+    "X_PIXEL_ID": "YOUR_X_PIXEL_ID",
+    "X_EVENT_PLAY_START": "YOUR_X_EVENT_ID",
+    "X_EVENT_OUTBID_PURCHASE": "YOUR_X_EVENT_ID",
+    "X_EVENT_AD_PURCHASE": "YOUR_X_EVENT_ID",
+    "POSTHOG_KEY": "YOUR_POSTHOG_KEY",
+    "POSTHOG_HOST": "https://eu.i.posthog.com",
+    "POSTHOG_PROJECT_ID": "292297",
+    "STRIPE_PUBLISHABLE_KEY": "YOUR_STRIPE_PUBLISHABLE_KEY"
+  },
+  "alias": {
+    "@gtasf/shared/flags": "./.wrangler/production/flags.ts"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "WORLD",
+        "class_name": "WorldDO"
+      },
+      {
+        "name": "LEDGER",
+        "class_name": "LedgerDO"
+      },
+      {
+        "name": "LOBBY",
+        "class_name": "LobbyDO"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "WorldDO",
+        "LedgerDO"
+      ]
+    },
+    {
+      "tag": "v2",
+      "new_sqlite_classes": [
+        "LobbyDO"
+      ]
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gtasf-production",
+      "database_id": "YOUR_D1_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "ASSETS",
+      "bucket_name": "gtasf-assets-production"
+    }
+  ],
+  // Cloudflare Email Service send_email binding (emailCapture, gtasf-1aon). gtasf.com is ONBOARDED for
+  // sending (pane 5, DEPLOY.md). Inert until flags.emailCapture flips (the feature self-gates on the flag);
+  // for the gated founder-only test, pane 5 may add "allowed_destination_addresses": ["reply@example.com"]
+  // here, then remove it when enabling general sending.
+  "send_email": [{ "name": "EMAIL" }],
+  "queues": {
+    "producers": [
+      {
+        "binding": "JOBS",
+        "queue": "gtasf-jobs-production"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "gtasf-jobs-production",
+        "max_batch_size": 10,
+        "max_retries": 3
+      }
+    ]
+  },
+  "triggers": {
+    "crons": [
+      "0 */3 * * *"
+    ]
+  }
+}

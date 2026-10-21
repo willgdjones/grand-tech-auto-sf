@@ -1,0 +1,41 @@
+/* Persistent controls panel (flag guidedOpener): top-left key-cap legend, GTA help-box style. */
+.gt-controls-panel {
+  position: fixed; z-index: 21; top: 84px; left: 18px; width: 228px; box-sizing: border-box;
+  padding: 8px 10px 10px; background: #000000b3; border: 1px solid #ffffff26; border-radius: 10px;
+  color: #f6edda; font: 13px/1.25 Arial, sans-serif; text-shadow: none; filter: drop-shadow(0 3px 6px #0007);
+}
+.gt-controls-panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.gt-controls-panel-head span { font: 700 11px/1 Arial, sans-serif; letter-spacing: .26em; color: #f0b429; }
+.gt-controls-panel-close {
+  width: 24px; height: 24px; padding: 0; cursor: pointer; font: 700 18px/1 Arial, sans-serif;
+  color: #f6edda; background: none; border: 1px solid #ffffff44; border-radius: 6px;
+}
+.gt-controls-panel-close:hover { border-color: #f0b429; color: #f0b429; }
+.gt-controls-panel-list { display: grid; grid-template-columns: auto 1fr; gap: 5px 8px; margin: 0; align-items: center; }
+.gt-controls-panel-list dt { display: flex; gap: 3px; margin: 0; }
+.gt-controls-panel-list dd { margin: 0; color: #e8e0cc; }
+.gt-controls-panel kbd {
+  display: inline-block; min-width: 20px; padding: 1px 5px 2px; box-sizing: border-box; text-align: center;
+  font: 700 12px/1.3 Arial, sans-serif; letter-spacing: 0; white-space: nowrap; color: #10221a; background: #f6edda;
+  border: 1px solid #f0b429; border-bottom-width: 3px; border-radius: 5px;
+}
+/* Lane B 19:2x: on desktop the combat HUD (health/armour, wanted stars, SEARCHING bar) is fixed top-left at 150 px and drew
+   over this panel once the 18+ gate is accepted. While it is visible the panel moves to the free right side, under the
+   clock and $ readout and above the weapon chip. (Phone: see the media block below.) */
+body:has(.gt-combat-hud:not([hidden])) .gt-controls-panel { left: auto; right: 18px; top: 236px; }
+@media (pointer: coarse), (max-width: 640px) {
+  .gt-controls-panel { top: auto; right: auto; bottom: calc(50vh + 8px); left: 10px; width: 160px; padding: 5px 7px 7px; font-size: 11px; }
+  /* With the combat HUD up, the phone's left column is quest card -> valuation pill -> vitals (--gt-vitals-top, N26 +
+     970cea28) -> police bark -> DISPATCH, which can reach the minimap on an 873 px phone with a cheque in hand. Every row of
+     this panel is already labelled on screen (stick 'Push to run', 'Drag to look' hint, FIRE, ENTER / EXIT), so on a phone
+     the panel simply waits until the combat HUD is gone. */
+  body:has(.gt-combat-hud:not([hidden])) .gt-controls-panel { display: none; }
+  /* Critic N28: in a vehicle the 'You're driving…' hint and the GO / BRAKE / H-BRAKE buttons already teach the controls, and this
+     panel's on-foot rows (stick to move, drag to look) only stack under the hint. */
+  body:has(.gtasf-touch.on[data-mode="driver"]) .gt-controls-panel,
+  body:has(.gtasf-touch.on[data-mode="passenger"]) .gt-controls-panel { display: none; }
+  .gt-controls-panel-head { margin-bottom: 4px; }
+  .gt-controls-panel-close { width: 20px; height: 20px; font-size: 15px; }
+  .gt-controls-panel-list { gap: 3px 6px; }
+  .gt-controls-panel kbd { font-size: 10px; padding: 0 4px 1px; min-width: 16px; }
+}

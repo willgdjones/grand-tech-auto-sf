@@ -1,0 +1,31 @@
+{
+ "source": "DataSF Street Tree List (tkzw-k3nq)",
+ "licence": "PDDL 1.0",
+ "url": "https://data.sf.gov/d/tkzw-k3nq",
+ "asOf": [
+  "2026-09-30",
+  "2026-10-02",
+  "2026-10-03",
+  "2026-10-06"
+ ],
+ "trees": 138723,
+ "skipped": 5742,
+ "kinds": {
+  "ficus": 77142,
+  "plane": 38581,
+  "eucalyptus": 11614,
+  "cypress": 4630,
+  "pine": 2503,
+  "palm": 4253
+ },
+ "kindOrder": [
+  "palm",
+  "plane",
+  "cypress",
+  "eucalyptus",
+  "pine",
+  "ficus"
+ ],
+ "bytes": 832350,
+ "gzipBytes": 527215
+}

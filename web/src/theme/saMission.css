@@ -1,0 +1,424 @@
+/*
+ * GTASF onboarding SA UI kit (gtasf-ha2l, PLAN-onboarding.md pane-8 row).
+ *
+ * The shared San Andreas presentation layer the onboarding owner (pane 14) consumes:
+ *   - mission objective banner (big pricedown-style step title + objective line + reward chip)
+ *   - mission stinger (big centre "MISSION PASSED" / "PRE-SEED CLOSED" one-shot)
+ *   - intro slides (SA loading-screen poster frame, persistent Skip, any-key/tap advance, dots)
+ *   - contextual hint chips (near-object key prompts, touch labels, idle nudges)
+ *   - gold objective arrow (edge indicator that points at the current marker + distance)
+ *
+ * SA rules (same as theme/saTheme.css): straight on-screen text with a THICK BLACK OUTLINE, no soft
+ * shadows, no rounded corners on chrome, no serif/italic, condensed display font for big gold titles.
+ * Tokens come from theme/saTheme.css; every var() carries an inline fallback so the kit reads even if
+ * the token import order differs. Nothing here captures pointer input except the intro Skip button.
+ */
+
+/* ============================== Mission objective banner ============================== */
+/* Top-centre, flat SA panel. Persistent during a tutorial step; pane 14 toggles [hidden]. */
+.gt-sa-mission {
+  position: fixed;
+  z-index: 36;
+  left: 50%;
+  top: calc(10px + env(safe-area-inset-top, 0px));
+  transform: translateX(-50%);
+  width: min(520px, calc(100vw - 32px));
+  padding: 8px 16px 9px;
+  border: 2px solid var(--sa-panel-edge, rgba(0, 0, 0, 0.9));
+  border-radius: 0;
+  background: var(--sa-panel-bg, rgba(0, 0, 0, 0.62));
+  box-shadow: none;
+  text-align: center;
+  pointer-events: none;
+  font-family: var(--sa-sans, Arial, Helvetica, sans-serif);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+.gt-sa-mission.gt-sa-show { opacity: 1; }
+.gt-sa-mission[hidden] { display: none; }
+
+.gt-sa-mission__step {
+  font-family: var(--sa-sans, Arial, sans-serif);
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sa-bar-blue, #b2cef2);
+  -webkit-text-stroke: 1px var(--sa-ink, #000);
+  paint-order: stroke fill;
+}
+.gt-sa-mission__step[hidden] { display: none; }
+
+.gt-sa-mission__title {
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.04;
+  font-size: clamp(22px, 3.4vw, 30px);
+  color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: 3px var(--sa-ink, #000);
+  paint-order: stroke fill;
+  text-shadow: none;
+  margin: 1px 0 0;
+}
+
+.gt-sa-mission__obj {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--sa-menu-white, #fff);
+  -webkit-text-stroke: 1.2px var(--sa-ink, #000);
+  paint-order: stroke fill;
+  margin: 3px 0 0;
+}
+.gt-sa-mission__obj[hidden] { display: none; }
+
+.gt-sa-mission__reward {
+  display: inline-block;
+  margin: 5px 0 0;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--sa-money-green, #345f27);
+  -webkit-text-stroke: 2px var(--sa-ink, #000);
+  paint-order: stroke fill;
+  font-variant-numeric: tabular-nums;
+}
+.gt-sa-mission__reward[hidden] { display: none; }
+
+.gt-sa-mission__dots { display: flex; gap: 5px; justify-content: center; margin: 7px 0 0; }
+.gt-sa-mission__dots[hidden] { display: none; }
+.gt-sa-dot {
+  width: 7px; height: 7px; border: 1px solid var(--sa-ink, #000); background: rgba(255, 255, 255, 0.28);
+}
+.gt-sa-dot--on { background: var(--sa-title-gold, #f6a81e); }
+
+/* ============================== Mission stinger (centre one-shot) ============================== */
+.gt-sa-stinger {
+  position: fixed;
+  z-index: 70;
+  left: 50%;
+  top: 28vh;
+  transform: translateX(-50%) scale(0.92);
+  width: min(680px, calc(100vw - 32px));
+  text-align: center;
+  pointer-events: none;
+  font-family: var(--sa-sans, Arial, sans-serif);
+  opacity: 0;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.gt-sa-stinger.gt-sa-show { opacity: 1; transform: translateX(-50%) scale(1); }
+.gt-sa-stinger__head {
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(30px, 6vw, 62px);
+  line-height: 1.0;
+  letter-spacing: 0.03em;
+  color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: 3px var(--sa-ink, #000);
+  paint-order: stroke fill;
+  text-shadow: none;
+}
+.gt-sa-stinger--pass .gt-sa-stinger__head { color: var(--sa-money-green, #345f27); }
+.gt-sa-stinger--orange .gt-sa-stinger__head { color: var(--sa-title-orange, #e3651d); }
+.gt-sa-stinger__sub {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--sa-menu-white, #fff);
+  -webkit-text-stroke: 1.2px var(--sa-ink, #000);
+  paint-order: stroke fill;
+}
+.gt-sa-stinger__sub[hidden] { display: none; }
+
+/* ============================== Intro slides (SA loading-screen poster) ============================== */
+.gt-sa-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #05070c;
+  font-family: var(--sa-sans, Arial, sans-serif);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.gt-sa-intro.gt-sa-show { opacity: 1; }
+
+/* Poster frame: full-bleed art area with a double ink border, dark scrim at the foot for the text. */
+.gt-sa-intro__frame {
+  position: relative;
+  width: min(880px, calc(100vw - 24px));
+  height: min(620px, calc(100vh - 24px));
+  border: 3px solid #000;
+  outline: 2px solid rgba(255, 255, 255, 0.14);
+  outline-offset: 3px;
+  background: linear-gradient(160deg, #1b2b47 0%, #223a5e 40%, #3a4a63 100%);
+  overflow: hidden;
+}
+/* No-art fallback poster: a saturated San Andreas sky graded by slide (midday cyan / golden hour /
+   blue dusk) with a sun glow. Only visible when there's no illustration — the <img> covers the frame
+   background when pane 9's art is set. The scrim keeps the caption legible over any of them. */
+.gt-sa-intro__frame[data-mood="day"] {
+  background: radial-gradient(58% 48% at 78% 15%, rgba(255, 245, 205, .5), transparent 56%),
+    linear-gradient(180deg, #2f6f9e 0%, #5f9bc0 46%, #c7b48c 100%);
+}
+.gt-sa-intro__frame[data-mood="gold"] {
+  background: radial-gradient(70% 55% at 30% 24%, rgba(255, 183, 92, .6), transparent 60%),
+    linear-gradient(180deg, #5a3f73 0%, #b9683a 52%, #e2a24c 100%);
+}
+.gt-sa-intro__frame[data-mood="dusk"] {
+  background: radial-gradient(60% 46% at 70% 20%, rgba(124, 152, 220, .34), transparent 60%),
+    linear-gradient(180deg, #121f44 0%, #27365f 52%, #46465f 100%);
+}
+.gt-sa-intro__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: auto;
+}
+.gt-sa-intro__img[hidden] { display: none; }
+.gt-sa-intro__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.45) 34%, rgba(0, 0, 0, 0) 62%);
+}
+.gt-sa-intro__text {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 20px 26px 26px;
+  text-align: left;
+}
+.gt-sa-intro__kicker {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sa-bar-blue, #b2cef2);
+  -webkit-text-stroke: 1px var(--sa-ink, #000);
+  paint-order: stroke fill;
+}
+.gt-sa-intro__title {
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  line-height: 1.02;
+  font-size: clamp(30px, 5.2vw, 52px);
+  color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: 3px var(--sa-ink, #000);
+  paint-order: stroke fill;
+  margin: 4px 0 0;
+}
+.gt-sa-intro__body {
+  max-width: 640px;
+  margin: 8px 0 0;
+  font-weight: 700;
+  font-size: clamp(14px, 2.2vw, 17px);
+  line-height: 1.32;
+  color: var(--sa-menu-white, #fff);
+  -webkit-text-stroke: 1.1px var(--sa-ink, #000);
+  paint-order: stroke fill;
+}
+.gt-sa-intro__body[hidden] { display: none; }
+
+/* Device-control list (the controls slide): rows of key-cap + label. */
+.gt-sa-intro__controls { margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 7px 18px; max-width: 680px; }
+.gt-sa-intro__controls[hidden] { display: none; }
+.gt-sa-ctl { display: flex; align-items: center; gap: 9px; }
+.gt-sa-ctl__keys {
+  flex: none;
+  min-width: 30px;
+  padding: 2px 7px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  border: 2px solid #000;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.gt-sa-ctl__label {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--sa-menu-white, #fff);
+  -webkit-text-stroke: 1px var(--sa-ink, #000);
+  paint-order: stroke fill;
+}
+
+/* Persistent Skip button, top-right of the overlay. This is the only pointer-capturing element. */
+.gt-sa-intro__skip {
+  position: absolute;
+  top: calc(14px + env(safe-area-inset-top, 0px));
+  right: 16px;
+  z-index: 2;
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 7px 16px;
+  background: var(--sa-panel-bg-strong, rgba(0, 0, 0, 0.82));
+  border: 2px solid var(--sa-panel-edge, rgba(0, 0, 0, 0.9));
+  border-radius: 0;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sa-menu-white, #fff);
+  -webkit-text-stroke: 1.4px var(--sa-ink, #000);
+  paint-order: stroke fill;
+}
+.gt-sa-intro__skip:hover { color: var(--sa-title-gold, #f6a81e); }
+
+.gt-sa-intro__advance {
+  position: absolute;
+  left: 50%;
+  bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  -webkit-text-stroke: 1px var(--sa-ink, #000);
+  paint-order: stroke fill;
+  animation: gt-sa-pulse 1.5s ease-in-out infinite;
+}
+@keyframes gt-sa-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+
+.gt-sa-intro__dots { position: absolute; left: 50%; bottom: 38px; transform: translateX(-50%); display: flex; gap: 7px; }
+
+/* ============================== Contextual hint chips ============================== */
+/* Shared container; variants position themselves. Prompts never capture pointer input. */
+.gt-sa-hint {
+  position: fixed;
+  z-index: 48;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 11px;
+  background: var(--sa-panel-bg, rgba(0, 0, 0, 0.62));
+  border: 2px solid var(--sa-panel-edge, rgba(0, 0, 0, 0.9));
+  border-radius: 0;
+  pointer-events: none;
+  font-family: var(--sa-sans, Arial, sans-serif);
+  opacity: 0;
+  transition: opacity 0.16s ease;
+  white-space: nowrap;
+}
+.gt-sa-hint.gt-sa-show { opacity: 1; }
+.gt-sa-hint__key {
+  flex: none;
+  min-width: 20px;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  border: 2px solid #000;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.gt-sa-hint__key[hidden] { display: none; }
+.gt-sa-hint__text {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--sa-menu-white, #fff);
+  -webkit-text-stroke: 1px var(--sa-ink, #000);
+  paint-order: stroke fill;
+}
+/* Near-object prompt: centre, just above the lower third. */
+.gt-sa-hint--prompt { left: 50%; bottom: 23vh; transform: translateX(-50%); }
+/* Contextual nudge: below the live sponsor/fund band, including wrapped notices. */
+.gt-sa-hint--nudge {
+  left: 50%;
+  top: max(calc(var(--gt-desktop-controls-bottom, 0px) + 12px), calc(max(74px, var(--gt-drop-banner-height, 0px) + 24px) + var(--gt-outbid-bar-height, 0px) + env(safe-area-inset-top, 0px)));
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(560px, calc(100vw - 24px));
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+/* Touch label: absolutely positioned by pane 14 near a control; it sets left/top inline. */
+.gt-sa-hint--touch { transform: translate(-50%, -50%); }
+
+/* ============================== Gold objective arrow (edge indicator) ============================== */
+.gt-sa-arrow {
+  position: fixed;
+  z-index: 46;
+  left: 0; top: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.16s ease;
+  will-change: transform;
+}
+.gt-sa-arrow.gt-sa-show { opacity: 1; }
+/* The triangle rotates to point at the target; the whole chip bobs along its facing via the parent. */
+.gt-sa-arrow__tri {
+  width: 0; height: 0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 22px solid var(--sa-title-gold, #f6a81e);
+  filter: drop-shadow(0 0 0 #000);
+  /* Black outline via a slightly larger ::before triangle. */
+  position: relative;
+}
+.gt-sa-arrow__tri::before {
+  content: '';
+  position: absolute;
+  left: -16px; top: -3px;
+  width: 0; height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 27px solid var(--sa-ink, #000);
+  z-index: -1;
+}
+.gt-sa-arrow__dist {
+  margin-top: 3px;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: 2px var(--sa-ink, #000);
+  paint-order: stroke fill;
+  font-variant-numeric: tabular-nums;
+}
+.gt-sa-arrow__dist[hidden] { display: none; }
+
+@media (max-width: 760px) {
+  .gt-sa-mission { width: calc(100vw - 20px); padding: 7px 12px 8px; }
+  .gt-sa-mission__title { font-size: clamp(20px, 6vw, 26px); }
+  .gt-sa-intro__frame { height: calc(100vh - 16px); border-width: 2px; }
+  /* The dots and continue hint sit over the poster on phones. Keep all captions/control rows
+     above that footer, including the home-indicator safe area. */
+  .gt-sa-intro__text { padding: 16px 16px calc(68px + env(safe-area-inset-bottom, 0px)); }
+  .gt-sa-intro__skip { min-height: 44px; }
+  .gt-sa-hint--prompt { bottom: 30vh; }
+}
+
+@media (max-width: 700px) {
+  .gt-sa-mission { top: calc(10px + var(--gt-outbid-bar-height, 0px) + var(--gt-phone-notice-height, 0px) + env(safe-area-inset-top, 0px)); }
+  /* The phone HUD reserves this chip's height via --gt-sa-nudge-height. */
+  .gt-sa-hint--nudge { top: calc(16px + var(--gt-outbid-bar-height, 0px) + var(--gt-phone-notice-height, var(--gt-drop-banner-height, 0px)) + var(--gt-sa-mission-height, 0px) + env(safe-area-inset-top, 0px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gt-sa-intro__advance { animation: none; }
+}

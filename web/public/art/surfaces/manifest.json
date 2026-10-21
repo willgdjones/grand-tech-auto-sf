@@ -1,0 +1,312 @@
+{
+  "version": 1,
+  "licenseUrl": "https://polyhaven.com/license",
+  "normalConvention": "OpenGL +Y",
+  "materials": [
+    {
+      "id": "asphalt",
+      "asset": "asphalt_02",
+      "source": "https://polyhaven.com/a/asphalt_02",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        3,
+        3
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/asphalt-albedo.webp",
+          "bytes": 96670,
+          "sha256": "df20905d460eb895bfbf3ce352e6ea03334198657dad6792f605b100fd78300e",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg",
+          "sourceSha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed"
+        },
+        "normal": {
+          "url": "/art/surfaces/asphalt-normal.webp",
+          "bytes": 137576,
+          "sha256": "4706de88c267f3d22efd554027a363cf5de70a29961500976ba7450ab8181d03",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg",
+          "sourceSha256": "42a1c381b53204e83a982db2864479a30bc127bbdeebb1006f8ee51bff099df3"
+        },
+        "roughness": {
+          "url": "/art/surfaces/asphalt-roughness.webp",
+          "bytes": 85484,
+          "sha256": "3bc221dbd30ca8419948dc0acb7cad8a3702ab680f4a541d28558fa73176c324",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_rough_1k.jpg",
+          "sourceSha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712"
+        }
+      }
+    },
+    {
+      "id": "sidewalk",
+      "asset": "concrete_pavement",
+      "source": "https://polyhaven.com/a/concrete_pavement",
+      "authors": {
+        "Charlotte Baglioni": "All"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        1.8,
+        1.8
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/sidewalk-albedo.webp",
+          "bytes": 59668,
+          "sha256": "5cb2b5962e62e1a3b5e3c6b01165b17ba1454a1367302e0e134065a88b11765b",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_pavement/concrete_pavement_diff_1k.jpg",
+          "sourceSha256": "70d3ff969a7421c7ae057b5d16386d11f5e59c6740db643352e1039413f419c4"
+        },
+        "normal": {
+          "url": "/art/surfaces/sidewalk-normal.webp",
+          "bytes": 122872,
+          "sha256": "f88c85184b21269811a563d993d3b155f688fabb5f0f8a3deb3fd3b93b758d74",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_pavement/concrete_pavement_nor_gl_1k.jpg",
+          "sourceSha256": "a5009e409ff0f7b2d19e1316fe5e2b2b4f28e4a6b79990a664be69d4e8a0e690"
+        },
+        "roughness": {
+          "url": "/art/surfaces/sidewalk-roughness.webp",
+          "bytes": 5014,
+          "sha256": "56b4e3687dc5c9dbfb22dfbba9879ceccd0027c802969f2b251756372fb1fc61",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_pavement/concrete_pavement_rough_1k.jpg",
+          "sourceSha256": "99f81099af07b009134b6a81bf0f95ab16da09c57156cc2ed534975664a68533"
+        }
+      }
+    },
+    {
+      "id": "pavers",
+      "asset": "concrete_pavers",
+      "source": "https://polyhaven.com/a/concrete_pavers",
+      "authors": {
+        "Amal Kumar": "All"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        1.92,
+        1.92
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/pavers-albedo.webp",
+          "bytes": 42338,
+          "sha256": "33d72d0b700cdb0a0c8570b94bfc07854672a79d1822cf2d33b2ddd14fb4839c",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_pavers/concrete_pavers_diff_1k.jpg",
+          "sourceSha256": "eea1fb8b498154754f4961ce0792092ef56cadc3d210becbb0dc3bf6c96c261d"
+        },
+        "normal": {
+          "url": "/art/surfaces/pavers-normal.webp",
+          "bytes": 86538,
+          "sha256": "bf29cd4e2bfba6e706ae13d6c2fff2188d4047e8c4464b2bdef1f4fb5293ae6b",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_pavers/concrete_pavers_nor_gl_1k.jpg",
+          "sourceSha256": "761c8332b4b53ab06931adf83f5f8f4fa5b7559a1a8267bc7ef865f890b17894"
+        },
+        "roughness": {
+          "url": "/art/surfaces/pavers-roughness.webp",
+          "bytes": 5420,
+          "sha256": "80d6fd489c00cd278b95a2b81f10899a14b71d0650e1f726f6013d26452fe129",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_pavers/concrete_pavers_rough_1k.jpg",
+          "sourceSha256": "27fb26837b95523b4ff8d663745466005ac6ae9797e6f5ced1192eaebf6c1469"
+        }
+      }
+    },
+    {
+      "id": "roof",
+      "asset": "grey_roof_01",
+      "source": "https://polyhaven.com/a/grey_roof_01",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        8,
+        8
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/roof-albedo.webp",
+          "bytes": 64724,
+          "sha256": "db87669cda032cda53049b4fda00dc7b65e7af479fae105de4dd90c979b0e6d5",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grey_roof_01/grey_roof_01_diff_1k.jpg",
+          "sourceSha256": "d988fc8e8dcf3d817d15d84e1cb1d9131095184c74c5f7b18b6491103489c2bd"
+        },
+        "normal": {
+          "url": "/art/surfaces/roof-normal.webp",
+          "bytes": 105206,
+          "sha256": "e0b58430d241576c7b1f1558e5185ef87ac84c8a7913a5b475f921cd54dc0ed1",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grey_roof_01/grey_roof_01_nor_gl_1k.jpg",
+          "sourceSha256": "2d37930361e93495706b43b9406744c43c9c86eb1b813562e787f9ead2c429cd"
+        },
+        "roughness": {
+          "url": "/art/surfaces/roof-roughness.webp",
+          "bytes": 58652,
+          "sha256": "ae4602db03440a0ea02ac064dcec93baa7f9c19f6ebb0f3f6e0fc99ef99d8ccc",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grey_roof_01/grey_roof_01_rough_1k.jpg",
+          "sourceSha256": "f01f3377de6da22beecd69bc54b498b1bbf81184504b90589242f51a0488f041"
+        }
+      }
+    },
+    {
+      "id": "stucco",
+      "asset": "white_stucco",
+      "source": "https://polyhaven.com/a/white_stucco",
+      "authors": {
+        "Amal Kumar": "All"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        1.998,
+        1.998
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/stucco-albedo.webp",
+          "bytes": 7666,
+          "sha256": "06324ea99bb7ec113dd1ffdb3774b48eda49c42377612becfdc89c696414a583",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_stucco/white_stucco_diff_1k.jpg",
+          "sourceSha256": "5f2d11f5675ffe679155d8e38ed8eaa9b9972126675641e4977c8a4f905f276b"
+        },
+        "normal": {
+          "url": "/art/surfaces/stucco-normal.webp",
+          "bytes": 83744,
+          "sha256": "eb14333d6a5f918b4413f157bdb6454fcfc81347b43809c31aa1605b7b379e68",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_stucco/white_stucco_nor_gl_1k.jpg",
+          "sourceSha256": "f0d4f34b30093ceca5e58d5168fc06c2f0cd0b81289708aa3eac7d0801bd069d"
+        },
+        "roughness": {
+          "url": "/art/surfaces/stucco-roughness.webp",
+          "bytes": 2414,
+          "sha256": "c57bffb63a222e753eeeaa84b678cc83cebe8432bc098cbc0f73a660971dbf72",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_stucco/white_stucco_rough_1k.jpg",
+          "sourceSha256": "04866e5a27a96148a744c526babad0abc27fe8c1b4c0c7edae65583d1ed6afb1"
+        }
+      }
+    },
+    {
+      "id": "brick",
+      "asset": "red_brick",
+      "source": "https://polyhaven.com/a/red_brick",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        1.4,
+        1.4
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/brick-albedo.webp",
+          "bytes": 40686,
+          "sha256": "476ce4b0419a00bed79e7079a00f595b88fb62abfc7ad0a49b2c85f7b04e16b8",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/red_brick/red_brick_diff_1k.jpg",
+          "sourceSha256": "6dea3a2b5a3185ff48d299d182c405a9f787129d79677792db6de4afd81c47f6"
+        },
+        "normal": {
+          "url": "/art/surfaces/brick-normal.webp",
+          "bytes": 125940,
+          "sha256": "21c95d2a621a5e183b7b84e02713a05be652555a2541a9385c6c6ee87684f8bf",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/red_brick/red_brick_nor_gl_1k.jpg",
+          "sourceSha256": "99bd2c60dfdb02b011cc3551bd9ab51d9b0be2807e3ba8f7a53c8a4c945b2f87"
+        },
+        "roughness": {
+          "url": "/art/surfaces/brick-roughness.webp",
+          "bytes": 4736,
+          "sha256": "b0467746981610a565a6ecb80cc0a55c59daeb30e3145123786a809feb94fec1",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/red_brick/red_brick_rough_1k.jpg",
+          "sourceSha256": "9bc9ece8264eb53d6f290bd2950ece5e462f83ce9e65b945fb1caf9972973ab9"
+        }
+      }
+    },
+    {
+      "id": "siding",
+      "asset": "weathered_plank_siding",
+      "source": "https://polyhaven.com/a/weathered_plank_siding",
+      "authors": {
+        "Dimitrios Savva": "All"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        1.57,
+        1.57
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/siding-albedo.webp",
+          "bytes": 20344,
+          "sha256": "d4f79399a724d51f71d3f11eb35993dbb4ba3be3df2d8f9aae4f6ea302639560",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_plank_siding/weathered_plank_siding_diff_1k.jpg",
+          "sourceSha256": "dad0442114f1efd9a25195f2e2ac480693c2a6199f3987f4cfac4002b2820fbd"
+        },
+        "normal": {
+          "url": "/art/surfaces/siding-normal.webp",
+          "bytes": 45766,
+          "sha256": "011d499c9258683d619158848428e7f6f9f36d1beacd8f77830c1a54386c11d8",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_plank_siding/weathered_plank_siding_nor_gl_1k.jpg",
+          "sourceSha256": "229440bb21992d7f97bbbe03f6488e21cc061119ab3774ad0c30e352c9690a74"
+        },
+        "roughness": {
+          "url": "/art/surfaces/siding-roughness.webp",
+          "bytes": 8532,
+          "sha256": "2049bb0c40677e19f71e32b9a0f7f9edec0641313709c56aea0ac8dce314dc66",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_plank_siding/weathered_plank_siding_rough_1k.jpg",
+          "sourceSha256": "1f4707c748102d1faf275d35dea798e2e51dcc0d425ddd2121643b08d2b3af3e"
+        }
+      }
+    },
+    {
+      "id": "concrete",
+      "asset": "concrete_wall_001",
+      "source": "https://polyhaven.com/a/concrete_wall_001",
+      "authors": {
+        "Dimitrios Savva": "Photography",
+        "Rico Cilliers": "Processing"
+      },
+      "license": "CC0-1.0",
+      "metres": [
+        1.5,
+        1.5
+      ],
+      "width": 512,
+      "height": 512,
+      "maps": {
+        "albedo": {
+          "url": "/art/surfaces/concrete-albedo.webp",
+          "bytes": 6210,
+          "sha256": "1f70ba270e2436ee5b90237acf99719a13bf62705ea87b1158b920f2acc00318",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_001/concrete_wall_001_diff_1k.jpg",
+          "sourceSha256": "c3c936da86d57997d9fc4022371c3798c8d438aeecb8f41546104da6d3947c02"
+        },
+        "normal": {
+          "url": "/art/surfaces/concrete-normal.webp",
+          "bytes": 76238,
+          "sha256": "d6184afeafb2e798a2c52804ae89c1e082e250694693b637b4b666d392d3ab4c",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_001/concrete_wall_001_nor_gl_1k.jpg",
+          "sourceSha256": "6f10711d123c8dff26375555196eae9e16d874c137acdacd44d1ba90168b6d46"
+        },
+        "roughness": {
+          "url": "/art/surfaces/concrete-roughness.webp",
+          "bytes": 22566,
+          "sha256": "922a6419ae1268a041a075a640e30e7580dfd3395026c2c177e5075d120fb24b",
+          "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_001/concrete_wall_001_rough_1k.jpg",
+          "sourceSha256": "d0964c690a8de99fb4f6657e0d3474eea9f9f293d080f4e5c871a55857d9448b"
+        }
+      }
+    }
+  ]
+}

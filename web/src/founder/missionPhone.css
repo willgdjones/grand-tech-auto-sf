@@ -1,0 +1,135 @@
+/* GTASF in-game phone (jobs list) — docs/PLAN-gta-pivot.md LANE C. A small phone-shaped panel, bottom-right on
+   desktop, that lists missions + the live job. Dark tech-noir to match the founder-ladder cards. */
+.gt-mission-phone {
+  position: fixed;
+  right: 16px;
+  bottom: 96px;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  z-index: 40;
+  font-family: Arial, sans-serif;
+  color: #f6edda;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.5));
+}
+.gt-mission-phone-screen {
+  background: #0c1813f2;
+  border: 2px solid #f0b429;
+  border-radius: 22px;
+  padding: 14px 12px 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.gt-mission-phone-header {
+  font: 900 15px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif;
+  letter-spacing: 0.12em;
+  color: #f0b429;
+  margin-bottom: 8px;
+}
+.gt-mission-phone-live {
+  background: #f0b42922;
+  border: 1px solid #f0b42955;
+  border-radius: 10px;
+  padding: 7px 9px;
+  font-size: 12px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.gt-mission-phone-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.gt-mission-phone-item {
+  background: #11211a;
+  border: 1px solid #ffffff1f;
+  border-radius: 12px;
+  padding: 10px;
+}
+.gt-mission-phone-item-title { font: 700 15px Arial, sans-serif; margin-bottom: 3px; }
+.gt-mission-phone-item-blurb { font-size: 12px; line-height: 1.35; color: #d8d2c2; margin: 0 0 7px; }
+.gt-mission-phone-item-pay { font-size: 12px; color: #f0b429; margin-bottom: 8px; }
+.gt-mission-phone-start {
+  width: 100%;
+  background: #f0b429;
+  color: #0c1813;
+  border: none;
+  border-radius: 9px;
+  padding: 8px;
+  font: 700 13px Arial, sans-serif;
+  cursor: pointer;
+}
+.gt-mission-phone-start:hover { background: #f7c64e; }
+.gt-mission-phone-start:disabled { background: #2b3a33; color: #9fb3a8; cursor: default; }
+.gt-mission-phone-start:disabled:hover { background: #2b3a33; }
+.gt-mission-phone-item-current { border-color: #f0b429; background: #16261e; }
+.gt-mission-phone-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #0c1813;
+  color: #f6edda;
+  border: 2px solid #f0b429;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+/* Live-job banner: text + an Abandon button (no job is a one-way door). */
+.gt-mission-phone-live-text { display: block; }
+.gt-mission-phone-abandon { margin-top: 7px; background: none; color: #f6edda; border: 1px solid #f0b42999; border-radius: 8px; padding: 5px 10px; font: 700 12px Arial, sans-serif; cursor: pointer; }
+.gt-mission-phone-abandon:hover { background: #f0b4291f; }
+/* Collectibles — the SF-pilgrimage stamp collection section (LANE C task 6). */
+.gt-mission-phone-stamps-header { margin-top: 12px; padding-top: 12px; border-top: 1px solid #ffffff1f; }
+.gt-mission-phone-stamps-count { font-size: 12px; color: #f0b429; margin-bottom: 8px; }
+.gt-mission-phone-stamps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.gt-mission-phone-stamp { font-size: 12px; color: #d8d2c2; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gt-mission-phone-stamp-empty { color: #9fb3a8; font-style: italic; }
+/* SF pilgrimage landmarks (LANE C task 6): name + blurb with a Route button; collected rows collapse to a ✓ line. */
+.gt-mission-phone-pilgrims { list-style: none; margin: 0 0 4px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.gt-mission-phone-pilgrim { display: flex; align-items: center; gap: 8px; background: #11211a; border: 1px solid #ffffff1f; border-radius: 10px; padding: 7px 8px; }
+.gt-mission-phone-pilgrim-done { background: none; border: none; padding: 0 2px; font-size: 12px; color: #9fd8b0; }
+.gt-mission-phone-pilgrim-text { flex: 1; min-width: 0; }
+.gt-mission-phone-pilgrim-name { font: 700 13px Arial, sans-serif; }
+.gt-mission-phone-pilgrim-blurb { font-size: 11px; line-height: 1.3; color: #d8d2c2; }
+.gt-mission-phone-pilgrim-route { flex: none; background: #f0b429; color: #0c1813; border: none; border-radius: 8px; padding: 6px 10px; font: 700 12px Arial, sans-serif; cursor: pointer; }
+.gt-mission-phone-pilgrim-route:hover { background: #f7c64e; }
+@media (pointer: coarse) {
+  .gt-mission-phone { right: 10px; bottom: 120px; width: min(86vw, 320px); }
+}
+/* While the phone is open, transient tutorial/look hints would draw over its rows (they sit above it); hide them. */
+body:has(.gt-mission-phone:not([hidden])) :is(.gt-sa-hint, .gt-look-fallback) { visibility: hidden; }
+
+/* Founder Rank (flag founderRank): the full rank line at the top of the phone. */
+.gt-mission-phone-rank { margin: 0 0 8px; padding: 6px 10px; border-radius: 8px; background: #f0b42922; color: #f0b429; font: 800 12px Arial, sans-serif; letter-spacing: .08em; }
+.gt-mission-phone-rank[hidden] { display: none; }
+/* Personal car (flag personalCar): one row above JOBS — where it is, Route, Deliver. */
+.gt-mission-phone-car { list-style: none; gap: 6px; margin-bottom: 10px; }
+.gt-mission-phone-car[hidden], .gt-mission-phone-header[hidden] { display: none; }
+.gt-mission-phone-car-deliver { background: #2f7de1; color: #fff; }
+.gt-mission-phone-car-deliver:hover { background: #4b92ee; }
+.gt-mission-phone-car-deliver:disabled { opacity: .6; cursor: default; }
+
+/* phoneFrame (critique #17): the jobs phone as a handset — bezel, status bar, home bar; slides up from the bottom edge. */
+.gt-mission-phone--framed {
+  width: 300px; padding: 10px 9px 12px; border-radius: 38px; background: linear-gradient(160deg, #2a2f33, #0d0f11 60%);
+  border: 1px solid #4a5157; box-shadow: inset 0 0 0 2px #050607, 0 18px 40px #000a; filter: none;
+  animation: gt-phone-rise .22s ease-out;
+}
+.gt-mission-phone--framed .gt-mission-phone-screen { border: 0; border-radius: 26px; max-height: min(60vh, 560px); background: #0c1813; }
+.gt-mission-phone-status {
+  display: flex; align-items: center; justify-content: space-between; padding: 2px 16px 7px;
+  font: 700 11px Arial, sans-serif; color: #f6edda; letter-spacing: .02em;
+}
+.gt-mission-phone-carrier { flex: 1; color: #9fb3a8; }
+.gt-mission-phone-clock { flex: none; font-weight: 800; }
+.gt-mission-phone-icons { flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 6px; }
+.gt-mission-phone-signal { width: 15px; height: 10px; background: linear-gradient(90deg, #f6edda 0 20%, transparent 20% 27%, #f6edda 27% 47%, transparent 47% 54%, #f6edda 54% 74%, transparent 74% 81%, #f6edda 81%);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%); }
+.gt-mission-phone-battery { width: 20px; height: 9px; border: 1.5px solid #f6edda; border-radius: 3px; position: relative;
+  background: linear-gradient(90deg, #6fe08a 0 72%, transparent 72%) content-box; padding: 1px; box-sizing: border-box; }
+.gt-mission-phone-battery::after { content: ''; position: absolute; right: -4px; top: 2px; width: 2px; height: 4px; background: #f6edda; border-radius: 0 1px 1px 0; }
+.gt-mission-phone-homebar { width: 96px; height: 4px; margin: 9px auto 0; border-radius: 2px; background: #f6edda99; }
+.gt-mission-phone--framed .gt-mission-phone-close { top: 4px; right: 4px; width: 26px; height: 26px; font-size: 16px; border-width: 1px; border-color: #4a5157; background: #1a1e21; }
+@keyframes gt-phone-rise { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .gt-mission-phone--framed { animation: none; } }
+@media (pointer: coarse) { .gt-mission-phone--framed { width: min(86vw, 320px); } }
+/* stuntBonus: the best jump line under the rank (same chip, cooler colour). */
+.gt-mission-phone-stunt { background: #ff8a2a22; color: #ffb066; }

@@ -1,0 +1,83 @@
+[
+  {
+    "name": "worn-asphalt",
+    "prompt": "Dark charcoal worn asphalt surface with sparse tiny grey aggregate flecks, very subtle patches and broad soft tire scuff wear. Completely unmarked asphalt. Seamless square albedo texture for a 2004 PlayStation 2 urban open-world game. Strict perpendicular top-down orthographic view, no perspective. Tile fills the complete frame edge to edge. Chunky low-resolution photographic texture, subdued 16-color palette, softly baked flat diffuse light, no directional shadows, no shine, no 3D objects, no cars, no people, no words, no logos. Clear readable large-scale details, minimal noisy microdetail. Tiling asset, not a scene.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53001,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/worn-asphalt.png"
+  },
+  {
+    "name": "double-yellow",
+    "prompt": "Dark charcoal asphalt road tile with exactly TWO thin parallel weathered YELLOW centre lines running vertically straight from the TOP edge to the BOTTOM edge, lines near center separated by a narrow dark gap. Both yellow lines unbroken, width 3 percent of image each. No other markings. Seamless square albedo texture for a 2004 PlayStation 2 urban open-world game. Strict perpendicular top-down orthographic view, no perspective. Tile fills the complete frame edge to edge. Chunky low-resolution photographic texture, subdued 16-color palette, softly baked flat diffuse light, no directional shadows, no shine, no 3D objects, no cars, no people, no words, no logos. Clear readable large-scale details, minimal noisy microdetail. Tiling asset, not a scene.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53002,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/double-yellow.png"
+  },
+  {
+    "name": "white-dashes",
+    "prompt": "Dark charcoal asphalt road tile with one narrow WHITE dashed lane divider running vertically through the center. Exactly two long straight white painted rectangles separated by a dark gap, repeated vertically, mild paint chipping, no yellow. Seamless square albedo texture for a 2004 PlayStation 2 urban open-world game. Strict perpendicular top-down orthographic view, no perspective. Tile fills the complete frame edge to edge. Chunky low-resolution photographic texture, subdued 16-color palette, softly baked flat diffuse light, no directional shadows, no shine, no 3D objects, no cars, no people, no words, no logos. Clear readable large-scale details, minimal noisy microdetail. Tiling asset, not a scene.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53003,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/white-dashes.png"
+  },
+  {
+    "name": "crosswalk",
+    "prompt": "Dark charcoal asphalt with six broad parallel off-white pedestrian crosswalk zebra bars running horizontally from left to right, evenly spaced dark asphalt gaps. Simple worn paint, completely top-down. Seamless square albedo texture for a 2004 PlayStation 2 urban open-world game. Strict perpendicular top-down orthographic view, no perspective. Tile fills the complete frame edge to edge. Chunky low-resolution photographic texture, subdued 16-color palette, softly baked flat diffuse light, no directional shadows, no shine, no 3D objects, no cars, no people, no words, no logos. Clear readable large-scale details, minimal noisy microdetail. Tiling asset, not a scene.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53004,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/crosswalk.png"
+  },
+  {
+    "name": "sidewalk-kerb",
+    "prompt": "Pale warm-grey concrete pavement squares, regular two by two large slab grid with thin dark expansion joints and mild scuff marks. Along the RIGHT edge only is a straight narrow light concrete kerb strip running top to bottom, subtle shaded inner joint. Seamless square albedo texture for a 2004 PlayStation 2 urban open-world game. Strict perpendicular top-down orthographic view, no perspective. Tile fills the complete frame edge to edge. Chunky low-resolution photographic texture, subdued 16-color palette, softly baked flat diffuse light, no directional shadows, no shine, no 3D objects, no cars, no people, no words, no logos. Clear readable large-scale details, minimal noisy microdetail. Tiling asset, not a scene.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53005,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/sidewalk-kerb.png"
+  },
+  {
+    "name": "cobbles",
+    "prompt": "Old San Francisco red-brown brick cobbles arranged in a clear horizontal running bond pavement pattern. Muted terracotta rectangles, dark thin grout, light worn uneven color, readable chunky bricks. Seamless square albedo texture for a 2004 PlayStation 2 urban open-world game. Strict perpendicular top-down orthographic view, no perspective. Tile fills the complete frame edge to edge. Chunky low-resolution photographic texture, subdued 16-color palette, softly baked flat diffuse light, no directional shadows, no shine, no 3D objects, no cars, no people, no words, no logos. Clear readable large-scale details, minimal noisy microdetail. Tiling asset, not a scene.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53006,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/cobbles.png"
+  },
+  {
+    "name": "cable-track",
+    "prompt": "San Francisco cable-car track pavement inset viewed straight down: TWO narrow parallel dull steel rail heads running VERTICALLY from top to bottom, plus ONE thin dark continuous cable grip slot exactly midway between them. Rails at one-quarter and three-quarter image width. Muted red-brown brick paving surrounding and between the rails. No wooden railway sleepers. Seamless square albedo texture for a 2004 PlayStation 2 urban open-world game. Strict perpendicular top-down orthographic view, no perspective. Tile fills the complete frame edge to edge. Chunky low-resolution photographic texture, subdued 16-color palette, softly baked flat diffuse light, no directional shadows, no shine, no 3D objects, no cars, no people, no words, no logos. Clear readable large-scale details, minimal noisy microdetail. Tiling asset, not a scene.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53007,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/cable-track.png"
+  },
+  {
+    "name": "white-dashes-b",
+    "prompt": "Seamless top down asphalt game texture, one SINGLE vertical white dashed line down its exact center. Four identical white long rectangular strokes arranged vertically, all centered on x=50%, separated by equally sized blank gaps. Absolutely no horizontal line, no junction, no intersection, no crossing stripe, no other markings. Dark charcoal asphalt, dull chipped off-white paint. 2004 PlayStation 2 game texture style, orthographic flat square albedo, no perspective, low resolution chunky readable painted texture, subdued color, no shadows, no writing, no vehicles, no logos, no people. Tile edge-to-edge.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53023,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/white-dashes-b.png"
+  },
+  {
+    "name": "crosswalk-b",
+    "prompt": "Seamless zebra pedestrian crossing game texture. Six LONG white HORIZONTAL BANDS cover the entire image width, each band runs continuously from the left edge all the way to the right edge, separated by narrow charcoal asphalt bands. Simple alternating horizontal off-white and charcoal stripes, mild chipped paint edges. Every white stripe is unbroken across the full image width. No columns, no dashed segments, no vertical divisions, no blocks or checkerboard. Top down orthographic flat albedo square. 2004 PlayStation 2 game texture, chunky low resolution, diffuse flat light, no perspective, no shadows, no objects, no text, no logos.",
+    "model": "model_bfl-flux-1-1-pro",
+    "seed": 53024,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/ground/crosswalk-b.png"
+  }
+]

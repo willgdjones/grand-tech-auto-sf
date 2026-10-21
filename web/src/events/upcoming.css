@@ -1,0 +1,46 @@
+/* Upcoming-events browser (V / touch HUD) — San Andreas HUD theme (gtasf-v2-sa-hud-theme).
+   Flat black SA pause-menu panels (square corners), gold outlined display title, plain-sans
+   black-outline text; no rounded corners, no soft shadows, no serif/italic. Tokens from theme/saTheme.css
+   (globally imported in main.ts; inline fallbacks keep this correct in isolation). Reference: drops/banner.css. */
+
+/* Persistent "next event" callout launcher (floats over the game → outlined text for legibility). */
+.gt-upcoming-open{position:fixed;right:18px;bottom:44px;z-index:14;min-height:44px;padding:10px 16px;border:2px solid var(--sa-panel-edge,#000);border-radius:0;background:var(--sa-panel-bg-strong,rgba(0,0,0,0.82));color:var(--sa-title-gold,#f6a81e);font:700 14px var(--sa-sans,Arial,Helvetica,sans-serif);cursor:pointer;box-shadow:none}
+
+/* Modal browser panel — flat black SA pause-menu box. */
+.gt-upcoming{position:fixed;inset:6vh max(20px,calc((100vw - 840px)/2));z-index:90;display:flex;flex-direction:column;gap:12px;max-height:88vh;padding:22px;border:2px solid var(--sa-panel-edge,#000);border-radius:0;background:var(--sa-panel-bg-strong,rgba(0,0,0,0.82));color:#fff;font:14px/1.4 var(--sa-sans,Arial,Helvetica,sans-serif);box-shadow:none;overflow:auto;overscroll-behavior:contain}
+.gt-upcoming[hidden],.gt-upcoming [hidden]{display:none!important}
+.gt-upcoming-header{position:static;pointer-events:auto;text-shadow:none;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.gt-upcoming h2{margin:0;font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;text-transform:uppercase;letter-spacing:.02em;font-size:30px;line-height:1.05;color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:3px var(--sa-ink,#000);paint-order:stroke fill;text-shadow:none}
+.gt-upcoming button,.gt-upcoming a{font:inherit}
+.gt-upcoming button,.gt-upcoming-actions a{border:2px solid var(--sa-ink,#000);border-radius:0;background:rgba(0,0,0,0.5);color:#fff;min-height:42px;padding:8px 12px;cursor:pointer;text-decoration:none;font-weight:700}
+.gt-upcoming button:hover,.gt-upcoming a:hover{background:rgba(255,255,255,0.14)}
+.gt-upcoming button:focus-visible,.gt-upcoming a:focus-visible,.gt-upcoming input:focus-visible,.gt-upcoming select:focus-visible{outline:2px solid var(--sa-title-gold,#f6a81e);outline-offset:2px}
+.gt-upcoming button:disabled{opacity:.65;cursor:default}
+.gt-upcoming-tabs{display:flex;gap:7px;flex-wrap:wrap}
+.gt-upcoming-tabs button[aria-selected=true]{background:var(--sa-title-gold,#f6a81e);color:var(--sa-ink,#000);border-color:var(--sa-ink,#000);font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);text-transform:uppercase;letter-spacing:.02em}
+.gt-upcoming-search{box-sizing:border-box;width:100%;min-height:44px;background:rgba(0,0,0,0.45);border:2px solid var(--sa-panel-edge,#000);border-radius:0;padding:10px 12px;color:#fff;font:inherit}
+.gt-upcoming-note,.gt-upcoming-status{margin:0;color:#cfcfcf}
+.gt-upcoming-status{color:var(--sa-title-gold,#f6a81e)}
+.gt-upcoming-list{display:flex;flex-direction:column;gap:10px}
+.gt-upcoming-row{border:2px solid var(--sa-panel-edge,#000);border-radius:0;background:rgba(0,0,0,0.45);overflow:hidden}
+.gt-upcoming .gt-upcoming-choose{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;width:100%;border:0;border-radius:0;background:transparent;padding:13px}
+.gt-upcoming-choose strong{font-size:16px;color:var(--sa-title-gold,#f6a81e)}
+.gt-upcoming-host{color:#eaeaea}
+.gt-upcoming-time{color:var(--sa-bar-blue,#b2cef2)}
+.gt-upcoming-place{color:#c3c3c3;font-size:12px}
+.gt-upcoming-actions{display:flex;gap:8px;align-items:center;padding:0 13px 12px;flex-wrap:wrap}
+.gt-upcoming-actions button{color:var(--sa-title-gold,#f6a81e);font-size:12px}
+.gt-upcoming-actions a{font-size:12px}
+.gt-upcoming-more{align-self:center}
+@media(max-width:640px){.gt-upcoming{inset:10px 8px;max-height:calc(100dvh - 20px);padding:14px;gap:10px}.gt-upcoming h2{font-size:24px}.gt-upcoming-tabs{display:grid;grid-template-columns:1fr 1fr}.gt-upcoming-tabs button{padding:8px;font-size:12px}.gt-upcoming-open{right:12px;bottom:calc(350px + env(safe-area-inset-bottom));max-width:164px;padding:8px 11px;font-size:12px}.gt-upcoming-actions button{flex:1}.gt-upcoming-actions{gap:6px}}
+.gt-upcoming-open{width:280px;height:48px;padding:7px 12px;text-align:left;overflow:hidden}
+.gt-upcoming-callout-label,.gt-upcoming-callout-title{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gt-upcoming-callout-label{font-size:12px;line-height:16px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:1.2px var(--sa-ink,#000);paint-order:stroke fill}
+.gt-upcoming-callout-title{font-size:11px;line-height:15px;font-weight:400;color:#fff;-webkit-text-stroke:1px var(--sa-ink,#000);paint-order:stroke fill}
+.gt-upcoming-happening{border-color:var(--sa-title-orange,#e3651d)}
+.gt-upcoming-happening .gt-upcoming-callout-label{color:var(--sa-title-orange,#e3651d)}
+.gt-upcoming-sort{display:flex;align-items:center;gap:12px;color:#d7dfbe}
+.gt-upcoming-sort select{flex:1;min-width:0;min-height:44px;border:2px solid var(--sa-panel-edge,#000);border-radius:0;background:rgba(0,0,0,0.45);color:#fff;padding:8px 12px;font:inherit}
+.gt-upcoming-funding{color:var(--sa-money-green,#345f27);font-size:12px;font-weight:700;line-height:1.5}
+.gt-upcoming-community{align-self:flex-start;padding:1px 7px;border:2px solid var(--sa-ink,#000);background:var(--sa-bar-blue,#b2cef2);color:var(--sa-ink,#000);font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+@media(max-width:640px){.gt-upcoming-open{width:164px;height:48px;padding:6px 8px}.gt-upcoming-callout-label{font-size:10px}.gt-upcoming-callout-title{font-size:10px}}

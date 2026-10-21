@@ -1,0 +1,44 @@
+{
+  "model": "fal-ai/flux/dev",
+  "upscaler": "fal-ai/clarity-upscaler",
+  "estimatedUsdPerCall": 0.1,
+  "basePrompt": "Seamless repeating material texture, uniform full-bleed albedo swatch, 2D flat surface photographed straight down at close range under perfectly even diffuse light. The material pattern completely fills every part of the image. Microdetail at consistent scale, muted low contrast, evenly exposed, flat matte surface. Material:",
+  "tiles": [
+    {
+      "id": "pavement",
+      "seed": 42181,
+      "metres": 3,
+      "prompt": "Light warm-grey concrete with very fine mineral grain and subtle weathering. Four broad square concrete slabs, very thin straight expansion joints. Pure concrete material texture."
+    },
+    {
+      "id": "plaza-pavers",
+      "seed": 42182,
+      "metres": 3,
+      "prompt": "A continuous repeating running-bond arrangement of small rectangular grey granite paving blocks, narrow mortar joints, softly speckled stone grain, consistent block size. Pure granite paver material texture."
+    },
+    {
+      "id": "asphalt-patch",
+      "seed": 42183,
+      "metres": 5,
+      "prompt": "Solid charcoal-black bituminous aggregate, a close-up of rough black asphalt. Tiny grey aggregate embedded in dark binder, very subtle irregular darker repairs and fine hairline cracks. Plain asphalt material texture."
+    },
+    {
+      "id": "parking-lot",
+      "seed": 42184,
+      "metres": 5,
+      "prompt": "Solid medium-dark grey asphalt aggregate, subtle compressed-grain wear, faint old oil discoloration, uniform flat tarmac. Plain unpainted asphalt material texture."
+    },
+    {
+      "id": "gravel",
+      "seed": 42185,
+      "metres": 2,
+      "prompt": "A dense flat bed of tiny finely crushed grey limestone chips, each pebble only a few millimeters across, uniform fine scale, tightly compacted beige mineral dust between tiny chips. Pure crushed-gravel material texture."
+    },
+    {
+      "id": "kerb",
+      "seed": 42186,
+      "metres": 2,
+      "prompt": "Solid pale warm-grey fine-grain cast concrete, subtle speckled aggregate, a few shallow tiny chips, evenly weathered. Pure plain concrete material texture."
+    }
+  ]
+}

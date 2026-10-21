@@ -1,0 +1,18 @@
+/* Street / area name, bottom-right — San Andreas HUD theme (gtasf-v2-sa-hud-theme).
+   SA: blocky uppercase display name in gold with a thick black outline; no serif/italic, no soft shadow. */
+.gt-street-hud{position:fixed;right:26px;bottom:120px;z-index:19;max-width:min(420px,48vw);pointer-events:none;text-align:right}
+.gt-street-hud[hidden],.gt-street-district[hidden]{display:none}
+.gt-street-district{
+  font:700 12px/1.4 var(--sa-sans,Arial,sans-serif);letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;-webkit-text-stroke:1.2px var(--sa-ink,#000);paint-order:stroke fill;
+}
+.gt-street-name{
+  font-family:var(--sa-display,'Arial Narrow Bold','Arial Narrow',Impact,sans-serif);
+  font-weight:900;font-size:32px;line-height:1.05;font-style:normal;text-transform:uppercase;letter-spacing:.01em;
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:2.5px var(--sa-ink,#000);paint-order:stroke fill;
+  overflow-wrap:anywhere;
+}
+/* Short desktop windows have funding actions and radio text in the lower-right.
+   Use the title's column, leaving the full 440px toolbar plus a 16px gap. */
+@media(min-width:701px) and (max-height:860px){.gt-street-hud{left:36px;right:auto;top:calc(158px + var(--gt-outbid-bar-height,0px) + var(--gt-drop-banner-height,0px));bottom:auto;max-width:min(420px,calc(100vw - 516px));text-align:left}}
+@media(max-width:700px){.gt-street-hud{top:calc(264px + var(--gt-outbid-bar-height,0px));bottom:auto;right:20px;max-width:calc(100vw - 40px)}.gt-street-district{font-size:10px}.gt-street-name{font-size:23px}}

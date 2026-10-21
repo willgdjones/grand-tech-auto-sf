@@ -1,0 +1,99 @@
+{
+ "walkFrames": 12,
+ "idleFrames": 2,
+ "walkSeconds": 1.6666666269302368,
+ "idleSeconds": 2.0833332538604736,
+ "quant": 8192,
+ "bodies": [
+  {
+   "id": "business-man",
+   "vertices": 1599,
+   "triangles": 3373,
+   "indexOffset": 0,
+   "colourOffset": 20240,
+   "paintOffset": 25040,
+   "positionOffset": 26640,
+   "normalOffset": 160956
+  },
+  {
+   "id": "casual-woman",
+   "vertices": 1752,
+   "triangles": 3871,
+   "indexOffset": 228116,
+   "colourOffset": 251344,
+   "paintOffset": 256600,
+   "positionOffset": 258352,
+   "normalOffset": 405520
+  },
+  {
+   "id": "casual-man",
+   "vertices": 1549,
+   "triangles": 3099,
+   "indexOffset": 479104,
+   "colourOffset": 497700,
+   "paintOffset": 502348,
+   "positionOffset": 503900,
+   "normalOffset": 634016
+  },
+  {
+   "id": "formal-woman",
+   "vertices": 1743,
+   "triangles": 3681,
+   "indexOffset": 699076,
+   "colourOffset": 721164,
+   "paintOffset": 726396,
+   "positionOffset": 728140,
+   "normalOffset": 874552
+  },
+  {
+   "id": "worker-man",
+   "vertices": 1635,
+   "triangles": 2666,
+   "indexOffset": 947760,
+   "colourOffset": 963756,
+   "paintOffset": 968664,
+   "positionOffset": 970300,
+   "normalOffset": 1107640
+  },
+  {
+   "id": "beach-man",
+   "vertices": 1911,
+   "triangles": 3538,
+   "indexOffset": 1176312,
+   "colourOffset": 1197540,
+   "paintOffset": 1203276,
+   "positionOffset": 1205188,
+   "normalOffset": 1365712
+  },
+  {
+   "id": "punk-woman",
+   "vertices": 1652,
+   "triangles": 2818,
+   "indexOffset": 1445976,
+   "colourOffset": 1462884,
+   "paintOffset": 1467840,
+   "positionOffset": 1469492,
+   "normalOffset": 1608260
+  },
+  {
+   "id": "punk-man",
+   "vertices": 1428,
+   "triangles": 2672,
+   "indexOffset": 1677644,
+   "colourOffset": 1693676,
+   "paintOffset": 1697960,
+   "positionOffset": 1699388,
+   "normalOffset": 1819340
+  },
+  {
+   "id": "hoodie",
+   "vertices": 1690,
+   "triangles": 3342,
+   "indexOffset": 1879316,
+   "colourOffset": 1899368,
+   "paintOffset": 1904440,
+   "positionOffset": 1906132,
+   "normalOffset": 2048092
+  }
+ ]
+}

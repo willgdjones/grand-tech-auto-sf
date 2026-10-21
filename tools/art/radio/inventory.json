@@ -1,0 +1,437 @@
+{
+  "totalBytesIncludingLegacy": 23270453,
+  "files": [
+    {
+      "file": "radio-soma-track-1.mp3",
+      "kind": "music",
+      "title": "Embarcadero Glide",
+      "bytes": 959948,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "radio-soma-track-2.mp3",
+      "kind": "music",
+      "title": "Cap Table Cruiser",
+      "bytes": 959948,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "radio-soma-track-3.mp3",
+      "kind": "music",
+      "title": "After the Demo",
+      "bytes": 959945,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "radio-soma-track-4.mp3",
+      "kind": "music",
+      "title": "Hills on Hydraulics",
+      "bytes": 959950,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "radio-soma-dj-1.mp3",
+      "kind": "dj",
+      "title": "DJ Dividend 1",
+      "bytes": 61750,
+      "duration": 7.65,
+      "bitrate": 64000
+    },
+    {
+      "file": "radio-soma-dj-2.mp3",
+      "kind": "dj",
+      "title": "DJ Dividend 2",
+      "bytes": 56525,
+      "duration": 6.97576,
+      "bitrate": 64000
+    },
+    {
+      "file": "radio-soma-dj-3.mp3",
+      "kind": "dj",
+      "title": "DJ Dividend 3",
+      "bytes": 57779,
+      "duration": 7.15,
+      "bitrate": 64000
+    },
+    {
+      "file": "radio-soma-dj-4.mp3",
+      "kind": "dj",
+      "title": "DJ Dividend 4",
+      "bytes": 55480,
+      "duration": 6.85,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-track-1.mp3",
+      "kind": "music",
+      "title": "Last Exit Before Payroll",
+      "bytes": 959955,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-track-2.mp3",
+      "kind": "music",
+      "title": "Garage With a View",
+      "bytes": 959949,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-track-3.mp3",
+      "kind": "music",
+      "title": "Runway to Nowhere",
+      "bytes": 959948,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-track-4.mp3",
+      "kind": "music",
+      "title": "Pacific Overdrive",
+      "bytes": 959948,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-dj-1.mp3",
+      "kind": "dj",
+      "title": "Rusty Riff 1",
+      "bytes": 61749,
+      "duration": 7.65,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-dj-2.mp3",
+      "kind": "dj",
+      "title": "Rusty Riff 2",
+      "bytes": 46284,
+      "duration": 5.7,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-dj-3.mp3",
+      "kind": "dj",
+      "title": "Rusty Riff 3",
+      "bytes": 53598,
+      "duration": 6.625011,
+      "bitrate": 64000
+    },
+    {
+      "file": "k-dsrupt-dj-4.mp3",
+      "kind": "dj",
+      "title": "Rusty Riff 4",
+      "bytes": 41686,
+      "duration": 5.125011,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-track-1.mp3",
+      "kind": "music",
+      "title": "Liquid Assets",
+      "bytes": 959944,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-track-2.mp3",
+      "kind": "music",
+      "title": "Expense Account Boogie",
+      "bytes": 959953,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-track-3.mp3",
+      "kind": "music",
+      "title": "The Velvet Vest",
+      "bytes": 959946,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-track-4.mp3",
+      "kind": "music",
+      "title": "Dance Floor Dilution",
+      "bytes": 959951,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-dj-1.mp3",
+      "kind": "dj",
+      "title": "Velvet Ledger 1",
+      "bytes": 62587,
+      "duration": 7.75,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-dj-2.mp3",
+      "kind": "dj",
+      "title": "Velvet Ledger 2",
+      "bytes": 55064,
+      "duration": 6.8,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-dj-3.mp3",
+      "kind": "dj",
+      "title": "Velvet Ledger 3",
+      "bytes": 71574,
+      "duration": 8.875011,
+      "bitrate": 64000
+    },
+    {
+      "file": "burn-rate-fm-dj-4.mp3",
+      "kind": "dj",
+      "title": "Velvet Ledger 4",
+      "bytes": 48586,
+      "duration": 6,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-track-1.mp3",
+      "kind": "music",
+      "title": "Warehouse Term Sheet",
+      "bytes": 959951,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-track-2.mp3",
+      "kind": "music",
+      "title": "Market After Midnight",
+      "bytes": 959952,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-track-3.mp3",
+      "kind": "music",
+      "title": "Acid Due Diligence",
+      "bytes": 959949,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-track-4.mp3",
+      "kind": "music",
+      "title": "Sunrise on the Ledger",
+      "bytes": 959952,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-dj-1.mp3",
+      "kind": "dj",
+      "title": "Cassette Capital 1",
+      "bytes": 56739,
+      "duration": 7.025011,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-dj-2.mp3",
+      "kind": "dj",
+      "title": "Cassette Capital 2",
+      "bytes": 45872,
+      "duration": 5.65,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-dj-3.mp3",
+      "kind": "dj",
+      "title": "Cassette Capital 3",
+      "bytes": 41901,
+      "duration": 5.15,
+      "bitrate": 64000
+    },
+    {
+      "file": "sf-vc-dj-4.mp3",
+      "kind": "dj",
+      "title": "Cassette Capital 4",
+      "bytes": 50888,
+      "duration": 6.275011,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-track-1.mp3",
+      "kind": "music",
+      "title": "Window Seat Runway",
+      "bytes": 959949,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-track-2.mp3",
+      "kind": "music",
+      "title": "Succulent Standup",
+      "bytes": 959948,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-track-3.mp3",
+      "kind": "music",
+      "title": "Fog in the Inbox",
+      "bytes": 959947,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-track-4.mp3",
+      "kind": "music",
+      "title": "One Nice Little Afternoon",
+      "bytes": 959956,
+      "duration": 119.907868,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-dj-1.mp3",
+      "kind": "dj",
+      "title": "DJ Soft Launch 1",
+      "bytes": 92473,
+      "duration": 11.475011,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-dj-2.mp3",
+      "kind": "dj",
+      "title": "DJ Soft Launch 2",
+      "bytes": 92055,
+      "duration": 11.425011,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-dj-3.mp3",
+      "kind": "dj",
+      "title": "DJ Soft Launch 3",
+      "bytes": 81606,
+      "duration": 10.125011,
+      "bitrate": 64000
+    },
+    {
+      "file": "lofi-hayes-valley-dj-4.mp3",
+      "kind": "dj",
+      "title": "DJ Soft Launch 4",
+      "bytes": 68440,
+      "duration": 8.475011,
+      "bitrate": 64000
+    },
+    {
+      "file": "west-coast-tech-dj-1.mp3",
+      "kind": "dj",
+      "title": "Pat Pending 1",
+      "bytes": 92470,
+      "duration": 11.475011,
+      "bitrate": 64000
+    },
+    {
+      "file": "west-coast-tech-dj-2.mp3",
+      "kind": "dj",
+      "title": "Pat Pending 2",
+      "bytes": 75751,
+      "duration": 9.4,
+      "bitrate": 64000
+    },
+    {
+      "file": "west-coast-tech-dj-3.mp3",
+      "kind": "dj",
+      "title": "Pat Pending 3",
+      "bytes": 64675,
+      "duration": 8,
+      "bitrate": 64000
+    },
+    {
+      "file": "west-coast-tech-dj-4.mp3",
+      "kind": "dj",
+      "title": "Pat Pending 4",
+      "bytes": 68646,
+      "duration": 8.5,
+      "bitrate": 64000
+    },
+    {
+      "file": "ad-vested-interest.mp3",
+      "kind": "ad",
+      "title": "vested-interest",
+      "bytes": 134267,
+      "duration": 16.7,
+      "bitrate": 64000
+    },
+    {
+      "file": "ad-pivot-pillow.mp3",
+      "kind": "ad",
+      "title": "pivot-pillow",
+      "bytes": 141370,
+      "duration": 17.6,
+      "bitrate": 64000
+    },
+    {
+      "file": "ad-deck-dusters.mp3",
+      "kind": "ad",
+      "title": "deck-dusters",
+      "bytes": 166447,
+      "duration": 20.725011,
+      "bitrate": 64000
+    },
+    {
+      "file": "ad-runway-noodles.mp3",
+      "kind": "ad",
+      "title": "runway-noodles",
+      "bytes": 116921,
+      "duration": 14.55,
+      "bitrate": 64000
+    },
+    {
+      "file": "ad-meeting-meadow.mp3",
+      "kind": "ad",
+      "title": "meeting-meadow",
+      "bytes": 171256,
+      "duration": 21.325011,
+      "bitrate": 64000
+    },
+    {
+      "file": "ad-badge-barge.mp3",
+      "kind": "ad",
+      "title": "badge-barge",
+      "bytes": 136771,
+      "duration": 17.025011,
+      "bitrate": 64000
+    },
+    {
+      "file": "talk-the-moat.mp3",
+      "kind": "talk",
+      "title": "the-moat",
+      "bytes": 304788,
+      "duration": 38.025011,
+      "bitrate": 64000
+    },
+    {
+      "file": "talk-caller-from-the-queue.mp3",
+      "kind": "talk",
+      "title": "caller-from-the-queue",
+      "bytes": 288082,
+      "duration": 35.925011,
+      "bitrate": 64000
+    },
+    {
+      "file": "talk-the-demo.mp3",
+      "kind": "talk",
+      "title": "the-demo",
+      "bytes": 297473,
+      "duration": 37.1,
+      "bitrate": 64000
+    },
+    {
+      "file": "talk-exit-strategy.mp3",
+      "kind": "talk",
+      "title": "exit-strategy",
+      "bytes": 340528,
+      "duration": 42.5,
+      "bitrate": 64000
+    }
+  ]
+}

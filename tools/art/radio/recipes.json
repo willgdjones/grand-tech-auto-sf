@@ -1,0 +1,690 @@
+[
+  {
+    "title": "Embarcadero Glide",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental West Coast G-funk hip-hop, warm rounded synth bass, relaxed swung drum machine, high portamento synth melody, clean electric piano, cruising groove, no vocals, 92 BPM, sunny major seventh chords, whistling analog lead, spacious handclaps, smooth waterfront cruise",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64000
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-track-1.wav"
+  },
+  {
+    "title": "Cap Table Cruiser",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental West Coast G-funk hip-hop, warm rounded synth bass, relaxed swung drum machine, high portamento synth melody, clean electric piano, cruising groove, no vocals, 96 BPM, minor key, rubbery bass riff, wah guitar accents, bell melody, confident head nod",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64001
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-track-2.wav"
+  },
+  {
+    "title": "After the Demo",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental West Coast G-funk hip-hop, warm rounded synth bass, relaxed swung drum machine, high portamento synth melody, clean electric piano, cruising groove, no vocals, 88 BPM, mellow electric piano, laid back snare, deep sub bass, sunset saxophone phrases",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64002
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-track-3.wav"
+  },
+  {
+    "title": "Hills on Hydraulics",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental West Coast G-funk hip-hop, warm rounded synth bass, relaxed swung drum machine, high portamento synth melody, clean electric piano, cruising groove, no vocals, 100 BPM, funky octave bass, syncopated synth stabs, bright melodic hook, rolling drums",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64003
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-track-4.wav"
+  },
+  {
+    "title": "DJ Dividend 1",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Radio Soma. Low rides, high burn. DJ Dividend at the wheel. Keep your eyes on the street and your pitch out of my inbox.",
+      "voice": "am_onyx",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-dj-1.wav"
+  },
+  {
+    "title": "DJ Dividend 2",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "That was another original from the Soma vault. The bass has recurring revenue. Your accelerator badge does not.",
+      "voice": "am_onyx",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-dj-2.wav"
+  },
+  {
+    "title": "DJ Dividend 3",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "San Francisco weather advice: keep a jacket in the car. The fog does not accept calendar invitations.",
+      "voice": "am_onyx",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-dj-3.wav"
+  },
+  {
+    "title": "DJ Dividend 4",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Radio Soma traffic: somebody is pivoting across three lanes. Signal before you disrupt, people.",
+      "voice": "am_onyx",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/radio-soma-dj-4.wav"
+  },
+  {
+    "title": "Last Exit Before Payroll",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental classic rock, live acoustic drum kit, overdriven electric guitar riffs, melodic guitar solo, warm electric bass, analog seventies studio production, no vocals, 118 BPM, driving straight eighth rhythm, crunchy open chords, big tom fills, uplifting guitar chorus",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64010
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-track-1.wav"
+  },
+  {
+    "title": "Garage With a View",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental classic rock, live acoustic drum kit, overdriven electric guitar riffs, melodic guitar solo, warm electric bass, analog seventies studio production, no vocals, 106 BPM, blues rock shuffle, gritty slide guitar, Hammond organ, stomping backbeat",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64011
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-track-2.wav"
+  },
+  {
+    "title": "Runway to Nowhere",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental classic rock, live acoustic drum kit, overdriven electric guitar riffs, melodic guitar solo, warm electric bass, analog seventies studio production, no vocals, 128 BPM, urgent power chords, tight bass, soaring harmonized lead guitars, dynamic breakdown",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64012
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-track-3.wav"
+  },
+  {
+    "title": "Pacific Overdrive",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental classic rock, live acoustic drum kit, overdriven electric guitar riffs, melodic guitar solo, warm electric bass, analog seventies studio production, no vocals, 112 BPM, spacious southern rock groove, clean arpeggio intro, warm fuzzy lead, triumphant ending",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64013
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-track-4.wav"
+  },
+  {
+    "title": "Rusty Riff 1",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "K Disrupt. Rusty Riff here. Real amps, imaginary exits. Our guitars have six strings and absolutely no subscription tier.",
+      "voice": "am_eric",
+      "speed": 0.98
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-dj-1.wav"
+  },
+  {
+    "title": "Rusty Riff 2",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "That was rock and roll, recorded without a strategy offsite. Try getting that past procurement.",
+      "voice": "am_eric",
+      "speed": 0.98
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-dj-2.wav"
+  },
+  {
+    "title": "Rusty Riff 3",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Whatever time your dashboard says, it is time to turn up the guitar. Quietly enough to hear the traffic, obviously.",
+      "voice": "am_eric",
+      "speed": 0.98
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-dj-3.wav"
+  },
+  {
+    "title": "Rusty Riff 4",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "K Disrupt. We tried to move the studio into the cloud. The drummer fell off the roof.",
+      "voice": "am_eric",
+      "speed": 0.98
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/k-dsrupt-dj-4.wav"
+  },
+  {
+    "title": "Liquid Assets",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental seventies funk disco, live slap bass, crisp rhythm guitar, brass section, Rhodes electric piano, danceable pocket, warm tape production, no vocals, 114 BPM, syncopated slap bass, punchy horn answers, wah guitar, tight dry snare",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64020
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-track-1.wav"
+  },
+  {
+    "title": "Expense Account Boogie",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental seventies funk disco, live slap bass, crisp rhythm guitar, brass section, Rhodes electric piano, danceable pocket, warm tape production, no vocals, 122 BPM, four on the floor disco drums, sweeping strings, octave bass line, sparkling piano",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64021
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-track-2.wav"
+  },
+  {
+    "title": "The Velvet Vest",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental seventies funk disco, live slap bass, crisp rhythm guitar, brass section, Rhodes electric piano, danceable pocket, warm tape production, no vocals, 108 BPM, laid back funk pocket, clavinet riff, congas, muted trumpet, short organ solo",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64022
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-track-3.wav"
+  },
+  {
+    "title": "Dance Floor Dilution",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental seventies funk disco, live slap bass, crisp rhythm guitar, brass section, Rhodes electric piano, danceable pocket, warm tape production, no vocals, 120 BPM, lively disco groove, handclaps, bright brass hook, string flourishes, energetic bass",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64023
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-track-4.wav"
+  },
+  {
+    "title": "Velvet Ledger 1",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Burn Rate FM. Velvet Ledger with you. Make your last dollar dance. The spreadsheet can wait for the bridge.",
+      "voice": "af_bella",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-dj-1.wav"
+  },
+  {
+    "title": "Velvet Ledger 2",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "That groove has more liquidity than my entire portfolio. Stay loose, San Francisco.",
+      "voice": "af_bella",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-dj-2.wav"
+  },
+  {
+    "title": "Velvet Ledger 3",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Our weather forecast is seventy percent funk with a chance of sequins. Actual jacket requirements remain extremely high.",
+      "voice": "af_bella",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-dj-3.wav"
+  },
+  {
+    "title": "Velvet Ledger 4",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Burn Rate FM. The only round closing tonight is the circle on the dance floor.",
+      "voice": "af_bella",
+      "speed": 0.96
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/burn-rate-fm-dj-4.wav"
+  },
+  {
+    "title": "Warehouse Term Sheet",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental nineties house music, four on the floor kick, classic drum machine hi hats, warm organ bass, piano chord stabs, underground dance club, no vocals, 124 BPM, deep organ groove, shuffled hats, soulful piano chords, dub delay, long evolving arrangement",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64030
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-track-1.wav"
+  },
+  {
+    "title": "Market After Midnight",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental nineties house music, four on the floor kick, classic drum machine hi hats, warm organ bass, piano chord stabs, underground dance club, no vocals, 126 BPM, bright piano house, bouncy bass, uplifting string pads, snare build and release",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64031
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-track-2.wav"
+  },
+  {
+    "title": "Acid Due Diligence",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental nineties house music, four on the floor kick, classic drum machine hi hats, warm organ bass, piano chord stabs, underground dance club, no vocals, 128 BPM, squelchy resonant acid bass sequence, raw drum machine, hypnotic filter movement, sparse stabs",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64032
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-track-3.wav"
+  },
+  {
+    "title": "Sunrise on the Ledger",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental nineties house music, four on the floor kick, classic drum machine hi hats, warm organ bass, piano chord stabs, underground dance club, no vocals, 122 BPM, deep house, lush minor ninth chords, rolling percussion, mellow bass, dreamy synth melody",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64033
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-track-4.wav"
+  },
+  {
+    "title": "Cassette Capital 1",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "S F V C. Cassette Capital broadcasting from a warehouse with surprisingly good acoustics and no meeting rooms.",
+      "voice": "af_nova",
+      "speed": 1.04
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-dj-1.wav"
+  },
+  {
+    "title": "Cassette Capital 2",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Two tracks, zero action items. That is what I call a productive session. S F V C.",
+      "voice": "af_nova",
+      "speed": 1.04
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-dj-2.wav"
+  },
+  {
+    "title": "Cassette Capital 3",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "The city clock keeps moving. So does this kick drum. Take the next corner gently.",
+      "voice": "af_nova",
+      "speed": 1.04
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-dj-3.wav"
+  },
+  {
+    "title": "Cassette Capital 4",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "S F V C. Four to the floor, zero to the board. Your next meeting has been replaced by a bass line.",
+      "voice": "af_nova",
+      "speed": 1.04
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/sf-vc-dj-4.wav"
+  },
+  {
+    "title": "Window Seat Runway",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental lo-fi hip-hop, soft dusty drums, warm jazz piano, gentle vinyl texture, rounded upright bass, intimate mellow atmosphere, no vocals, 76 BPM, tender major seventh piano chords, brushed snare, subtle tape wobble, rain on the window mood",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64040
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-track-1.wav"
+  },
+  {
+    "title": "Succulent Standup",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental lo-fi hip-hop, soft dusty drums, warm jazz piano, gentle vinyl texture, rounded upright bass, intimate mellow atmosphere, no vocals, 82 BPM, warm electric piano, lightly swung drums, muted guitar melody, relaxed sunny afternoon",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64041
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-track-2.wav"
+  },
+  {
+    "title": "Fog in the Inbox",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental lo-fi hip-hop, soft dusty drums, warm jazz piano, gentle vinyl texture, rounded upright bass, intimate mellow atmosphere, no vocals, 72 BPM, sparse minor piano, soft bass, airy pads, distant vibraphone, reflective evening",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64042
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-track-3.wav"
+  },
+  {
+    "title": "One Nice Little Afternoon",
+    "kind": "music",
+    "model": "fal-ai/ace-step",
+    "input": {
+      "tags": "instrumental lo-fi hip-hop, soft dusty drums, warm jazz piano, gentle vinyl texture, rounded upright bass, intimate mellow atmosphere, no vocals, 80 BPM, jazzy guitar chords, mellow saxophone phrases, soft kick and rimshot, cozy cafe groove",
+      "lyrics": "[instrumental]",
+      "duration": 120,
+      "number_of_steps": 32,
+      "seed": 64043
+    },
+    "estimatedUsd": 0.03,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-track-4.wav"
+  },
+  {
+    "title": "DJ Soft Launch 1",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Lo-fi Hayes Valley. DJ Soft Launch here. Take a breath. The email can develop a personality without you.",
+      "voice": "af_nicole",
+      "speed": 0.94
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-dj-1.wav"
+  },
+  {
+    "title": "DJ Soft Launch 2",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "That was another little afternoon from our record shelf. Your shoulders are not responsible for the entire company.",
+      "voice": "af_nicole",
+      "speed": 0.94
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-dj-2.wav"
+  },
+  {
+    "title": "DJ Soft Launch 3",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "If the fog hides your destination, enjoy having fewer tabs open in real life. Bring a layer.",
+      "voice": "af_nicole",
+      "speed": 0.94
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-dj-3.wav"
+  },
+  {
+    "title": "DJ Soft Launch 4",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Lo-fi Hayes Valley. Your calendar has a gap. Please do not immediately pave it.",
+      "voice": "af_nicole",
+      "speed": 0.94
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/lofi-hayes-valley-dj-4.wav"
+  },
+  {
+    "title": "Pat Pending 1",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "West Coast Tech Radio. Pat Pending, opinions with no liquidation preference. Every company on this show is fictional. Several of the business models are too.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/west-coast-tech-dj-1.wav"
+  },
+  {
+    "title": "Pat Pending 2",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "You are listening to West Coast Tech Radio. Callers receive one unsolicited opinion and absolutely no investment advice.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/west-coast-tech-dj-2.wav"
+  },
+  {
+    "title": "Pat Pending 3",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Time for our weather desk. It is San Francisco. Bring a jacket and stop asking the cloud for a valuation.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/west-coast-tech-dj-3.wav"
+  },
+  {
+    "title": "Pat Pending 4",
+    "kind": "dj",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "West Coast Tech Radio. Back after these entirely fictional sponsors. Nobody has paid us. This will be obvious.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/west-coast-tech-dj-4.wav"
+  },
+  {
+    "title": "vested-interest",
+    "kind": "ad",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "This Tech Week, dress for the round you want. Vested Interest brings you the sleeveless jacket with twelve pockets for twelve different conference badges. Breathable fabric. Unbreathable valuation. Now with a tiny pocket for your remaining equity. Vested Interest. A fictional product for a very real temperature problem.",
+      "voice": "af_jessica",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/ad-vested-interest.wav"
+  },
+  {
+    "title": "pivot-pillow",
+    "kind": "ad",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Still lying awake wondering if your startup should become something else? Try the Pivot Pillow. Turn it over and discover a completely new business model. The cool side is enterprise. The other side is community. Pivot Pillow. Sleep on it, then rebrand it. Fictional bedding. Actual exhaustion sold separately.",
+      "voice": "am_puck",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/ad-pivot-pillow.wav"
+  },
+  {
+    "title": "deck-dusters",
+    "kind": "ad",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Deck Dusters cleans the slide nobody understands. We remove jargon, polish your hockey stick, and put a little sparkle on the word platform. Our premium service replaces your entire strategy with one tasteful gradient. Deck Dusters. A fictional cleaning company for very dusty pitch decks. Results may contain whitespace.",
+      "voice": "af_sarah",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/ad-deck-dusters.wav"
+  },
+  {
+    "title": "runway-noodles",
+    "kind": "ad",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Your company has six months of runway. Your lunch has three minutes. Runway Noodles. The fictional instant meal with a burn rate you can actually afford. Just add hot water and one achievable milestone. Now available in Seed Broth and Series A Spicy. Please do not pitch the kettle.",
+      "voice": "am_eric",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/ad-runway-noodles.wav"
+  },
+  {
+    "title": "meeting-meadow",
+    "kind": "ad",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Introducing Meeting Meadow. The fictional calendar app that replaces every unnecessary meeting with a picture of grass. Your weekly sync is now a fern. Your alignment session is a small pond. Meeting Meadow. Touch grass without adding another recurring appointment. No lawn care expertise required. Silence is our premium feature.",
+      "voice": "af_heart",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/ad-meeting-meadow.wav"
+  },
+  {
+    "title": "badge-barge",
+    "kind": "ad",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Too many Tech Week events and only one neck? Badge Barge is the fictional conference lanyard with industrial suspension. Carry every credential you have ever earned, plus three you found near the snacks. Badge Barge. Network harder, stand slightly differently. Not suitable for swimming, sleeping, or modest doorways.",
+      "voice": "am_liam",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/ad-badge-barge.wav"
+  },
+  {
+    "title": "the-moat",
+    "kind": "talk",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Today on the Pat Pending show: moats. A caller from a fictional startup says their competitive moat is a spreadsheet only one employee understands. Congratulations. That is not a moat. That is a bus factor wearing a blazer. The caller says they have added artificial intelligence. Excellent. Now two things do not understand the spreadsheet. My producer wants to know our own moat. We broadcast from a room with a door that sticks. Nobody can acquire us because nobody can get in. Coming up: a founder who describes charging money as an exciting experiment. Stay with West Coast Tech Radio.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/talk-the-moat.wav"
+  },
+  {
+    "title": "caller-from-the-queue",
+    "kind": "talk",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "We have a caller from a Tech Week coffee queue. Caller, what are you building? Apparently a queue for people waiting to join other queues. There is a premium tier that lets you see the queue. Beautiful. A marketplace with both sides standing still. How many customers? The caller says everyone ahead of them. That is an addressable market, not a customer list. My producer has joined the queue. We have lost the producer. If you see someone holding a microphone and explaining network effects to a pastry, please send them back. This is West Coast Tech Radio.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/talk-caller-from-the-queue.wav"
+  },
+  {
+    "title": "the-demo",
+    "kind": "talk",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Welcome back. A fictional founder has sent us a demo with three buttons. The first button says coming soon. The second says request access. The third opens a calendar. Finally, a product with measurable meeting fit. The founder tells me the demo worked yesterday. Yesterday is not available for comment. We invited the engineer, who asked whether we could simply turn the radio off and on again. We tried that, and our audience doubled from one to two. Both are the engineer. After the break, we investigate whether a rooftop mixer is just a very expensive way to find the stairs.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/talk-the-demo.wav"
+  },
+  {
+    "title": "exit-strategy",
+    "kind": "talk",
+    "model": "fal-ai/kokoro/american-english",
+    "input": {
+      "prompt": "Our topic is exit strategies. Listener number one says their exit strategy is leaving the networking event before anyone asks what they do. Sensible. Listener number two has located a side door near the snacks. Strong execution. Listener number three is still saying goodbye forty minutes later. That is a lockup period. Here at West Coast Tech Radio, our own exit is clearly marked and occasionally blocked by a box of promotional tote bags. Remember, a successful evening does not have to include a term sheet. Sometimes you meet a nice person, eat something warm, and catch the right bus. Pat Pending, signing off this segment.",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    "estimatedUsd": 0.025,
+    "output": "tools/assets/cache/radio-jwxu/talk-exit-strategy.wav"
+  }
+]

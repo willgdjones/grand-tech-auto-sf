@@ -1,0 +1,2 @@
+# Known failing tests, tolerated by the pre-deploy test gate (tools/deploy/production/deploy.mjs).
+# Baseline from main on 2026-10-05. Shrink this list; never grow it to force a deploy without founder sign-off.

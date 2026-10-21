@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /api/private
+Disallow: /calendar/la
+Allow: /calendar/sf
+Allow: /go/event/
+Crawl-delay: 1.2

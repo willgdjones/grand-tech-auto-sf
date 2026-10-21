@@ -1,0 +1,101 @@
+[
+  {
+    "name": "weathered-wood",
+    "prompt": "Seamless weathered wooden utility pole surface texture. The entire image is filled by straight parallel vertical warm grey-brown wood grain, occasional dark nail holes and little splits, subtle salt-air age. No whole pole silhouette, no wires, no sky or surrounding objects. Repeats on both axes. Original low resolution hand-painted texture for an early-2000s console open-world San Francisco game. Chunky readable shapes, subtle painted wear, flat diffuse baked lighting, muted sage/cream/rust/charcoal palette. No photograph, no physical showcase scene, no people, no real brand logo, no watermark. Square orthographic front-facing texture only.",
+    "seed": 71000,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/weathered-wood-source.png"
+  },
+  {
+    "name": "hydrant-paint",
+    "prompt": "Seamless red-orange painted cast iron material from a well-used San Francisco fire hydrant. Entire image filled by rough faded terracotta enamel, small dark exposed-metal chips and subtle cast-iron texture, no whole hydrant, no hardware, no perspective. Repeatable albedo surface only. Original low resolution hand-painted texture for an early-2000s console open-world San Francisco game. Chunky readable shapes, subtle painted wear, flat diffuse baked lighting, muted sage/cream/rust/charcoal palette. No photograph, no physical showcase scene, no people, no real brand logo, no watermark. Square orthographic front-facing texture only.",
+    "seed": 71001,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/hydrant-paint-source.png"
+  },
+  {
+    "name": "newspaper-front",
+    "prompt": "A single flat rectangular newspaper vending-box front panel, perfectly front-on, fills square. Dark forest green painted metal border, upper cream header with exact large text \"THE RUNWAY\", central wide black glass display containing a newspaper front page with one bold headline \"BURN RATE\", simple monochrome tiny SF skyline photo block below it, coin slot on right, thin metal door rim. No perspective, no surrounding street, no other words. Original low resolution hand-painted texture for an early-2000s console open-world San Francisco game. Chunky readable shapes, subtle painted wear, flat diffuse baked lighting, muted sage/cream/rust/charcoal palette. No photograph, no physical showcase scene, no people, no real brand logo, no watermark. Square orthographic front-facing texture only.",
+    "seed": 71002,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/newspaper-front-source.png"
+  },
+  {
+    "name": "muni-stop",
+    "prompt": "A single simple San Francisco bus stop sign texture, perfectly front-on square format. Pale cream metal background; red upper panel with exact white bold text \"MUNI\", black lower text \"BUS STOP\", one large black bus pictogram and route number \"30\". Plain block typography, no stylized brand mark. Small paint chips at outer edges. The sign fills the image, no mounting pole or environment. Original low resolution hand-painted texture for an early-2000s console open-world San Francisco game. Chunky readable shapes, subtle painted wear, flat diffuse baked lighting, muted sage/cream/rust/charcoal palette. No photograph, no physical showcase scene, no people, no real brand logo, no watermark. Square orthographic front-facing texture only.",
+    "seed": 71003,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/muni-stop-source.png"
+  },
+  {
+    "name": "billboard-metal",
+    "prompt": "Seamless weathered painted steel surface texture for billboard frames, pale blue-grey galvanized metal with broad subtle scratches and seams, dull oxidized corners, no words or whole frame silhouette. Entire square fills with metal; tileable surface albedo, no reflections. Original low resolution hand-painted texture for an early-2000s console open-world San Francisco game. Chunky readable shapes, subtle painted wear, flat diffuse baked lighting, muted sage/cream/rust/charcoal palette. No photograph, no physical showcase scene, no people, no real brand logo, no watermark. Square orthographic front-facing texture only.",
+    "seed": 71004,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/billboard-metal-source.png"
+  },
+  {
+    "name": "chain-link",
+    "prompt": "A flat front-on perfectly regular repeating diamond chain-link fence texture. Thin galvanized grey wire forms a uniform diamond lattice with many completely open diamond holes. Wire only, no posts, no rails, no shadows or environment. Every open hole and all background are exactly solid vivid magenta #ff00ff chroma key. Wires light grey and dark grey with subtle painted shading. Uniform thin diagonal grid fills the entire square and tiles on all four sides. Original low resolution hand-painted texture for an early-2000s console open-world San Francisco game. Chunky readable shapes, subtle painted wear, flat diffuse baked lighting, muted sage/cream/rust/charcoal palette. No photograph, no physical showcase scene, no people, no real brand logo, no watermark. Square orthographic front-facing texture only.",
+    "seed": 71005,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/chain-link-source.png"
+  },
+  {
+    "name": "shopfront-strips",
+    "prompt": "An orthographic square texture sheet containing exactly four wide horizontal shopfront fascia signs stacked in four equal rows without gaps. Each is an original fictional San Francisco neighborhood business. Row1 dark green cream bold text \"PIVOT COFFEE\". Row2 faded red cream text \"FOG CITY RAMEN\". Row3 golden mustard black text \"STEALTH LAUNDRY\". Row4 navy pale blue text \"RUNWAY REPAIRS\". Simple small original cup, bowl, shirt and wrench icons beside their corresponding words. All signs front-on, crisp readable text, no buildings, no perspective, no street, no real brand. Original low resolution hand-painted texture for an early-2000s console open-world San Francisco game. Chunky readable shapes, subtle painted wear, flat diffuse baked lighting, muted sage/cream/rust/charcoal palette. No photograph, no physical showcase scene, no people, no real brand logo, no watermark. Square orthographic front-facing texture only.",
+    "seed": 71006,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/shopfront-strips-source.png"
+  },
+  {
+    "name": "sign-coffee",
+    "prompt": "Flat orthographic square graphic for one fictional San Francisco shop fascia. Centered single line of large exact text \"PIVOT COFFEE\" in bold condensed block capitals. No other text anywhere, no small print, no repeated text, no icons. The text occupies the central horizontal third of the square, with large empty margins above and below. Background dark green with cream letters. Thin worn cream border around that central horizontal third, small painted chips. Early-2000s console urban game texture, simple chunky hand-painted albedo, flat lighting, limited muted palette. This is a single flat sign graphic only, no perspective, no wall, no building, no street, no photograph, no real brand logo, no watermark.",
+    "seed": 71200,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/sign-coffee-source.png"
+  },
+  {
+    "name": "sign-ramen",
+    "prompt": "Flat orthographic square graphic for one fictional San Francisco shop fascia. Centered single line of large exact text \"FOG CITY RAMEN\" in bold condensed block capitals. No other text anywhere, no small print, no repeated text, no icons. The text occupies the central horizontal third of the square, with large empty margins above and below. Background faded brick red with cream letters. Thin worn cream border around that central horizontal third, small painted chips. Early-2000s console urban game texture, simple chunky hand-painted albedo, flat lighting, limited muted palette. This is a single flat sign graphic only, no perspective, no wall, no building, no street, no photograph, no real brand logo, no watermark.",
+    "seed": 71201,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/sign-ramen-source.png"
+  },
+  {
+    "name": "sign-laundry",
+    "prompt": "Flat orthographic square graphic for one fictional San Francisco shop fascia. Centered single line of large exact text \"STEALTH LAUNDRY\" in bold condensed block capitals. No other text anywhere, no small print, no repeated text, no icons. The text occupies the central horizontal third of the square, with large empty margins above and below. Background mustard yellow with charcoal letters. Thin worn cream border around that central horizontal third, small painted chips. Early-2000s console urban game texture, simple chunky hand-painted albedo, flat lighting, limited muted palette. This is a single flat sign graphic only, no perspective, no wall, no building, no street, no photograph, no real brand logo, no watermark.",
+    "seed": 71202,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/sign-laundry-source.png"
+  },
+  {
+    "name": "sign-repairs",
+    "prompt": "Flat orthographic square graphic for one fictional San Francisco shop fascia. Centered single line of large exact text \"RUNWAY REPAIRS\" in bold condensed block capitals. No other text anywhere, no small print, no repeated text, no icons. The text occupies the central horizontal third of the square, with large empty margins above and below. Background dark navy with pale blue letters. Thin worn cream border around that central horizontal third, small painted chips. Early-2000s console urban game texture, simple chunky hand-painted albedo, flat lighting, limited muted palette. This is a single flat sign graphic only, no perspective, no wall, no building, no street, no photograph, no real brand logo, no watermark.",
+    "seed": 71203,
+    "width": 512,
+    "height": 512,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/props/sign-repairs-source.png"
+  }
+]

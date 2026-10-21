@@ -1,0 +1,37 @@
+.gt-hud{position:fixed;z-index:19;top:260px;right:24px;min-width:188px;text-align:right;pointer-events:none;color:#f6edda;font-family:Impact,'Arial Narrow',Arial,sans-serif;text-shadow:2px 2px 0 #10221a,-1px -1px 0 #10221a;filter:drop-shadow(0 2px 3px #0007)}
+.gt-hud-zone{font:700 10px Arial,sans-serif;letter-spacing:.18em}.gt-hud-clock{display:block;font-size:38px;line-height:1.12;letter-spacing:.025em;font-variant-numeric:tabular-nums}.gt-hud-money{color:#aee297;font-size:22px;line-height:1.4}.gt-hud-stars{font:27px/1.15 Arial,sans-serif;letter-spacing:2px}.gt-star{color:#253e37;-webkit-text-stroke:1px #ded5b5}.gt-star.earned{color:#ecd17d;-webkit-text-stroke:1px #152920}.gt-hud-tier{font:700 10px/1.7 Arial,sans-serif;letter-spacing:.08em;color:#f0dfac}.gt-hud-radio{font:700 12px/1.7 Arial,sans-serif;max-width:220px;overflow-wrap:anywhere}
+/* Event details use the shared SA pause-menu theme; the card keeps its game/phone anchors. */
+.gt-event-card{position:fixed;right:24px;bottom:26px;z-index:45;width:min(360px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;padding:25px 22px 20px;background:var(--sa-panel-bg-strong,rgba(0,0,0,.82));border:2px solid var(--sa-panel-edge,#000);border-radius:0;color:var(--sa-menu-white,#fff);box-shadow:none;font:700 14px/1.45 var(--sa-sans,Arial,sans-serif);-webkit-text-stroke:var(--sa-outline-thin,1.2px) var(--sa-ink,#000);paint-order:stroke fill;text-shadow:none;pointer-events:auto}
+.gt-event-card[hidden]{display:none}
+.gt-event-kicker{font-weight:900;font-size:11px;letter-spacing:.14em;color:var(--sa-menu-blue,#b2cef2);padding-right:85px}
+.gt-event-title{font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;font-size:24px;line-height:1.12;letter-spacing:.02em;text-transform:uppercase;color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:var(--sa-outline-thick,3px) var(--sa-ink,#000);margin:16px 0 12px;overflow-wrap:anywhere}
+.gt-event-card p{margin:9px 0;overflow-wrap:anywhere}
+.gt-event-close{position:absolute;right:12px;top:10px;padding:7px 9px;font-size:12px}
+.gt-event-approx{border-left:3px solid var(--sa-gold,#f0b429);padding-left:10px;color:var(--sa-menu-blue,#b2cef2);font-size:12px}
+.gt-event-attendance{color:var(--sa-menu-blue,#b2cef2);font-size:12px}
+.gt-event-link{display:inline-block;margin-top:8px;padding:10px 13px;text-decoration:none}
+.gt-event-close,.gt-event-link,.gt-event-share{box-sizing:border-box;min-height:44px;background:var(--sa-gold,#f0b429);border:2px solid var(--sa-panel-edge,#000);border-radius:0;color:var(--sa-ink,#000);font-family:var(--sa-sans,Arial,sans-serif);font-weight:700;-webkit-text-stroke:0;text-shadow:none;box-shadow:none;cursor:pointer}
+.gt-event-close:hover,.gt-event-link:hover,.gt-event-share:hover{background:var(--sa-title-gold,#f6a81e)}
+.gt-event-link[hidden]{display:none}
+.gt-event-card :focus-visible{outline:3px solid var(--sa-menu-white,#fff);outline-offset:3px}
+.gt-hud-rank{font:700 10px/1.6 Arial,sans-serif;color:#c8ddb6;letter-spacing:.06em}.gt-hud-rank[hidden]{display:none}
+.gt-hud-radio-ticker{width:220px;max-width:220px;margin-left:auto;overflow:hidden;text-align:left;color:#e6d299;font:11px/1.5 Arial,sans-serif;background:#10221a99;border-radius:3px;padding:2px 0;box-sizing:border-box;white-space:nowrap}
+.gt-hud-radio-ticker[hidden]{display:none}.gt-hud-radio-line{display:inline-block;min-width:100%;padding-left:8px;padding-right:220px;animation:gt-radio-line 14s linear forwards}
+@keyframes gt-radio-line{0%,8%{transform:translateX(0)}100%{transform:translateX(calc(-100% + 220px))}}
+@media(max-width:700px){.gt-hud-radio-ticker{width:140px;max-width:140px;font-size:10px}.gt-hud-radio-line{padding-right:140px;animation-name:gt-radio-line-phone}}
+@keyframes gt-radio-line-phone{0%,8%{transform:translateX(0)}100%{transform:translateX(calc(-100% + 140px))}}
+@media(prefers-reduced-motion:reduce){.gt-hud-radio-line{animation:none;white-space:normal;padding:0 4px;display:block;max-height:3em;overflow:hidden}}
+.gt-event-share{margin:8px 0 0 8px;padding:10px 13px}.gt-event-share-status{font-size:12px;color:var(--sa-menu-blue,#b2cef2)}.gt-event-share[hidden],.gt-event-share-status[hidden]{display:none}
+@media(max-width:700px){.gt-hud{top:76px;right:12px;min-width:126px}.gt-hud-zone{font-size:8px;letter-spacing:.1em}.gt-hud-clock{font-size:25px}.gt-hud-money{font-size:14px}.gt-hud-stars{font-size:18px;letter-spacing:1px}.gt-hud-tier{font-size:8px}.gt-hud-radio{font-size:10px;max-width:140px}.gt-event-card{right:12px;bottom:max(16px,env(safe-area-inset-bottom));width:calc(100vw - 24px);max-height:65dvh;padding:22px 18px 18px}.gt-event-title{font-size:21px}}
+/* SA money styling: canonical whole dollars, eight digits minimum; no abbreviated totals. */
+.gt-hud-clock{color:#fff9ed;text-shadow:2px 2px 0 #080b09,-1px -1px 0 #080b09,1px -1px 0 #080b09,-1px 1px 0 #080b09}
+.gt-hud-money{color:#74a66a;line-height:1.04;margin:5px 0 4px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.gt-hud-money-label{display:block;color:#b2caa8;font:700 9px/1.35 Arial,sans-serif;letter-spacing:.16em}
+.gt-hud-money-value{display:block;font:32px/1.1 Impact,'Arial Narrow',Arial,sans-serif;letter-spacing:.035em;-webkit-text-stroke:1px #0a120b;paint-order:stroke fill;text-shadow:2px 2px 0 #080c08,-1px -1px 0 #080c08,1px -1px 0 #080c08,-1px 1px 0 #080c08}
+.gt-hud-money-long .gt-hud-money-value{font-size:24px;letter-spacing:0}
+@media(max-width:700px){.gt-hud-money-value{font-size:21px;-webkit-text-stroke:.7px #0a120b}.gt-hud-money-long .gt-hud-money-value{font-size:16px}.gt-hud-money-label{font-size:7px;line-height:1.25}.gt-hud-money{margin:3px 0}}
+
+/* The street HUD shows only the current burn rate; detailed runway stays in the Funding board. */
+.gt-hud-burn{display:block;margin-top:2px;color:#e05249;font:900 16px/1.2 var(--sa-display,Impact,'Arial Narrow',sans-serif);letter-spacing:.025em;white-space:nowrap;-webkit-text-stroke:1px #000;paint-order:stroke fill;text-shadow:1px 1px 0 #000}
+.gt-hud-burn[hidden]{display:none}
+@media(max-width:700px){.gt-hud-burn{font-size:13px;letter-spacing:0;-webkit-text-stroke:.8px #000}}

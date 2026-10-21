@@ -1,0 +1,33 @@
+{
+  "name": "@gtasf/map",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "fetch": "tsx src/pipeline/cli.ts fetch",
+    "build": "tsx src/pipeline/cli.ts build",
+    "validate": "tsx src/pipeline/cli.ts validate",
+    "preview": "tsx src/pipeline/preview.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --config vitest.config.ts"
+  },
+  "dependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
+    "jsts": "2.12.1",
+    "meshoptimizer": "1.3.0",
+    "pngjs": "7.0.0",
+    "polyclip-ts": "0.16.8",
+    "polygon-clipping": "0.15.7",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.0",
+    "@types/pngjs": "^6.0.5",
+    "@types/three": "^0.183.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}

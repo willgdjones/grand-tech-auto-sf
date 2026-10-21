@@ -1,0 +1,182 @@
+[
+  {
+    "id": "business-woman",
+    "path": "avatars/meshy-business-woman.glb",
+    "bytes": 309948,
+    "sha256": "cd84331e73ab19d79098b4ec28b8cce98b9c86bbc85aec7e0b5b77a9b0bb144d",
+    "trianglesBefore": 12429,
+    "triangles": 7000,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "denim-woman",
+    "path": "avatars/meshy-denim-woman.glb",
+    "bytes": 368464,
+    "sha256": "95c6da90de99cc778571b27193dcfe0067cc96351e00ad2ca5c3a6ae8b55e4b1",
+    "trianglesBefore": 12474,
+    "triangles": 7559,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "flannel-man",
+    "path": "avatars/meshy-flannel-man.glb",
+    "bytes": 340792,
+    "sha256": "26e9f6fac9999045fb19fb1e1fae0e7d8a4d33c3d04f6a3115a8adfa811260ea",
+    "trianglesBefore": 12496,
+    "triangles": 7153,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "founder-blazer",
+    "path": "avatars/meshy-founder-blazer.glb",
+    "bytes": 336232,
+    "sha256": "a8f53cbc1f4ae8b8d92aaa8f2f473dbbc47dfca7d35ae4d7da0066123078078a",
+    "trianglesBefore": 12473,
+    "triangles": 7000,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "founder-bomber",
+    "path": "avatars/meshy-founder-bomber.glb",
+    "bytes": 361128,
+    "sha256": "e393046de33e5fbeceaf22bf36422387daf447611d59e37b431b05921e414799",
+    "trianglesBefore": 12506,
+    "triangles": 7656,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "founder-hoodie",
+    "path": "avatars/meshy-founder-hoodie.glb",
+    "bytes": 360080,
+    "sha256": "72e7321d1cb24f4f5c43c258afb8a32462202120db89c6e874c3a0a7ce2aedf3",
+    "trianglesBefore": 12476,
+    "triangles": 7630,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "hoodie-woman",
+    "path": "avatars/meshy-hoodie-woman.glb",
+    "bytes": 336136,
+    "sha256": "2e166ed232ad036ba870c85645248725dab2197ebf6574e06f64cf18107c89fe",
+    "trianglesBefore": 12443,
+    "triangles": 7378,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "jogger-woman",
+    "path": "avatars/meshy-jogger-woman.glb",
+    "bytes": 375388,
+    "sha256": "333062401a0f30e2c0d0023e217d00e0a384a09fdf163f87b757e47323a7cde4",
+    "trianglesBefore": 12494,
+    "triangles": 7635,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "puffer-man",
+    "path": "avatars/meshy-puffer-man.glb",
+    "bytes": 336624,
+    "sha256": "a7bc67b1454d25578515d0edd6751d2019d6b234a18d2e09af4cd0e6e3d7a7e6",
+    "trianglesBefore": 12490,
+    "triangles": 7621,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "sfpd-officer",
+    "path": "avatars/meshy-sfpd-officer.glb",
+    "bytes": 386536,
+    "sha256": "8b8cd46a9f7ac6f6304b15b5ad88b23aa1ec3d1a062cff3f47a4eaffcd96078a",
+    "trianglesBefore": 12440,
+    "triangles": 8912,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "skater-man",
+    "path": "avatars/meshy-skater-man.glb",
+    "bytes": 322728,
+    "sha256": "afdd08cf10be1def219f401e85d4dab22c0523a3bbc8742f7432baa30e66faf7",
+    "trianglesBefore": 12485,
+    "triangles": 7000,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  },
+  {
+    "id": "tech-vest-man",
+    "path": "avatars/meshy-tech-vest-man.glb",
+    "bytes": 337276,
+    "sha256": "bd9b2f289285dbcef19e794bb8b7b8cde24db194c8ce6958ac225f6b0cfea093",
+    "trianglesBefore": 12465,
+    "triangles": 7287,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "sit"
+    ],
+    "source": "Meshy-6 (existing plan credits) via tools/art/meshy-people.mjs; rig + clips by Meshy auto-rig/animation API"
+  }
+]

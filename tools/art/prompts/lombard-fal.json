@@ -1,0 +1,59 @@
+{
+  "bead": "gtasf-sqi3",
+  "budgetUsd": 10,
+  "runtimeSize": 512,
+  "references": "See web/src/render/landmarks/LOMBARD-FLOWERS.md; photographs informed the design but are not generation inputs.",
+  "generation": {
+    "wrapper": "tools/art/fal.mjs",
+    "reservedUsd": 0.4,
+    "costNote": "Four conservative $0.10 ledger reservations, not a provider invoice.",
+    "leafSourceJob": "da1bc17d-6bd4-48ac-bb79-e1daff856d1b",
+    "petalSourceJob": "639ec8b2-1bfc-4197-92c8-753f8198dccc",
+    "backgroundRemovalModel": "fal-ai/bria/background/remove",
+    "leafAlphaJob": "c15d4d50-77a5-4988-a15e-28215c93034f",
+    "petalAlphaJob": "24075efd-80d4-4063-becb-fb6f46b83961",
+    "packing": "Lossless WebP from 512x512 RGBA alpha outputs; raw PNGs kept in ignored tools/assets/cache/lombard-fal."
+  },
+  "runtimeAssets": [
+    {
+      "path": "web/public/art/foliage/lombard-leaves-v1.webp",
+      "bytes": 191624,
+      "sha256": "1f6865db0d2123c2f5fd6a4cb74b2643171d68a15f86844b26b276066aa81722"
+    },
+    {
+      "path": "web/public/art/foliage/lombard-petals-v1.webp",
+      "bytes": 180830,
+      "sha256": "34fed22907374cc0476ce63e8b7af04691df12febcd8b625088e5d9865a77721"
+    }
+  ],
+  "recipes": [
+    {
+      "model": "fal-ai/flux/dev",
+      "estimatedUsd": 0.1,
+      "output": "tools/assets/cache/lombard-fal/leaves-source.png",
+      "input": {
+        "prompt": "A botanical game foliage texture: one compact dense mound of hydrangea leaves, isolated against a perfectly plain white background. Entire plant fits inside the frame with a narrow clear margin. Broad dark and mid-green ovate leaves with pointed tips, finely serrated edges, realistic branching pale veins and subtle waxy surfaces; many overlapping leaves in different directions, a few short fine brown stems ending at the bottom center. Front view slightly above the mound, soft even overcast daylight, gentle internal shadows, crisp readable leaf silhouettes, muted natural San Francisco garden greens. Photographic botanical detail suitable for an alpha-cutout billboard in a videogame, no flowers, no pot, no soil, no ground plane, no cast shadow, no labels, no lettering, no border, no grid, no checkerboard.",
+        "image_size": { "width": 512, "height": 512 },
+        "num_inference_steps": 28,
+        "guidance_scale": 3.5,
+        "num_images": 1,
+        "output_format": "png",
+        "seed": 402111597
+      }
+    },
+    {
+      "model": "fal-ai/flux/dev",
+      "estimatedUsd": 0.1,
+      "output": "tools/assets/cache/lombard-fal/petals-source.png",
+      "input": {
+        "prompt": "A botanical game flower texture: one full rounded mophead hydrangea flower head, isolated against a perfectly flat medium charcoal-gray background. Straight-on close view of the flower head, centered, filling about eighty-five percent of the square with every petal inside the frame. Scores of tiny overlapping ivory-white four-petal florets form a softly domed cluster, each with delicate creases and a tiny pale green center, natural irregular scalloped outer silhouette. Neutral low-saturation creamy white petals with soft gray and pale green internal shadows, detailed photographic botanical texture, soft even overcast light, readable petal shapes, suitable for tinting pink or lilac in a videogame. No leaves, no stalk, no vase, no ground, no cast shadow, no other flowers, no text, no label, no border, no checkerboard.",
+        "image_size": { "width": 512, "height": 512 },
+        "num_inference_steps": 28,
+        "guidance_scale": 3.5,
+        "num_images": 1,
+        "output_format": "png",
+        "seed": 402111682
+      }
+    }
+  ]
+}

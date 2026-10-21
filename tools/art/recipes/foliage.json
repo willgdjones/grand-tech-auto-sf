@@ -1,0 +1,56 @@
+[
+  {
+    "name": "palm-1",
+    "prompt": "Isolated full-height one mature slender Canary Island date palm tree, gently curved thin rough brown trunk, a wide crown of long drooping dark green feather-shaped fronds with individual visible pointed leaflets. One single tree, centered with trunk base at the bottom and every leaf fully inside the square with 4 percent margin. Flat front elevation for a crossed-card videogame tree sprite; painted darker undersides and warm muted highlights, chunky clusters and clear natural silhouette. Every pixel outside the tree and every gap between leaves is a perfectly uniform vivid magenta #ff00ff chroma key background. No shadow on the background, no ground, no grass, no horizon, no other objects, no border, no text. Early-2000s console urban game foliage sprite, flat hand-painted albedo, limited earthy palette, modest detail, not photorealistic, no shiny rendering.",
+    "seed": 71100,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/foliage/palm-1-source.png"
+  },
+  {
+    "name": "palm-2",
+    "prompt": "Isolated full-height one mature slender Canary Island date palm tree, gently curved thin rough brown trunk, a wide crown of long drooping dark green feather-shaped fronds with individual visible pointed leaflets. One single tree, centered with trunk base at the bottom and every leaf fully inside the square with 4 percent margin. Flat front elevation for a crossed-card videogame tree sprite; painted darker undersides and warm muted highlights, chunky clusters and clear natural silhouette. Every pixel outside the tree and every gap between leaves is a perfectly uniform vivid magenta #ff00ff chroma key background. No shadow on the background, no ground, no grass, no horizon, no other objects, no border, no text. Early-2000s console urban game foliage sprite, flat hand-painted albedo, limited earthy palette, modest detail, not photorealistic, no shiny rendering.",
+    "seed": 71101,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/foliage/palm-2-source.png"
+  },
+  {
+    "name": "plane-1",
+    "prompt": "Isolated full-height one mature London plane street tree, stout pale mottled trunk with visible fork branches, broad irregular rounded crown of dense olive and sage green maple-shaped leaves, small natural gaps between clusters. One single tree, centered with trunk base at the bottom and every leaf fully inside the square with 4 percent margin. Flat front elevation for a crossed-card videogame tree sprite; painted darker undersides and warm muted highlights, chunky clusters and clear natural silhouette. Every pixel outside the tree and every gap between leaves is a perfectly uniform vivid magenta #ff00ff chroma key background. No shadow on the background, no ground, no grass, no horizon, no other objects, no border, no text. Early-2000s console urban game foliage sprite, flat hand-painted albedo, limited earthy palette, modest detail, not photorealistic, no shiny rendering.",
+    "seed": 71110,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/foliage/plane-1-source.png"
+  },
+  {
+    "name": "plane-2",
+    "prompt": "Isolated full-height one mature London plane street tree, stout pale mottled trunk with visible fork branches, broad irregular rounded crown of dense olive and sage green maple-shaped leaves, small natural gaps between clusters. One single tree, centered with trunk base at the bottom and every leaf fully inside the square with 4 percent margin. Flat front elevation for a crossed-card videogame tree sprite; painted darker undersides and warm muted highlights, chunky clusters and clear natural silhouette. Every pixel outside the tree and every gap between leaves is a perfectly uniform vivid magenta #ff00ff chroma key background. No shadow on the background, no ground, no grass, no horizon, no other objects, no border, no text. Early-2000s console urban game foliage sprite, flat hand-painted albedo, limited earthy palette, modest detail, not photorealistic, no shiny rendering.",
+    "seed": 71111,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/foliage/plane-2-source.png"
+  },
+  {
+    "name": "cypress-1",
+    "prompt": "Isolated full-height one mature Monterey cypress tree, textured grey-brown trunk forked near its upper third, broad windswept flat-topped dark forest green canopy and irregular sculptural branching. One single tree, centered with trunk base at the bottom and every leaf fully inside the square with 4 percent margin. Flat front elevation for a crossed-card videogame tree sprite; painted darker undersides and warm muted highlights, chunky clusters and clear natural silhouette. Every pixel outside the tree and every gap between leaves is a perfectly uniform vivid magenta #ff00ff chroma key background. No shadow on the background, no ground, no grass, no horizon, no other objects, no border, no text. Early-2000s console urban game foliage sprite, flat hand-painted albedo, limited earthy palette, modest detail, not photorealistic, no shiny rendering.",
+    "seed": 71120,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/foliage/cypress-1-source.png"
+  },
+  {
+    "name": "cypress-2",
+    "prompt": "Isolated full-height one mature Monterey cypress tree, textured grey-brown trunk forked near its upper third, broad windswept flat-topped dark forest green canopy and irregular sculptural branching. One single tree, centered with trunk base at the bottom and every leaf fully inside the square with 4 percent margin. Flat front elevation for a crossed-card videogame tree sprite; painted darker undersides and warm muted highlights, chunky clusters and clear natural silhouette. Every pixel outside the tree and every gap between leaves is a perfectly uniform vivid magenta #ff00ff chroma key background. No shadow on the background, no ground, no grass, no horizon, no other objects, no border, no text. Early-2000s console urban game foliage sprite, flat hand-painted albedo, limited earthy palette, modest detail, not photorealistic, no shiny rendering.",
+    "seed": 71121,
+    "width": 768,
+    "height": 768,
+    "model": "model_bfl-flux-1-1-pro",
+    "output": "web/public/art/foliage/cypress-2-source.png"
+  }
+]

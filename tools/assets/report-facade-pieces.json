@@ -1,0 +1,219 @@
+{
+  "awning": {
+    "label": "Storefront awning",
+    "meshyJob": "awning",
+    "meshyTask": "01a1056d-6a3f-71a7-8406-6c97359d3b66",
+    "license": "Meshy paid-plan output (commercial use)",
+    "creator": "GTASF via Meshy 6 text-to-3D",
+    "hd": {
+      "url": "/assets/facades-pbr/awning.glb",
+      "triangles": 13728,
+      "bytes": 364860,
+      "sha256": "23499268a398b52a69f2ca4d9fc6c3e4186668b2ba2ca9698fe047a4a24acb10"
+    },
+    "low": {
+      "url": "/assets/facades-pbr/awning.low.glb",
+      "triangles": 2960,
+      "bytes": 137512,
+      "sha256": "b6a369e2727f8107a1a695a4744aad147e7c5725ad47af42e5df45f0d11c493c"
+    },
+    "bounds": {
+      "min": [
+        -0.566,
+        0,
+        -0.469
+      ],
+      "max": [
+        0.566,
+        1.1,
+        0.469
+      ]
+    }
+  },
+  "balcony": {
+    "label": "Juliet balcony",
+    "meshyJob": "balcony",
+    "meshyTask": "01a10582-5a6b-76c7-8f96-2ed468b56629",
+    "license": "Meshy paid-plan output (commercial use)",
+    "creator": "GTASF via Meshy 6 text-to-3D",
+    "hd": {
+      "url": "/assets/facades-pbr/balcony.glb",
+      "triangles": 13999,
+      "bytes": 643032,
+      "sha256": "e7b37f2d4f1d77492e3ec22ab3bc6de99e678d16466617e766a27d3aed228de8"
+    },
+    "low": {
+      "url": "/assets/facades-pbr/balcony.low.glb",
+      "triangles": 2975,
+      "bytes": 157700,
+      "sha256": "535ae25bd30cd549356139875e20df32f47adc8086452c2e71521fd7ca674d43"
+    },
+    "bounds": {
+      "min": [
+        -0.511,
+        0,
+        -0.178
+      ],
+      "max": [
+        0.511,
+        1.2,
+        0.178
+      ]
+    }
+  },
+  "bay-window": {
+    "label": "Victorian bay window",
+    "meshyJob": "bay-window",
+    "meshyTask": "01a10568-fdbb-7006-a567-5162d9acd681",
+    "license": "Meshy paid-plan output (commercial use)",
+    "creator": "GTASF via Meshy 6 text-to-3D",
+    "hd": {
+      "url": "/assets/facades-pbr/bay-window.glb",
+      "triangles": 13646,
+      "bytes": 537992,
+      "sha256": "4a7a1cd6cf98dc7c9a17d107b0da9d16c510639c067ac0862a6b70b6db905579"
+    },
+    "low": {
+      "url": "/assets/facades-pbr/bay-window.low.glb",
+      "triangles": 2998,
+      "bytes": 245956,
+      "sha256": "43ffa504e43d03b945b1d1e81eb1338da4b5a80fe80186d843f6b278f52ab710"
+    },
+    "bounds": {
+      "min": [
+        -1.681,
+        0,
+        -0.368
+      ],
+      "max": [
+        1.681,
+        3,
+        0.368
+      ]
+    }
+  },
+  "cornice": {
+    "label": "Roofline cornice",
+    "meshyJob": "cornice",
+    "meshyTask": "01a1056d-b925-7579-b0fd-e8173907de0a",
+    "license": "Meshy paid-plan output (commercial use)",
+    "creator": "GTASF via Meshy 6 text-to-3D",
+    "hd": {
+      "url": "/assets/facades-pbr/cornice.glb",
+      "triangles": 12265,
+      "bytes": 407800,
+      "sha256": "bdb7d9da66c7ad08120b34aced45d4818b6df9631772603e44455afcabdc80dd"
+    },
+    "low": {
+      "url": "/assets/facades-pbr/cornice.low.glb",
+      "triangles": 2991,
+      "bytes": 148260,
+      "sha256": "c0b32750705572409170b488e692f745eccac28d02b6788fe8666996452aace2"
+    },
+    "bounds": {
+      "min": [
+        -1.347,
+        0,
+        -1.348
+      ],
+      "max": [
+        1.347,
+        0.8,
+        1.348
+      ]
+    }
+  },
+  "entrance": {
+    "label": "Ornate entrance",
+    "meshyJob": "entrance",
+    "meshyTask": "01a10582-5a86-70f0-bfe1-ed48cd1c1bda",
+    "license": "Meshy paid-plan output (commercial use)",
+    "creator": "GTASF via Meshy 6 text-to-3D",
+    "hd": {
+      "url": "/assets/facades-pbr/entrance.glb",
+      "triangles": 14000,
+      "bytes": 670616,
+      "sha256": "1086eddb5e2efc7cc302a1d62faaa0d2eeea80efc3ffce19022d1c0d5cad7265"
+    },
+    "low": {
+      "url": "/assets/facades-pbr/entrance.low.glb",
+      "triangles": 2996,
+      "bytes": 249704,
+      "sha256": "f7943534fc8adc024fd3ec2b3c5f379aa10f23f34b2a1a48b04b97096107183e"
+    },
+    "bounds": {
+      "min": [
+        -1.377,
+        0,
+        -0.373
+      ],
+      "max": [
+        1.377,
+        4,
+        0.373
+      ]
+    }
+  },
+  "fire-escape": {
+    "label": "Iron fire escape",
+    "meshyJob": "fire-escape",
+    "meshyTask": "01a10569-4d0f-7684-aa83-5572594e9cfd",
+    "license": "Meshy paid-plan output (commercial use)",
+    "creator": "GTASF via Meshy 6 text-to-3D",
+    "hd": {
+      "url": "/assets/facades-pbr/fire-escape.glb",
+      "triangles": 14000,
+      "bytes": 506640,
+      "sha256": "58d094fefb2c301355953aaa97c52e02d29a27c411669a5ba5573e6904cdc431"
+    },
+    "low": {
+      "url": "/assets/facades-pbr/fire-escape.low.glb",
+      "triangles": 2968,
+      "bytes": 146172,
+      "sha256": "0da4b6a30bc356a81ecab33c96f8ce6175ff1736431848979020c8aa1b3918ae"
+    },
+    "bounds": {
+      "min": [
+        -1.002,
+        0,
+        -1.022
+      ],
+      "max": [
+        1.002,
+        3.2,
+        1.022
+      ]
+    }
+  },
+  "storefront": {
+    "label": "Ground-floor storefront",
+    "meshyJob": "storefront",
+    "meshyTask": "01a1056d-b9a0-7735-8a7c-4599f16bb43b",
+    "license": "Meshy paid-plan output (commercial use)",
+    "creator": "GTASF via Meshy 6 text-to-3D",
+    "hd": {
+      "url": "/assets/facades-pbr/storefront.glb",
+      "triangles": 10068,
+      "bytes": 508524,
+      "sha256": "a68c7207fbe03d4a09cac0fdc5370fd336c8be905e79d308c15a69e181cde328"
+    },
+    "low": {
+      "url": "/assets/facades-pbr/storefront.low.glb",
+      "triangles": 2995,
+      "bytes": 173072,
+      "sha256": "f5011320074bbb8e96bc06692eb3e0976cf5886c0bc5e76cb0db7bc9572e02ad"
+    },
+    "bounds": {
+      "min": [
+        -2.773,
+        0,
+        -2.002
+      ],
+      "max": [
+        2.773,
+        4.2,
+        2.002
+      ]
+    }
+  }
+}

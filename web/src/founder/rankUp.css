@@ -1,0 +1,11 @@
+/* RANK UP centre splash (flag founderRank). */
+.gt-rank-up {
+  position: fixed; left: 0; right: 0; top: 38%; transform: translateY(-50%) scaleY(.6); opacity: 0; z-index: 45; pointer-events: none;
+  padding: 14px 16px 16px; text-align: center; background: linear-gradient(90deg, #0000, #0c1813e6 18%, #0c1813e6 82%, #0000);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.gt-rank-up[hidden] { display: none; }
+.gt-rank-up.is-in { opacity: 1; transform: translateY(-50%); }
+.gt-rank-up-word { font: 900 clamp(38px, 7vw, 64px)/1 Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .06em; color: #f0b429; text-shadow: 0 3px 0 #0c1813, 0 0 22px #000; }
+.gt-rank-up-line { margin-top: 6px; font: 800 clamp(15px, 2.4vw, 20px) Arial, sans-serif; letter-spacing: .12em; color: #f6edda; }
+@media (prefers-reduced-motion: reduce) { .gt-rank-up { transition: none; } }

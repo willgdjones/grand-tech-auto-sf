@@ -1,0 +1,15 @@
+/* Opening cinematic — San Andreas HUD theme (gtasf-8tsx; shared module theme/saTheme.css).
+   The landmark label reads like an SA area/street caption: condensed gold display text with a heavy
+   black outline over a flat black panel; no cream/gold rounded box. The hide-HUD rules below are
+   functional (they blank the HUD during the fly-in) and are left unchanged. Tokens from saTheme.css. */
+.gt-cinematic-label {
+  position: fixed; left: 24px; bottom: 24px; max-width: 80vw; padding: 9px 14px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0; background: var(--sa-panel-bg, rgba(0,0,0,.62));
+  font-family: var(--sa-display, 'Haettenschweiler', 'Arial Narrow Bold', 'Arial Narrow', Impact, sans-serif);
+  font-weight: 900; font-size: 20px; line-height: 1.1; text-transform: uppercase; letter-spacing: .02em;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 2px var(--sa-ink, #000); paint-order: stroke fill; text-shadow: none;
+  z-index: 100; pointer-events: none;
+}
+.gt-cinematic-hide-hud #app>:not(#world):not(#loading):not(#error){display:none!important}
+body.gt-cinematic-hide-hud>:not(#app):not(script):not(style){display:none!important}
+.gt-cinematic #play-controls,.gt-cinematic #prompt{display:none}

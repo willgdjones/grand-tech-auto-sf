@@ -1,0 +1,29 @@
+[
+  {
+    "name": "sa-car-paint",
+    "prompt": "Seamless neutral ivory enamel automotive PAINT surface material only. Broad softly faded grey edge shading and restrained subtle weathering, a few tiny chips, large flat readable tones. An old 1980s boxy car paint texture for a 2004 PlayStation 2 open-world game. Flat square albedo, no perspective, no objects, no cars, no words or logos, no reflections of scenery, no panel seams. Neutral white and grey so the game can tint it different paint colours. Deliberately chunky low resolution diffuse texture, minimal noise, not a photograph of an object. Seamless tile fills complete frame.",
+    "model": "model_bfl-flux-1-dev",
+    "seed": 64011,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/vehicles/paint.png"
+  },
+  {
+    "name": "sa-bumper-chrome",
+    "prompt": "Old polished chrome bumper MATERIAL texture only for a 2004 PlayStation 2 car game. Broad horizontal bands of cool pale silver, bright off-white highlights and dark charcoal reflected ground, simple painted fake reflection, lightly brushed and slightly worn, not a mirror scene. Low resolution chunky albedo, high readability, limited grey palette, flat orthographic square, no objects, no car, no text, no logos, no scenery, no fine noisy detail. Seamless tile fills complete frame edge to edge, same tones across left and right edges.",
+    "model": "model_bfl-flux-1-dev",
+    "seed": 64012,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/vehicles/chrome.png"
+  },
+  {
+    "name": "sa-silver-bands",
+    "prompt": "ABSTRACT seamless brushed silver metallic surface swatch, flat two-dimensional material tile. Wide straight horizontal bands alternating bright white silver, cool medium grey and charcoal. Every band runs edge to edge across the entire width. Faint broad smudges only, softly blurred band boundaries, low-resolution painted diffuse game texture from 2004, simple fake reflection gradient, limited grey palette. Absolutely no objects, no vehicles, no machines, no illustration, no scene, no perspective, no curved shapes, no letters. Square material swatch filling the frame.",
+    "model": "model_bfl-flux-1-dev",
+    "seed": 64013,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/vehicles/chrome-b.png"
+  }
+]

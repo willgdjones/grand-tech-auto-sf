@@ -1,0 +1,42 @@
+/* SA pause-menu restyle (gtasf-v2-sa-restyle-tracker-ni5k): flat black translucent panel, square
+ * corners, no soft shadows, SA tokens/fonts. Classes + structure preserved (CSS-only). */
+.gt-captable {
+  box-sizing: border-box; width: min(460px, calc(100vw - 24px)); max-height: min(86dvh, 700px); padding: 22px;
+  border: 2px solid var(--sa-panel-edge); border-radius: 0; color: var(--sa-menu-white); background: var(--sa-panel-bg-strong);
+  font: 15px/1.5 var(--sa-sans); overflow: auto; box-shadow: none;
+}
+.gt-captable::backdrop { background: #07100bd0; }
+.gt-captable-eyebrow {
+  margin: 0 0 2px; letter-spacing: .14em; font-size: 13px; font-weight: 900; text-transform: uppercase;
+  font-family: var(--sa-display); color: var(--sa-title-gold); -webkit-text-stroke: var(--sa-outline-thin) var(--sa-ink); paint-order: stroke fill;
+}
+.gt-captable-startup {
+  margin: 0; font-size: 28px; line-height: 1.04; text-transform: uppercase; letter-spacing: .02em;
+  font-family: var(--sa-display); font-weight: 900; color: var(--sa-title-gold);
+  -webkit-text-stroke: var(--sa-outline-thick) var(--sa-ink); paint-order: stroke fill;
+}
+.gt-captable-sub { margin: 4px 0 0; font-size: 13px; color: #cdd3c2; }
+.gt-captable-status { margin: 14px 0 0; font-size: 14px; color: #b6bfac; }
+.gt-captable-status[data-kind="error"] { color: #f0a98a; }
+.gt-captable-status[data-kind="empty"] { color: #cdd3c2; }
+.gt-captable-body { margin-top: 10px; display: grid; gap: 14px; }
+.gt-captable-group { border-top: 1px solid #ffffff26; padding-top: 10px; }
+.gt-captable-group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.gt-captable-group-head h3 {
+  margin: 0; font-size: 15px; letter-spacing: .04em; text-transform: uppercase;
+  font-family: var(--sa-display); font-weight: 900; color: var(--sa-gold);
+  -webkit-text-stroke: var(--sa-outline-thin) var(--sa-ink); paint-order: stroke fill;
+}
+.gt-captable-group-total { font-weight: 700; color: #8fe08a; }
+.gt-captable-list { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 5px; }
+.gt-captable-list li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 14px; }
+.gt-captable-entry-label { color: var(--sa-menu-white); overflow-wrap: anywhere; }
+.gt-captable-entry-amount { color: #dfe6d6; white-space: nowrap; }
+.gt-captable-more { margin: 6px 0 0; font-size: 12px; color: #9aa492; }
+.gt-captable-close {
+  margin-top: 18px; min-height: 42px; padding: 9px 20px; border: 2px solid var(--sa-panel-edge); border-radius: 0;
+  background: var(--sa-gold); color: #15221a; font-weight: 700; font-size: 15px; cursor: pointer; font-family: var(--sa-sans);
+}
+.gt-captable-close:hover { background: var(--sa-title-gold); }
+.gt-captable-close:focus-visible { outline: 2px solid var(--sa-menu-white); outline-offset: 2px; }
+@media (max-width: 700px) { .gt-captable { padding: 16px; } .gt-captable-startup { font-size: 22px; } }

@@ -1,0 +1,399 @@
+{
+  "version": 1,
+  "provider": "Scenario",
+  "model": "model_bfl-flux-1-schnell",
+  "ledger": "tools/art/ledger.json",
+  "palette": "64-colour PS2 SF: sage, cream, muted terracotta, dark teal, warm stone",
+  "atlas": {
+    "path": "/art/facades/sf-facades.png",
+    "width": 1024,
+    "height": 512,
+    "bytes": 62815,
+    "sha256": "48aefebe5f98eb3ada24c1a93d116ebeab70ec97e2744ff9cc3acfb4ec12665c",
+    "colorSpace": "srgb",
+    "columns": 4,
+    "rows": 2,
+    "tileSize": 256,
+    "gutter": 8,
+    "interior": 240,
+    "minFilter": "LinearFilter (no atlas mip bleed)",
+    "magFilter": "NearestFilter",
+    "vOrigin": "top-left; for Three flipY=true sample v = 1 - (y + localV*height)/512"
+  },
+  "assets": [
+    {
+      "id": "victorian",
+      "source": "/art/facades/victorian-a.png",
+      "generationId": "7110b30b-63d3-4155-a70f-3407d27fa49b",
+      "selected": true,
+      "tile": 0,
+      "pixelRect": [
+        8,
+        8,
+        240,
+        240
+      ],
+      "metres": [
+        3.2,
+        3.8
+      ],
+      "crop": {
+        "left": 28,
+        "top": 56,
+        "width": 448,
+        "height": 364
+      },
+      "review": "Cream trim and sage clapboard; crop removes the unwanted railing. Russian Hill/North Beach residential."
+    },
+    {
+      "id": "edwardian",
+      "source": "/art/facades/victorian-b.png",
+      "generationId": "bcdfdcaf-4c77-4ebc-acb7-dc6f518ebb4f",
+      "selected": true,
+      "tile": 1,
+      "pixelRect": [
+        264,
+        8,
+        240,
+        240
+      ],
+      "metres": [
+        4.8,
+        3.8
+      ],
+      "crop": {
+        "left": 20,
+        "top": 8,
+        "width": 472,
+        "height": 466
+      },
+      "review": "Two salmon-and-cream sash windows; crop removes the partial doorway. Pastel residential variant."
+    },
+    {
+      "id": "fidi-glass",
+      "source": "/art/facades/fidi-glass.png",
+      "generationId": "b2ab82ee-d581-4f65-b6d5-d8eceb36808b",
+      "selected": true,
+      "tile": 2,
+      "pixelRect": [
+        520,
+        8,
+        240,
+        240
+      ],
+      "metres": [
+        18,
+        24
+      ],
+      "review": "Blue-green curtain wall grid for taller downtown buildings; larger repeat preserves plausible window sizes in the dense generated grid."
+    },
+    {
+      "id": "fidi-stone",
+      "source": "/art/facades/fidi-stone.png",
+      "generationId": "3b76e749-1167-4844-b970-501c2413c2d6",
+      "selected": true,
+      "tile": 3,
+      "pixelRect": [
+        776,
+        8,
+        240,
+        240
+      ],
+      "metres": [
+        4.8,
+        3.8
+      ],
+      "review": "Warm limestone piers and recessed windows for older downtown blocks."
+    },
+    {
+      "id": "soma-brick",
+      "source": "/art/facades/soma-brick.png",
+      "generationId": "f8c408c3-57b6-4545-a9e9-91800eea233f",
+      "selected": true,
+      "tile": 4,
+      "pixelRect": [
+        8,
+        264,
+        240,
+        240
+      ],
+      "metres": [
+        5.4,
+        4.2
+      ],
+      "review": "Factory window and brick bay for warehouse districts."
+    },
+    {
+      "id": "mission-mural",
+      "source": "/art/facades/mission-mural.png",
+      "generationId": "44085dc4-9de1-4947-900d-d6d85bdc0902",
+      "selected": true,
+      "tile": 5,
+      "pixelRect": [
+        264,
+        264,
+        240,
+        240
+      ],
+      "metres": [
+        8,
+        5
+      ],
+      "review": "Original abstract community-mural palette for selected low Mission walls."
+    },
+    {
+      "id": "storefront",
+      "source": "/art/facades/storefront.png",
+      "generationId": "9b84d5fc-2b84-4c9a-94bb-44bafe51e544",
+      "selected": true,
+      "tile": 6,
+      "pixelRect": [
+        520,
+        264,
+        240,
+        240
+      ],
+      "metres": [
+        5.4,
+        3.6
+      ],
+      "review": "Unbranded awning and shop window for ground floors."
+    },
+    {
+      "id": "stone-variant",
+      "source": "/art/facades/fidi-stone.png",
+      "generationId": "3b76e749-1167-4844-b970-501c2413c2d6",
+      "selected": true,
+      "tile": 7,
+      "pixelRect": [
+        776,
+        264,
+        240,
+        240
+      ],
+      "metres": [
+        4.8,
+        3.8
+      ],
+      "review": "Cooler local colour variant of the same generated limestone bay."
+    }
+  ],
+  "loading": [
+    {
+      "id": "ferry-title",
+      "path": "/art/loading/ferry-title.webp",
+      "source": "/art/loading/ferry-comic.png",
+      "width": 1024,
+      "height": 576,
+      "bytes": 93868,
+      "sha256": "7f434d36aaba0a45d8c81e14c2723daa393674f848646fbd8aa004d3b3eeb071",
+      "generationId": "14c478c6-e014-46ba-9cdc-5edc7792ab9c",
+      "colorSpace": "srgb",
+      "usage": "decorative loading/title illustration",
+      "selected": true
+    },
+    {
+      "id": "lombard-title",
+      "path": "/art/loading/lombard-title.webp",
+      "source": "/art/loading/lombard-comic.png",
+      "width": 1024,
+      "height": 576,
+      "bytes": 190820,
+      "sha256": "55fbf697fb483ff13f2218f1037f981b59e9ebe5981882dafbbf0f66b411c75b",
+      "generationId": "09cd663c-eea0-418c-ab64-52abcd4ae7bd",
+      "colorSpace": "srgb",
+      "usage": "decorative loading/title illustration",
+      "selected": true
+    },
+    {
+      "id": "golden-gate-title",
+      "path": "/art/loading/golden-gate-title.webp",
+      "source": "/art/loading/golden-gate-comic.png",
+      "width": 1024,
+      "height": 576,
+      "bytes": 55466,
+      "sha256": "5b905b9ab1b51fb025e187186ccf1e515bbb191768984575fb374739bba41ba7",
+      "generationId": "dc7c280a-a523-4062-9b27-2d4af8116d56",
+      "colorSpace": "srgb",
+      "usage": "decorative loading/title illustration",
+      "selected": true
+    },
+    {
+      "id": "round-closed",
+      "path": "/art/loading/round-closed.webp",
+      "source": "/art/loading/round-closed.png",
+      "width": 1024,
+      "height": 576,
+      "bytes": 51104,
+      "sha256": "a207c9a233e368300ddb4ec9996406eaab0da50e69b03905556b81ab677ce641",
+      "generationId": "65206629-bc8a-4349-b4a7-086352eb071b",
+      "colorSpace": "srgb",
+      "usage": "funding round achievement splash artwork",
+      "selected": true
+    }
+  ],
+  "rejectedLoading": [
+    {
+      "id": "ferry-title",
+      "selected": false,
+      "reason": "Unrequested branded car and signature; rejected original kept only in ignored local review artifacts."
+    },
+    {
+      "id": "lombard-title",
+      "selected": false,
+      "reason": "Too photographic, extra street signs and figure; rejected original kept only in ignored local review artifacts."
+    },
+    {
+      "id": "golden-gate-title",
+      "selected": false,
+      "reason": "Founder requested rough inked comic style and character silhouettes instead of clean travel-poster treatment."
+    }
+  ],
+  "ground": [
+    {
+      "id": "worn-asphalt",
+      "path": "/art/ground/worn-asphalt.tile.png",
+      "width": 256,
+      "height": 256,
+      "metres": [
+        6,
+        6
+      ],
+      "bytes": 19282,
+      "sha256": "fab6ded4d0c31604b4bcd4705f5252b8a7daf204f4738773b30b3f46bf31b376",
+      "generationId": "86622ab4-301f-46c4-8e0d-68c00e4426fc",
+      "sourceSha256": "a95051780637e268fdd749129db667a0afa8b6306d4348d49cf93662f2809bdc",
+      "model": "model_bfl-flux-1-1-pro",
+      "colorSpace": "srgb",
+      "palette": 32,
+      "selected": true,
+      "review": "Unmarked charcoal aggregate; base asphalt only."
+    },
+    {
+      "id": "double-yellow",
+      "path": "/art/ground/double-yellow.tile.png",
+      "width": 256,
+      "height": 256,
+      "metres": [
+        6,
+        6
+      ],
+      "bytes": 17572,
+      "sha256": "92b63a0ba25f2c1c25b64ae5f5fb3c658976758d3f258211ac0cdfe7acc8a66b",
+      "generationId": "3d3182b1-432d-42f1-93e3-8cb8cdb0cf70",
+      "sourceSha256": "637ec821e6d97a19f1242bee0d5550f9576392c4b444700147d8106f0aaba6cf",
+      "model": "model_bfl-flux-1-1-pro",
+      "colorSpace": "srgb",
+      "palette": 32,
+      "selected": true,
+      "review": "Two continuous yellow lines. Road-aligned detail only, never global planar markings."
+    },
+    {
+      "id": "white-dashes",
+      "path": "/art/ground/white-dashes.tile.png",
+      "width": 256,
+      "height": 256,
+      "metres": [
+        6,
+        4
+      ],
+      "bytes": 15716,
+      "sha256": "ccb1925497cc57d893963bae242f44d6134076edbc514a9a1ca305520693e426",
+      "generationId": "a45b2aaf-fa69-43b4-91c7-26fed0d7bdc2",
+      "sourceSha256": "47481bccf7f21d48549d807d187d0b3a2e103be4e73ea659568d29688a8dd245",
+      "crop": {
+        "left": 0,
+        "top": 142,
+        "width": 1024,
+        "height": 214
+      },
+      "model": "model_bfl-flux-1-1-pro",
+      "colorSpace": "srgb",
+      "palette": 32,
+      "selected": true,
+      "review": "Crop selects one correctly shaped single white dash and blank gaps, excluding the unwanted horizontal crossbar. Second candidate rejected for double lines."
+    },
+    {
+      "id": "crosswalk",
+      "path": "/art/ground/crosswalk.tile.png",
+      "width": 256,
+      "height": 256,
+      "metres": [
+        8,
+        1.2
+      ],
+      "bytes": 18712,
+      "sha256": "3b9b10b48682bf202a78b0346f97681380b48959545db49c66870a3fc6964668",
+      "generationId": "2248e9e8-44bc-4772-9403-8b30327ee3fc",
+      "sourceSha256": "7e33d46f282e90411a6f8ead5b6a5b929b945fefc7dbce752846c7c3a876bcf3",
+      "crop": {
+        "left": 16,
+        "top": 214,
+        "width": 992,
+        "height": 196
+      },
+      "model": "model_bfl-flux-1-1-pro",
+      "colorSpace": "srgb",
+      "palette": 32,
+      "selected": true,
+      "review": "Selected unbroken full-width stripe plus asphalt gap from corrected candidate; first grid-shaped candidate rejected."
+    },
+    {
+      "id": "sidewalk-kerb",
+      "path": "/art/ground/sidewalk-kerb.tile.png",
+      "width": 256,
+      "height": 256,
+      "metres": [
+        3,
+        3
+      ],
+      "bytes": 21579,
+      "sha256": "50ec5feac2d8ef800cb0e2f7f4a59d4fb0c4313c9d82b1b615c6e1edd79f4fe8",
+      "generationId": "330cad3d-d8c4-4c72-8478-71b9e50d5661",
+      "sourceSha256": "50b7da96c02bad5b5502b88d1e31fdfb26717d431b6dac8f22f80d1d02725dd0",
+      "model": "model_bfl-flux-1-1-pro",
+      "colorSpace": "srgb",
+      "palette": 32,
+      "selected": true,
+      "review": "Light slabs and narrow kerb at right edge."
+    },
+    {
+      "id": "cobbles",
+      "path": "/art/ground/cobbles.tile.png",
+      "width": 256,
+      "height": 256,
+      "metres": [
+        3,
+        3
+      ],
+      "bytes": 23995,
+      "sha256": "750c0544e41d16e77c5c7358de18bac3b7632c31aee7ab5651cabe444ba666d6",
+      "generationId": "701488f5-37fa-4055-b99a-bbd269fb8f0d",
+      "sourceSha256": "857fc737cfc6c449ba9c828e3e8eaf0ec3c94d328d6153d804305f9f85c9ba02",
+      "model": "model_bfl-flux-1-1-pro",
+      "colorSpace": "srgb",
+      "palette": 32,
+      "selected": true,
+      "review": "Terracotta brick cobbles preserve the crooked Lombard road material."
+    },
+    {
+      "id": "cable-track",
+      "path": "/art/ground/cable-track.tile.png",
+      "width": 256,
+      "height": 256,
+      "metres": [
+        2.1,
+        4
+      ],
+      "bytes": 22014,
+      "sha256": "7db9164a4e5200807a72986e77eab5474dabb1d2bbf35e7bcff4ccd41e5538fa",
+      "generationId": "7506020e-bd90-423b-a430-9c637f4ab0e8",
+      "sourceSha256": "d428e31acb1140014cc480854bdc3d357d70a1908cc2ff9ff228766d0f362310",
+      "model": "model_bfl-flux-1-1-pro",
+      "colorSpace": "srgb",
+      "palette": 32,
+      "selected": true,
+      "review": "Steel heads and central cable-grip slot in brick; source cable-car corridors only."
+    }
+  ]
+}

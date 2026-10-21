@@ -1,0 +1,38 @@
+/* Radio controls (inside the Game Options dialog) — San Andreas HUD theme (gtasf-fben;
+   shared module theme/saTheme.css). SA staple: radio in the pause menu. Gold display sub-heading,
+   near-white square select, gold-outlined DJ line. No cream fields or soft chrome. All classes
+   preserved. Tokens from theme/saTheme.css (inline fallbacks). */
+.gt-radio-controls { min-width: 0; margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .2); }
+.gt-radio-controls h3 {
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif); font-weight: 900; text-transform: uppercase; letter-spacing: .02em;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 2px var(--sa-ink, #000); paint-order: stroke fill;
+  font-size: 18px; margin: 0 0 10px;
+}
+.gt-radio-controls label { display: block; font: 12px/1.5 var(--sa-sans, Arial, sans-serif); margin: 10px 0; }
+.gt-radio-controls select {
+  box-sizing: border-box; display: block; width: 100%; min-height: 44px; padding: 8px; color: #17251b;
+  background: #f2efe6; border: 2px solid var(--sa-ink, #000); border-radius: 0; font-size: 16px;
+}
+.gt-radio-controls input { display: block; width: 100%; min-height: 32px; accent-color: var(--sa-gold, #f0b429); }
+.gt-radio-buttons { display: flex; gap: 8px; }
+.gt-radio-buttons button { min-height: 44px; }
+.gt-radio-dj { color: var(--sa-title-gold, #f6a81e); font: 700 13px/1.45 var(--sa-sans, Arial, sans-serif); overflow-wrap: anywhere; -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-radio-status { font: 12px/1.4 var(--sa-sans, Arial, sans-serif); color: #cfcfcf; -webkit-text-stroke: .7px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-radio-station-toast {
+  /* Critic N28 (R3 family): at the top centre the station name printed across the event/fund announcement banner's title.
+     Its own slot is the band above the car / crosshair (below the payout card at ~24-36vh, above the 50vh crosshair). */
+  position: fixed; z-index: 55; top: calc(40vh + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%);
+  max-width: 78vw; text-align: center; pointer-events: none; color: var(--sa-title-gold, #f6a81e);
+  font: 900 clamp(22px, 3.5vw, 42px)/1.1 var(--sa-display, Impact, sans-serif);
+  -webkit-text-stroke: 3px #000; paint-order: stroke fill; text-shadow: 3px 4px 0 #000;
+}
+.gt-radio-next {
+  display: none; position: fixed; z-index: 51; left: calc(12px + env(safe-area-inset-left)); top: calc(72px + var(--gt-outbid-bar-height, 0px) + env(safe-area-inset-top));
+  min-height: 44px; padding: 7px 11px; border: 2px solid #000; border-radius: 0; background: #151515dd;
+  color: var(--sa-title-gold, #f6a81e); font: 800 14px var(--sa-sans, Arial, sans-serif); touch-action: manipulation;
+}
+@media (pointer: coarse) { .gt-radio-next { display: block; } }
+@media (max-width: 700px) {
+  .gt-radio-station-toast { top: calc(40vh + env(safe-area-inset-top)); max-width: 90vw; font-size: 26px; } /* N28: own slot, not the banner row */
+}
+.gt-radio-next[hidden], .gt-radio-station-toast[hidden] { display: none !important; }

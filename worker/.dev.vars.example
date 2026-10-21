@@ -1,0 +1,21 @@
+# Public X pixel/event IDs. Real secrets belong in ignored .dev.vars or Wrangler secrets.
+X_PIXEL_ID=rgc75
+X_EVENT_PLAY_START=tw-rgc75-rgc7f
+X_EVENT_OUTBID_PURCHASE=tw-rgc75-rgc7h
+X_EVENT_AD_PURCHASE=tw-rgc75-rgc7n
+# Founder supplies this with wrangler secret; unset is a no-op.
+X_PIXEL_TOKEN=
+POSTHOG_KEY=
+POSTHOG_HOST=https://eu.i.posthog.com
+# Server-only management credential; never VITE_-prefix or send to the browser.
+POSTHOG_SECRET_KEY=
+# Optional, server-only. Set via wrangler secret (or let tools/deploy/production/secrets.mjs
+# upload them from this file). Unset = the gated feature stays off; nothing breaks.
+#   TYPESAFE_API_KEY → Jev chat + event-link moderation (gtasf-a366 / submission).
+#   ADMIN_TOKEN      → event + feedback admin endpoints (hidden without it).
+#   ANTHROPIC_API_KEY→ event-link detail extraction.
+TYPESAFE_API_KEY=
+ADMIN_TOKEN=
+ANTHROPIC_API_KEY=
+# Secret salt for hashed per-IP rate-limit keys (worker/src/referrals/ipLimiter.ts). Optional locally; set as a Wrangler secret in prod.
+IP_HASH_SECRET=

@@ -1,0 +1,57 @@
+/* VC fund drop banner + claim toast — San Andreas HUD theme (gtasf-v2-sa-hud-theme).
+   Flat black SA pause-menu panel, gold outlined display title, plain-sans black-outline subtext;
+   no rounded corners, no soft shadows, no serif/italic. Tokens come from theme/saTheme.css. */
+.gt-drop-banner{
+  position:fixed;z-index:40;left:50%;transform:translateX(-50%);
+  top:calc(12px + var(--gt-outbid-bar-height,0px));
+  width:min(560px,calc(100vw - 260px));max-width:560px;
+  padding:8px 16px;border:2px solid var(--sa-panel-edge,#000);border-radius:0;
+  background:var(--sa-panel-bg,rgba(0,0,0,0.62));text-align:center;pointer-events:none;
+  font-family:var(--sa-sans,Arial,sans-serif);box-shadow:none;
+}
+.gt-drop-banner[hidden]{display:none}
+.gt-drop-banner.gt-drop-claimed{border-color:#000}
+.gt-drop-banner.gt-drop-closed{opacity:.9}
+.gt-drop-title{
+  font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);
+  font-weight:900;text-transform:uppercase;letter-spacing:.02em;line-height:1.05;
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:3px var(--sa-ink,#000);paint-order:stroke fill;
+  text-shadow:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.gt-drop-banner.gt-drop-closed .gt-drop-title{color:var(--sa-money-red,#a2191c)}
+.gt-drop-banner.gt-drop-claimed .gt-drop-title{color:var(--sa-money-green,#345f27)}
+.gt-drop-sub{margin-top:3px;font-size:13px;font-weight:700;color:#fff;-webkit-text-stroke:1.2px var(--sa-ink,#000);paint-order:stroke fill;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.gt-drop-count{color:var(--sa-title-gold,#f6a81e)}
+.gt-drop-count.gt-drop-low{color:var(--sa-title-orange,#e3651d)}
+.gt-drop-count.gt-drop-out{color:var(--sa-money-red,#a2191c)}
+.gt-drop-dir{color:var(--sa-bar-blue,#b2cef2)}
+.gt-drop-teaser{margin-top:4px;font-size:11px;font-weight:700;color:#cfcfcf;-webkit-text-stroke:1px var(--sa-ink,#000);paint-order:stroke fill;letter-spacing:.01em}
+.gt-drop-teaser[hidden]{display:none}
+
+/* Centre-screen one-shot "cheque secured" toast — SA gold title + green money, heavy outline. */
+.gt-drop-toast{
+  position:fixed;z-index:62;left:50%;top:30vh;transform:translateX(-50%) scale(.92);
+  width:min(620px,calc(100vw - 32px));text-align:center;pointer-events:none;
+  font-family:var(--sa-sans,Arial,sans-serif);opacity:0;transition:opacity .2s ease,transform .2s ease;
+}
+.gt-drop-toast.gt-drop-toast-show{opacity:1;transform:translateX(-50%) scale(1)}
+.gt-drop-toast-head{
+  font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;text-transform:uppercase;
+  font-size:clamp(28px,5.2vw,56px);line-height:1.02;letter-spacing:.03em;
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:3px var(--sa-ink,#000);paint-order:stroke fill;text-shadow:none;
+}
+.gt-drop-toast-amount{
+  font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;
+  font-size:clamp(24px,4vw,44px);margin:4px 0;color:var(--sa-money-green,#345f27);
+  -webkit-text-stroke:2px var(--sa-ink,#000);paint-order:stroke fill;font-variant-numeric:tabular-nums;
+}
+.gt-drop-toast-sub{font-size:15px;font-weight:800;color:#fff;-webkit-text-stroke:1.2px var(--sa-ink,#000);paint-order:stroke fill}
+
+@media(max-width:760px){
+  /* On phones the full-width banner used to sit at the top, on top of the menu button (top-left) and the
+     clock/money/stars HUD cluster (.gt-hud, top-right). Drop it below the top HUD band instead so nothing
+     overlaps; it stays well above the centred player nameplate. */
+  .gt-drop-banner{width:calc(100vw - 16px);max-width:none;top:158px;padding:6px 12px}
+  .gt-drop-title{font-size:16px;white-space:normal}
+  .gt-drop-sub{font-size:11px;gap:8px}
+}

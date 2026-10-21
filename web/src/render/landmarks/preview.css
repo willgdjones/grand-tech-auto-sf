@@ -1,0 +1,40 @@
+/* /landmarks preview page — San Andreas HUD theme (gtasf-sa-theme-landmarks-preview-cxl5).
+   Flat black SA pause-menu panel, square corners, gold display title, white/outlined menu text; no
+   rounded cream/green boxes or soft shadows. Standalone page, so SA values ride as var() fallbacks
+   (same pattern as drops/banner.css) and apply with or without theme/saTheme.css. Layout preserved. */
+:root{font-family:var(--sa-sans,Arial,Helvetica,sans-serif);color:var(--sa-menu-white,#fff);background:#0c0f0e;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;overflow:hidden}
+canvas{display:block;width:100vw;height:100vh;touch-action:none}
+header{position:fixed;left:28px;right:28px;top:24px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.brand{font-size:22px;font-weight:900;letter-spacing:.01em;text-transform:uppercase;font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:2px var(--sa-ink,#000);paint-order:stroke fill;text-shadow:none;text-decoration:none;pointer-events:auto}
+.brand small{display:block;font-size:10px;letter-spacing:4.7px;padding-top:4px;color:var(--sa-menu-white,#fff);-webkit-text-stroke:1px var(--sa-ink,#000);paint-order:stroke fill}
+.badge{font-size:10px;font-weight:bold;letter-spacing:1.8px;border:2px solid var(--sa-panel-edge,#000);padding:9px 12px;border-radius:0;
+  background:var(--sa-panel-bg,rgba(0,0,0,.62));color:var(--sa-menu-white,#fff);-webkit-text-stroke:1px var(--sa-ink,#000);paint-order:stroke fill}
+.panel{position:fixed;left:28px;top:112px;width:270px;padding:22px;background:var(--sa-panel-bg-strong,rgba(0,0,0,.82));
+  border:2px solid var(--sa-panel-edge,#000);border-radius:0;box-shadow:none}
+.eyebrow{font-size:9px;letter-spacing:1.9px;color:var(--sa-gold,#f0b429);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill;margin:0 0 13px}
+h1{font-size:30px;line-height:1.06;font-weight:900;margin:0 0 22px;letter-spacing:.01em;font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:2.5px var(--sa-ink,#000);paint-order:stroke fill;text-shadow:none}
+.select-label{display:block;font-size:11px;font-weight:700;color:var(--sa-menu-white,#fff);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill;margin-bottom:7px}
+select{width:100%;background:var(--sa-panel-bg,rgba(0,0,0,.62));color:var(--sa-menu-white,#fff);border:2px solid var(--sa-panel-edge,#000);border-radius:0;padding:10px 8px;font:700 13px/1 var(--sa-sans,Arial,sans-serif)}
+#meta{font-size:11px;line-height:1.7;font-weight:700;color:var(--sa-menu-blue,#b2cef2);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill;font-variant-numeric:tabular-nums}
+.buttons{display:grid;gap:7px;margin:17px 0}
+button{border:2px solid var(--sa-panel-edge,#000);background:var(--sa-panel-bg,rgba(0,0,0,.62));color:var(--sa-menu-white,#fff);padding:9px;text-align:left;
+  font:700 12px/1 var(--sa-sans,Arial,sans-serif);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill;cursor:pointer;border-radius:0}
+button:hover,button:focus-visible{background:var(--sa-panel-edge,rgba(0,0,0,.9))}
+button:first-child{background:var(--sa-gold,#f0b429);color:var(--sa-ink,#000);font-weight:900;border-color:var(--sa-ink,#000);-webkit-text-stroke:0}
+.check{font-size:11px;display:flex;gap:7px;align-items:center;color:var(--sa-menu-white,#fff)}
+.help{font-size:11px;line-height:1.7;font-weight:700;color:var(--sa-menu-white,#fff);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill;margin-top:17px}
+#stats{font-size:10px;font-weight:700;color:var(--sa-clock-grey,#dcdcdc);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill}
+#source{color:var(--sa-gold,#f0b429);font-size:10px;font-weight:700;text-decoration:underline}
+footer{position:fixed;bottom:22px;left:28px;right:28px;display:flex;justify-content:space-between;font-size:9px;font-weight:700;letter-spacing:1.5px;
+  color:var(--sa-menu-white,#fff);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill;text-shadow:none}
+footer a{color:inherit;text-decoration:none;letter-spacing:0;font-size:11px}
+@media(max-width:650px){header{left:16px;right:16px;top:16px}.brand{font-size:18px}.badge{display:none}.panel{left:14px;top:auto;bottom:48px;padding:13px;width:224px}.eyebrow,.select-label,.help,.check,#stats,#source{display:none}h1{font-size:24px;margin-bottom:10px}.buttons{display:flex;margin:10px 0 0;flex-wrap:wrap;gap:5px}button{padding:7px;font-size:10px}#meta{margin:7px 0 0;font-size:10px}footer{left:16px;right:16px;bottom:16px}footer span{display:none}}
+
+[hidden]{display:none!important}
+#drive{width:100%;margin:0 0 8px;background:var(--sa-gold,#f0b429);color:var(--sa-ink,#000);font-weight:900;-webkit-text-stroke:0}
+#drive-help{font-size:11px;line-height:1.6;font-weight:700;color:var(--sa-menu-white,#fff);-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill}
+#drive-touch{display:flex;gap:5px;margin-bottom:10px}
+#drive-touch button{flex:1;text-align:center;font-size:20px;touch-action:none}

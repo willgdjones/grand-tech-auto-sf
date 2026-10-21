@@ -1,0 +1,26 @@
+[
+  {
+    "name": "onboarding-raise",
+    "prompt": "An INKED COMIC BOOK video game intro/onboarding loading illustration. In the foreground an ORIGINAL FICTIONAL young founder as a bold black silhouette stands on a San Francisco sidewalk at a confident low hero angle, plain unbranded hoodie and backpack, one arm raised holding a takeaway coffee, face entirely in shadow. Behind and above them a big glowing gold upward arrow and a rising stack of gold coin discs and bar-chart blocks arc into the sky, suggesting fundraising momentum (graphic shapes only). The unmistakable San Francisco skyline fills the background: pointed Transamerica Pyramid, Coit Tower on its hill and the orange Golden Gate suspension span, under golden sunbeams and lavender Karl the Fog. Optimistic, ambitious startup mood. Leave the upper-left corner a quiet dark turquoise block for a later HTML title. Heavy BLACK INK OUTLINES around every shape. Comic-book crosshatching and HALFTONE DOT screentone shadows. Saturated limited palette of burnt orange, mustard yellow, turquoise, dark violet, cream and black. Flat angular two-tone cel shading. A rough 2004 Grand Theft Auto San Andreas loading-screen/comic-cover aesthetic, gritty playful ink illustration. NOT photorealistic, NOT clean vector poster, NOT a travel poster. No real persons, no celebrity likeness, no logos, no writing, no letters, no numbers, no signature, no brand marks. Wide 16:9.",
+    "seed": 52301,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/onboarding-raise.png"
+  },
+  {
+    "name": "onboarding-events",
+    "prompt": "An INKED COMIC BOOK video game onboarding loading illustration. A small white self-driving ROBOTAXI POD - a smooth rounded futuristic driverless electric car with a single spinning cylindrical lidar puck on its roof and large curved windows - speeds in the foreground straight through a big glowing gold circular CHECKPOINT RING of light hovering over a San Francisco street, bursting with sparks and comic speed lines. The pod body is smooth plain white with a COMPLETELY BLANK SMOOTH FRONT (no car badge, no emblem, no grille, no brand mark) and blank number plates; its roof holds only the plain matte-black lidar puck - there is NO taxi sign, NO roof box, NO panel and NO text on the car anywhere. Above the ring float a glowing gold five-point star, a glowing briefcase icon suggesting a venture-fund drop, and a faint translucent angelic halo with soft wings hinting at a hidden angel, all as simple graphic shapes. Pastel cream and salmon Victorian bay-window houses and the pointed Transamerica Pyramid line the street behind under golden afternoon light and lavender Karl the Fog. All the houses and their ground-floor storefronts, shop windows and awnings are COMPLETELY BLANK with no shop signs, no text, no letters and no words of any kind. Dynamic motion and energy, exciting mood. Leave the lower-left corner quieter for later HTML text. Heavy BLACK INK OUTLINES around every shape. Comic-book crosshatching and HALFTONE DOT screentone shadows. Saturated limited palette of burnt orange, mustard yellow, turquoise, dark violet, cream and black. Flat angular two-tone cel shading. A rough 2004 Grand Theft Auto San Andreas loading-screen/comic-cover aesthetic, gritty playful ink illustration. NOT photorealistic, NOT clean vector poster, NOT a travel poster. No real persons, no celebrity likeness, no logos, no writing, no letters, no numbers, no signature, no watermark, no brand marks anywhere. Wide 16:9.",
+    "seed": 52332,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/onboarding-events.png"
+  },
+  {
+    "name": "onboarding-controls",
+    "prompt": "A clean, mostly EMPTY INKED COMIC BOOK background illustration for a video game controls/help screen. A calm wide San Francisco scene with a simple stylized skyline silhouette along the BOTTOM edge only - pointed Transamerica Pyramid, Coit Tower and the orange Golden Gate suspension span - beneath a large open golden-ochre sky with soft lavender Karl the Fog bands and plenty of quiet uncluttered negative space across the entire centre and top for overlaying HTML control diagrams later. Minimal and uncluttered, no foreground subjects, no vehicles, no characters, no icons, no UI elements. Heavy BLACK INK OUTLINES on the thin bottom skyline band only. Flat angular two-tone cel shading. Saturated but calm limited palette of burnt orange, mustard yellow, turquoise, dark violet, cream and black. A rough 2004 Grand Theft Auto San Andreas loading-screen aesthetic, hand-inked illustration. NOT photorealistic, NOT a clean vector poster, NOT a travel poster. No real persons, no celebrity likeness, no logos, no brand marks. ABSOLUTELY NO signature, NO watermark, NO text, NO letters, NO numbers and NO artist mark anywhere in the image, including every corner and all four edges - clean empty sky with nothing written on it. The bottom-right and bottom-left corners must be completely clean background with no mark, no url, no copyright symbol and no tiny text whatsoever. Wide 16:9.",
+    "seed": 52323,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/onboarding-controls.png"
+  }
+]

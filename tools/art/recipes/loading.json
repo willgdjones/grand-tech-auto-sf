@@ -1,0 +1,74 @@
+[
+  {
+    "name": "ferry-title",
+    "prompt": "Wide 16:9 original loading screen illustration for a playful San Francisco open-world videogame. Hero architecture is the real San Francisco Ferry Building, recognizable tall slender cream clock tower with four-sided clock face and stepped terracotta roof, long low arcaded market terminal stretching to both sides. Seen from Embarcadero plaza looking toward the waterfront. A small generic white autonomous taxi with a black rooftop lidar cylinder and no badge is in the right foreground; cable car rails and palm silhouettes lead toward the tower. Golden afternoon light, pale mint bay, distant Bay Bridge steel span, lavender Karl the Fog. Hand-painted 2004 PlayStation 2 Grand Theft Auto San Andreas loading art, bold black ink outlines, angular cel shading, paper-like flat warm ochre and teal color blocks, stylish editorial illustration. No people, no faces, no words, no lettering, no logos, no brands. Architectural proportions recognizable. Place tower in right two-thirds; quiet dark teal graphic space in left third for an HTML title overlay, never render text.",
+    "seed": 52001,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/ferry-title.png"
+  },
+  {
+    "name": "lombard-title",
+    "prompt": "Wide cinematic original San Francisco videogame loading screen illustration. Look DOWN the famous steep crooked block of Lombard Street from Hyde Street: an unmistakable repeated sequence of tight red brick hairpin switchbacks winding through dense green hydrangea planting beds, elegant pastel cream sage and salmon Victorian bay-window houses closely lining both sides, blue San Francisco Bay and Coit Tower far downhill. A tiny unbranded white autonomous taxi rounds one hairpin, roof lidar visible. PlayStation 2 era Grand Theft Auto San Andreas loading art, thick confident black outlines, flat cel-shaded ochre and teal forms, angular hand-painted comic illustration, sunny afternoon haze and pale lavender fog. Strong downhill slope, eight compact zigzag turns, distinctly San Francisco. No people, no writing, no letters, no logos, no real brands. Composition fills frame, no borders. Lower left corner quieter for HTML progress text.",
+    "seed": 52002,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/lombard-title.png"
+  },
+  {
+    "name": "golden-gate-title",
+    "prompt": "Wide cinematic original loading screen illustration for a San Francisco videogame. Recognizable Golden Gate Bridge viewed from the San Francisco south approach, two tall International Orange Art Deco towers with their rectangular portals and curved suspension cables receding toward the Marin Headlands. Blue-green Pacific water and California golden grass in foreground, dramatic bank of white Karl the Fog rolling beneath the span, sunlit apricot sky, eucalyptus silhouette at edge. 2004 PlayStation 2 Grand Theft Auto San Andreas loading screen illustration style: bold thick black ink contours, limited warm ochre terracotta teal and cream palette, flat cel shading, angular hand-painted comic shapes, no photorealism. No people, no words, no logos, no branding. Keep the left third softly foggy for HTML title overlay, no rendered typography. The bridge is the unmistakable hero.",
+    "seed": 52003,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/golden-gate-title.png"
+  },
+  {
+    "name": "round-closed",
+    "prompt": "Wide original celebratory videogame achievement splash illustration. San Francisco startup funding round celebration as a graphic still life: a gold five-point star trophy, stack of anonymous term-sheet papers with abstract lines and no readable writing, a plain cream coffee cup, an unbranded laptop with a simple rising bar chart, all on a dark teal desk. Through the window a stylized unmistakable San Francisco skyline with the pointed Transamerica Pyramid, Coit Tower and an orange Golden Gate suspension span under golden sunbeams and Karl the Fog. 2004 PlayStation 2 Grand Theft Auto San Andreas illustrated loading art, bold black ink outlines, angular cel-shaded forms, flat limited ochre, cream, dark teal and terracotta palette. No people, no real brand marks, no logos, no readable words or numbers, no confetti clutter. Leave center-left dark and quiet for an HTML achievement title. Classy playful mission-success mood.",
+    "seed": 52004,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/round-closed.png"
+  },
+  {
+    "name": "ferry-title-b",
+    "prompt": "A bold flat vector comic illustration with thick BLACK OUTLINES, exactly 8 flat colors, no textures, no gradients, no photographic detail. Wide 16:9 video game loading art from the 2004 GTA San Andreas era. Scene: San Francisco Ferry Building viewed frontally from Embarcadero plaza. Iconic cream slender clock tower with four-sided clock face, stepped narrow terracotta pyramidal roof, long TWO STOREY cream arcaded market terminal on BOTH SIDES, rows of arched windows. Thick graphic black outlines around every architectural shape. Simple teal bay and pale lavender fog, palm tree silhouettes, golden ochre pavement. Strong graphic shapes and cel shading. Composition positions clock tower at 65 percent of width, left third quiet dark teal for later HTML title. EMPTY PLAZA. NO CARS, NO VEHICLES, NO PEOPLE, NO WORDS, NO LETTERS, NO LOGOS, NO BRAND MARKS, NO SIGNATURE, NO WATERMARK. Professional graphic novel title card, stylized ink drawing, NOT a photo.",
+    "seed": 52101,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/ferry-title-b.png"
+  },
+  {
+    "name": "lombard-title-b",
+    "prompt": "Flat graphic novel ink drawing with thick BLACK OUTLINES and exactly 8 flat cel-shaded colors. Wide 16:9 loading art for a 2004 PlayStation 2 open-world videogame. San Francisco Lombard Street viewed from the TOP looking sharply DOWNHILL: the whole red-brick roadway zigzags left and right in EIGHT tight short repeated HAIRPIN SWITCHBACKS through simple rounded dark-green hedge islands. Rows of pastel Victorian bay-window houses flank both sides. Blue-green San Francisco Bay appears far below, tiny Coit Tower on a distant hill. Exaggerated steep hill perspective, compressed tight zigzag road. Warm ochre light, cream and terracotta houses, teal foliage, lavender fog. GTA San Andreas cover-art inspired comic illustration, poster-like geometry, hand-inked black contours. EMPTY ROAD. No cars, no people, no street signs, no lettering, no words, no logos, no signature, no watermark. Absolutely not photographic, no realistic textures. Simple screen-printed comic landscape.",
+    "seed": 52102,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/lombard-title-b.png"
+  },
+  {
+    "name": "ferry-comic",
+    "prompt": "An INKED COMIC BOOK game loading screen. In the right foreground an ORIGINAL FICTIONAL young adult startup courier seen in a graphic black silhouette, wearing a plain unbranded mustard hoodie, backpack strap and holding a takeaway coffee, face entirely in dark shadow. The real San Francisco Ferry Building cream clock tower rises clearly behind the courier at center, recognizable stepped narrow terracotta roof and clock, long low arched market building along the waterfront. The ENTIRE Ferry Building facade, its arcade arches, every window and every storefront are COMPLETELY BLANK walls with absolutely NO text, NO letters, NO words, NO numbers, NO signage, NO store names and NO lettering anywhere on the building. Thick palm silhouettes and cable-car tracks. Dynamic low angle, warm hazy afternoon. Large flat dark turquoise shape in left third for later HTML title. No vehicles.  Heavy BLACK INK OUTLINES around every shape. Comic-book crosshatching and HALFTONE DOT screentone shadows. Saturated limited palette of burnt orange, mustard yellow, turquoise, dark violet, cream and black. Flat angular two-tone cel shading. A rough 2004 Grand Theft Auto San Andreas loading-screen/comic-cover aesthetic, gritty playful ink illustration. NOT photorealistic, NOT clean vector poster, NOT a travel poster. No real persons, no celebrity likeness, no logos, no writing, no signature, no brand marks. Wide 16:9.",
+    "seed": 52201,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/ferry-comic.png"
+  },
+  {
+    "name": "lombard-comic",
+    "prompt": "An INKED COMIC BOOK video game loading illustration. In the bottom-right foreground the back-view black silhouette of an ORIGINAL FICTIONAL adult woman with short hair and a plain violet jacket, holding a skateboard at her side, looking down a steep San Francisco hill. The unmistakable red-brick Lombard Street twists in EIGHT very tight short zigzag hairpin turns through rounded green hedge islands, flanked by crowded pastel Victorian bay-window houses. Blue-green bay and small Coit Tower visible far downhill. Strong steep perspective and exaggerated comic composition. Foreground figure occupies only a quarter of image; crooked street is clear hero. No vehicles or signs.  Heavy BLACK INK OUTLINES around every shape. Comic-book crosshatching and HALFTONE DOT screentone shadows. Saturated limited palette of burnt orange, mustard yellow, turquoise, dark violet, cream and black. Flat angular two-tone cel shading. A rough 2004 Grand Theft Auto San Andreas loading-screen/comic-cover aesthetic, gritty playful ink illustration. NOT photorealistic, NOT clean vector poster, NOT a travel poster. No real persons, no celebrity likeness, no logos, no writing, no signature, no brand marks. Wide 16:9.",
+    "seed": 52202,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/lombard-comic.png"
+  },
+  {
+    "name": "golden-gate-comic",
+    "prompt": "An INKED COMIC BOOK video game loading illustration. A bold black silhouette of an ORIGINAL FICTIONAL adult hacker in a plain orange jacket and backpack on the right foreground cliff, three-quarter back view, face completely shadowed, looking toward the real Golden Gate Bridge. The recognizable International Orange Art Deco bridge towers with rectangular portals, sweeping suspension cables and the road deck cross the left two-thirds over teal bay water toward dark Marin hills. Karl the Fog drawn as chunky cream ribbons curls through the bridge. Saturated orange sunset, dramatic diagonal composition, rough energetic inking and halftone-dot shadows on clothes and hills. Left lower third quiet dark teal for later HTML title. No vehicles.  Heavy BLACK INK OUTLINES around every shape. Comic-book crosshatching and HALFTONE DOT screentone shadows. Saturated limited palette of burnt orange, mustard yellow, turquoise, dark violet, cream and black. Flat angular two-tone cel shading. A rough 2004 Grand Theft Auto San Andreas loading-screen/comic-cover aesthetic, gritty playful ink illustration. NOT photorealistic, NOT clean vector poster, NOT a travel poster. No real persons, no celebrity likeness, no logos, no writing, no signature, no brand marks. Wide 16:9.",
+    "seed": 52203,
+    "width": 1024,
+    "height": 576,
+    "output": "web/public/art/loading/golden-gate-comic.png"
+  }
+]

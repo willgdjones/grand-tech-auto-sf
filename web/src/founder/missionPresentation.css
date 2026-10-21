@@ -1,0 +1,64 @@
+/* GTA-style mission presentation (flag missionPresentation): title slab, objective line, PASSED/FAILED band.
+   Every surface is pointer-events:none. Fonts/colours follow the race HUD + quest card (Haettenschweiler gold). */
+.gt-mission-slab[hidden], .gt-mission-line[hidden], .gt-mission-band[hidden] { display: none; }
+
+/* Job start: bottom-right, like GTA V's mission title. Slides in from the right. */
+.gt-mission-slab {
+  position: fixed; right: 28px; bottom: 210px; z-index: 39; /* above the objective line's band (review LOW: the blurb ran into its chip) */ pointer-events: none; text-align: right; max-width: min(46vw, 520px);
+  opacity: 0; transform: translateX(28px); transition: opacity .35s ease-out, transform .45s cubic-bezier(.2, .8, .2, 1);
+}
+.gt-mission-slab.is-in { opacity: 1; transform: none; }
+/* Critic N2 (desktop/14-job-started): the slab printed over HOLD V TO TALK at the bottom right. The title plays alone for its
+   few seconds — the talk button (and its status line) stand aside; V still works. Phones centre the slab, so no clash. */
+@media not (pointer: coarse) {
+  body:has(.gt-mission-slab:not([hidden])) :is(.gt-voice-ptt, .gt-voice-status) { visibility: hidden; }
+}
+.gt-mission-slab-kicker { font: 900 13px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .18em; color: #f6edda; text-shadow: 0 2px 6px #000c; }
+.gt-mission-slab-title {
+  font: 900 clamp(30px, 4.2vw, 46px)/1 Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .03em; text-transform: uppercase;
+  color: #f0b429; text-shadow: 0 0 18px #000, 3px 3px 0 #10221a; margin-top: 2px;
+}
+.gt-mission-slab-blurb { margin-top: 6px; font: 700 14px/1.35 Arial, sans-serif; color: #f6edda; text-shadow: 0 1px 4px #000d; }
+
+/* Current objective: the mission-text spot. Desktop: bottom-centre, above the key legend. */
+.gt-mission-line {
+  position: fixed; left: 50%; bottom: 136px; transform: translateX(-50%); z-index: 37; pointer-events: none; /* clear of the 'E · …' interaction prompt */
+  text-align: center; width: max-content; max-width: calc(100vw - 32px);
+  background: #0000009e; border: 1px solid #f0b42966; border-radius: 10px; padding: 6px 16px 7px;
+}
+.gt-mission-line-mission { font: 900 11px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #f0b429; }
+.gt-mission-line-text { font: 700 15px/1.3 Arial, sans-serif; color: #f6edda; white-space: normal; }
+
+/* Result band: full-width dark band across the middle, big word, title, reward count-up. */
+.gt-mission-band {
+  position: fixed; left: 0; right: 0; top: 50%; transform: translateY(-50%) scaleY(.6); z-index: 44; pointer-events: none;
+  padding: 22px 16px 24px; text-align: center; background: linear-gradient(90deg, #0000 0%, #000000d9 18%, #000000d9 82%, #0000 100%);
+  opacity: 0; transition: opacity .25s ease-out, transform .35s cubic-bezier(.2, .9, .2, 1);
+}
+.gt-mission-band.is-in { opacity: 1; transform: translateY(-50%) scaleY(1); }
+.gt-mission-band-word {
+  font: 900 clamp(44px, 9vw, 92px)/1 Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .04em;
+  text-shadow: 0 0 24px #000, 4px 4px 0 #10221a;
+}
+.gt-mission-band.is-passed .gt-mission-band-word { color: #f0b429; }
+.gt-mission-band.is-failed .gt-mission-band-word { color: #d9442f; }
+.gt-mission-band-title { margin-top: 6px; font: 900 18px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #f6edda; text-shadow: 0 2px 6px #000; }
+.gt-mission-band-reward { margin-top: 10px; min-height: 1.2em; font: 900 clamp(26px, 4.4vw, 40px)/1.1 'Arial Black', Arial, sans-serif; color: #5ad17a; text-shadow: 0 0 16px #000, 2px 2px 0 #0a1f12; }
+.gt-mission-band.is-failed .gt-mission-band-reward { color: #f6edda; font: 700 15px Arial, sans-serif; }
+
+@media (pointer: coarse) {
+  /* Phone: the title slab sits centred above the touch controls; the objective line takes the mission-text spot above the
+     minimap (its box reaches ~370 px from the bottom on a 393x873 phone). */
+  /* Above the local player's nameplate (mid-screen) and below the top-right HUD. */
+  .gt-mission-slab { right: auto; left: 50%; bottom: 62vh; transform: translate(-50%, 14px); text-align: center; max-width: calc(100vw - 32px); }
+  .gt-mission-slab.is-in { transform: translate(-50%, 0); }
+  .gt-mission-slab-title { font-size: clamp(28px, 9vw, 40px); }
+  .gt-mission-line { bottom: 322px; padding: 5px 12px 6px; }
+  .gt-mission-line-text { font-size: 13px; }
+  .gt-mission-band { padding: 16px 12px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gt-mission-slab, .gt-mission-band { transition: none; transform: none; }
+  .gt-mission-slab.is-in { transform: none; }
+  .gt-mission-band, .gt-mission-band.is-in { transform: translateY(-50%); }
+}

@@ -1,0 +1,183 @@
+[
+  {
+    "path": "vehicles/prius.glb",
+    "bytes": 30708,
+    "sha256": "acdcb3dba9d436eead9610f3ae61c5cb0a97266177f614398dfb797acb7f39de",
+    "source": "kenney/Models/GLB format/hatchback-sports.glb",
+    "sourceSha256": "bd5c9d4c3b4bdd254a66b8426563a68b1487ae7a5076df3a2488e6ffed7be64f",
+    "bounds": {
+      "min": [
+        -0.88,
+        5.551115123125783e-17,
+        -2.27
+      ],
+      "max": [
+        0.88,
+        1.4700000000000002,
+        2.27
+      ]
+    },
+    "animations": [],
+    "skins": 0,
+    "triangles": 1424
+  },
+  {
+    "path": "vehicles/model3.glb",
+    "bytes": 29672,
+    "sha256": "9e5f2a394614e2cc570e543f68431b2f90559e3615c84dae27e33e36a4d26fd8",
+    "source": "kenney/Models/GLB format/sedan.glb",
+    "sourceSha256": "b532ea7d2c59f7f6b22b138cf1955218a2c1898f1cea932af4d3fd563c3959b7",
+    "bounds": {
+      "min": [
+        -0.925,
+        0,
+        -2.345
+      ],
+      "max": [
+        0.925,
+        1.44,
+        2.345
+      ]
+    },
+    "animations": [],
+    "skins": 0,
+    "triangles": 1368
+  },
+  {
+    "path": "vehicles/outback.glb",
+    "bytes": 31428,
+    "sha256": "2faa7df62fecc1cb61ede56dad803ad584142aa2f3aeac71de2d63dc1ab82310",
+    "source": "kenney/Models/GLB format/suv-luxury.glb",
+    "sourceSha256": "9e2a79dc050189d4555a88d2e9da0f30ff946ba74f1d43b5b3bda3c193d1f7d7",
+    "bounds": {
+      "min": [
+        -0.935,
+        0,
+        -2.41
+      ],
+      "max": [
+        0.935,
+        1.7399999991059303,
+        2.41
+      ]
+    },
+    "animations": [],
+    "skins": 0,
+    "triangles": 1434
+  },
+  {
+    "path": "vehicles/muni-bus.glb",
+    "bytes": 28476,
+    "sha256": "547fab4ae90204c67e8c45e02c819e57c0c7e354f890fa24c8f5e35010f7c521",
+    "source": "kenney/Models/GLB format/van.glb",
+    "sourceSha256": "ed4ed56e8e5ed98db050af09ed2062b3b6bb7b93eab1e563cb6774b387b233a1",
+    "bounds": {
+      "min": [
+        -1.3075000008940696,
+        5.551115123125783e-17,
+        -5.989999999552965
+      ],
+      "max": [
+        1.335000000372529,
+        3.2299999994039537,
+        6.0050000003725295
+      ]
+    },
+    "animations": [],
+    "skins": 0,
+    "triangles": 784
+  },
+  {
+    "path": "vehicles/robotaxi.glb",
+    "bytes": 36212,
+    "sha256": "6b35324fa1ea64eebc7e6fd891426b1261a259bc9971943abc1120a3b2424228",
+    "source": "kenney/Models/GLB format/suv-luxury.glb",
+    "sourceSha256": "9e2a79dc050189d4555a88d2e9da0f30ff946ba74f1d43b5b3bda3c193d1f7d7",
+    "bounds": {
+      "min": [
+        -1.0350000017881393,
+        5.551115123125783e-17,
+        -2.4
+      ],
+      "max": [
+        1.0350000017881393,
+        2.0650000008940697,
+        2.4
+      ]
+    },
+    "animations": [],
+    "skins": 0,
+    "triangles": 1554
+  },
+  {
+    "path": "vehicles/vc-supercar.glb",
+    "bytes": 30296,
+    "sha256": "0cd7035c1977a89efbbaae1717fed4fcb3b738295e79a690eac1e0fa27b9e359",
+    "source": "kenney/Models/GLB format/race-future.glb",
+    "sourceSha256": "869e2a58d2c12de474e824aff137334491b8f234b97127cf23f1ea04e42deec6",
+    "bounds": {
+      "min": [
+        -1.25,
+        5.551115123125783e-17,
+        -2.4
+      ],
+      "max": [
+        1.25,
+        1.5399999986588955,
+        2.4
+      ]
+    },
+    "animations": [],
+    "skins": 0,
+    "triangles": 1428
+  },
+  {
+    "path": "vehicles/powell-cable-car.glb",
+    "bytes": 22484,
+    "sha256": "d614ac2bffa8ebd83994923d35d13582377666ecd1e96c3434c19cecdef05c51",
+    "source": "train/Models/GLB format/train-tram-classic.glb",
+    "sourceSha256": "2f64db140f523985f29714c6b4e5844b15a0c789b2d486963d7eba3f9b1ac194",
+    "bounds": {
+      "min": [
+        -1.4559999964237214,
+        0,
+        -4.224999904632568
+      ],
+      "max": [
+        1.4559999964237214,
+        3.3599999994039536,
+        4.224999904632568
+      ]
+    },
+    "animations": [],
+    "skins": 0,
+    "triangles": 448
+  },
+  {
+    "path": "avatars/hoodie.glb",
+    "bytes": 534784,
+    "sha256": "542ebc8d34aa13c808f754ef2178382f156d93fd17166dd26624725f418d35be",
+    "source": "hoodie.glb",
+    "sourceSha256": "0de1bcd789d409214cf82f66f61daeb53d2f7de6d914b23e7b3660bfb3dee61e",
+    "bounds": {
+      "min": [
+        -0.7838232073702961,
+        0,
+        -0.17675599343077164
+      ],
+      "max": [
+        0.7838232073702961,
+        1.75,
+        0.1767559934307716
+      ]
+    },
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ],
+    "skins": 4,
+    "triangles": 6206
+  }
+]

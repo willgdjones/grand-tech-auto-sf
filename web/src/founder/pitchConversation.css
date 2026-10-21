@@ -1,0 +1,46 @@
+/* In-world pitch conversation (flag actionOpening): GTA-style subtitles + numbered replies, bottom-centre. */
+.gt-convo {
+  position: fixed; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 44;
+  width: min(720px, calc(100vw - 32px)); text-align: center; pointer-events: none;
+  font: 600 16px/1.35 Arial, sans-serif; color: #fff; text-shadow: 0 2px 4px #000, 0 0 12px #000a;
+}
+.gt-convo[hidden], .gt-convo-cheque[hidden], .gt-convo-choices[hidden] { display: none; }
+/* Critic N8: the phone's floating mic + 🎨 buttons sat on top of the choices — they stand aside while a conversation is open. */
+body.gt-convo-open :is(.gt-voice-ptt, .gt-voice-pill, .gt-voice-status, #mayhem-fire, #mayhem-item) { display: none !important; }
+/* The conversation owns the mission-text spot while it runs (subtitles replace the objective, as in GTA): on phones the
+   two sat 8 px apart and overlapped. The objective line comes back when the conversation closes. */
+body.gt-convo-open .gt-mission-line { display: none !important; }
+.gt-convo-who { font: 900 14px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .08em; color: #f0b429; text-transform: uppercase; }
+.gt-convo-line { margin: 4px 0 10px; font-size: 19px; }
+.gt-convo-choices { display: flex; flex-direction: column; gap: 6px; align-items: center; pointer-events: auto; }
+.gt-convo-choice {
+  display: flex; align-items: center; gap: 10px; max-width: 100%; text-align: left; cursor: pointer;
+  background: #0c1813d9; color: #f6edda; border: 1px solid #f0b42966; border-radius: 10px; padding: 8px 14px;
+  font: 600 15px/1.3 Arial, sans-serif; text-shadow: none;
+  text-transform: none; letter-spacing: normal; min-height: 0; /* the game's global button style is all-caps + tall */
+}
+/* Beat the touch HUD's SA button skin (all-caps Impact) — scoped to this component only. */
+.gt-convo .gt-convo-choice { font-family: Arial, sans-serif !important; text-transform: none !important; font-weight: 600 !important; letter-spacing: normal !important; }
+.gt-convo-choice:hover, .gt-convo-choice:focus-visible { border-color: #f0b429; outline: none; }
+.gt-convo-key { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: #f0b429; color: #0c1813; font: 900 13px Arial, sans-serif; }
+.gt-convo-cheque {
+  margin-top: 8px; font: 900 44px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .03em;
+  color: #6fe08a; text-shadow: 0 3px 0 #0c1813, 0 0 18px #000;
+}
+@media (pointer: coarse) {
+  .gt-convo { bottom: 330px; font-size: 13px; } /* above the minimap + joystick */
+  .gt-convo-line { font-size: 15px; margin: 2px 0 8px; }
+  .gt-convo-choices { gap: 5px; }
+  .gt-convo-choice { font-size: 12.5px; line-height: 1.25; padding: 6px 10px; gap: 8px; }
+  .gt-convo-key { width: 19px; height: 19px; font-size: 12px; }
+  .gt-convo-cheque { font-size: 34px; }
+}
+/* While the partner is talking, other bottom-centre pills (street-race host, interaction prompt) stand aside. */
+body.gt-convo-open :is(.gt-race-host, #prompt, .gt-mission-line) { display: none !important; }
+/* A panel the player opened on top (jobs phone, a modal dialog) owns the screen: the waiting conversation steps aside
+   so its reply buttons never sit over the panel's buttons, and comes back when the panel closes. The weapon wheel too:
+   hidden, the conversation's key handler stands down, so Esc closes the wheel and 1-3 pick weapons, not pitch lines. */
+body:has(.gt-mission-phone:not([hidden]), dialog[open], .gt-weapon-wheel:not([hidden])) .gt-convo { display: none; }
+/* critic N7: while the partner is talking, the quest card's 'walk over and press E' would contradict the conversation:
+   the conversation IS the objective, so the card steps aside until it closes. */
+body.gt-convo-open .gt-founder-quest { display: none !important; }

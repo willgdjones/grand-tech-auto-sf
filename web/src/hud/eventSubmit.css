@@ -1,0 +1,76 @@
+/* Paste-a-link event submission dialog + launcher — San Andreas HUD theme (gtasf-v2-sa-hud-theme).
+   Flat black SA pause-menu panel (square corners), gold outlined display title, plain-sans
+   black-outline body; no rounded corners, no soft shadows, no serif/italic. Tokens from theme/saTheme.css
+   (globally imported in main.ts; inline fallbacks keep this correct in isolation). Reference: drops/banner.css. */
+.gt-eventsubmit {
+  box-sizing: border-box; width: min(460px, calc(100vw - 24px)); max-height: min(82dvh, 620px); padding: 22px;
+  border: 2px solid var(--sa-panel-edge, #000); border-radius: 0; color: #fff;
+  background: var(--sa-panel-bg-strong, rgba(0, 0, 0, 0.82));
+  font: 15px/1.5 var(--sa-sans, Arial, Helvetica, sans-serif); overflow: auto; box-shadow: none;
+}
+.gt-eventsubmit::backdrop { background: rgba(0, 0, 0, 0.72); }
+.gt-eventsubmit-eyebrow {
+  margin: 0 0 4px; letter-spacing: .18em; font-size: 12px; font-weight: 700; text-transform: uppercase;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 1.2px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-eventsubmit h2 {
+  margin: 0; font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif); font-weight: 900;
+  text-transform: uppercase; letter-spacing: .02em; font-size: 28px; line-height: 1.05;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 3px var(--sa-ink, #000); paint-order: stroke fill; text-shadow: none;
+}
+.gt-eventsubmit-blurb {
+  margin: 10px 0 0; font-size: 14px; color: #fff;
+  -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+
+.gt-eventsubmit-form { margin: 18px 0 0; display: flex; gap: 10px; flex-wrap: wrap; }
+.gt-eventsubmit-input {
+  flex: 1 1 220px; min-height: 42px; box-sizing: border-box; padding: 9px 12px;
+  border: 2px solid var(--sa-panel-edge, #000); border-radius: 0;
+  background: rgba(0, 0, 0, 0.45); color: #fff; font: 15px var(--sa-sans, Arial, Helvetica, sans-serif);
+}
+.gt-eventsubmit-input::placeholder { color: #b7b7b7; }
+.gt-eventsubmit-input:focus-visible { outline: 2px solid var(--sa-title-gold, #f6a81e); outline-offset: 1px; border-color: var(--sa-title-gold, #f6a81e); }
+.gt-eventsubmit-input:disabled { opacity: .6; }
+
+.gt-eventsubmit-add {
+  min-height: 42px; padding: 9px 20px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  color: var(--sa-ink, #000); background: var(--sa-title-gold, #f6a81e); font-weight: 900; text-transform: uppercase;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif); letter-spacing: .03em; font-size: 16px; cursor: pointer;
+}
+.gt-eventsubmit-add:hover { background: var(--sa-gold, #f0b429); }
+.gt-eventsubmit-add:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.gt-eventsubmit-add:disabled { cursor: progress; opacity: .7; }
+
+.gt-eventsubmit-status {
+  margin: 12px 0 0; min-height: 1.4em; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; color: #fff;
+  -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-eventsubmit-status[data-tone="working"] { color: var(--sa-title-gold, #f6a81e); }
+.gt-eventsubmit-status[data-tone="ok"] { color: var(--sa-money-green, #345f27); }
+.gt-eventsubmit-status[data-tone="error"] { color: var(--sa-money-red, #a2191c); }
+
+.gt-eventsubmit-foot {
+  margin: 14px 0 0; font-size: 12px; color: #d7d7d7;
+  -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-eventsubmit-close {
+  margin: 18px 0 0; min-height: 38px; padding: 7px 16px; border: 2px solid var(--sa-panel-edge, #000); border-radius: 0;
+  color: #fff; background: transparent; font: 700 14px var(--sa-sans, Arial, Helvetica, sans-serif); text-transform: uppercase; cursor: pointer;
+}
+.gt-eventsubmit-close:hover { background: rgba(255, 255, 255, 0.12); }
+.gt-eventsubmit-close:focus-visible { outline: 2px solid var(--sa-title-gold, #f6a81e); outline-offset: 2px; }
+
+.gt-eventsubmit-open {
+  min-height: 40px; padding: 8px 16px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  color: var(--sa-ink, #000); background: var(--sa-title-gold, #f6a81e); font-weight: 900; text-transform: uppercase;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif); letter-spacing: .03em; font-size: 14px; cursor: pointer;
+}
+.gt-eventsubmit-open:hover { background: var(--sa-gold, #f0b429); }
+.gt-eventsubmit-open:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+@media (max-width: 700px) {
+  .gt-eventsubmit { padding: 18px; }
+  .gt-eventsubmit h2 { font-size: 24px; }
+  .gt-eventsubmit-add { flex: 1 1 100%; }
+}

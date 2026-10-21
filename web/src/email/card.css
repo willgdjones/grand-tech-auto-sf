@@ -1,0 +1,65 @@
+/* Email-capture SA card (emailCapture, gtasf-1aon). Square-cornered, ink-bordered SA modal using the
+   shared saTheme.css tokens, matching the recovery dialog. Its own gt-email-* namespace so it carries no
+   dependency on the recovery panel's CSS. */
+.gt-email {
+  border: 2px solid var(--sa-panel-edge, #000);
+  border-radius: 0;
+  background: var(--sa-panel-bg-strong, rgba(0, 0, 0, 0.82));
+  color: var(--sa-menu-white, #fff);
+  max-width: 420px;
+  width: calc(100vw - 32px);
+  padding: 0;
+  font-family: var(--sa-sans, Arial, Helvetica, sans-serif);
+}
+.gt-email [hidden] { display: none; }
+.gt-email::backdrop { background: rgba(0, 0, 0, 0.55); }
+.gt-email-close {
+  position: absolute; top: 8px; right: 8px;
+  border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  background: var(--sa-panel-bg, rgba(0, 0, 0, 0.62)); color: var(--sa-menu-white, #fff);
+  font-weight: 700; padding: 5px 9px; cursor: pointer;
+}
+.gt-email-body { padding: 22px 24px; position: relative; }
+.gt-email-kicker { font-size: 11px; font-weight: 800; letter-spacing: .14em; color: var(--sa-title-gold, #f6a81e); text-transform: uppercase; }
+.gt-email-title {
+  margin: 8px 0 8px; font-size: 26px; line-height: 1.06;
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif);
+  text-transform: uppercase; color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-email-blurb { margin: 0 0 14px; font-size: 14px; line-height: 1.45; color: #dfe8e2; }
+.gt-email-input {
+  width: 100%; box-sizing: border-box; padding: 11px 12px; margin-bottom: 12px;
+  border: 2px solid var(--sa-ink, #000); border-radius: 0; background: rgba(0, 0, 0, 0.55);
+  color: #fff; font: 16px var(--sa-sans, Arial, sans-serif);
+}
+.gt-email-code { letter-spacing: .3em; text-align: center; font-weight: 800; }
+.gt-email-actions { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+.gt-email-primary {
+  padding: 12px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  background: var(--sa-title-gold, #f6a81e); color: #10281e; font-weight: 900; cursor: pointer;
+}
+.gt-email-secondary {
+  padding: 12px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  background: var(--sa-panel-bg, rgba(0, 0, 0, 0.62)); color: var(--sa-menu-white, #fff); font-weight: 800; cursor: pointer;
+}
+.gt-email-primary:disabled, .gt-email-secondary:disabled { opacity: .55; cursor: wait; }
+.gt-email-consent { margin: 12px 0 0; font-size: 11px; line-height: 1.4; color: #8aa093; }
+.gt-email-status { margin: 12px 0 0; font-size: 13px; font-weight: 700; }
+.gt-email-status[data-tone="error"] { color: var(--sa-money-red, #e0564f); }
+.gt-email-status[data-tone="ok"] { color: var(--sa-title-gold, #f6a81e); }
+.gt-email-status[data-tone="working"] { color: #b7c4bc; }
+.gt-email-reward {
+  margin-top: 12px; padding: 12px; border: 2px solid var(--sa-ink, #000);
+  background: #06130d; text-align: center;
+}
+.gt-email-reward-tick { font-size: 18px; font-weight: 900; color: var(--sa-title-gold, #f6a81e); }
+.gt-email-reward-cheque { font-size: 15px; font-weight: 800; color: var(--sa-money-green, #4a8f33); margin-top: 4px; }
+
+/* Inline (non-modal) variant: 'Enter your email to talk' (proximityVoice). Anchored bottom-right above the thumb
+   controls so it is usable one-handed; no backdrop, play continues behind it. */
+.gt-email.gt-email-inline { position: fixed; inset: auto 12px calc(var(--gt-touch-actions-height, 0px) + 12px) auto; margin: 0;
+  max-width: 340px; width: calc(100vw - 24px); z-index: 45; }
+.gt-email.gt-email-inline .gt-email-blurb { font-size: 14px; }
+.gt-email.gt-email-inline input { font-size: 18px; min-height: 44px; }
+.gt-email.gt-email-inline button { min-height: 44px; }

@@ -1,0 +1,32 @@
+/** Short model smoke; actual boarding and ride acceptance belongs to the running game. */
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { Box3, LOD, Mesh, Vector3 } from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { createVehicleTemplate } from '../web/src/vehicles/models/vehicle';
+
+const bytes = await readFile(new URL('../web/public/assets/vehicles/robotaxi.glb', import.meta.url));
+const gltf = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).parseAsync(Uint8Array.from(bytes).buffer, '');
+const template = createVehicleTemplate('robotaxi', gltf);
+const a = template.createInstance(), b = template.createInstance();
+a.root.position.set(-1041.863, 85.954, -1975.201);
+const initial = b.root.getObjectByName('lidar')!.rotation.y;
+a.update(.1, 3, .2);
+assert.notEqual(a.root.getObjectByName('lidar')!.rotation.y, initial);
+assert.equal(b.root.getObjectByName('lidar')!.rotation.y, initial);
+assert.equal(template.budget.farDraws, 1);
+const lod = a.root.children.find(child => child instanceof LOD) as LOD;
+a.root.updateMatrixWorld(true);
+const bounds = new Box3().setFromObject(lod.levels[0]!.object);
+const seat = a.seat.getWorldPosition(new Vector3());
+assert.ok(bounds.containsPoint(seat), 'Seat origin must stay inside the car body');
+const far = lod.levels[1]!.object as Mesh;
+assert.ok(far.geometry.boundingSphere!.radius > 2);
+assert.ok(far.geometry.boundingSphere!.radius < 5, 'Quantization compensation must preserve metres');
+const sharedGeometry = far.geometry;
+a.dispose();
+assert.equal(((b.root.children[0] as LOD).levels[1]!.object as Mesh).geometry, sharedGeometry);
+b.update(.1, -2);
+console.log(JSON.stringify({ kind: 'vehicle model smoke', assetBytes: bytes.length, budget: template.budget, seat: seat.toArray(), passed: true }));
+template.dispose();

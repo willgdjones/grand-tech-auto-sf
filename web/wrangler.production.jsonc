@@ -1,0 +1,42 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "gtasf",
+  "pages_build_output_dir": "./dist-production",
+  "compatibility_date": "2026-09-28",
+  "services": [
+    {
+      "binding": "API",
+      "service": "gtasf-production"
+    }
+  ],
+  "vars": {
+    "VITE_X_PIXEL_ID": "YOUR_X_PIXEL_ID",
+    "VITE_X_EVENT_PLAY_START": "YOUR_X_EVENT_ID",
+    "VITE_X_EVENT_OUTBID_PURCHASE": "YOUR_X_EVENT_ID",
+    "VITE_X_EVENT_AD_PURCHASE": "YOUR_X_EVENT_ID",
+    "VITE_POSTHOG_KEY": "YOUR_POSTHOG_KEY",
+    "VITE_POSTHOG_HOST": "https://eu.i.posthog.com",
+    "VITE_POSTHOG_PROJECT_ID": "292297",
+    "VITE_STRIPE_PUBLISHABLE_KEY": "YOUR_STRIPE_PUBLISHABLE_KEY"
+  },
+  "env": {
+    "preview": {
+      "services": [
+        {
+          "binding": "API",
+          "service": "gtasf-production"
+        }
+      ],
+      "vars": {
+        "VITE_X_PIXEL_ID": "YOUR_X_PIXEL_ID",
+        "VITE_X_EVENT_PLAY_START": "YOUR_X_EVENT_ID",
+        "VITE_X_EVENT_OUTBID_PURCHASE": "YOUR_X_EVENT_ID",
+        "VITE_X_EVENT_AD_PURCHASE": "YOUR_X_EVENT_ID",
+        "VITE_POSTHOG_KEY": "YOUR_POSTHOG_KEY",
+        "VITE_POSTHOG_HOST": "https://eu.i.posthog.com",
+        "VITE_POSTHOG_PROJECT_ID": "292297",
+        "VITE_STRIPE_PUBLISHABLE_KEY": "YOUR_STRIPE_PUBLISHABLE_KEY"
+      }
+    }
+  }
+}

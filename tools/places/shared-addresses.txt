@@ -1,0 +1,33 @@
+# Places sharing a building (multi-tenant towers, or stale Apollo HQ rows): founder skim.
+Anthropic | Slack
+Scale AI | Zynga
+Salesforce | MuleSoft | Apollo.io
+Lyft | Dignity Health
+Block | Square
+Meta San Francisco | Strava
+DoorDash | AppDynamics
+Okta | AppsFlyer
+Notion | Thinking Machines Lab
+Rippling | Intercom
+Affirm | Vercel | AppDirect
+Niantic | SHACK15
+Frontier Tower | Deel
+Wikimedia Foundation | Stitch Fix | OpenTable
+Upwork | MasterClass
+TechCrunch | Riverbed Technology | Demandbase
+Turing | Towards Data Science | Reddit, Inc. | OptimHire | Zapier | HackerOne | ALOIS Solutions | Grammarly | Abacus.AI | topmate.io | Judi Health
+Perplexity | Meltwater | Mindtickle
+Benefit Cosmetics | Handshake | Sunrun
+Motive | NerdWallet
+Gap Inc. | Banana Republic
+Miro | Gong
+The Linux Foundation | Node.js | Cloud Native Computing Foundation (CNCF)
+Talkdesk | Branch International | Eventbrite
+VentureBeat | IA Interior Architects | Omada Health
+Flexport | SpotOn
+Nium | Lime
+Akraya, Inc. | Mercury | Medallion
+Coalition, Inc. | data.ai (by Sensor Tower)
+Harvey | Tubi | Amplitude
+New Relic | Goodreads
+Cribl | Skai

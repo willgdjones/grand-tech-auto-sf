@@ -1,0 +1,15 @@
+/* "Buy this billboard" floating badges — San Andreas HUD theme (gtasf-v2-sa-restyle-tracker-ni5k;
+   shared module theme/saTheme.css). Flat SA gold tag, square corners, black edge + hard (blur-free)
+   drop, blocky uppercase text. Classes preserved (CSS-only). Tokens from theme/saTheme.css. */
+.gt-adslot-markers { position: fixed; inset: 0; pointer-events: none; z-index: 6; overflow: hidden; }
+.gt-adslot-badge {
+  position: absolute; transform: translate(-50%, -100%); pointer-events: auto; cursor: pointer;
+  padding: 4px 10px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  background: var(--sa-gold, #f0b429); color: var(--sa-ink, #000);
+  font: 900 11px/1.1 var(--sa-sans, Arial, sans-serif); white-space: nowrap;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.9); letter-spacing: .04em; text-transform: uppercase;
+}
+.gt-adslot-badge::after { content: ' 💲'; }
+.gt-adslot-badge:hover { background: var(--sa-title-gold, #f6a81e); }
+.gt-adslot-badge:focus-visible { outline: 2px solid var(--sa-menu-white, #fff); outline-offset: 2px; }
+.gt-adslot-badge[hidden] { display: none; }

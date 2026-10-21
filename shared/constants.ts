@@ -1,0 +1,27 @@
+// Shared runtime limits carried from BDTS; no sale curve or lobby.
+export const ATLAS_BYTES_PER_TEXEL = 4;
+export const ATLAS_FADE_MS = 150;
+export const ATLAS_LAYERS = Object.freeze({ high: 4, medium: 3, low: 2 } as const);
+export const ATLAS_PAGE_EDGE = 2_048;
+export const ATLAS_UPLOAD_BUDGET_BYTES_DESKTOP = 2_097_152;
+export const ATLAS_UPLOAD_BUDGET_BYTES_MOBILE = 786_432;
+export const CAM_MAX_OFFSET_M = 13;
+export const CLOCK_RTT_MAX_MS = 10_000;
+export const CLOCK_SLEW_MS_PER_S = 5;
+export const CLOCK_SNAP_THRESHOLD_MS = 250;
+export const CORRECTION_FREEZE_MS = 200;
+export const CORRECTION_LERP_MS = 100;
+export const EXTRAP_MAX_MS = 200;
+export const INTEREST_FAR_M = 120;
+export const INTEREST_NEAR_M = 40;
+export const INTERP_DELAY_BASE_MS = Object.freeze({ near: 120, mid: 260, far: 650 } as const);
+export const INTERP_DELAY_MAX_MS = 1_500;
+export const MASTER_MAX_PIXELS = 1_048_576;
+export const MAX_DECIMAL_DIGITS = 1_024;
+export const MAX_GRID = 255;
+export const PRESCREEN_MAX_TOKENS = 1_500;
+export const PRESCREEN_MODEL = 'anthropic/claude-haiku-4.5';
+export const PRESCREEN_PROMPT_VERSION = 'gtasf-ps-2026-10-02';
+export const SUPPORTED_ASPECT = Object.freeze({ min: 0.45, max: 2.4 } as const);
+export const SUPPORTED_VFOV_DEG = Object.freeze({ min: 50, max: 75 } as const);
+export const TICK_HZ = 10;

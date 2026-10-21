@@ -1,0 +1,30 @@
+.gt-nameplates { position: fixed; inset: 0; pointer-events: none; z-index: 7; overflow: hidden; }
+/* SA overhead nameplates (founder look review 2026-10-03): outlined SA text with NO box. The name
+ * sits just above the head and tracks the camera (projection in nameplates.ts, PLATE_HEIGHT_M).
+ * Readability comes from a hard black text outline like the in-world SA labels — no background,
+ * border, shadow box or width clip (the old max-width + overflow:hidden truncated "Bootstrapping"
+ * to "BOOTSTRA" and read as a floating strip). The startup name stacks over the meta line so neither
+ * is clipped. Structure/classes preserved for nameplates.ts + its tests. */
+.gt-nameplate {
+  position: absolute; box-sizing: border-box; margin: 0; width: max-content;
+  padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none;
+  color: var(--sa-menu-white); font: 700 13px/1.15 var(--sa-sans); text-align: center;
+  transform: translate(-50%, -100%); white-space: nowrap;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 2px 4px #000c;
+  pointer-events: auto; cursor: pointer;
+}
+.gt-nameplate:hover .gt-nameplate-label strong { color: #ffd84d; }
+.gt-nameplate:focus-visible { outline: 2px solid var(--sa-gold); outline-offset: 2px; }
+.gt-nameplate[hidden] { display: none; }
+/* Stack startup name over the meta line (was a single clipped inline strip). */
+.gt-nameplate-label { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.gt-nameplate-label strong {
+  font-weight: 800; font-size: 14px; color: var(--sa-gold); letter-spacing: .01em;
+  -webkit-text-stroke: var(--sa-outline-thin) var(--sa-ink); paint-order: stroke fill;
+}
+.gt-nameplate-meta { color: #eaf0e2; font-size: 11px; font-weight: 700; }
+.gt-nameplate-verified { display: inline-block; margin-inline-start: .25em; color: var(--sa-title-gold); font-weight: 900; }
+/* Top-10 raiser: brighter gold name + glow, still no box (crown + rank already distinguish it). */
+.gt-nameplate--top .gt-nameplate-label strong { color: #ffd34d; text-shadow: 0 0 8px #f6a81eaa; }
+.gt-nameplate-mic { color:#b1e377; margin-left:6px; font-size:16px; }
+.gt-nameplate-mic[hidden] { display:none; }

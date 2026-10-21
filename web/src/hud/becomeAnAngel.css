@@ -1,0 +1,73 @@
+/* SA restyle (gtasf-v2-sa-restyle-tracker-ni5k): flat black panel, square corners, SA tokens, gold
+ * display-font outlined title, no soft shadow. CSS-only — all classes/structure preserved for
+ * becomeAnAngel.ts. On-dark text uses readable light variants (the --sa-money-* tokens are tuned for
+ * light HUD backgrounds). */
+.gt-angel {
+  box-sizing: border-box; width: min(460px, calc(100vw - 24px)); max-height: min(86dvh, 720px); padding: 24px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: var(--sa-menu-white, #fff); background: var(--sa-panel-bg-strong, rgba(0,0,0,.82));
+  font: 15px/1.5 var(--sa-sans, Arial, Helvetica, sans-serif); overflow: auto; box-shadow: none;
+}
+.gt-angel::backdrop { background: rgba(0,0,0,.66); }
+.gt-angel-close {
+  float: right; min-height: 34px; padding: 4px 11px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: var(--sa-menu-white, #fff); background: rgba(0,0,0,.45); font-size: 13px; font-weight: 700; cursor: pointer;
+  -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-angel-close:hover { background: rgba(0,0,0,.65); color: var(--sa-menu-blue, #b2cef2); }
+.gt-angel-close:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 2px; }
+.gt-angel-eyebrow {
+  margin: 0 0 4px; letter-spacing: .18em; font-size: 12px; font-weight: 700; text-transform: uppercase;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-angel h2 {
+  margin: 0; font-size: 30px; line-height: 1.1; text-transform: uppercase; letter-spacing: .01em;
+  font-family: var(--sa-display, 'Arial Narrow Bold', 'Arial Narrow', Impact, sans-serif);
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 3px var(--sa-ink, #000); paint-order: stroke fill; text-shadow: none;
+}
+.gt-angel-desc { margin: 10px 0 0; font-size: 13px; color: #cfd6c6; }
+.gt-angel-price {
+  margin: 8px 0 0; font-size: 14px; font-weight: 700; color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-angel-form { margin: 16px 0 0; display: grid; gap: 12px; }
+.gt-angel-form label { display: grid; gap: 5px; font-size: 13px; color: #dce0d4; }
+.gt-angel-form input[type="text"],
+.gt-angel-form input:not([type]),
+.gt-angel-form textarea,
+.gt-angel-form select {
+  box-sizing: border-box; width: 100%; padding: 9px 10px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: var(--sa-menu-white, #fff); background: rgba(0,0,0,.45); font: inherit; resize: vertical;
+}
+.gt-angel-form input:focus-visible,
+.gt-angel-form textarea:focus-visible,
+.gt-angel-form select:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 1px; }
+.gt-angel-colour { flex-direction: row; grid-auto-flow: column; justify-content: start; align-items: center; gap: 8px; }
+.gt-angel-colour input[type="color"] { width: 42px; height: 28px; padding: 0; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0; background: none; }
+.gt-angel-status { margin: 0; min-height: 18px; font-size: 13px; color: #a9b3a0; }
+.gt-angel-status[data-kind="error"] { color: #f0a98a; }
+.gt-angel-status[data-kind="ok"] { color: #8fd27a; }
+.gt-angel-submit {
+  min-height: 44px; padding: 10px 20px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  color: var(--sa-ink, #000); background: var(--sa-gold, #f0b429); cursor: pointer;
+  font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .02em;
+}
+.gt-angel-submit:hover { background: #ffc746; }
+.gt-angel-submit:disabled { opacity: .55; cursor: default; }
+.gt-angel-submit:focus-visible { outline: 3px solid var(--sa-menu-white, #fff); outline-offset: 2px; }
+.gt-angel-mine-title {
+  margin: 20px 0 6px; font-size: 14px; font-weight: 700; color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-angel-mine { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.gt-angel-mine li { font-size: 13px; color: var(--sa-menu-white, #fff); }
+.gt-angel-mine-status { color: #a9b3a0; text-transform: capitalize; }
+.gt-angel-mine-count { color: var(--sa-title-gold, #f6a81e); }
+.gt-angel-remove {
+  margin-left: 8px; min-height: 26px; padding: 2px 9px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: #f0a98a; background: rgba(0,0,0,.45); font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.gt-angel-remove:hover { background: rgba(0,0,0,.65); }
+.gt-angel-remove:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 2px; }
+.gt-angel-mine-empty { margin: 0; font-size: 13px; color: #a9b3a0; }
+@media (max-width: 700px) { .gt-angel { padding: 18px; } .gt-angel h2 { font-size: 24px; } }

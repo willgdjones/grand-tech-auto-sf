@@ -1,0 +1,138 @@
+[
+  {
+    "id": "business-man",
+    "path": "avatars/business-man.glb",
+    "bytes": 537452,
+    "sha256": "64d8ec02f8a3acbe318fd20418dfb6a21515235e5613b128039e2c6bc9c74674",
+    "source": "https://poly.pizza/m/JFrLIKqvCH",
+    "sourceUrl": "https://static.poly.pizza/e599abbe-7d73-488c-9d7e-3ead281e705c.glb",
+    "sourceSha256": "82b81257c1e94cd9ee48cb1dcbe5ff506e81c9ce67cd0c5af542d8712dca546e",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  },
+  {
+    "id": "casual-man",
+    "path": "avatars/casual-man.glb",
+    "bytes": 519640,
+    "sha256": "72be01c73fb4101a13fd95278563e3b3c890dc5fe0c784134c8f5fe8c428f996",
+    "source": "https://poly.pizza/m/kZ3DmIoGip",
+    "sourceUrl": "https://static.poly.pizza/90a9e2d4-053f-42f1-99a2-8f5e1180ea7f.glb",
+    "sourceSha256": "fea7e71271203e7073f1a073fa1208de7402df276f87f80e149bf7589b5d46b4",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  },
+  {
+    "id": "beach-man",
+    "path": "avatars/beach-man.glb",
+    "bytes": 536796,
+    "sha256": "01dcfe3b5b6ffb081efc05224ac59f9a71a2d600c146027aff3cc21f39b9166e",
+    "source": "https://poly.pizza/m/DojKLcO34E",
+    "sourceUrl": "https://static.poly.pizza/f771a536-1c18-4a47-bb56-ceea4b603455.glb",
+    "sourceSha256": "67c366f8c1e9ba3d3767213bc8660579a4f8028ed647a33c53d05596e8dd888c",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  },
+  {
+    "id": "worker-man",
+    "path": "avatars/worker-man.glb",
+    "bytes": 514860,
+    "sha256": "9ccd5a44345c213d5efe8f521944d03c64ce039f1a11fa63d56cc424e8483f03",
+    "source": "https://poly.pizza/m/Yg2bQZO6Hj",
+    "sourceUrl": "https://static.poly.pizza/3a5f3056-ffe6-42eb-bd52-122afcbd22b2.glb",
+    "sourceSha256": "9c28614f465b7dc105f908c20c22fc045f4b07caf8c5ef0e9f8049eceb6dd38d",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  },
+  {
+    "id": "punk-man",
+    "path": "avatars/punk-man.glb",
+    "bytes": 519036,
+    "sha256": "edde841f2ef509b1cd5631d33a14fd3c8507b4bd68232d56210c97e53fc54696",
+    "source": "https://poly.pizza/m/BTALZymknF",
+    "sourceUrl": "https://static.poly.pizza/e56f23b5-3270-406f-8924-f77cad980c43.glb",
+    "sourceSha256": "94afa8718093cc7f9e51cdc0b35f4432c1c2f1901177f98fbbbcb4c6fd79b163",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  },
+  {
+    "id": "casual-woman",
+    "path": "avatars/casual-woman.glb",
+    "bytes": 546152,
+    "sha256": "7a564529fa78fa8e192715a9603555bc1b2f0c23402048f44a413bbdada9ec36",
+    "source": "https://poly.pizza/m/qJ2gsTUBHL",
+    "sourceUrl": "https://static.poly.pizza/ba7a1955-ea51-4cb9-a561-188bdef0a6c7.glb",
+    "sourceSha256": "a2212729826b718e59e698211ed3951c22459b48733b1ee6a24fac0abf74dca8",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  },
+  {
+    "id": "formal-woman",
+    "path": "avatars/formal-woman.glb",
+    "bytes": 539268,
+    "sha256": "7ea439baeca49dee3740bd735f5814ae7d702afc41fd2de0bc5726e6f2b6d82a",
+    "source": "https://poly.pizza/m/nIItLV9nxS",
+    "sourceUrl": "https://static.poly.pizza/46d6db5a-3c9f-4238-8cdf-8eb7194498dc.glb",
+    "sourceSha256": "a6522fe53d15de21130a957d1bf2b8a9a58d4e4e9a12af646645b667a9bb2d17",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  },
+  {
+    "id": "punk-woman",
+    "path": "avatars/punk-woman.glb",
+    "bytes": 544852,
+    "sha256": "90d429dd5197f5d1261ea6a43adff9c74a9516e4a508b31bad5b53672c54d149",
+    "source": "https://poly.pizza/m/djXoqejw6w",
+    "sourceUrl": "https://static.poly.pizza/1d368679-1d9a-4d5c-9095-877144b02d00.glb",
+    "sourceSha256": "77cbb6838bf207fc948848ddb389ea43d4bb30c52ec62c5a2fc84bbf35c88c52",
+    "license": "CC0-1.0",
+    "creator": "Quaternius",
+    "animations": [
+      "idle",
+      "run",
+      "walk",
+      "sit"
+    ]
+  }
+]

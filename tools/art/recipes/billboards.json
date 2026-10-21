@@ -1,0 +1,110 @@
+[
+  {
+    "name": "fog-compute",
+    "prompt": "Original satirical advertisement artwork for an unsold roadside billboard in a San Francisco early-2000s console open-world game. Wide 2:1 landscape composition fills the entire image edge to edge, no physical billboard frame or environment. A cream smiling cloud sitting on three chunky sage-green server cabinets, tiny orange status lights, flat turquoise background. Large exact headline \"FOG COMPUTE\" in heavy condensed block letters at top; exact smaller bold tagline \"CLOUD NATIVE. LITERALLY.\" along the bottom. Those are the ONLY words anywhere. Clear hierarchy, text inside safe 8 percent margins, illustration in center, limited muted teal/cream/mustard/terracotta palette, bold ink outlines, chunky hand-painted flat shaded shapes, mild worn print texture, readable at low resolution. Fictional startup parody; no real companies, no real logos, no realistic people, no watermark, no fine print, no website address, no three-dimensional product rendering.",
+    "seed": 71300,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/fog-compute-source.png"
+  },
+  {
+    "name": "agentic-toast",
+    "prompt": "Original satirical advertisement artwork for an unsold roadside billboard in a San Francisco early-2000s console open-world game. Wide 2:1 landscape composition fills the entire image edge to edge, no physical billboard frame or environment. One thick slice of golden toast with two simple jointed cream robot arms holding a butter knife and clipboard, dark navy background, mustard rays. Large exact headline \"AGENTIC TOAST\" in heavy condensed block letters at top; exact smaller bold tagline \"NOW WITH EXTRA AGENTS\" along the bottom. Those are the ONLY words anywhere. Clear hierarchy, text inside safe 8 percent margins, illustration in center, limited muted teal/cream/mustard/terracotta palette, bold ink outlines, chunky hand-painted flat shaded shapes, mild worn print texture, readable at low resolution. Fictional startup parody; no real companies, no real logos, no realistic people, no watermark, no fine print, no website address, no three-dimensional product rendering.",
+    "seed": 71301,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/agentic-toast-source.png"
+  },
+  {
+    "name": "cone-coin",
+    "prompt": "Original satirical advertisement artwork for an unsold roadside billboard in a San Francisco early-2000s console open-world game. Wide 2:1 landscape composition fills the entire image edge to edge, no physical billboard frame or environment. A single bright orange traffic cone on a large gold coin pedestal, simple pale teal city hills and geometric cream rays, no actual cryptocurrency symbols. Large exact headline \"CONE COIN\" in heavy condensed block letters at top; exact smaller bold tagline \"BACKED BY TRAFFIC CONES\" along the bottom. Those are the ONLY words anywhere. Clear hierarchy, text inside safe 8 percent margins, illustration in center, limited muted teal/cream/mustard/terracotta palette, bold ink outlines, chunky hand-painted flat shaded shapes, mild worn print texture, readable at low resolution. Fictional startup parody; no real companies, no real logos, no realistic people, no watermark, no fine print, no website address, no three-dimensional product rendering.",
+    "seed": 71302,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/cone-coin-source.png"
+  },
+  {
+    "name": "burnt-runway",
+    "prompt": "Original satirical advertisement artwork for an unsold roadside billboard in a San Francisco early-2000s console open-world game. Wide 2:1 landscape composition fills the entire image edge to edge, no physical billboard frame or environment. An orange paper airplane flying off the end of a tall stack of cream pitch-deck pages, warm charcoal and pale salmon background, small ember shapes. Large exact headline \"BURNT RUNWAY\" in heavy condensed block letters at top; exact smaller bold tagline \"LESS RUNWAY. MORE DECKS.\" along the bottom. Those are the ONLY words anywhere. Clear hierarchy, text inside safe 8 percent margins, illustration in center, limited muted teal/cream/mustard/terracotta palette, bold ink outlines, chunky hand-painted flat shaded shapes, mild worn print texture, readable at low resolution. Fictional startup parody; no real companies, no real logos, no realistic people, no watermark, no fine print, no website address, no three-dimensional product rendering.",
+    "seed": 71303,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/burnt-runway-source.png"
+  },
+  {
+    "name": "prompt-juice",
+    "prompt": "Original satirical advertisement artwork for an unsold roadside billboard in a San Francisco early-2000s console open-world game. Wide 2:1 landscape composition fills the entire image edge to edge, no physical billboard frame or environment. A chunky orange juice carton with a simple lightning-bolt icon, cable-shaped straw and two green citrus slices, cream and forest-green geometric backdrop. Large exact headline \"PROMPT JUICE\" in heavy condensed block letters at top; exact smaller bold tagline \"SQUEEZE MORE SYNERGY\" along the bottom. Those are the ONLY words anywhere. Clear hierarchy, text inside safe 8 percent margins, illustration in center, limited muted teal/cream/mustard/terracotta palette, bold ink outlines, chunky hand-painted flat shaded shapes, mild worn print texture, readable at low resolution. Fictional startup parody; no real companies, no real logos, no realistic people, no watermark, no fine print, no website address, no three-dimensional product rendering.",
+    "seed": 71304,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/prompt-juice-source.png"
+  },
+  {
+    "name": "series-sea",
+    "prompt": "Original satirical advertisement artwork for an unsold roadside billboard in a San Francisco early-2000s console open-world game. Wide 2:1 landscape composition fills the entire image edge to edge, no physical billboard frame or environment. A friendly stylized brown San Francisco sea lion wearing a plain navy sleeveless vest, balancing a golden fish on its nose, teal waves and cream sun disc. Large exact headline \"SERIES SEA\" in heavy condensed block letters at top; exact smaller bold tagline \"RAISE WITH THE TIDE\" along the bottom. Those are the ONLY words anywhere. Clear hierarchy, text inside safe 8 percent margins, illustration in center, limited muted teal/cream/mustard/terracotta palette, bold ink outlines, chunky hand-painted flat shaded shapes, mild worn print texture, readable at low resolution. Fictional startup parody; no real companies, no real logos, no realistic people, no watermark, no fine print, no website address, no three-dimensional product rendering.",
+    "seed": 71305,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/series-sea-source.png"
+  },
+  {
+    "name": "fog-compute-flat",
+    "prompt": "Flat 2D advertisement graphic design, horizontal 2:1 rectangle filled edge to edge by the design itself. A smiling cream cloud directly above three sage server cabinets, pure teal background. Exact large title \"FOG COMPUTE\" across the top. Exact bold short footer \"CLOUD NATIVE. LITERALLY.\" across the bottom. No other words. Limited cream, dark teal, rusty orange and mustard palette, thick black ink outlines, flat comic shading, bold playful geometric composition, slightly worn screenprint. Front view artwork only: completely flat with no perspective, no physical object, no frame, no stand, no surrounding scene, no road, no building, no landscape, no watermark. All text readable and inside generous margins.",
+    "seed": 71400,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/fog-compute-flat-source.png"
+  },
+  {
+    "name": "agentic-toast-flat",
+    "prompt": "Flat 2D advertisement graphic design, horizontal 2:1 rectangle filled edge to edge by the design itself. One orange toast mascot with two little robot arms holding a knife and clipboard, dark navy background. Exact large title \"AGENTIC TOAST\" across the top. Exact bold short footer \"NOW WITH EXTRA AGENTS\" across the bottom. No other words. Limited cream, dark teal, rusty orange and mustard palette, thick black ink outlines, flat comic shading, bold playful geometric composition, slightly worn screenprint. Front view artwork only: completely flat with no perspective, no physical object, no frame, no stand, no surrounding scene, no road, no building, no landscape, no watermark. All text readable and inside generous margins.",
+    "seed": 71401,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/agentic-toast-flat-source.png"
+  },
+  {
+    "name": "cone-coin-flat",
+    "prompt": "Flat 2D advertisement graphic design, horizontal 2:1 rectangle filled edge to edge by the design itself. One large orange traffic cone on a gold coin disc, cream sun rays on teal background. Exact large title \"CONE COIN\" across the top. Exact bold short footer \"BACKED BY TRAFFIC CONES\" across the bottom. No other words. Limited cream, dark teal, rusty orange and mustard palette, thick black ink outlines, flat comic shading, bold playful geometric composition, slightly worn screenprint. Front view artwork only: completely flat with no perspective, no physical object, no frame, no stand, no surrounding scene, no road, no building, no landscape, no watermark. All text readable and inside generous margins.",
+    "seed": 71402,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/cone-coin-flat-source.png"
+  },
+  {
+    "name": "burnt-runway-flat",
+    "prompt": "Flat 2D advertisement graphic design, horizontal 2:1 rectangle filled edge to edge by the design itself. An orange paper airplane above a stack of cream sheets, charcoal background with pale coral rays. Exact large title \"BURNT RUNWAY\" across the top. Exact bold short footer \"LESS RUNWAY. MORE DECKS.\" across the bottom. No other words. Limited cream, dark teal, rusty orange and mustard palette, thick black ink outlines, flat comic shading, bold playful geometric composition, slightly worn screenprint. Front view artwork only: completely flat with no perspective, no physical object, no frame, no stand, no surrounding scene, no road, no building, no landscape, no watermark. All text readable and inside generous margins.",
+    "seed": 71403,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/burnt-runway-flat-source.png"
+  },
+  {
+    "name": "prompt-juice-flat",
+    "prompt": "Flat 2D advertisement graphic design, horizontal 2:1 rectangle filled edge to edge by the design itself. One orange juice carton with a lightning icon and a cable-shaped straw, green citrus slice, cream backdrop. Exact large title \"PROMPT JUICE\" across the top. Exact bold short footer \"SQUEEZE MORE SYNERGY\" across the bottom. No other words. Limited cream, dark teal, rusty orange and mustard palette, thick black ink outlines, flat comic shading, bold playful geometric composition, slightly worn screenprint. Front view artwork only: completely flat with no perspective, no physical object, no frame, no stand, no surrounding scene, no road, no building, no landscape, no watermark. All text readable and inside generous margins.",
+    "seed": 71404,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/prompt-juice-flat-source.png"
+  },
+  {
+    "name": "series-sea-flat",
+    "prompt": "Flat 2D advertisement graphic design, horizontal 2:1 rectangle filled edge to edge by the design itself. Friendly brown sea lion in a plain navy vest balancing a yellow fish on its nose, flat teal wave shapes and cream sun. Exact large title \"SERIES SEA\" across the top. Exact bold short footer \"RAISE WITH THE TIDE\" across the bottom. No other words. Limited cream, dark teal, rusty orange and mustard palette, thick black ink outlines, flat comic shading, bold playful geometric composition, slightly worn screenprint. Front view artwork only: completely flat with no perspective, no physical object, no frame, no stand, no surrounding scene, no road, no building, no landscape, no watermark. All text readable and inside generous margins.",
+    "seed": 71405,
+    "width": 1024,
+    "height": 512,
+    "model": "model_bfl-flux-1-dev",
+    "output": "web/public/art/billboards/series-sea-flat-source.png"
+  }
+]

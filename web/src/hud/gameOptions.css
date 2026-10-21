@@ -1,0 +1,49 @@
+/* Game Options menu — San Andreas HUD theme (gtasf-4b6o; shared module theme/saTheme.css).
+   SA pause-menu look: a flat black translucent box with square corners, a gold outlined display
+   title, white/blue menu text; no rounded cream/dark-green panel, no serif/italic, no soft/offset
+   shadow. Class names are unchanged so hud/gameOptions.ts (pane 1) is untouched. Tokens from
+   theme/saTheme.css; every var() carries an inline fallback. */
+.gt-game-options{
+  box-sizing:border-box;width:min(540px,calc(100vw - 24px));max-height:calc(100dvh - 32px);overflow:auto;
+  border:2px solid var(--sa-panel-edge,rgba(0,0,0,.9));border-radius:0;
+  background:var(--sa-panel-bg-strong,rgba(0,0,0,.82));color:var(--sa-menu-white,#fff);
+  padding:22px;box-shadow:none;font:14px/1.4 var(--sa-sans,Arial,Helvetica,sans-serif);
+}
+.gt-game-options::backdrop{background:rgba(0,0,0,.66)}
+.gt-game-options header{position:static;inset:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px;padding:0;max-width:none;text-align:left;pointer-events:auto}
+.gt-game-options h2{
+  margin:0;font-family:var(--sa-display,'Haettenschweiler','Arial Narrow Bold','Arial Narrow',Impact,sans-serif);
+  font-weight:900;font-size:32px;line-height:1.02;text-transform:uppercase;letter-spacing:.02em;
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:3px var(--sa-ink,#000);paint-order:stroke fill;text-shadow:none;
+}
+.gt-game-options button{
+  position:static;box-sizing:border-box;min-height:40px;border:2px solid var(--sa-panel-edge,rgba(0,0,0,.9));border-radius:0;
+  padding:10px 12px;background:rgba(0,0,0,.45);color:var(--sa-menu-white,#fff);
+  font:700 13px/1.25 var(--sa-sans,Arial,sans-serif);-webkit-text-stroke:1px var(--sa-ink,#000);paint-order:stroke fill;
+  white-space:normal;cursor:pointer;
+}
+.gt-game-options button:focus-visible{outline:3px solid var(--sa-gold,#f0b429);outline-offset:2px}
+.gt-game-options button:hover{background:rgba(0,0,0,.65);color:var(--sa-menu-blue,#b2cef2)}
+.gt-game-options-controls,.gt-game-options-extra{display:grid;gap:10px}
+.gt-game-options-extra:empty{display:none}
+.gt-game-options-extra:not(:empty){border-top:1px solid rgba(255,255,255,.2);margin-top:18px;padding-top:18px}
+.gt-game-options-hint{margin:18px 0 0;color:#cfcfcf;font-size:12px;-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill}
+.gt-game-options-status{
+  border-left:3px solid var(--sa-title-gold,#f6a81e);padding-left:10px;color:var(--sa-title-gold,#f6a81e);
+  -webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill;
+}
+.gt-game-options .gtasf-traffic-options h3{
+  font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;text-transform:uppercase;letter-spacing:.02em;
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:2px var(--sa-ink,#000);paint-order:stroke fill;
+  font-size:16px;margin:0 0 10px;
+}
+.gt-game-options .gtasf-traffic-options label{display:flex;align-items:center;gap:8px}
+.gt-game-options .gtasf-cable-stops{display:grid;gap:10px}
+.gt-game-options .gtasf-cable-stops p{font-size:12px;margin:4px 0 0;color:#cfcfcf;-webkit-text-stroke:.8px var(--sa-ink,#000);paint-order:stroke fill}
+@media(max-width:400px){.gt-game-options{padding:16px}.gt-game-options h2{font-size:27px}}
+/* Time-of-day comparison toggle (pane 9) */
+.gt-game-options-timeofday{border-top:1px solid rgba(255,255,255,.2);margin-top:18px;padding-top:18px;display:grid;gap:8px}
+.gt-game-options-timeofday-label{font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;text-transform:uppercase;letter-spacing:.02em;color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:1.5px var(--sa-ink,#000);paint-order:stroke fill;font-size:14px}
+.gt-game-options-timeofday-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.gt-game-options-timeofday-buttons button{flex:1 1 auto}
+.gt-game-options-timeofday-buttons button[aria-pressed="true"]{background:var(--sa-title-gold,#f6a81e);color:var(--sa-ink,#000)}

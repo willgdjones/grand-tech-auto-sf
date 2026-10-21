@@ -1,0 +1,12 @@
+/* Mouse-look guidance — San Andreas HUD theme (gtasf-8tsx; shared module theme/saTheme.css).
+   Flat black SA panel, square corners, white outlined text; no cream/gold rounded box. Positions
+   preserved (stays above GPS, between the desktop HUD columns). Tokens from theme/saTheme.css. */
+.gt-look-fallback {
+  position: fixed; left: 280px; right: 320px; bottom: 202px; margin: 0; padding: 8px 10px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  background: var(--sa-panel-bg, rgba(0,0,0,.62)); color: var(--sa-menu-white, #fff);
+  -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+  pointer-events: none; z-index: 20; font: 700 12px/1.4 var(--sa-sans, Arial, sans-serif); text-align: center; overflow-wrap: anywhere;
+}
+@media (min-width: 701px) and (max-width: 960px) { .gt-look-fallback { left: 260px; right: 310px; } }
+@media (max-width: 700px) { .gt-look-fallback { left: 12px; right: 12px; top: 336px; bottom: auto; } }

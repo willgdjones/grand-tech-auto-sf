@@ -1,0 +1,97 @@
+/* SA pause-menu restyle (gtasf-v2-sa-restyle-tracker-ni5k): flat black translucent panels, square
+ * corners, no soft shadows, SA tokens/fonts, gold display titles with ink stroke. Classes, structure
+ * and ALL layout/positioning (bar-height offsets, grids, breakpoints) preserved — presentation only. */
+.gt-outbid-active { --gt-outbid-bar-height: 68px; }
+.gt-outbid-banner {
+  position: fixed; inset: 0 0 auto; min-height: 68px; z-index: 60; display: flex; align-items: center; gap: 16px;
+  padding: 10px max(22px, env(safe-area-inset-right)) 10px max(22px, env(safe-area-inset-left));
+  background: var(--sa-panel-bg-strong); border-bottom: 2px solid var(--sa-gold); color: var(--sa-menu-white);
+  font: 13px/1.3 var(--sa-sans); box-shadow: none;
+}
+.gt-outbid-badge {
+  font: 900 11px/1.2 var(--sa-display); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--sa-title-gold); max-width: 80px;
+}
+.gt-outbid-winner { flex: 1; min-width: 0; }
+.gt-outbid-name {
+  font-family: var(--sa-display); font-weight: 900; font-size: 15px; text-transform: uppercase; letter-spacing: .01em;
+  color: var(--sa-title-gold); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.gt-outbid-message { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #cdd3c2; }
+.gt-outbid-message a { color: inherit; text-decoration: none; }
+.gt-outbid-message a:hover { text-decoration: underline; }
+.gt-outbid-target { color: var(--sa-title-gold); font-size: 12px; white-space: nowrap; }
+.gt-outbid-banner button { white-space: nowrap; padding: 10px 13px; border-radius: 0; }
+.gt-outbid-banner .gt-outbid-claim, .gt-outbid-submit {
+  background: var(--sa-gold); color: var(--sa-ink); border: 2px solid var(--sa-ink); border-radius: 0; font-weight: 900;
+}
+.gt-outbid-board-button { background: transparent; }
+.gt-outbid-active #app > header { top: calc(34px + var(--gt-outbid-bar-height)); }
+.gt-outbid-active #app > aside { top: calc(38px + var(--gt-outbid-bar-height)); }
+.gt-outbid-active #play-controls { top: calc(94px + var(--gt-outbid-bar-height)); }
+.gt-outbid-active .gt-hud { top: calc(260px + var(--gt-outbid-bar-height)); }
+
+.gt-outbid-dialog {
+  box-sizing: border-box; width: min(640px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); padding: 26px;
+  background: var(--sa-panel-bg-strong); color: var(--sa-menu-white); border: 2px solid var(--sa-panel-edge);
+  border-radius: 0; box-shadow: none; font: 14px/1.45 var(--sa-sans); overflow: auto;
+}
+.gt-outbid-dialog::backdrop { background: #07100bd0; }
+.gt-outbid-dialog h2 {
+  margin: 6px 80px 12px 0; font-family: var(--sa-display); font-weight: 900; font-size: 30px; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: .02em; color: var(--sa-title-gold);
+  -webkit-text-stroke: var(--sa-outline-thick) var(--sa-ink); paint-order: stroke fill;
+}
+.gt-outbid-close { position: sticky; float: right; top: 0; z-index: 2; margin: -10px -6px 8px 12px; background: var(--sa-panel-bg-strong); }
+.gt-outbid-mode { font-family: var(--sa-display); font-size: 11px; letter-spacing: .09em; color: var(--sa-title-gold); font-weight: 900; text-transform: uppercase; }
+.gt-outbid-rules { color: #cbd7c6; }
+.gt-outbid-board { list-style: none; padding: 0; margin: 22px 0; }
+.gt-outbid-row { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #ffffff26; }
+.gt-outbid-rank { width: 30px; flex: none; font-family: var(--sa-display); font-weight: 900; color: var(--sa-title-gold); }
+.gt-outbid-row-copy { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.gt-outbid-row-copy > a { font-weight: 800; color: var(--sa-title-gold); }
+.gt-outbid-row-copy p { margin: 3px 0 0; font-size: 12px; color: #baccb8; }
+.gt-outbid-total { white-space: nowrap; font-variant-numeric: tabular-nums; color: #8fe08a; }
+.gt-outbid-logo { object-fit: contain; flex: none; }
+.gt-outbid-form { border-top: 2px solid var(--sa-gold); padding-top: 18px; margin-top: 20px; }
+.gt-outbid-form h3 { margin: 0; font-family: var(--sa-display); font-size: 23px; text-transform: uppercase; letter-spacing: .02em; color: var(--sa-title-gold); }
+.gt-outbid-quote { color: var(--sa-title-gold); font-size: 13px; }
+.gt-outbid-field { display: block; font-size: 12px; font-weight: 700; color: #dfe7d6; margin: 14px 0; }
+.gt-outbid-field input, .gt-outbid-field textarea {
+  box-sizing: border-box; display: block; width: 100%; margin-top: 5px; padding: 11px 12px;
+  border: 2px solid var(--sa-panel-edge); border-radius: 0; background: rgba(0, 0, 0, 0.45); color: var(--sa-menu-white);
+  font: 16px/1.4 var(--sa-sans);
+}
+.gt-outbid-field textarea { resize: vertical; min-height: 80px; }
+.gt-outbid-field input[type=file] { font-size: 12px; }
+.gt-outbid-notice { font-size: 11px; color: #b6c6ae; }
+.gt-outbid-status { font-size: 13px; color: var(--sa-title-gold); min-height: 20px; }
+.gt-outbid-submit { width: 100%; padding: 14px; }
+.gt-outbid-submit:disabled { cursor: not-allowed; opacity: .5; }
+.gt-outbid-dialog :focus-visible, .gt-outbid-banner :focus-visible { outline: 2px solid var(--sa-title-gold); outline-offset: 2px; }
+.gt-outbid-empty[hidden] { display: none; }
+
+@media (max-width: 700px) {
+  .gt-outbid-active { --gt-outbid-bar-height: 96px; }
+  .gt-outbid-banner { min-height: 96px; gap: 6px 10px; padding: 10px 12px; display: grid; grid-template-columns: 1fr auto auto; }
+  .gt-outbid-badge { display: none; }
+  .gt-outbid-winner { grid-column: 1 / 4; }
+  .gt-outbid-name { font-size: 13px; }
+  .gt-outbid-message { font-size: 11px; }
+  .gt-outbid-target { font-size: 11px; }
+  .gt-outbid-banner button { font-size: 10px; padding: 7px 9px; }
+  .gt-outbid-dialog { padding: 20px 16px; max-height: calc(100dvh - 20px); }
+  .gt-outbid-dialog h2 { font-size: 25px; }
+  .gt-outbid-row { gap: 8px; }
+  .gt-outbid-total { font-size: 12px; }
+  .gt-outbid-row-copy > a { font-size: 13px; }
+  .gt-outbid-active .gt-hud { top: calc(76px + var(--gt-outbid-bar-height)); }
+}
+@media (max-width: 600px) {
+  .gt-outbid-active #app > header { top: calc(22px + var(--gt-outbid-bar-height)); }
+  .gt-outbid-active #app > aside { top: calc(130px + var(--gt-outbid-bar-height)); }
+  .gt-outbid-active #play-controls { top: calc(180px + var(--gt-outbid-bar-height)); }
+}
+.gt-outbid-credit { display: flex; align-items: center; gap: .65rem; min-height: 44px; cursor: pointer; }
+.gt-outbid-credit input { width: 20px; height: 20px; flex: none; accent-color: var(--sa-money-green); }
+.gt-outbid-credit-quote { margin: .1rem 0 .7rem; color: #d9e7ca; font-size: .85rem; line-height: 1.45; }

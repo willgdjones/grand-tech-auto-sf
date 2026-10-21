@@ -1,0 +1,14 @@
+/* Vehicle-audio controls (inside the Game Options dialog) — San Andreas HUD theme (gtasf-jq1l;
+   shared module theme/saTheme.css). Parallel to audio/radio.css: gold display sub-heading, SA-gold
+   range accent, light divider, grey outlined notes. All classes preserved. Tokens from saTheme.css. */
+.gt-vehicle-audio { min-width: 0; margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .2); }
+.gt-vehicle-audio h3 {
+  font-family: var(--sa-display, 'Arial Narrow', Impact, sans-serif); font-weight: 900; text-transform: uppercase; letter-spacing: .02em;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 2px var(--sa-ink, #000); paint-order: stroke fill;
+  font-size: 18px; margin: 0 0 10px;
+}
+.gt-vehicle-audio label { display: block; font: 12px/1.5 var(--sa-sans, Arial, sans-serif); margin: 10px 0; }
+.gt-vehicle-audio input { box-sizing: border-box; display: block; width: 100%; min-height: 32px; accent-color: var(--sa-gold, #f0b429); }
+.gt-vehicle-audio-buttons { display: flex; gap: 8px; }
+.gt-vehicle-audio-buttons button { min-height: 44px; }
+.gt-vehicle-audio p { font: 12px/1.4 var(--sa-sans, Arial, sans-serif); color: #cfcfcf; -webkit-text-stroke: .7px var(--sa-ink, #000); paint-order: stroke fill; }

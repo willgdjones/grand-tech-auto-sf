@@ -1,0 +1,18 @@
+/* Most Wanted bounty (flag mostWantedBounty): the over-head tag on the target and the "you're the target" banner. */
+.gt-bounty-tag {
+  position: fixed; left: 0; top: 0; z-index: 36; pointer-events: none; white-space: nowrap;
+  background: #e5484d; color: #fff; border: 2px solid #0c1813; border-radius: 8px; padding: 3px 9px;
+  font: 900 13px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .06em;
+  filter: drop-shadow(0 4px 10px #0009);
+}
+.gt-bounty-banner {
+  position: fixed; left: 50%; top: 44px; transform: translateX(-50%); z-index: 37; pointer-events: none;
+  max-width: calc(100vw - 32px); text-align: center;
+  background: #e5484de8; color: #fff; border-radius: 10px; padding: 6px 14px;
+  font: 900 14px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .06em;
+  animation: gt-bounty-pulse 1.6s ease-in-out infinite;
+}
+.gt-bounty-tag[hidden], .gt-bounty-banner[hidden] { display: none; }
+@keyframes gt-bounty-pulse { 50% { filter: brightness(1.25); } }
+@media (pointer: coarse) { .gt-bounty-banner { top: auto; bottom: 372px; font-size: 12px; } } /* GTA mission-text spot above the minimap (stacked over the race/getaway HUD at 322px): the top band holds the $ HUD, toasts, health bars and fund-drop banner */
+@media (prefers-reduced-motion: reduce) { .gt-bounty-banner { animation: none; } }

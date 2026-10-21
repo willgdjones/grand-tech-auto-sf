@@ -1,0 +1,209 @@
+/* Founder ladder UI (docs/PLAN-founder-ladder.md phase 1). Matches the SA/GTA HUD look via the
+   shared theme tokens (web/src/theme/saTheme.css); phone-first, no horizontal overflow. */
+
+/* One quest card, pinned top-centre, above the world but below modals. */
+.gt-founder-quest {
+  position: fixed; z-index: 22; top: 18px; left: 50%; transform: translateX(-50%);
+  max-width: min(420px, calc(100vw - 32px)); box-sizing: border-box;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 12px 18px; text-align: center; pointer-events: none;
+  background: var(--sa-panel-bg, #0000009e); border: 1px solid #ffffff22; border-radius: 10px;
+  color: #f6edda; text-shadow: 2px 2px 0 #10221a, -1px -1px 0 #10221a;
+  filter: drop-shadow(0 2px 6px #0008);
+}
+.gt-founder-quest[hidden] { display: none; }
+.gt-founder-quest-kicker {
+  font: 700 11px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .28em;
+  color: var(--sa-gold, #f0b429); text-transform: uppercase;
+}
+.gt-founder-quest-kicker[hidden] { display: none; }
+.gt-founder-quest-title {
+  font: 900 clamp(18px, 4.4vw, 26px)/1.1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif);
+  text-transform: uppercase; letter-spacing: .01em;
+}
+.gt-founder-quest-cta {
+  pointer-events: auto; cursor: pointer; margin-top: 4px;
+  font: 900 15px/1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); text-transform: uppercase;
+  letter-spacing: .04em; color: #10221a; background: var(--sa-gold, #f0b429);
+  border: 0; border-radius: 8px; padding: 9px 18px; text-shadow: none;
+}
+.gt-founder-quest-cta[hidden] { display: none; }
+.gt-founder-quest-cta:hover { background: var(--sa-title-gold, #f6a81e); }
+.gt-founder-quest-cta:active { transform: translateY(1px); }
+
+/* Valuation score pill (revealed when first non-zero). Below the quest card, top-centre — clears a
+   two-line quest title (e.g. "<Startup> just closed Pre-seed.") so the pill never sits under it. */
+.gt-founder-valuation {
+  position: fixed; z-index: 21; top: max(124px, calc(var(--gt-founder-quest-bottom, 0px) + 8px)); left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: baseline; gap: 8px; pointer-events: none;
+  padding: 6px 14px; background: var(--sa-panel-bg, #0000009e); border-radius: 999px;
+  color: #f6edda; text-shadow: 1px 1px 0 #10221a; filter: drop-shadow(0 2px 4px #0007);
+  white-space: nowrap;
+}
+.gt-founder-valuation[hidden] { display: none; }
+.gt-founder-valuation-label { font: 700 10px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .26em; color: var(--sa-gold, #f0b429); }
+.gt-founder-valuation-value { font: 900 clamp(16px, 4vw, 22px)/1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); color: #eafbe0; }
+.gt-founder-valuation-stage { font: 700 11px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+
+/* Found-your-startup card (full-screen modal). */
+.gt-founder-found {
+  position: fixed; inset: 0; margin: auto; width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 32px);
+  box-sizing: border-box; border: 0; border-radius: 16px; padding: clamp(20px, 5vw, 34px);
+  background: linear-gradient(170deg, #14241d, #0c1813); color: #f6edda; text-align: center;
+  box-shadow: 0 24px 80px #000a, 0 0 0 1px #ffffff14 inset;
+}
+.gt-founder-found::backdrop { background: #04100bd0; backdrop-filter: blur(3px); }
+.gt-founder-found-kicker {
+  font: 700 12px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .32em;
+  color: var(--sa-gold, #f0b429); text-transform: uppercase; margin-bottom: 18px;
+}
+.gt-founder-found-badge {
+  width: clamp(76px, 20vw, 104px); aspect-ratio: 1; margin: 0 auto 16px; border-radius: 22%;
+  display: grid; place-items: center; font: 900 clamp(32px, 9vw, 46px)/1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif);
+  box-shadow: 0 10px 30px #0007, 0 0 0 3px #ffffff1c inset;
+}
+.gt-founder-found-name {
+  margin: 0 0 8px; font: 900 clamp(26px, 7vw, 40px)/1.05 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif);
+  text-transform: uppercase; letter-spacing: .01em; color: #fffbe9;
+}
+.gt-founder-found-stage { margin: 0 0 22px; font: 700 13px/1.3 var(--sa-sans, Arial, sans-serif); letter-spacing: .06em; opacity: .85; }
+.gt-founder-found-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.gt-founder-found-actions button {
+  cursor: pointer; flex: 1 1 auto; min-width: 128px;
+  font: 900 16px/1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); text-transform: uppercase;
+  letter-spacing: .04em; border: 0; border-radius: 10px; padding: 14px 18px;
+}
+.gt-founder-found-reroll { color: #f6edda; background: #ffffff16; box-shadow: 0 0 0 1px #ffffff2a inset; }
+.gt-founder-found-reroll:hover { background: #ffffff26; }
+.gt-founder-found-go { color: #0c1813; background: var(--sa-gold, #f0b429); }
+.gt-founder-found-go:hover { background: var(--sa-title-gold, #f6a81e); }
+.gt-founder-found-actions button:active { transform: translateY(1px); }
+.gt-founder-found-actions button:disabled { opacity: .55; cursor: default; }
+.gt-founder-found-status { margin: 14px 0 0; min-height: 1.2em; font: 700 12px/1.3 var(--sa-sans, Arial, sans-serif); color: var(--sa-gold, #f0b429); }
+
+/* Share card (full-screen modal): the generated billboard image + a copy-link control. */
+.gt-founder-share {
+  position: fixed; inset: 0; margin: auto; width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px);
+  box-sizing: border-box; border: 0; border-radius: 16px; padding: clamp(18px, 4vw, 28px);
+  background: linear-gradient(170deg, #14241d, #0c1813); color: #f6edda; text-align: center;
+  box-shadow: 0 24px 80px #000a, 0 0 0 1px #ffffff14 inset; overflow: auto;
+}
+.gt-founder-share::backdrop { background: #04100bd0; backdrop-filter: blur(3px); }
+.gt-founder-share-kicker { font: 700 12px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .32em; color: var(--sa-gold, #f0b429); text-transform: uppercase; }
+.gt-founder-share-title { margin: 10px 0 14px; font: 900 clamp(22px, 5.5vw, 32px)/1.05 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); text-transform: uppercase; color: #fffbe9; }
+/* The in-world shot is the viewport's aspect: portrait on phones. Cap it so Copy/Done stay above the fold. [gtasf-qa] */
+.gt-founder-share-image { display: block; width: 100%; height: auto; max-height: min(42dvh, 420px); object-fit: cover; border-radius: 10px; box-shadow: 0 10px 30px #0007; }
+.gt-founder-share-link {
+  display: block; width: 100%; box-sizing: border-box; margin: 14px 0 0; padding: 11px 12px;
+  font: 600 13px/1.2 var(--sa-sans, Arial, sans-serif); color: #eafbe0; text-align: center;
+  background: #ffffff12; border: 1px solid #ffffff24; border-radius: 8px;
+}
+.gt-founder-share-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+.gt-founder-share-actions button, .gt-founder-share-actions a {
+  cursor: pointer; flex: 1 1 auto; min-width: 128px; text-align: center; text-decoration: none;
+  font: 900 15px/1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); text-transform: uppercase;
+  letter-spacing: .04em; border: 0; border-radius: 10px; padding: 13px 18px;
+}
+.gt-founder-share-copy { color: #0c1813; background: var(--sa-gold, #f0b429); }
+.gt-founder-share-copy:hover { background: var(--sa-title-gold, #f6a81e); }
+.gt-founder-share-x { color: #f6edda; background: #1d9bf020; box-shadow: 0 0 0 1px #1d9bf07a inset; }
+.gt-founder-share-x:hover { background: #1d9bf033; }
+.gt-founder-share-x[hidden] { display: none; }
+.gt-founder-share-done { color: #f6edda; background: #ffffff16; box-shadow: 0 0 0 1px #ffffff2a inset; }
+.gt-founder-share-done:hover { background: #ffffff26; }
+.gt-founder-share-actions button:active { transform: translateY(1px); }
+.gt-founder-share-actions button:disabled { opacity: .55; cursor: default; }
+.gt-founder-share-status { margin: 12px 0 0; min-height: 1.2em; font: 700 12px/1.3 var(--sa-sans, Arial, sans-serif); color: var(--sa-gold, #f0b429); }
+
+/* First-pitch card (full-screen modal): a real VC firm partner + three tap-choice pitch lines. */
+.gt-founder-pitch {
+  position: fixed; inset: 0; margin: auto; width: min(480px, calc(100vw - 32px)); max-height: calc(100dvh - 32px);
+  box-sizing: border-box; border: 0; border-radius: 16px; padding: clamp(20px, 5vw, 32px); overflow: auto;
+  background: linear-gradient(170deg, #14241d, #0c1813); color: #f6edda; text-align: center;
+  box-shadow: 0 24px 80px #000a, 0 0 0 1px #ffffff14 inset;
+}
+.gt-founder-pitch::backdrop { background: #04100bd0; backdrop-filter: blur(3px); }
+.gt-founder-pitch-kicker { font: 700 12px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .32em; color: var(--sa-gold, #f0b429); text-transform: uppercase; }
+.gt-founder-pitch-who { margin: 14px 0 2px; font: 700 12px/1.2 var(--sa-sans, Arial, sans-serif); letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+.gt-founder-pitch-title { margin: 0 0 18px; font: 900 clamp(20px, 5vw, 28px)/1.1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); color: #fffbe9; }
+.gt-founder-pitch-lines { display: flex; flex-direction: column; gap: 10px; }
+.gt-founder-pitch-lines[hidden] { display: none; }
+.gt-founder-pitch-line {
+  cursor: pointer; text-align: left; border: 0; border-radius: 10px; padding: 13px 16px;
+  background: #ffffff12; box-shadow: 0 0 0 1px #ffffff22 inset; color: #f6edda;
+}
+.gt-founder-pitch-line:hover { background: #ffffff1f; }
+.gt-founder-pitch-line:active { transform: translateY(1px); }
+.gt-founder-pitch-line:disabled { opacity: .5; cursor: default; }
+.gt-founder-pitch-quote { font: 600 14px/1.35 var(--sa-sans, Arial, sans-serif); }
+.gt-founder-pitch-status { margin: 14px 0 0; min-height: 1.2em; font: 700 12px/1.3 var(--sa-sans, Arial, sans-serif); color: var(--sa-gold, #f0b429); }
+.gt-founder-pitch-result[hidden] { display: none; }
+.gt-founder-pitch-verdict { margin: 6px 0 14px; font: 600 clamp(16px, 4vw, 20px)/1.35 var(--sa-sans, Arial, sans-serif); color: #eafbe0; font-style: italic; }
+.gt-founder-pitch-cheque { font: 900 clamp(22px, 6vw, 32px)/1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); color: var(--sa-money-green, #7ddc8a); letter-spacing: .02em; }
+.gt-founder-pitch-done {
+  cursor: pointer; margin-top: 20px; width: 100%; box-sizing: border-box;
+  font: 900 16px/1 var(--sa-display, 'Arial Narrow Bold', Impact, sans-serif); text-transform: uppercase; letter-spacing: .04em;
+  color: #0c1813; background: var(--sa-gold, #f0b429); border: 0; border-radius: 10px; padding: 14px 18px;
+}
+.gt-founder-pitch-done:hover { background: var(--sa-title-gold, #f6a81e); }
+/* Side-quest "Not now": a quiet secondary close under the pitch lines (never a stuck modal). */
+.gt-founder-pitch-skip { margin-top: 12px; padding: 10px 18px; font-size: 13px; color: #f6edda; background: none; border: 1px solid #ffffff44; }
+.gt-founder-pitch-skip:hover { background: #ffffff14; }
+.gt-founder-pitch-skip[hidden] { display: none; }
+
+/* Earned crown + mini leaderboard banner (ladder bucket, free roam): a thin top-centre strip that reads
+   "#N of M · CROWN: <top startup>". The HUD lock hides it until Seed (hudLock EXTRA_HIDDEN). It replaces the
+   OUTBID banner, which is hidden for ladder players below; control/OUTBID is untouched. */
+.gt-founder-crown {
+  position: fixed; z-index: 20; top: 0; left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 8px; max-width: calc(100vw - 16px); box-sizing: border-box;
+  padding: 5px 16px; border-radius: 0 0 10px 10px; pointer-events: none; white-space: nowrap;
+  background: var(--sa-panel-bg, #0000009e); border: 1px solid #f0b42955; border-top: 0;
+  color: #f6edda; text-shadow: 1px 1px 0 #10221a; filter: drop-shadow(0 2px 4px #0007);
+}
+.gt-founder-crown[hidden] { display: none; }
+.gt-founder-crown-icon { font-size: 15px; line-height: 1; }
+.gt-founder-crown-text { font: 800 12px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .07em; overflow: hidden; text-overflow: ellipsis; }
+.gt-founder-crown-mine { border-color: var(--sa-gold, #f0b429); background: #2a210acc; }
+.gt-founder-crown-mine .gt-founder-crown-text { color: var(--sa-gold, #f0b429); }
+
+/* With the crown strip showing (free roam, not HUD-locked), the quest card sits below it instead of over it. */
+body:not([data-founder-locked]):has(.gt-founder-crown:not([hidden])) .gt-founder-quest { top: 40px; }
+/* Ladder players compete via the earned crown above, not the paid OUTBID banner (control/OUTBID untouched). */
+body.gt-founder-ladder .gt-outbid-banner { display: none !important; }
+
+@media (max-width: 600px) {
+  .gt-founder-quest { top: 12px; padding: 10px 14px; }
+  body:not([data-founder-locked]):has(.gt-founder-crown:not([hidden])) .gt-founder-quest { top: 34px; }
+  .gt-founder-valuation { top: max(72px, calc(var(--gt-founder-quest-bottom, 0px) + 6px)); }
+  .gt-founder-crown-text { font-size: 11px; letter-spacing: .04em; }
+  .gt-drive-quest { top: 150px; }
+  .gt-drive-quest-line { font-size: 13px; padding: 7px 12px; }
+}
+
+/* Phase 5.1 drive-quest HUD (flags.driveQuest): a single pinned countdown + distance line while escaping
+   the cone. Same card aesthetic as the meme NPC labels (dark card, gold border). */
+.gt-drive-quest { position: fixed; top: 120px; left: 50%; transform: translateX(-50%); z-index: 40; pointer-events: none; }
+.gt-drive-quest-line { background: #0c1813e6; border: 2px solid #f0b429; border-radius: 12px; padding: 8px 16px;
+  color: #f6edda; font: 800 15px/1.2 Arial, sans-serif; text-align: center; white-space: nowrap; box-shadow: 0 2px 12px #0008; }
+
+/* Phase 5.1 share-quest card (flags.shareQuest): the thought-leader's take + repost/claim actions. Centered
+   (not a full modal, so game input isn't locked); dark/gold aesthetic. */
+.gt-share-quest { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 60; width: min(420px, calc(100vw - 32px)); }
+.gt-share-quest-card { position: relative; background: #0c1813f2; border: 2px solid #f0b429; border-radius: 16px; padding: 22px 24px; color: #f6edda; box-shadow: 0 8px 40px #000a; }
+.gt-share-quest-kicker { color: #f0b429; font: 800 11px/1.3 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+.gt-share-quest-take { font: 600 18px/1.45 Georgia, 'Times New Roman', serif; margin: 0 0 18px; }
+.gt-share-quest-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.gt-share-quest-repost, .gt-share-quest-done { flex: 1; min-width: 130px; border: none; border-radius: 10px; padding: 11px 14px; font: 800 14px Arial, sans-serif; cursor: pointer; }
+.gt-share-quest-repost { background: #1d9bf0; color: #fff; }
+.gt-share-quest-done { background: #f0b429; color: #10201a; }
+.gt-share-quest-done:disabled { opacity: .6; cursor: default; }
+.gt-share-quest-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: #f6eddaaa; font-size: 18px; line-height: 1; cursor: pointer; }
+
+/* Founder Rank on the crown chip (flag founderRank): 'LV n · TITLE' + a thin XP bar. */
+.gt-founder-crown-rank { display: inline-flex; flex-direction: column; gap: 2px; margin-left: 8px; padding-left: 8px; border-left: 1px solid #ffffff33;
+  font: 800 11px/1 var(--sa-sans, Arial, sans-serif); letter-spacing: .07em; color: var(--sa-gold, #f0b429); white-space: nowrap; }
+.gt-founder-crown-rank[hidden] { display: none; }
+.gt-founder-crown-rank-bar { display: block; height: 3px; background: #ffffff26; border-radius: 2px; overflow: hidden; }
+.gt-founder-crown-rank-bar > i { display: block; height: 100%; width: 0; background: var(--sa-gold, #f0b429); transition: width .6s ease; }
+@media (prefers-reduced-motion: reduce) { .gt-founder-crown-rank-bar > i { transition: none; } }

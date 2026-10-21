@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTASF · Lombard map inspection</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;background:#bcd0d4;color:#142525;font:14px/1.4 system-ui,sans-serif}canvas{display:block}
+  aside{position:fixed;top:16px;left:16px;width:310px;padding:16px;background:#f7f4e9ee;border:1px solid #ffffff88;border-radius:10px;box-shadow:0 4px 24px #152e3020}
+  h1{font-size:18px;margin:0 0 4px}p{margin:6px 0;font-size:12px}button,select{font:inherit;padding:5px 9px;border:1px solid #8b9a91;border-radius:5px;background:#fffaf0;cursor:pointer}
+  .row{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}label{font-size:12px}#status{font-variant-numeric:tabular-nums;white-space:pre-line}
+  footer{position:fixed;bottom:8px;right:12px;background:#f7f4e9dd;padding:5px 8px;font-size:10px;border-radius:4px}a{color:inherit}
+</style>
+<script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+<aside><h1>GTASF · Map inspection</h1><p>Ferry Building → North Beach → Lombard</p><p id="status">Loading map…</p>
+<div class="row"><button id="ferry">Ferry</button><button id="lombard">Lombard</button><button id="overview">Overview</button><button id="street">Street</button><select id="lod"><option value="0">LOD 0</option><option value="1">LOD 1</option></select></div>
+<div class="row"><label><input type="checkbox" data-layer="terrain" checked>Terrain</label><label><input type="checkbox" data-layer="roads" checked>Roads</label><label><input type="checkbox" data-layer="buildings" checked>Buildings</label><label><input id="lanes" type="checkbox">Lane graph</label></div>
+<p>Drag to orbit · wheel to zoom · right-drag to pan</p></aside>
+<footer><a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a> · DataSF · Mapzen/USGS/NOAA</footer>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from '/vendor/meshoptimizer/meshopt_decoder.mjs';
+const status=document.querySelector('#status');
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0xbcd0d4);scene.fog=new THREE.Fog(0xbcd0d4,700,4000);
+scene.add(new THREE.HemisphereLight(0xddeeff,0x636047,2));const sun=new THREE.DirectionalLight(0xffead0,2.8);sun.position.set(-600,900,400);scene.add(sun);
+const camera=new THREE.PerspectiveCamera(48,innerWidth/innerHeight,0.2,10000),controls=new OrbitControls(camera,renderer.domElement);controls.maxPolarAngle=Math.PI/2-0.01;
+const render=()=>renderer.render(scene,camera);controls.addEventListener('change',render);
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);render();});
+const loader=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder),world=new THREE.Group();scene.add(world);
+const layers=()=>{for(const input of document.querySelectorAll('[data-layer]'))world.traverse(obj=>{if(obj.name===input.dataset.layer)obj.visible=input.checked;});render();};
+for(const input of document.querySelectorAll('[data-layer]'))input.addEventListener('change',layers);
+try {
+  const manifest=await fetch('/map/manifest.json').then(r=>{if(!r.ok)throw Error('Build the map first');return r.json();});
+  const graph=await fetch('/map/'+manifest.roadGraph.path).then(r=>r.json());
+  const lombard=graph.edges.filter(e=>e.kind==='lane'&&e.osmWay===402111597).flatMap(e=>e.points);
+  const focus=lombard.length?new THREE.Box3().setFromPoints(lombard.map(p=>new THREE.Vector3(...p))).getCenter(new THREE.Vector3()):new THREE.Vector3((manifest.bounds[0]+manifest.bounds[2])/2,50,(manifest.bounds[1]+manifest.bounds[3])/2);
+  const positions=[];for(const edge of graph.edges)for(let i=1;i<edge.points.length;i++){const a=edge.points[i-1],b=edge.points[i];positions.push(a[0],a[1]+0.4,a[2],b[0],b[1]+0.4,b[2]);}
+  const geometry=new THREE.BufferGeometry().setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+  const lines=new THREE.LineSegments(geometry,new THREE.LineBasicMaterial({color:0xffde50,depthTest:false,transparent:true,opacity:.8}));lines.visible=false;scene.add(lines);
+  document.querySelector('#lanes').addEventListener('change',e=>{lines.visible=e.target.checked;render();});
+  function view(name){controls.target.copy(focus);if(name==='ferry'){controls.target.set(1241.869,15,-1254.309);camera.position.set(1110,100,-1060);}else if(name==='overview'){controls.target.set((manifest.bounds[0]+manifest.bounds[2])/2,40,(manifest.bounds[1]+manifest.bounds[3])/2);camera.position.copy(controls.target).add(new THREE.Vector3(-750,1750,1650));}else if(name==='street'){const p=lombard[0]??focus.toArray();camera.position.set(p[0]-12,p[1]+7,p[2]+4);controls.target.copy(focus);}else camera.position.copy(focus).add(new THREE.Vector3(150,180,45));controls.update();render();}
+  for(const id of ['ferry','lombard','overview','street'])document.getElementById(id).onclick=()=>view(id);
+  async function loadLod(lod){document.body.dataset.ready='false';const old=[...world.children];world.clear();for(const object of old)object.traverse(node=>{node.geometry?.dispose();if(Array.isArray(node.material))node.material.forEach(m=>m.dispose());else node.material?.dispose();});let loaded=0;
+    for(const chunk of manifest.chunks){const gltf=await loader.loadAsync('/map/'+chunk.lods[lod].path);gltf.scene.position.set(chunk.x*manifest.chunkSize,0,chunk.z*manifest.chunkSize);world.add(gltf.scene);loaded++;status.textContent=`Loading LOD ${lod}: ${loaded}/${manifest.chunks.length} chunks`;}
+    layers();status.textContent=`${manifest.chunks.length} chunks · ${manifest.stats.buildings.toLocaleString()} buildings\n${manifest.stats.lanes.toLocaleString()} lanes · ${(manifest.stats.gzipBytes/1e6).toFixed(2)} MB compressed\n${renderer.info.render.triangles.toLocaleString()} visible triangles`;document.body.dataset.ready='true';window.mapInspection={manifest,graph,renderer,scene,camera,controls,view};render();
+  }
+  document.querySelector('#lod').addEventListener('change',async e=>{try{await loadLod(Number(e.target.value));}catch(error){status.textContent=error.message;document.body.dataset.error=error.message;}});
+  view(manifest.bounds[2]>1500?'ferry':'lombard');await loadLod(0);
+}catch(error){status.textContent=error.message;document.body.dataset.error=error.message;console.error(error);}
+</script>
+</html>

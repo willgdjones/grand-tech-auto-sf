@@ -1,0 +1,28 @@
+diff --git a/web/src/radar/radar.ts b/web/src/radar/radar.ts
+index ef11445..5b12130 100644
+--- a/web/src/radar/radar.ts
++++ b/web/src/radar/radar.ts
+@@ -7,0 +8 @@ import { createMapRouter, type MapRoute } from './routing';
++import { createRadarTextCache } from './textCache';
+@@ -123,0 +125 @@ export function createRadar(options: {
++  const textCache = createRadarTextCache(context);
+@@ -536,2 +538,4 @@ export function createRadar(options: {
+-      context.font = `${gpx}px "Apple Color Emoji","Segoe UI Emoji",Arial,sans-serif`; context.textAlign = 'center'; context.textBaseline = 'middle';
+-      context.globalAlpha = o.collected ? 0.55 : 1; context.fillText(style.glyph, x, y + 0.5); context.textBaseline = 'alphabetic';
++      const font = `${gpx}px "Apple Color Emoji","Segoe UI Emoji",Arial,sans-serif`;
++      context.font = font; context.textAlign = 'center'; context.textBaseline = 'middle';
++      context.globalAlpha = o.collected ? 0.55 : 1;
++      textCache.paint(style.glyph, x, y + 0.5, font, o.collected ? '#8a8f86' : style.color, 'middle'); context.textBaseline = 'alphabetic';
+@@ -563 +567 @@ export function createRadar(options: {
+-      if (focusCount > 1) { context.fillStyle = saStyle ? '#2a1e0c' : '#17211d'; context.font = 'bold 9px Arial'; context.textAlign = 'center'; context.textBaseline = 'alphabetic'; context.fillText(focusCount > 99 ? '99+' : String(focusCount), p.x, p.y + 3); }
++      if (focusCount > 1) { context.fillStyle = saStyle ? '#2a1e0c' : '#17211d'; context.font = 'bold 9px Arial'; context.textAlign = 'center'; context.textBaseline = 'alphabetic'; textCache.paint(focusCount > 99 ? '99+' : String(focusCount), p.x, p.y + 3, 'bold 9px Arial', saStyle ? '#2a1e0c' : '#17211d', 'alphabetic'); }
+@@ -579,0 +584 @@ export function createRadar(options: {
++    textCache.setPixelRatio(dpr);
+@@ -691 +696 @@ export function createRadar(options: {
+-      if (count > 1) { context.globalAlpha = edge ? .72 : 1; context.fillStyle = '#17211d'; context.font = 'bold 9px Arial'; context.textAlign = 'center'; context.fillText(count > 99 ? '99+' : String(count), x, y + 3); context.globalAlpha = 1; }
++      if (count > 1) { context.globalAlpha = edge ? .72 : 1; context.fillStyle = '#17211d'; context.font = 'bold 9px Arial'; context.textAlign = 'center'; textCache.paint(count > 99 ? '99+' : String(count), x, y + 3, 'bold 9px Arial', '#17211d', 'alphabetic'); context.globalAlpha = 1; }
+@@ -801,0 +807 @@ export function createRadar(options: {
++      textCache.clear();
+@@ -874 +880 @@ export function createRadar(options: {
+-    destroy() { if (disposed) return; toggleMap(false); disposed = true; abort.abort(); releaseCursor?.(); window.removeEventListener('keydown', keyboard); window.removeEventListener('resize', invalidateViewport); viewportObserver?.disconnect(); clusters.clear(); clusterPool.length = 0; hitPool.length = 0; hits.length = 0; root.remove(); },
++    destroy() { if (disposed) return; toggleMap(false); disposed = true; abort.abort(); releaseCursor?.(); window.removeEventListener('keydown', keyboard); window.removeEventListener('resize', invalidateViewport); viewportObserver?.disconnect(); textCache.clear(); clusters.clear(); clusterPool.length = 0; hitPool.length = 0; hits.length = 0; root.remove(); },

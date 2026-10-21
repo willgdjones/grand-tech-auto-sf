@@ -1,0 +1,10 @@
+/* Push-to-talk mic: SA gold square button like the chat dialog's controls; red while listening. */
+.gt-chat-mic {
+  min-height: 42px; padding: 9px 14px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  background: var(--sa-gold, #f0b429); color: var(--sa-ink, #000); font: 800 13px/1.2 var(--sa-sans, Arial, sans-serif);
+  text-transform: uppercase; letter-spacing: .02em; cursor: pointer; touch-action: none; user-select: none;
+}
+.gt-chat-mic:hover:not(:disabled) { background: #ffc746; }
+.gt-chat-mic:disabled { opacity: .55; cursor: not-allowed; }
+.gt-chat-mic[data-listening="true"] { background: #a2191c; border-color: var(--sa-ink, #000); color: var(--sa-menu-white, #fff); }
+.gt-chat-mic:focus-visible { outline: 3px solid var(--sa-menu-white, #fff); outline-offset: 2px; }

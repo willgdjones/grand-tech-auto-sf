@@ -1,0 +1,33 @@
+/* hudFocus (critic N2/N4, gtasf-8c8wo): one message at a time. Every replay since #6.18 showed several messages drawn
+   over each other (DISPATCH on the look hint, MISSION PASSED under PITCH NOW, five layers at a robbery). GTA gives each
+   kind one spot and lets the important one stand alone. Scoped to body.gt-hud-focus (pauseMenu.ts adds it with the flag).
+   Bottom-centre priority: conversation > mission objective line > DISPATCH > look hint > key legend. */
+body.gt-hud-focus:has(.gt-convo:not([hidden])) :is(.gt-dispatch, .gt-police-bark, .gt-look-fallback, .gt-pause-hint),
+body.gt-hud-focus:has(.gt-mission-line:not([hidden])) :is(.gt-look-fallback, .gt-pause-hint),
+body.gt-hud-focus:has(.gt-dispatch:not([hidden])) :is(.gt-look-fallback, .gt-pause-hint) { visibility: hidden !important; }
+/* Big centre moments stand alone: MISSION PASSED / FAILED, RANK UP and the SA stingers clear the help text, notices,
+   radio chatter and hints for their few seconds (the quest card and minimap stay). */
+body.gt-hud-focus:has(.gt-mission-band.is-in, .gt-rank-up.is-in, .gt-sa-stinger.gt-sa-show)
+  :is(.gt-toast-notice, .gt-sa-hint, .gt-dispatch, .gt-police-bark, .gt-look-fallback, .gt-pause-hint, .gt-mission-slab) { visibility: hidden !important; }
+/* #6.23 replay frames. Your own plate never sits on a conversation, a job title or a result band (it re-shows for 6 s
+   on every profile change — exactly when the cheque counts up). */
+body.gt-hud-focus:has(.gt-convo:not([hidden]), .gt-mission-slab.is-in, .gt-mission-band.is-in, .gt-rank-up.is-in) .gt-nameplate--self { visibility: hidden !important; }
+/* The job title slab stands alone for its 3 s: the ARRIVED notice, help text and hints step aside. */
+body.gt-hud-focus:has(.gt-mission-slab.is-in) :is(.gt-toast-notice, .gt-sa-hint, .gt-look-fallback, .gt-pause-hint, #trip-status[data-notice=true]) { visibility: hidden !important; }
+@media (pointer: coarse) {
+  /* Phone: the slab is tall (two-line title + blurb) and ran under the valuation pill and the station button; trim the
+     blurb to two lines and let the pill/station step aside while it shows. */
+  body.gt-hud-focus .gt-mission-slab-blurb { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  body.gt-hud-focus:has(.gt-mission-slab.is-in) :is(.gt-founder-valuation, .gt-radio-next) { visibility: hidden !important; }
+  /* Phone: the objective line sat across the minimap's top edge and the 🎨 button. Lift it clear of the minimap (which
+     reaches ~370-390 px from the bottom) and let the paint toy step aside while a job runs. */
+  body.gt-hud-focus .gt-mission-line { bottom: 396px; }
+  body.gt-hud-focus:has(.gt-mission-line:not([hidden])) :is(#mayhem-fire, #mayhem-item) { display: none !important; }
+}
+/* Critic N2 (#6.27 robbery frames): a payout card (STORE ROBBED / JOB DONE / CHEQUE SECURED, .gt-funding-toast) is the
+   big moment too — the notice that repeats it ("Robbed … for $812!"), your own plate re-showing for the cheque, and help
+   hints step aside while it shows. The valuation pill and DISPATCH stay. */
+body.gt-hud-focus:has(.gt-funding-toast:not([hidden])) :is(.gt-toast-notice, .gt-nameplate--self, .gt-sa-hint, .gt-look-fallback, .gt-pause-hint) { visibility: hidden !important; }
+/* Critic N42 (questYieldsToPayout): the Pre-seed quest card ("A PARTNER AT PEAR VC WANTS YOUR PITCH · PITCH NOW") printed
+   over STORE ROBBED. It yields for the payout card's hold too (visibility only: nothing below it moves), then comes back. */
+body.gt-quest-yields:has(.gt-funding-toast:not([hidden])) .gt-founder-quest { visibility: hidden !important; }

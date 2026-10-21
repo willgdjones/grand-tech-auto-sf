@@ -1,0 +1,42 @@
+/* Live street races (flag streetRaces): host button, invite/lobby/results card, race HUD, countdown. Tech-noir like the phone. */
+.gt-race-host {
+  position: fixed; left: 50%; bottom: 120px; transform: translateX(-50%); z-index: 38;
+  background: #f0b429; color: #0c1813; border: 0; border-radius: 12px; padding: 10px 18px;
+  font: 900 15px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .06em; text-transform: uppercase;
+  cursor: pointer; filter: drop-shadow(0 6px 16px #0008);
+}
+.gt-race-host[hidden], .gt-race-card[hidden], .gt-race-hud[hidden], .gt-race-count[hidden] { display: none; }
+/* While aiming (body.gt-aiming, weaponPoses) the over-the-shoulder view puts the player where this button sits. */
+.gt-race-host { transition: opacity .15s; }
+body.gt-aiming .gt-race-host { opacity: 0; pointer-events: none; }
+.gt-race-card {
+  position: fixed; right: 16px; top: 120px; z-index: 42; /* above the fund-drop banner (40): an invite is time-critical */ width: 290px; max-width: calc(100vw - 32px);
+  background: #0c1813f2; border: 2px solid #f0b429; border-radius: 16px; padding: 12px 14px;
+  color: #f6edda; font: 13px/1.4 Arial, sans-serif; filter: drop-shadow(0 10px 28px #0008);
+}
+.gt-race-card-title { font: 900 15px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; letter-spacing: .06em; color: #f0b429; margin-bottom: 6px; }
+.gt-race-card-line { color: #d8d2c2; }
+.gt-race-card-actions { display: flex; gap: 8px; margin-top: 10px; }
+.gt-race-card-btn { flex: 1; border-radius: 9px; padding: 8px; font: 700 13px Arial, sans-serif; cursor: pointer; background: #f0b429; color: #0c1813; border: 0; }
+.gt-race-card-close { background: none; color: #f6edda; border: 1px solid #ffffff44; }
+.gt-race-hud {
+  position: fixed; left: 50%; top: 64px; transform: translateX(-50%); z-index: 37;
+  background: #0000009e; border: 1px solid #f0b42966; border-radius: 10px; padding: 6px 14px;
+  color: #f6edda; font: 700 14px Arial, sans-serif; white-space: nowrap;
+}
+.gt-race-count {
+  position: fixed; inset: 0; display: grid; place-items: center; z-index: 43; pointer-events: none;
+  font: 900 min(28vw, 220px) Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif; color: #f0b429;
+  text-shadow: 0 0 24px #000, 4px 4px 0 #10221a;
+}
+@media (pointer: coarse) {
+  /* Above the minimap (its box reaches ~370 px from the bottom on a 393x873 phone) and narrow enough to clear the paint button. [gtasf-qa] */
+  .gt-race-host { bottom: 382px; padding: 8px 14px; font-size: 13px; }
+  /* Below the founder quest card + the toast band (which hold the top ~215 px on a phone), so the card never sits on them. */
+  .gt-race-card { right: 10px; top: 224px; width: min(86vw, 300px); }
+  /* GTA mission-text spot above the minimap (the top band holds the $ HUD, STATION, stars, toasts, drop banner); wraps. */
+  .gt-race-hud { top: auto; bottom: 322px; font-size: 13px; white-space: normal; text-align: center; width: max-content; max-width: calc(100vw - 32px); }
+}
+/* While racing, the race HUD owns the top centre: the founder quest card / valuation pill step aside (GTA hides other
+   objectives during a race) instead of sitting under it. */
+body:has(.gt-race-hud:not([hidden])) :is(.gt-founder-quest, .gt-founder-valuation) { display: none !important; }

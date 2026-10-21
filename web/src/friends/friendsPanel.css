@@ -1,0 +1,77 @@
+/* Friends & DMs panel — SA kit (flat black panel, square corners, outlined gold title), matching
+ * the rest of the HUD (ni5k). Gated by flags.friends at the call site. */
+.gt-friends-launch {
+  position: static; box-sizing: border-box; min-height: 40px; width: 100%; margin-top: 8px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0; padding: 10px 12px;
+  background: rgba(0,0,0,.45); color: var(--sa-menu-white, #fff); cursor: pointer;
+  font: 700 13px/1.25 var(--sa-sans, Arial, sans-serif); -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-friends-launch:hover { background: rgba(0,0,0,.65); color: var(--sa-menu-blue, #b2cef2); }
+.gt-friends-launch:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 2px; }
+
+.gt-friends {
+  box-sizing: border-box; width: min(420px, calc(100vw - 24px)); max-height: min(80dvh, 640px); padding: 20px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0; box-shadow: none;
+  color: var(--sa-menu-white, #fff); background: var(--sa-panel-bg-strong, rgba(0,0,0,.82));
+  font: 14px/1.4 var(--sa-sans, Arial, Helvetica, sans-serif); overflow: hidden;
+}
+.gt-friends::backdrop { background: rgba(0,0,0,.66); }
+.gt-friends [hidden] { display: none; }
+.gt-friends-view { display: flex; flex-direction: column; gap: 10px; max-height: calc(80dvh - 40px); }
+.gt-friends-header { position: static; inset: auto; z-index: auto; pointer-events: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.gt-friends-title {
+  margin: 0; font-size: 26px; text-transform: uppercase; letter-spacing: .01em;
+  font-family: var(--sa-display, 'Arial Narrow Bold', 'Arial Narrow', Impact, sans-serif);
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 3px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-friends-close, .gt-friends-back {
+  min-height: 44px; padding: 4px 11px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  background: rgba(0,0,0,.45); color: var(--sa-menu-white, #fff); font: 700 13px var(--sa-sans, Arial, sans-serif); cursor: pointer;
+  -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-friends-close:hover, .gt-friends-back:hover { background: rgba(0,0,0,.65); color: var(--sa-menu-blue, #b2cef2); }
+.gt-friends-close:focus-visible, .gt-friends-back:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 2px; }
+
+.gt-friends-handle { margin: 0; font-size: 12px; color: #b9c2b0; }
+.gt-friends-section { margin: 6px 0 2px; font-size: 12px; font-weight: 700; color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-friends-add, .gt-friends-send { display: flex; gap: 8px; }
+.gt-friends-add-input, .gt-friends-send-input {
+  flex: 1; box-sizing: border-box; min-width: 0; padding: 9px 10px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  background: rgba(0,0,0,.45); color: var(--sa-menu-white, #fff); font: 14px var(--sa-sans, Arial, sans-serif);
+}
+.gt-friends-add-input:focus-visible, .gt-friends-send-input:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 1px; }
+.gt-friends-add-btn, .gt-friends-send-btn, .gt-friends-ok, .gt-friends-msg {
+  min-height: 38px; padding: 8px 14px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  background: var(--sa-gold, #f0b429); color: var(--sa-ink, #000); cursor: pointer;
+  font: 800 13px var(--sa-sans, Arial, sans-serif); text-transform: uppercase; letter-spacing: .02em;
+}
+.gt-friends-add-btn:hover, .gt-friends-send-btn:hover, .gt-friends-ok:hover, .gt-friends-msg:hover { background: #ffc746; }
+.gt-friends-add-btn:focus-visible, .gt-friends-send-btn:focus-visible, .gt-friends-ok:focus-visible, .gt-friends-msg:focus-visible { outline: 3px solid var(--sa-menu-white, #fff); outline-offset: 2px; }
+.gt-friends-no {
+  min-height: 38px; padding: 8px 12px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  background: rgba(0,0,0,.45); color: #f0a98a; cursor: pointer; font: 700 13px var(--sa-sans, Arial, sans-serif);
+}
+.gt-friends-no:hover { background: rgba(0,0,0,.65); }
+
+.gt-friends-status { margin: 0; min-height: 16px; font-size: 12px; color: #b9c2b0; }
+.gt-friends-status[data-kind="ok"] { color: #8fd27a; }
+.gt-friends-status[data-kind="error"] { color: #f0a98a; }
+
+.gt-friends-incoming { display: grid; gap: 6px; }
+.gt-friends-req { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.gt-friends-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; overflow-y: auto; }
+.gt-friends-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.gt-friends-row > button, .gt-friends-req > button { flex-shrink: 0; }
+.gt-friends-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: #5a5a5a; }
+.gt-friends-dot[data-online="true"] { background: #4caf50; box-shadow: 0 0 6px #4caf5088; }
+.gt-friends-name { min-width: 0; max-width: 100%; overflow-wrap: anywhere; font-weight: 700; }
+.gt-friends-meta { flex: 1 1 80px; min-width: 0; overflow-wrap: anywhere; font-size: 12px; color: #b9c2b0; }
+.gt-friends-pending { overflow-wrap: anywhere; font-size: 12px; color: #8a938080; }
+.gt-friends-empty { font-size: 13px; color: #b9c2b0; }
+
+.gt-friends-thread { margin: 0; padding: 8px; list-style: none; display: flex; flex-direction: column; gap: 5px; flex: 1; min-height: 160px; overflow-y: auto; border: 1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.35); }
+.gt-friends-msg-row { max-width: 80%; align-self: flex-start; }
+.gt-friends-msg-row[data-mine="true"] { align-self: flex-end; }
+.gt-friends-msg-text { display: inline-block; padding: 6px 10px; border: 1px solid var(--sa-panel-edge, rgba(0,0,0,.9)); background: rgba(0,0,0,.5); overflow-wrap: anywhere; }
+.gt-friends-msg-row[data-mine="true"] .gt-friends-msg-text { background: #3a3310; border-color: var(--sa-title-gold, #f6a81e); }
+@media (max-width: 700px) { .gt-friends { padding: 16px; } .gt-friends-title { font-size: 22px; } }

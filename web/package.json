@@ -1,0 +1,23 @@
+{
+  "name": "@gtasf/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gtasf/shared": "0.0.0",
+    "@takram/three-atmosphere": "^0.19.1",
+    "3d-tiles-renderer": "0.5.3",
+    "postprocessing": "^6.39.5",
+    "suncalc": "2.1.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "0.186.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@gtasf/worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8787",
+    "dev:ai": "wrangler dev --port 8787",
+    "build": "wrangler deploy --dry-run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gtasf/shared": "0.0.0",
+    "@typesafe-ai/sdk": "0.6.0",
+    "stripe": "18.0.0"
+  }
+}

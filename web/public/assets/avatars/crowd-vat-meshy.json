@@ -1,0 +1,129 @@
+{
+ "walkFrames": 12,
+ "idleFrames": 2,
+ "walkSeconds": 1.3333333730697632,
+ "idleSeconds": 1.899999976158142,
+ "quant": 8192,
+ "bodies": [
+  {
+   "id": "meshy-founder-hoodie",
+   "vertices": 1308,
+   "triangles": 2937,
+   "indexOffset": 0,
+   "colourOffset": 17624,
+   "paintOffset": 21548,
+   "positionOffset": 22856,
+   "normalOffset": 132728
+  },
+  {
+   "id": "meshy-founder-blazer",
+   "vertices": 1249,
+   "triangles": 2779,
+   "indexOffset": 187664,
+   "colourOffset": 204340,
+   "paintOffset": 208088,
+   "positionOffset": 209340,
+   "normalOffset": 314256
+  },
+  {
+   "id": "meshy-founder-bomber",
+   "vertices": 1398,
+   "triangles": 3045,
+   "indexOffset": 366716,
+   "colourOffset": 384988,
+   "paintOffset": 389184,
+   "positionOffset": 390584,
+   "normalOffset": 508016
+  },
+  {
+   "id": "meshy-hoodie-woman",
+   "vertices": 1292,
+   "triangles": 2896,
+   "indexOffset": 566732,
+   "colourOffset": 584108,
+   "paintOffset": 587984,
+   "positionOffset": 589276,
+   "normalOffset": 697804
+  },
+  {
+   "id": "meshy-tech-vest-man",
+   "vertices": 1276,
+   "triangles": 2761,
+   "indexOffset": 752068,
+   "colourOffset": 768636,
+   "paintOffset": 772464,
+   "positionOffset": 773740,
+   "normalOffset": 880924
+  },
+  {
+   "id": "meshy-business-woman",
+   "vertices": 1270,
+   "triangles": 2738,
+   "indexOffset": 934516,
+   "colourOffset": 950944,
+   "paintOffset": 954756,
+   "positionOffset": 956028,
+   "normalOffset": 1062708
+  },
+  {
+   "id": "meshy-jogger-woman",
+   "vertices": 1350,
+   "triangles": 2976,
+   "indexOffset": 1116048,
+   "colourOffset": 1133904,
+   "paintOffset": 1137956,
+   "positionOffset": 1139308,
+   "normalOffset": 1252708
+  },
+  {
+   "id": "meshy-flannel-man",
+   "vertices": 1277,
+   "triangles": 2756,
+   "indexOffset": 1309408,
+   "colourOffset": 1325944,
+   "paintOffset": 1329776,
+   "positionOffset": 1331056,
+   "normalOffset": 1438324
+  },
+  {
+   "id": "meshy-denim-woman",
+   "vertices": 1330,
+   "triangles": 2962,
+   "indexOffset": 1491960,
+   "colourOffset": 1509732,
+   "paintOffset": 1513724,
+   "positionOffset": 1515056,
+   "normalOffset": 1626776
+  },
+  {
+   "id": "meshy-puffer-man",
+   "vertices": 1340,
+   "triangles": 2958,
+   "indexOffset": 1682636,
+   "colourOffset": 1700384,
+   "paintOffset": 1704404,
+   "positionOffset": 1705744,
+   "normalOffset": 1818304
+  },
+  {
+   "id": "meshy-skater-man",
+   "vertices": 1280,
+   "triangles": 2764,
+   "indexOffset": 1874584,
+   "colourOffset": 1891168,
+   "paintOffset": 1895008,
+   "positionOffset": 1896288,
+   "normalOffset": 2003808
+  },
+  {
+   "id": "hoodie",
+   "vertices": 1690,
+   "triangles": 3342,
+   "indexOffset": 2057568,
+   "colourOffset": 2077620,
+   "paintOffset": 2082692,
+   "positionOffset": 2084384,
+   "normalOffset": 2226344
+  }
+ ]
+}

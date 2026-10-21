@@ -1,0 +1,140 @@
+/*
+ * GTASF shared San Andreas HUD/UI theme (gtasf-v2-sa-hud-theme).
+ *
+ * The ONE SA theme every pane's UI shares. Import once near the app entry; use the tokens and the
+ * utility classes below instead of bespoke cream/dark-green rounded panels. SA rules:
+ *   - text drawn straight on screen with a THICK BLACK OUTLINE (no soft drop shadows)
+ *   - no rounded corners, no serif/italic, no translucent cream panels
+ *   - money = dark green with black outline + leading zeros (negative = red)
+ *   - big titles in a pricedown-STYLE condensed display font, SA gold/orange
+ *   - small text in plain sans with a black outline
+ *   - dialogs = SA pause-menu: a flat black translucent box, white/blue menu text
+ *
+ * Reference art lives in tools/art/reference/ (gitignored) — compared by eye, never shipped.
+ * No pricedown font is bundled (licensing); the display stack approximates it with condensed bolds.
+ */
+:root {
+  /* SA money + status palette (founder-specified hex). */
+  --sa-money-green: #345f27;
+  --sa-money-red: #a2191c;
+  --sa-bar-red: #b81d21;
+  --sa-bar-white: #e3e3e3;
+  --sa-bar-blue: #b2cef2;
+  /* Wanted-star gold / big-title gold-orange. */
+  --sa-gold: #f0b429;
+  --sa-title-gold: #f6a81e;
+  --sa-title-orange: #e3651d;
+  /* SA pause-menu chrome. */
+  --sa-menu-white: #ffffff;
+  --sa-menu-blue: #b2cef2;
+  --sa-clock-grey: #dcdcdc;
+  --sa-ink: #000000;
+  --sa-panel-bg: rgba(0, 0, 0, 0.62);
+  --sa-panel-bg-strong: rgba(0, 0, 0, 0.82);
+  --sa-panel-edge: rgba(0, 0, 0, 0.9);
+  /* Fonts: a condensed-bold display stack (pricedown-ish, no copyrighted font) and plain sans. */
+  --sa-display: 'Haettenschweiler', 'Arial Narrow Bold', 'Arial Narrow', 'Impact', sans-serif;
+  --sa-sans: Arial, Helvetica, sans-serif;
+  /* Outline thickness tokens for the text-stroke helpers. */
+  --sa-outline-thin: 1.2px;
+  --sa-outline: 2px;
+  --sa-outline-thick: 3px;
+}
+
+/* --- Text: straight on screen with a solid black outline (paint-order keeps the fill crisp). --- */
+.sa-text {
+  font-family: var(--sa-sans);
+  font-weight: 700;
+  color: var(--sa-menu-white);
+  -webkit-text-stroke: var(--sa-outline-thin) var(--sa-ink);
+  paint-order: stroke fill;
+  text-shadow: none;
+  font-style: normal;
+}
+/* Fallback for engines without -webkit-text-stroke: a dense 8-way shadow reads as an outline. */
+@supports not ((-webkit-text-stroke: 1px #000)) {
+  .sa-text, .sa-title, .sa-money, .sa-street {
+    -webkit-text-stroke: 0;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000, 0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000;
+  }
+}
+
+/* --- Big titles / mission-pass toasts: condensed display, SA gold, heavy outline, uppercase. --- */
+.sa-title {
+  font-family: var(--sa-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--sa-title-gold);
+  -webkit-text-stroke: var(--sa-outline-thick) var(--sa-ink);
+  paint-order: stroke fill;
+  text-shadow: none;
+  font-style: normal;
+  line-height: 1.02;
+}
+.sa-title--orange { color: var(--sa-title-orange); }
+
+/* --- SA money counter: dark green, blocky, black outline, leading zeros (set the digits in JS). --- */
+.sa-money {
+  font-family: var(--sa-display);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--sa-money-green);
+  -webkit-text-stroke: var(--sa-outline) var(--sa-ink);
+  paint-order: stroke fill;
+  text-shadow: none;
+  font-variant-numeric: tabular-nums;
+}
+.sa-money--neg { color: var(--sa-money-red); }
+
+/* --- Clock: big blocky light-grey digits, black outline. --- */
+.sa-clock {
+  font-family: var(--sa-display);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--sa-clock-grey);
+  -webkit-text-stroke: var(--sa-outline) var(--sa-ink);
+  paint-order: stroke fill;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Street / area name, bottom-right SA style. --- */
+.sa-street {
+  font-family: var(--sa-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--sa-title-gold);
+  -webkit-text-stroke: var(--sa-outline) var(--sa-ink);
+  paint-order: stroke fill;
+  text-align: right;
+}
+
+/* --- Wanted-style stars (reused for funding stage): gold glyph, black outline. --- */
+.sa-stars { display: inline-flex; gap: 2px; line-height: 1; }
+.sa-star {
+  color: var(--sa-gold);
+  -webkit-text-stroke: var(--sa-outline-thin) var(--sa-ink);
+  paint-order: stroke fill;
+  text-shadow: none;
+}
+.sa-star--empty { color: transparent; -webkit-text-stroke: var(--sa-outline-thin) var(--sa-ink); }
+
+/* --- SA pause-menu panel/dialog: flat black translucent box, square corners, no soft shadow. --- */
+.sa-panel {
+  background: var(--sa-panel-bg);
+  border: 2px solid var(--sa-panel-edge);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--sa-menu-white);
+  font-family: var(--sa-sans);
+}
+.sa-panel--strong { background: var(--sa-panel-bg-strong); }
+.sa-menu-item { color: var(--sa-menu-white); font-weight: 700; }
+.sa-menu-item--active, .sa-menu-item:hover { color: var(--sa-menu-blue); }
+
+/* --- Health-style bars (red / white / light-blue). --- */
+.sa-bar { height: 8px; background: rgba(0, 0, 0, 0.55); border: 1px solid var(--sa-ink); border-radius: 0; overflow: hidden; }
+.sa-bar__fill { height: 100%; background: var(--sa-bar-red); }
+.sa-bar__fill--white { background: var(--sa-bar-white); }
+.sa-bar__fill--blue { background: var(--sa-bar-blue); }

@@ -1,0 +1,17 @@
+{
+  "name": "@gtasf/shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "polyclip-ts": "0.16.8",
+    "polygon-clipping": "0.15.7",
+    "three": "0.186.1"
+  }
+}

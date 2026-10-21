@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /e/robots-blocked
+Crawl-delay: 2
+
+User-agent: Googlebot
+Allow: /

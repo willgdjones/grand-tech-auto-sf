@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>GTASF · feedback digest</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px; min-height: 100vh; font: 15px/1.5 Arial, sans-serif; color: #fff8e8; background: #0b1812; }
+  main { max-width: 920px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 24px; }
+  .eyebrow { margin: 0; letter-spacing: .18em; font-size: 12px; font-weight: bold; color: #e4c776; }
+  .blurb { color: #cdd6c4; font-size: 14px; }
+  .auth { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 18px 0; }
+  input[type="password"] { flex: 1 1 260px; min-height: 42px; padding: 9px 12px; border: 1px solid #5c6e57; border-radius: 6px; background: #11251f; color: #fff8e8; font-size: 15px; }
+  input:focus-visible, button:focus-visible { outline: 2px solid #e4c776; outline-offset: 2px; }
+  label.remember { font-size: 13px; color: #a9b3a0; display: inline-flex; gap: 6px; align-items: center; }
+  button { min-height: 42px; padding: 9px 18px; border: 1px solid #c7ad65; border-radius: 6px; background: #e4c776; color: #15221a; font-weight: bold; font-size: 14px; cursor: pointer; }
+  button:hover { background: #f0d98a; }
+  button.ghost { background: transparent; color: #fff8e8; border-color: #5c6e57; font-weight: normal; font-size: 13px; min-height: 34px; padding: 5px 12px; }
+  button.ghost:hover { background: #ffffff14; }
+  button:disabled { opacity: .6; cursor: progress; }
+  #status { min-height: 1.4em; font-size: 14px; overflow-wrap: anywhere; }
+  #status[data-tone="ok"] { color: #8fe0a2; }
+  #status[data-tone="error"] { color: #f0a98a; }
+  #status[data-tone="working"] { color: #dcca8d; }
+  .group { margin-top: 22px; border-top: 1px solid #243b31; padding-top: 10px; }
+  .group h2 { font-size: 15px; color: #e4c776; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 8px; }
+  .group h2 span { color: #a9b3a0; font-weight: normal; letter-spacing: 0; text-transform: none; }
+  .item { padding: 10px 0; border-bottom: 1px solid #16271f; }
+  .item .text { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .meta { color: #a9b3a0; font-size: 12px; margin-top: 4px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .meta a { color: #dcca8d; }
+  .shot { margin-top: 8px; max-width: 320px; border: 1px solid #243b31; border-radius: 6px; display: block; }
+  .empty { color: #a9b3a0; padding: 16px 0; }
+  footer { margin-top: 28px; color: #6f7a67; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">GTASF ADMIN</p>
+  <h1>Feedback digest</h1>
+  <p class="blurb">F-key player feedback (PLAN-v2 decision 10), grouped by theme for review when planning
+    the next version. Nothing here creates work items; read it and decide. Themes are keyword-derived, never
+    executed. Click a location to jump into the game at that spot.</p>
+
+  <div class="auth">
+    <input id="token" type="password" placeholder="Admin token" autocomplete="off" aria-label="Admin token" />
+    <label class="remember"><input id="remember" type="checkbox" /> Remember for this tab</label>
+    <button id="load" type="button">Load feedback</button>
+  </div>
+
+  <p id="status" role="status" aria-live="polite"></p>
+  <div id="list"></div>
+
+  <footer>Requires the <code>ADMIN_TOKEN</code> worker secret. The token is sent only to this site's
+    <code>/api/feedback/admin/*</code> endpoints and, if you tick the box, kept in this tab only (sessionStorage).</footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var TOKEN_KEY = 'gtasf:adminToken';
+  var tokenInput = document.getElementById('token');
+  var remember = document.getElementById('remember');
+  var loadButton = document.getElementById('load');
+  var statusEl = document.getElementById('status');
+  var listEl = document.getElementById('list');
+  var shotUrls = [];
+
+  try { var saved = sessionStorage.getItem(TOKEN_KEY); if (saved) { tokenInput.value = saved; remember.checked = true; } }
+  catch (e) { /* private mode: no prefill */ }
+
+  function setStatus(text, tone) { statusEl.textContent = text; statusEl.dataset.tone = tone || ''; }
+  function el(tag, text, className) { var n = document.createElement(tag); if (text != null) n.textContent = text; if (className) n.className = className; return n; }
+
+  function authHeaders() {
+    var token = tokenInput.value.trim();
+    try { if (remember.checked && token) sessionStorage.setItem(TOKEN_KEY, token); else sessionStorage.removeItem(TOKEN_KEY); }
+    catch (e) { /* ignore storage failure */ }
+    return token ? { Authorization: 'Bearer ' + token } : null;
+  }
+  function friendlyError(response) {
+    if (response.status === 401) return 'Unauthorized — check the admin token.';
+    if (response.status === 404) return 'Admin endpoints are not available (is ADMIN_TOKEN set on the worker?).';
+    return 'Request failed (HTTP ' + response.status + ').';
+  }
+  function fmtTime(iso) {
+    var t = Date.parse(iso); if (!isFinite(t)) return iso || '';
+    try { return new Date(t).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' PT'; }
+    catch (e) { return new Date(t).toISOString(); }
+  }
+
+  function viewShot(id, button) {
+    var headers = authHeaders(); if (!headers) { setStatus('Enter the admin token first.', 'error'); return; }
+    button.disabled = true;
+    fetch('/api/feedback/admin/screenshot?id=' + encodeURIComponent(id), { headers: headers, credentials: 'same-origin', cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(friendlyError(r)); return r.blob(); })
+      .then(function (blob) {
+        var url = URL.createObjectURL(blob); shotUrls.push(url);
+        var img = document.createElement('img'); img.className = 'shot'; img.alt = 'Feedback screenshot'; img.src = url;
+        button.replaceWith(img);
+      })
+      .catch(function (err) { setStatus(err.message || 'Could not load screenshot.', 'error'); button.disabled = false; });
+  }
+
+  function renderItem(item) {
+    var wrap = el('div', null, 'item');
+    wrap.append(el('div', (item && typeof item.text === 'string') ? item.text : '(empty)', 'text'));
+    var meta = el('div', null, 'meta');
+    if (item.nick) meta.append(el('span', '@' + item.nick));
+    if (item.startup) meta.append(el('span', item.startup));
+    if (item.round) meta.append(el('span', item.round));
+    if (item.mode) meta.append(el('span', item.mode));
+    if (item.locationName) meta.append(el('span', item.locationName));
+    if (item.jump) { var a = el('a', 'jump ↗'); a.href = item.jump; a.target = '_blank'; a.rel = 'noopener'; meta.append(a); }
+    meta.append(el('span', fmtTime(item.createdAt)));
+    wrap.append(meta);
+    if (item.hasScreenshot) { var b = el('button', 'View screenshot', 'ghost'); b.type = 'button'; b.addEventListener('click', function () { viewShot(item.id, b); }); wrap.append(b); }
+    return wrap;
+  }
+
+  function render(digest) {
+    shotUrls.forEach(function (u) { try { URL.revokeObjectURL(u); } catch (e) {} }); shotUrls = [];
+    listEl.replaceChildren();
+    var themes = (digest && Array.isArray(digest.themes)) ? digest.themes : [];
+    if (!themes.length) { listEl.append(el('p', 'No feedback yet.', 'empty')); return; }
+    themes.forEach(function (group) {
+      var section = el('div', null, 'group');
+      var h = el('h2', (group.theme || 'general') + ' ');
+      h.append(el('span', '(' + group.count + ')'));
+      section.append(h);
+      (group.items || []).forEach(function (item) { section.append(renderItem(item)); });
+      listEl.append(section);
+    });
+  }
+
+  function load() {
+    var headers = authHeaders();
+    if (!headers) { setStatus('Enter the admin token first.', 'error'); return; }
+    loadButton.disabled = true; setStatus('Loading…', 'working');
+    fetch('/api/feedback/admin/digest', { headers: headers, credentials: 'same-origin', cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(friendlyError(r)); return r.json(); })
+      .then(function (digest) { render(digest); setStatus((digest && digest.total || 0) + ' feedback item(s) across ' + ((digest && digest.themes || []).length) + ' theme(s).', 'ok'); })
+      .catch(function (err) { setStatus(err.message || 'Could not load feedback.', 'error'); })
+      .finally(function () { loadButton.disabled = false; });
+  }
+
+  loadButton.addEventListener('click', load);
+  tokenInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') load(); });
+})();
+</script>
+</body>
+</html>

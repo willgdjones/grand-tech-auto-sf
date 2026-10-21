@@ -1,0 +1,52 @@
+GTASF original station loops — CC0 1.0 Universal
+
+kvc-radio.mp3 — "Seed Round Shuffle", 112 BPM
+lofi-hayes-valley.mp3 — "Soft Launch Afternoon", 76 BPM
+bart-delays-fm.mp3 — "Next Train in Two", 120 BPM
+
+Original synthesized instrumental compositions made for GTASF, 2026-10-03.
+No third-party recordings, samples, melodies, voices or lyrics are included.
+The reproducible synthesis source is tools/audio/build-radio.py.
+
+To the extent any copyright or related rights subsist in these original loops,
+they are dedicated to the public domain under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+You may copy, modify and distribute these loops, including commercially,
+without asking permission. No endorsement is implied and no warranty is made.
+This dedication applies to these three loops and their synthesis source, not to
+unrelated game assets or the radio DJ copy in shared/content/radio.ts.
+
+GTASF original genre radio — generated 2026-10-04 (gtasf-jwxu)
+-----------------------------------------------------------
+The following new filename families are NOT covered by the legacy-loop CC0
+dedication above:
+radio-soma-track-*, k-dsrupt-track-*, burn-rate-fm-track-*, sf-vc-track-*,
+lofi-hayes-valley-track-*, *-dj-*, ad-*, talk-*.
+
+Music: fal-ai/ace-step (ACE-Step), generated from original genre/instrument
+briefs with [instrumental] lyrics, 120-second requests, no source recording,
+artist reference, melody sample, brand or voice imitation prompt.
+Model code/weights: Apache License 2.0, Timedomain Inc. and stepfun (2025).
+https://github.com/ace-step/ACE-Step/blob/main/LICENSE
+fal commercial-use model listing and API:
+https://fal.ai/models/fal-ai/ace-step
+https://fal.ai/models/fal-ai/ace-step/api
+
+Speech: fal-ai/kokoro/american-english (Kokoro-82M), original GTASF scripts,
+stock synthetic voices only; no uploaded/cloned voice or real-person persona.
+Model: Apache License 2.0 (hexgrad/Kokoro-82M).
+https://huggingface.co/hexgrad/Kokoro-82M
+fal commercial-use model listing and API:
+https://fal.ai/models/fal-ai/kokoro/american-english
+https://fal.ai/models/fal-ai/kokoro/american-english/api
+
+Both fal model pages explicitly permit commercial use (checked 2026-10-04).
+Generated outputs are used in GTASF under those commercial-use service terms;
+Apache-2.0 describes the models, not an automatic licence for their outputs.
+No third-party music or voice recording was supplied. All hosts, callers,
+products and sponsors in the new scripts are fictional. No endorsement is
+claimed. Scripts/briefs: tools/art/radio/content.mjs; exact requests:
+tools/art/radio/recipes.json. Raw WAV masters are cached locally and excluded
+from the game. MP3 deliverables are normalized and encoded at 64 kbps, with
+stereo music and mono speech. Stock voice IDs are recorded in the recipes.

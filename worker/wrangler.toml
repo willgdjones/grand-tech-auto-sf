@@ -1,0 +1,63 @@
+name = "gtasf-local"
+main = "src/index.ts"
+compatibility_date = "2026-09-28"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+[vars]
+ENVIRONMENT = "local"
+LAUNCH_MODE = "open"
+WORLD_CAPACITY = "150"
+# npm run dev seeds this local-only manifest from the same map selected by Vite.
+WORLD_ROAD_GRAPH_KEY = "map/lombard/manifest.json"
+
+[[durable_objects.bindings]]
+name = "WORLD"
+class_name = "WorldDO"
+[[durable_objects.bindings]]
+name = "LEDGER"
+class_name = "LedgerDO"
+[[durable_objects.bindings]]
+name = "LOBBY"
+class_name = "LobbyDO"
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["WorldDO", "LedgerDO"]
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["LobbyDO"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gtasf-local"
+# Local-only placeholder. Track E provisioning replaces it in staging config.
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "gtasf-assets-local"
+
+[[queues.producers]]
+binding = "JOBS"
+queue = "gtasf-jobs-local"
+[[queues.consumers]]
+queue = "gtasf-jobs-local"
+max_batch_size = 10
+max_retries = 3
+
+# Cloudflare Email Service send_email binding (emailCapture, gtasf-1aon). gtasf.com is ONBOARDED for sending
+# (pane 5, DEPLOY.md). `wrangler dev` SIMULATES sends locally (logged, not delivered); the feature still
+# self-gates on flags.emailCapture (OFF), so this binding is inert until the flag flips. Add `remote = true`
+# below only for a deliberate local real-send test.
+[[send_email]]
+name = "EMAIL"
+
+[triggers]
+crons = ["0 */3 * * *", "0 8 * * *"]
+
+# Workers AI (spoken-bubble STT when flags.captionsWorkersAi; unused otherwise).
+[ai]
+binding = "AI"
+# Workers AI has no local emulation: proxy this one binding to real Cloudflare from `wrangler dev --local`.
+remote = true

@@ -1,0 +1,23 @@
+<!doctype html>
+<!-- Dev-only founder-ladder look harness (served by vite dev; NOT a production build entry, see
+     web/vite.config.ts rollupOptions.input). Screenshotted by tools/founder-ladder-capture.mjs. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Founder ladder look harness</title>
+    <style>
+      html, body { margin: 0; height: 100%; }
+      /* A dusk SF-ish backdrop so the overlays read in context, standing in for the spawn view. */
+      body {
+        min-height: 100dvh;
+        background:
+          radial-gradient(120% 80% at 50% -10%, #2a3f5c 0%, #16233a 42%, #0b1422 100%),
+          linear-gradient(0deg, #0b1422, #16233a);
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module" src="/src/founder/previewMount.ts"></script>
+  </body>
+</html>

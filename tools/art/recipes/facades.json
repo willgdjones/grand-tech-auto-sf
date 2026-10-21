@@ -1,0 +1,58 @@
+[
+  {
+    "name": "victorian-a",
+    "prompt": "A seamless repeating game texture of one San Francisco Victorian painted wooden house upper-floor facade, straight orthographic front elevation, no perspective. Entire square is filled edge to edge by pale sage painted clapboard, cream narrow ornate wooden trim, one tall recessed dark teal double sash bay-window unit centered, simplified cornice horizontal bands at top and bottom, weathered muted mustard accents. Wall albedo only, flat diffuse overcast light, no shadows from external objects, no ground, no sky, no roof, no doors, no people, no signs, no text, no logos. Authored 2004 PlayStation 2 open-world urban videogame texture style, GTA San Andreas era, chunky hand-painted pixels, flat limited 16-color earthy palette, legible large shapes, subtle wear only. Tile continues seamlessly on all four sides. Not a photograph, not a whole building, not an illustration of a scene.",
+    "seed": 51001,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/facades/victorian-a.png"
+  },
+  {
+    "name": "victorian-b",
+    "prompt": "Seamless square videogame building wall albedo texture, frontal orthographic elevation of a single upper-floor bay of a San Francisco Edwardian house. Dusty warm salmon stucco fills all edges. Two tall dark teal sash windows separated by pale cream pilaster, cream window frames with simple decorative capitals, thin horizontal floor molding. No ground, sky, roof, door, street, vegetation, people, logos or words. Flat overcast diffuse light, no cast shadows. Low resolution 2004 PlayStation 2 Grand Theft Auto San Andreas urban game art, limited warm pastel and charcoal palette, simple hand painted pixel blocks, chunky readable trim, mild age. Repeatable both horizontally and vertically, square wall texture only.",
+    "seed": 51002,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/facades/victorian-b.png"
+  },
+  {
+    "name": "fidi-glass",
+    "prompt": "A repeating 2 by 3 grid of dark blue-green glass curtain wall windows on a San Francisco Financial District office tower. Thin pale grey aluminum mullions, subtle flat blue reflection rectangles in alternate panes. Strict uniform rectangular grid all the way to all four edges, no external reflections or objects. Seamless square building wall texture for a 2004 PlayStation 2 open-world San Francisco videogame. Flat orthographic front elevation, wall fills the entire square. No perspective, no building silhouette, no sky, no ground, no roof, no people, no brand logos, no words. Limited muted earthy palette, chunky hand-painted pixels, simple large shapes, mild weathering, flat neutral diffuse light. Repeats horizontally and vertically.",
+    "seed": 51003,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/facades/fidi-glass.png"
+  },
+  {
+    "name": "fidi-stone",
+    "prompt": "One floor of a historic San Francisco Financial District limestone office wall, warm pale stone piers with a regular pair of narrow deeply recessed charcoal sash windows, simple art deco ornament, a dark sandstone floor stringcourse. Window openings cover half the wall; rectilinear geometry. Seamless square building wall texture for a 2004 PlayStation 2 open-world San Francisco videogame. Flat orthographic front elevation, wall fills the entire square. No perspective, no building silhouette, no sky, no ground, no roof, no people, no brand logos, no words. Limited muted earthy palette, chunky hand-painted pixels, simple large shapes, mild weathering, flat neutral diffuse light. Repeats horizontally and vertically.",
+    "seed": 51004,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/facades/fidi-stone.png"
+  },
+  {
+    "name": "soma-brick",
+    "prompt": "One bay of a San Francisco SoMa converted industrial warehouse facade, dusty red-orange bricks with irregular muted wear, one broad black steel factory window divided into 12 rectangular dark teal glass panes, flat grey lintel and sill. Square upper-storey wall with no entrance. Seamless square building wall texture for a 2004 PlayStation 2 open-world San Francisco videogame. Flat orthographic front elevation, wall fills the entire square. No perspective, no building silhouette, no sky, no ground, no roof, no people, no brand logos, no words. Limited muted earthy palette, chunky hand-painted pixels, simple large shapes, mild weathering, flat neutral diffuse light. Repeats horizontally and vertically.",
+    "seed": 51005,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/facades/soma-brick.png"
+  },
+  {
+    "name": "mission-mural",
+    "prompt": "Flat square section of painted stucco mural wall from San Francisco Mission District, original abstract geometric orange sun, pale turquoise rolling waves, terracotta hills and cream rays. Bold simple 1970s community mural shapes, no faces, no people, no writing, no symbols, no copyrighted art. Wall all the way to the edges. Seamless square building wall texture for a 2004 PlayStation 2 open-world San Francisco videogame. Flat orthographic front elevation, wall fills the entire square. No perspective, no building silhouette, no sky, no ground, no roof, no people, no brand logos, no words. Limited muted earthy palette, chunky hand-painted pixels, simple large shapes, mild weathering, flat neutral diffuse light. Repeats horizontally and vertically.",
+    "seed": 51006,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/facades/mission-mural.png"
+  },
+  {
+    "name": "storefront",
+    "prompt": "Straight frontal ground floor San Francisco North Beach neighborhood shop wall texture. Cream pilasters at sides, green striped short canvas awning across top quarter, large dark teal shopfront glazing divided by wood mullions, mustard lower wood panel. Empty unbranded blank fascia. No products or written signs, no pavement. Seamless square building wall texture for a 2004 PlayStation 2 open-world San Francisco videogame. Flat orthographic front elevation, wall fills the entire square. No perspective, no building silhouette, no sky, no ground, no roof, no people, no brand logos, no words. Limited muted earthy palette, chunky hand-painted pixels, simple large shapes, mild weathering, flat neutral diffuse light. Repeats horizontally and vertically.",
+    "seed": 51007,
+    "width": 512,
+    "height": 512,
+    "output": "web/public/art/facades/storefront.png"
+  }
+]

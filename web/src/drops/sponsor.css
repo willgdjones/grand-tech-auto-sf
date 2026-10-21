@@ -1,0 +1,50 @@
+/* SA-restyle (gtasf-v2-sa-restyle-tracker-ni5k): flat black panel, square corners, SA tokens, gold
+ * outlined display title. Mirrors becomeAnAngel.css; structure/classes are owned by sponsor.ts. */
+.gt-dropsponsor {
+  box-sizing: border-box; width: min(460px, calc(100vw - 24px)); max-height: min(86dvh, 720px); padding: 24px;
+  border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: var(--sa-menu-white, #fff); background: var(--sa-panel-bg-strong, rgba(0,0,0,.82));
+  font: 15px/1.5 var(--sa-sans, Arial, Helvetica, sans-serif); overflow: auto; box-shadow: none;
+}
+.gt-dropsponsor::backdrop { background: rgba(0,0,0,.66); }
+.gt-dropsponsor-close {
+  float: right; min-height: 34px; padding: 4px 11px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: var(--sa-menu-white, #fff); background: rgba(0,0,0,.45); font-size: 13px; font-weight: 700; cursor: pointer;
+  -webkit-text-stroke: 1px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-dropsponsor-close:hover { background: rgba(0,0,0,.65); color: var(--sa-menu-blue, #b2cef2); }
+.gt-dropsponsor-close:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 2px; }
+.gt-dropsponsor-eyebrow {
+  margin: 0 0 4px; letter-spacing: .18em; font-size: 12px; font-weight: 700; text-transform: uppercase;
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-dropsponsor h2 {
+  margin: 0; font-size: 30px; line-height: 1.1; text-transform: uppercase; letter-spacing: .01em;
+  font-family: var(--sa-display, 'Arial Narrow Bold', 'Arial Narrow', Impact, sans-serif);
+  color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 3px var(--sa-ink, #000); paint-order: stroke fill; text-shadow: none;
+}
+.gt-dropsponsor-desc { margin: 10px 0 0; font-size: 13px; color: #cfd6c6; }
+.gt-dropsponsor-price {
+  margin: 8px 0 0; font-size: 14px; font-weight: 700; color: var(--sa-title-gold, #f6a81e);
+  -webkit-text-stroke: .8px var(--sa-ink, #000); paint-order: stroke fill;
+}
+.gt-dropsponsor-form { margin: 16px 0 0; display: grid; gap: 12px; }
+.gt-dropsponsor-form label { display: grid; gap: 5px; font-size: 13px; color: #dce0d4; }
+.gt-dropsponsor-form input,
+.gt-dropsponsor-form select {
+  box-sizing: border-box; width: 100%; padding: 9px 10px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0;
+  color: var(--sa-menu-white, #fff); background: rgba(0,0,0,.45); font: inherit;
+}
+.gt-dropsponsor-form input:focus-visible,
+.gt-dropsponsor-form select:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 1px; }
+.gt-dropsponsor-status { margin: 0; min-height: 18px; font-size: 13px; color: #a9b3a0; }
+.gt-dropsponsor-status[data-kind="error"] { color: #f0a98a; }
+.gt-dropsponsor-status[data-kind="ok"] { color: #8fd27a; }
+.gt-dropsponsor-submit {
+  min-height: 44px; padding: 10px 20px; border: 2px solid var(--sa-ink, #000); border-radius: 0;
+  color: var(--sa-ink, #000); background: var(--sa-gold, #f0b429); cursor: pointer;
+  font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .02em;
+}
+.gt-dropsponsor-submit:hover { background: #ffc746; }
+.gt-dropsponsor-submit:disabled { opacity: .55; cursor: default; }
+.gt-dropsponsor-submit:focus-visible { outline: 3px solid var(--sa-menu-white, #fff); outline-offset: 2px; }

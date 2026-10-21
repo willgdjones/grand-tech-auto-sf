@@ -1,0 +1,43 @@
+# GTASF local prefilter. Adapted from the BDTS matcher and reviewed inventory.
+# English profanity additions are token bounded; this is a limited filter, not semantic moderation.
+# Format: normalized stem, TAB, word|prefix. See docs/chat.md for scope and regeneration.
+nigger	prefix
+sandnigger	prefix
+niglet	prefix
+kike	word
+kikes	word
+spic	word
+spics	word
+wetback	prefix
+beaner	word
+beaners	word
+gook	word
+gooks	word
+jigaboo	prefix
+porchmonkey	prefix
+zipperhead	prefix
+towelhead	prefix
+raghead	prefix
+jewboy	prefix
+shemale	prefix
+pikey	word
+pikeys	word
+sudaca	word
+sudacas	word
+жид	word
+жиды	word
+dothead	word
+dotheads	word
+niggress	word
+niggresses	word
+trannoid	word
+trannoids	word
+fuck	prefix
+shit	word
+shits	word
+asshole	prefix
+cunt	word
+cunts	word
+bitch	word
+bitches	word
+kys	word

@@ -1,0 +1,70 @@
+/* GTASF time-trial HUD (docs/PLAN-gta-pivot.md LANE C). A compact race-timer banner, top-centre, shown only while
+   a trial runs: route title, the live clock, the par to beat and gate progress. Tech-noir to match the
+   founder-ladder cards; the clock goes gold under par, red over. */
+.gt-tt-hud {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 42;
+  font-family: Arial, sans-serif;
+  color: #f6edda;
+  background: #0c1813e6;
+  border: 2px solid #f0b429;
+  border-radius: 14px;
+  padding: 8px 16px 10px;
+  text-align: center;
+  min-width: 190px;
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+.gt-tt-hud-title {
+  font: 900 13px Haettenschweiler, 'Arial Narrow Bold', Impact, sans-serif;
+  letter-spacing: 0.12em;
+  color: #f0b429;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.gt-tt-hud-clock {
+  font: 800 30px 'DIN Alternate', 'Arial Narrow', Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.05;
+}
+.gt-tt-hud-clock.is-under { color: #7be3a0; }   /* under par so far — on for gold */
+.gt-tt-hud-clock.is-over { color: #ff7a6b; }     /* over par */
+.gt-tt-hud-meta {
+  font-size: 11px;
+  color: #d8d2c2;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.gt-tt-hud-meta b { color: #f6edda; }
+.gt-tt-hud-delta {
+  margin-top: 3px;
+  font: 800 14px 'DIN Alternate', 'Arial Narrow', Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+.gt-tt-hud-delta.is-ahead { color: #7be3a0; }  /* under your best pace */
+.gt-tt-hud-delta.is-behind { color: #ff7a6b; } /* behind your best pace */
+.gt-tt-hud-cancel {
+  pointer-events: auto;          /* opt back in — the banner is pointer-events:none */
+  margin-top: 7px;
+  background: #ffffff14;
+  color: #f6edda;
+  border: 1px solid #ffffff3d;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font: 700 11px Arial, sans-serif;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.gt-tt-hud-cancel:hover { background: #ffffff26; }
+@media (pointer: coarse) {
+  /* Narrow and under the crown banner, so it clears the top-right clock/money column on a 393 px phone. [gtasf-qa] */
+  .gt-tt-hud { top: 38px; padding: 5px 10px 7px; min-width: 0; width: max-content; max-width: 38vw; box-sizing: border-box; }
+  .gt-tt-hud-title { font-size: 11px; letter-spacing: 0.06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .gt-tt-hud-clock { font-size: 22px; }
+  .gt-tt-hud-meta { font-size: 10px; letter-spacing: 0; }
+  .gt-tt-hud-cancel { padding: 7px 16px; font-size: 12px; }  /* a bigger tap target on touch */
+}

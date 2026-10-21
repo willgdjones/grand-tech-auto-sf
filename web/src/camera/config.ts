@@ -1,0 +1,46 @@
+import { CAM_MAX_OFFSET_M } from '@gtasf/shared/constants';
+const ACCEL_MPS2 = 18, RUN_MPS = 6, TURN_RADPS = 10, WALK_MPS = 3;
+
+/** M5.2 feel tunables; authoritative movement values are imported from the shared solver. */
+export const PLAYER_CAMERA_CONFIG = Object.freeze({
+  walkMps: WALK_MPS,
+  runMps: RUN_MPS,
+  accelerationMps2: ACCEL_MPS2,
+  turnRadps: TURN_RADPS,
+  heightSmoothSeconds: 0.1,
+  maxStepSeconds: 0.25,
+  /** Physical eye height for bench paths; the orbit target sits above the complete figure. */
+  headHeightM: 1.6,
+  targetHeightM: 2.2,
+  /** Standing geometry remains 1.75 m; this envelope also contains animated limbs/hats and crossfades. */
+  avatarClearanceHeightM: 1.9,
+  avatarClearanceRadiusM: 0.95,
+  avatarClearanceBelowFeetM: 0.5,
+  collisionMinM: 0.05,
+  avatarFadeNearM: 3,
+  avatarFadeFarM: 6,
+  boomMinM: 2.5,
+  boomDefaultM: 8.5,
+  boomMaxM: Math.min(12, CAM_MAX_OFFSET_M),
+  pitchMinRad: (-55 * Math.PI) / 180,
+  pitchDefaultRad: -0.22,
+  pitchMaxRad: (35 * Math.PI) / 180,
+  cameraRadiusM: 0.2,
+  wallMarginM: 0.2,
+  groundClearanceM: 0.3,
+  springOmega: 12,
+  wheelFactor: 1.1,
+  lookRadiansPerPixel: 0.003,
+  keyboardOrbitRadps: 1.8,
+  keyboardPitchRadps: 1.2,
+  manualHoldSeconds: 1.5,
+  manualResponse: 14,
+  followResponse: 3.5,
+  recenterResponse: 10,
+  positionResponse: 12,
+  aimResponse: 14,
+  speedPullbackSeconds: 0.12,
+  teleportDistanceM: 15,
+  emoteSeconds: 2,
+  seatIntentRadiusM: 1,
+});

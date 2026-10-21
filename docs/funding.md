@@ -1,0 +1,19 @@
+# Raise your round
+
+Funding is earned game currency. Outbid payments, advertising purchases and their leaderboards never enter the funding calculation.
+
+The shared rules choose bases of $1M for investor/VC events, $500k for demo/pitch events and $200k for community events. Public source host/title/tags determine the type. These are tuning choices: PLAN specifies the order but not the bases. The first event has a ×1 streak; each different event completed within 15 real minutes adds ×0.25, capped at ×2. This increment is also a tuning choice.
+
+The server fixes the real-event time factor at accepted room entry: ×3 inside the explicit start/end window, ×1.5 in the two hours before start, otherwise ×0.5. Missing end times never create an invented live window. The player must remain on foot within the eight-metre marker (four-metre height tolerance) for twenty continuous server seconds. Leaving, disconnecting or changing mode cancels. At completion, other distinct connected devices in the marker contribute +10% each, capped at +100%; the streak is evaluated from the previous successful award. Multipliers multiply, and integer-cent bigint arithmetic rounds down only once. Clients submit an event ID, never a payout or a clock.
+
+An event pays each device once per San Francisco calendar day, using the completion day. The persistent season is `sf-tech-week-2026`; the local preview can earn follow-up awards before Oct 5. Week totals include these preview awards. Rounds are Bootstrapping ($0), Pre-seed ($500k), Seed ($3M), Series A ($15M), Series B ($50M), Unicorn ($1B), with zero through five stars. Pre-seed unlocks a nicer car, Seed the startup building label, Series A a party marker; these affect appearance only.
+
+API cents are canonical decimal strings; sum with bigint and persist integer cents. The total guard is $10T, below JavaScript's safe integer-cent range and SQLite's integer range. Source records and profile names render as text. Approximate source locations remain approximate and public; gameplay attendance is at a road marker, never proof of real-world venue access.
+
+The HUD's **Round perks** panel uses canonical earned totals. The VC coupe replaces the local appearance of the car being driven; its handling, collision, avatar seat and camera remain the existing vehicle's. The HQ action raycasts a nearby loaded building face and mounts the startup name on it. These two personal appearances last for the current browser session; the earned unlock persists with the profile. Neither grants ownership of paid ad space. The party action is shared with other players: WorldDO checks Series A and an on-foot peer, takes its position from the server, and publishes a marker for fifteen minutes while the host remains connected. The endpoint accepts only a hosting choice and does not write funding.
+
+The referral adapter awards a configured $100k of fictional funding after a friend has at least 300,000 milliseconds of durable server-observed play. This amount is a tuning choice. It rechecks the stored referral and distinct device/account/email, records one immutable bonus per friend, and marks the qualification consumed. `funding_bonuses` stays separate from `funding_awards`: both count toward totals, rounds and ranks, while only event awards affect streaks and daily event visits. This adapter never supplies USD, checkout credit or cash-out balance. Its qualifying-play hook belongs to the referral feature and remains behind that feature's switch.
+
+Apply both `0010_funding.sql` and `0014_funding_bonus.sql` before enabling the funding loop. The latter defines the combined earnings view used by every profile and leaderboard query.
+
+Implementation beads: `gtasf-mj1.1` rules, `.2` identity/ledger, `.3` WorldDO authority, `.4` HUD/leaderboard, `.5` cosmetics, `.6` integrated acceptance, `.7` client/ring/radar, `.8` real game smoke evidence. The rules alone do not establish that persistence or gameplay is wired.

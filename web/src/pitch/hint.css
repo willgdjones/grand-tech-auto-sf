@@ -1,0 +1,6 @@
+.gt-pitch-hint { position: fixed; left: 50%; bottom: calc(118px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 30;
+  padding: 7px 14px; border-radius: 999px; background: rgba(12, 14, 18, .82); color: #ffd25a; font: 600 14px/1.2 system-ui, sans-serif;
+  border: 1px solid rgba(255, 210, 90, .55); pointer-events: none; white-space: nowrap; }
+.gt-pitch-hint[hidden] { display: none; }
+/* Phones: the bottom is minimap + joystick + hints; sit under the top HUD instead. */
+@media (pointer: coarse) { .gt-pitch-hint { bottom: auto; top: calc(150px + env(safe-area-inset-top)); font-size: 13px; } }

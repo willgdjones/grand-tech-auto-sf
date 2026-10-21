@@ -1,0 +1,256 @@
+/* GTA V pivot — LANE B (combat & police) styles. San Andreas HUD theme (tokens from theme/saTheme.css;
+   every var() carries an inline fallback). Grown feature by feature; step 1 is the 18+ gate. */
+
+/* ---- 18+ click-through gate (ageGate.ts) ------------------------------------------------------ */
+.gt-age-gate{
+  position:fixed;inset:0;z-index:4000;display:flex;align-items:center;justify-content:center;
+  padding:16px;background:rgba(0,0,0,.82);backdrop-filter:blur(3px);
+  font:15px/1.45 var(--sa-sans,Arial,Helvetica,sans-serif);
+}
+.gt-age-gate-card{
+  box-sizing:border-box;width:min(460px,calc(100vw - 32px));
+  border:2px solid var(--sa-panel-edge,rgba(0,0,0,.9));border-radius:0;
+  background:var(--sa-panel-bg-strong,rgba(0,0,0,.9));color:var(--sa-menu-white,#fff);
+  padding:26px 24px;box-shadow:none;text-align:left;
+}
+.gt-age-gate-kicker{
+  font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:.6px var(--sa-ink,#000);paint-order:stroke fill;
+  margin:0 0 10px;
+}
+.gt-age-gate-title{
+  margin:0 0 12px;font-family:var(--sa-display,'Haettenschweiler','Arial Narrow Bold','Arial Narrow',Impact,sans-serif);
+  font-weight:900;font-size:30px;line-height:1.02;text-transform:uppercase;letter-spacing:.02em;
+  color:var(--sa-menu-white,#fff);-webkit-text-stroke:3px var(--sa-ink,#000);paint-order:stroke fill;
+}
+.gt-age-gate-body{margin:0 0 18px;color:#e6e6e6}
+.gt-age-gate-gore{display:flex;align-items:flex-start;gap:10px;margin:0 0 20px;cursor:pointer;font-size:13px;color:#cfcfcf}
+.gt-age-gate-gore-box{width:18px;height:18px;flex:0 0 auto;margin:1px 0 0;accent-color:var(--sa-title-gold,#f6a81e);cursor:pointer}
+.gt-age-gate-actions{display:grid;gap:10px}
+.gt-age-gate-actions button{
+  box-sizing:border-box;min-height:46px;border:2px solid var(--sa-panel-edge,rgba(0,0,0,.9));border-radius:0;
+  padding:12px 14px;font:800 15px/1.2 var(--sa-sans,Arial,sans-serif);text-transform:uppercase;letter-spacing:.02em;
+  -webkit-text-stroke:1px var(--sa-ink,#000);paint-order:stroke fill;cursor:pointer;
+}
+.gt-age-gate-enter{background:var(--sa-title-gold,#f6a81e);color:var(--sa-ink,#000)}
+.gt-age-gate-enter:hover{filter:brightness(1.08)}
+.gt-age-gate-enter:disabled{background:rgba(255,255,255,.2);color:#888;cursor:not-allowed;filter:none}
+.gt-age-gate-leave{background:rgba(0,0,0,.45);color:var(--sa-menu-white,#fff)}
+.gt-age-gate-leave:hover{background:rgba(0,0,0,.65);color:var(--sa-menu-blue,#b2cef2)}
+.gt-age-gate-actions button:focus-visible{outline:3px solid var(--sa-gold,#f0b429);outline-offset:2px}
+.gt-age-gate-notice:empty{display:none}
+.gt-age-gate-notice{
+  margin:16px 0 0;border-left:3px solid var(--sa-title-gold,#f6a81e);padding-left:10px;
+  color:var(--sa-title-gold,#f6a81e);font-size:13px;-webkit-text-stroke:.6px var(--sa-ink,#000);paint-order:stroke fill;
+}
+@media(max-width:400px){.gt-age-gate-card{padding:20px 18px}.gt-age-gate-title{font-size:25px}}
+
+/* ---- health / armour HUD (combatHud.ts) ------------------------------------------------------- */
+/* Left column, below the top-left toolbar (menu/station) and above the bottom-left minimap. Deliberately
+   NOT top-right: that corner is the founder HUD (clock / money / Funded stars), which this used to overlap. */
+.gt-combat-hud{
+  position:fixed;top:150px;left:12px;z-index:60;display:flex;flex-direction:column;gap:6px;
+  width:min(210px,42vw);pointer-events:none;user-select:none;
+}
+/* `display:flex` above overrides the UA `[hidden]{display:none}`, so hide()/the pre-accept + declined state
+   would otherwise leak the (empty) bars. Restore it (higher specificity than the base rule, no !important). */
+.gt-combat-hud[hidden]{display:none}
+.gt-combat-bar{
+  position:relative;display:flex;align-items:center;height:16px;padding-left:22px;
+  background:rgba(0,0,0,.55);border:2px solid var(--sa-ink,#000);border-radius:0;overflow:hidden;
+}
+.gt-combat-bar-icon{
+  position:absolute;left:4px;top:50%;transform:translateY(-50%);font-size:12px;line-height:1;
+  filter:drop-shadow(0 1px 0 #000);
+}
+.gt-combat-health .gt-combat-bar-icon{color:#ff6d6d}
+.gt-combat-armour .gt-combat-bar-icon{color:#8fc0ff}
+.gt-combat-bar-fill{height:100%;width:100%;transition:width .18s ease-out}
+.gt-combat-armour .gt-combat-bar-fill{background:#4a8fe0}
+/* Wanted stars: red police stars under the bars, distinct from the gold funding "Funded stars"; hidden at 0. */
+.gt-combat-wanted{display:flex;gap:2px;justify-content:flex-start;margin-top:2px;line-height:1}
+.gt-combat-wanted[hidden]{display:none} /* else the empty star row shows at wanted 0 (display overrides [hidden]) */
+/* While combat is live, hide the gold funding "Funded stars" row (top-right) so it can't be confused with the
+   red wanted stars (top-left). The funding ROUND is still shown as text by .gt-hud-tier + the $ valuation.
+   `gt-combat-live` is toggled on <body> by createCombat.startCombat / destroy. */
+body.gt-combat-live .gt-hud-stars{display:none}
+.gt-combat-wanted-star{font-size:17px;color:rgba(255,255,255,.22);filter:drop-shadow(0 1px 0 #000);transition:color .15s}
+.gt-combat-wanted-star.lit{color:#ff3b30;filter:drop-shadow(0 0 3px rgba(255,59,48,.8)) drop-shadow(0 1px 0 #000)}
+/* Out of police sight: the lit stars blink (GTA "losing them" cue) while the heat can cool down. */
+.gt-combat-wanted-escaping .gt-combat-wanted-star.lit{animation:gt-wanted-escape .7s steps(1,end) infinite}
+@keyframes gt-wanted-escape{50%{color:rgba(255,255,255,.55);filter:drop-shadow(0 1px 0 #000)}}
+@media(prefers-reduced-motion:reduce){.gt-combat-wanted-escaping .gt-combat-wanted-star.lit{animation:none;opacity:.55}}
+/* wantedEscape (gtasf-66lvh): SEEN → the lit stars flash red/blue like a light bar; HIDDEN → dimmed stars + an escape bar. */
+.gt-combat-wanted-seen .gt-combat-wanted-star.lit{animation:gt-wanted-seen .5s steps(1,end) infinite}
+@keyframes gt-wanted-seen{50%{color:#3b82ff;filter:drop-shadow(0 0 4px rgba(59,130,255,.9)) drop-shadow(0 1px 0 #000)}}
+.gt-combat-wanted-hidden .gt-combat-wanted-star.lit{color:rgba(255,255,255,.62);filter:drop-shadow(0 1px 0 #000);animation:gt-wanted-search 1s steps(1,end) infinite}
+/* Critic 66lvh HUD condition: out of sight the stars go GREY AND FLASH (GTA's searching cue), then vanish on the clear. */
+@keyframes gt-wanted-search{50%{color:rgba(255,255,255,.2)}}
+@media(prefers-reduced-motion:reduce){.gt-combat-wanted-hidden .gt-combat-wanted-star.lit{animation:none}}
+.gt-combat-escape{display:flex;flex-direction:column;gap:2px;margin-top:3px;font:700 10px/1.1 system-ui,sans-serif;letter-spacing:.06em;color:#fff;text-shadow:0 1px 0 #000}
+.gt-combat-escape[hidden]{display:none}
+.gt-combat-escape-track{height:5px;border-radius:3px;background:rgba(0,0,0,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);overflow:hidden}
+.gt-combat-escape-fill{height:100%;width:0;background:#f0b429;transition:width .45s linear}
+.gt-combat-escape[data-phase=searching] .gt-combat-escape-fill{background:#3ddc84}
+@media(prefers-reduced-motion:reduce){.gt-combat-wanted-seen .gt-combat-wanted-star.lit{animation:none;color:#ff3b30}.gt-combat-escape-fill{transition:none}}
+/* gtasf-lskkn: on phones the fund-drop banner sits at top:158px (drops/banner.css) and covered the vitals at 150px. While
+   it shows (--gt-drop-banner-height > 0) the vitals move to 8px under it (158 + h + 8 = 150 + 16 + h; min(h,1px)*16 is
+   16px only when h > 0); with no banner they stay at 150px. */
+/* Lane E N26: a 4-line phone quest card (e.g. the Pre-seed 'walk over and tap Enter / Exit') ends ~190 px down, so its
+   PITCH NOW button sat under the vitals at 150 px. The vitals now also clear the card (questCard.ts publishes
+   --gt-founder-quest-bottom; 0 when hidden); the bark/DISPATCH follow --gt-vitals-top and toastLayout avoids the HUD. */
+@media(max-width:700px){body{--gt-vitals-top:max(calc(150px + min(var(--gt-drop-banner-height,0px),1px) * 16 + var(--gt-drop-banner-height,0px)), calc(var(--gt-founder-quest-bottom,0px) + 8px))}
+  /* ...and the valuation pill, which sits just under the card (ladder.css: quest bottom + 6, 28 px on a phone; quest + 8,
+     ~34 px at 601-700): with it showing, the vitals start 8 px below it (quest bottom + 50 covers both). */
+  body:has(.gt-founder-valuation:not([hidden])){--gt-vitals-top:max(calc(150px + min(var(--gt-drop-banner-height,0px),1px) * 16 + var(--gt-drop-banner-height,0px)), calc(var(--gt-founder-quest-bottom,0px) + 50px))}
+  .gt-combat-hud{top:var(--gt-vitals-top);left:8px;width:min(170px,44vw)}.gt-combat-wanted-star{font-size:15px}}
+
+/* ---- WASTED / BUSTED screen (wastedOverlay.ts) ------------------------------------------------ */
+.gt-wasted{
+  position:fixed;inset:0;z-index:3500;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;opacity:0;transition:opacity 1.1s ease-in;
+  background:radial-gradient(ellipse at center,rgba(40,0,0,.35) 0%,rgba(0,0,0,.92) 85%);
+}
+.gt-wasted.gt-wasted-busted{background:radial-gradient(ellipse at center,rgba(0,16,48,.4) 0%,rgba(0,0,0,.92) 85%)}
+.gt-wasted.gt-wasted-on{opacity:1}
+.gt-wasted-word{
+  font-family:var(--sa-display,'Haettenschweiler','Arial Narrow Bold','Arial Narrow',Impact,sans-serif);
+  font-weight:900;font-size:clamp(44px,13vw,120px);line-height:1;letter-spacing:.06em;text-transform:uppercase;
+  color:#c0392b;-webkit-text-stroke:3px #000;paint-order:stroke fill;
+  transform:scale(.92);transition:transform 1.1s ease-out;filter:saturate(.7);
+}
+.gt-wasted-busted .gt-wasted-word{color:#2f6fb0}
+.gt-wasted.gt-wasted-on .gt-wasted-word{transform:scale(1)}
+
+/* ---- weapon chip + wheel (weaponWheel.ts) ---------------------------------------------------- */
+.gt-weapon-chip{
+  position:fixed;right:12px;bottom:118px;z-index:62;display:flex;align-items:center;gap:7px;
+  box-sizing:border-box;min-height:34px;padding:5px 11px 5px 8px;cursor:pointer;
+  background:rgba(0,0,0,.55);border:2px solid var(--sa-ink,#000);border-radius:0;color:var(--sa-menu-white,#fff);
+  font:800 13px/1 var(--sa-sans,Arial,sans-serif);-webkit-text-stroke:.5px var(--sa-ink,#000);paint-order:stroke fill;
+}
+.gt-weapon-chip:hover{background:rgba(0,0,0,.72)}
+.gt-weapon-chip:focus-visible{outline:3px solid var(--sa-gold,#f0b429);outline-offset:2px}
+.gt-weapon-chip-icon{font-size:18px;line-height:1}
+.gt-weapon-chip-name{text-transform:uppercase;letter-spacing:.02em}
+.gt-weapon-chip-ammo{color:var(--sa-title-gold,#f6a81e);min-width:18px;text-align:right}
+.gt-weapon-chip-ammo:empty{display:none}
+/* Phone: sit the weapon chip ABOVE the FIRE button (fire btn is right:24 bottom:150 h:84 → top at 234), not
+   over its lower half. */
+@media(max-width:700px){.gt-weapon-chip{bottom:246px;right:16px}}
+
+.gt-weapon-wheel[hidden]{display:none} /* else the wheel overlay shows while "closed" (display overrides [hidden]) */
+.gt-weapon-wheel{
+  position:fixed;inset:0;z-index:3200;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.5);backdrop-filter:blur(2px);
+}
+.gt-weapon-wheel-ring{position:relative;width:min(360px,76vw);height:min(360px,76vw)}
+/* Gun-shop result inside the open wheel (the HUD notice sits under the wheel backdrop). [gtasf-qa] */
+.gt-weapon-wheel{flex-direction:column;gap:14px}
+.gt-weapon-wheel-status{max-width:min(420px,86vw);padding:10px 14px;background:rgba(0,0,0,.82);border:2px solid var(--sa-title-gold,#f6a81e);
+  color:#fff;font:700 14px/1.35 var(--sa-sans,Arial,sans-serif);text-align:center}
+.gt-weapon-wheel-status[hidden]{display:none}
+.gt-weapon-wheel-hub{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;font-size:16px;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:2px var(--sa-ink,#000);paint-order:stroke fill;
+}
+.gt-weapon-slot{
+  position:absolute;transform:translate(-50%,-50%);width:78px;height:78px;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  background:rgba(0,0,0,.6);border:2px solid var(--sa-ink,#000);border-radius:0;color:#8b8b8b;
+  font:700 10px/1.1 var(--sa-sans,Arial,sans-serif);text-align:center;
+}
+.gt-weapon-slot.owned{color:var(--sa-menu-white,#fff);background:rgba(0,0,0,.7)}
+.gt-weapon-slot.current{border-color:var(--sa-title-gold,#f6a81e);background:rgba(246,168,30,.22);color:#fff}
+/* Unowned but sold at the gun shop: buyable (shows its price in the ammo slot). */
+.gt-weapon-slot.buyable{cursor:pointer;color:#d6ecd7;border-color:#3ec46d;background:rgba(62,196,109,.16);opacity:1}
+.gt-weapon-slot.buyable .gt-weapon-slot-ammo{color:#3ec46d}
+.gt-weapon-slot:disabled{cursor:not-allowed;opacity:.5}
+.gt-weapon-slot-icon{font-size:22px;line-height:1}
+.gt-weapon-slot-name{text-transform:uppercase;letter-spacing:.01em}
+.gt-weapon-slot-key{position:absolute;top:2px;left:4px;font-size:9px;color:var(--sa-title-gold,#f6a81e)}
+.gt-weapon-slot-ammo{color:var(--sa-title-gold,#f6a81e)}
+.gt-weapon-slot-ammo:empty{display:none}
+
+/* ---- crosshair + fire button (fire.ts) ------------------------------------------------------- */
+.gt-combat-crosshair{
+  position:fixed;left:50%;top:50%;width:18px;height:18px;transform:translate(-50%,-50%);z-index:58;
+  pointer-events:none;
+  background:
+    linear-gradient(var(--sa-menu-white,#fff),var(--sa-menu-white,#fff)) 50% 0/2px 6px no-repeat,
+    linear-gradient(var(--sa-menu-white,#fff),var(--sa-menu-white,#fff)) 50% 100%/2px 6px no-repeat,
+    linear-gradient(var(--sa-menu-white,#fff),var(--sa-menu-white,#fff)) 0 50%/6px 2px no-repeat,
+    linear-gradient(var(--sa-menu-white,#fff),var(--sa-menu-white,#fff)) 100% 50%/6px 2px no-repeat;
+  filter:drop-shadow(0 0 1px #000);opacity:.85;
+}
+.gt-combat-crosshair[hidden]{display:none}
+/* aimControls: red when a shot would land on a target (magnetism / lock); a bracket over the locked target. */
+.gt-combat-crosshair.gt-on-target{--sa-menu-white:#ff3b30;opacity:1}
+.gt-combat-lock{position:fixed;width:34px;height:34px;transform:translate(-50%,-50%);z-index:58;pointer-events:none;
+  border:2px dashed rgba(255,59,48,.9);border-radius:4px;filter:drop-shadow(0 0 1px #000)}
+.gt-combat-lock.gt-lock-hard{border-style:solid;border-color:#ff3b30}
+.gt-combat-lock[hidden]{display:none}
+body.gt-aim-reticle [data-look-reticle]{display:none!important}
+.gt-combat-fire-btn{
+  position:fixed;right:24px;bottom:150px;z-index:61;width:84px;height:84px;border-radius:50%;
+  background:rgba(214,65,65,.82);border:3px solid var(--sa-ink,#000);color:#fff;
+  font:900 15px/1 var(--sa-sans,Arial,sans-serif);text-transform:uppercase;letter-spacing:.04em;
+  -webkit-text-stroke:1px var(--sa-ink,#000);paint-order:stroke fill;cursor:pointer;touch-action:none;user-select:none;
+}
+.gt-combat-fire-btn:active{background:rgba(236,88,88,.95)}
+@media(min-width:701px){.gt-combat-fire-btn{display:none}}
+/* twinStick: the FIRE button doubles as the aim stick; the label follows the thumb, a ring hints it's draggable. */
+.gt-combat-fire-label{display:inline-block;pointer-events:none;transition:transform .08s ease-out}
+.gt-combat-fire-stick{width:96px;height:96px;bottom:138px;box-shadow:0 0 0 6px rgba(0,0,0,.28),0 0 0 8px rgba(255,255,255,.35)}
+
+/* Game Options → Mature content (gore toggle + re-enable); mirrors the time-of-day section. */
+.gt-game-options-combat{border-top:1px solid rgba(255,255,255,.2);margin-top:18px;padding-top:18px;display:grid;gap:8px}
+.gt-game-options-combat-label{font-family:var(--sa-display,'Arial Narrow',Impact,sans-serif);font-weight:900;text-transform:uppercase;letter-spacing:.02em;color:var(--sa-title-gold,#f6a81e);-webkit-text-stroke:1.5px var(--sa-ink,#000);paint-order:stroke fill;font-size:14px}
+.gt-game-options-combat button[hidden]{display:none}
+.gt-game-options-combat button[aria-pressed="true"]{background:var(--sa-title-gold,#f6a81e);color:var(--sa-ink,#000)}
+/* Body armour buy (vitalsPickups), under the wheel hub. */
+.gt-weapon-armour{
+  position:absolute;left:50%;top:calc(50% + 26px);transform:translateX(-50%);white-space:nowrap;cursor:pointer;
+  padding:5px 9px;background:rgba(106,168,255,.18);border:2px solid #6aa8ff;color:#dbe9ff;font:700 11px/1.1 var(--sa-sans,Arial,sans-serif);
+}
+.gt-weapon-armour[hidden]{display:none}
+
+/* ---- shooting feel (flag shootingFeel, shotFeel.ts) ---- */
+.gt-combat-crosshair{width:calc(18px * var(--gt-bloom,1));height:calc(18px * var(--gt-bloom,1))}
+.gt-hitmarker{position:fixed;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%) rotate(45deg);z-index:59;pointer-events:none;
+  background:linear-gradient(#fff,#fff) 50% 0/2px 7px no-repeat,linear-gradient(#fff,#fff) 50% 100%/2px 7px no-repeat,
+    linear-gradient(#fff,#fff) 0 50%/7px 2px no-repeat,linear-gradient(#fff,#fff) 100% 50%/7px 2px no-repeat;filter:drop-shadow(0 0 1px #000)}
+.gt-hitmarker.kill{background:linear-gradient(#ff3b30,#ff3b30) 50% 0/3px 8px no-repeat,linear-gradient(#ff3b30,#ff3b30) 50% 100%/3px 8px no-repeat,
+    linear-gradient(#ff3b30,#ff3b30) 0 50%/8px 3px no-repeat,linear-gradient(#ff3b30,#ff3b30) 100% 50%/8px 3px no-repeat}
+.gt-hitmarker[hidden]{display:none}
+.gt-hurt-vignette{position:fixed;inset:0;z-index:57;pointer-events:none;opacity:0;
+  background:radial-gradient(ellipse at center,rgba(150,0,0,0) 45%,rgba(170,0,0,.55) 82%,rgba(120,0,0,.85) 100%)}
+/* policePresence (critique #16): SFPD barks + the dispatch radio line as centred subtitles. Desktop: above the bottom-centre
+   stack (key legend ~23-74px, street-race button 120-160px, 'T to chat' hint 186-210px; the race button overlapped them in
+   docs/sf-data/combat/police-presence-desktop.jpg). Phone (<701px, touch controls): the bottom is full (radar,
+   FIRE, weapon chip, chat hint), so they sit near the top, under the health/armour bars. Checked in the #7 captures. */
+.gt-police-bark,.gt-dispatch{position:fixed;left:50%;transform:translateX(-50%);z-index:46;pointer-events:none;
+  max-width:min(460px,calc(100vw - 32px));text-align:center;font:600 15px/1.3 system-ui,sans-serif;color:#fff;
+  padding:5px 10px;background:rgba(0,0,0,.62);text-shadow:0 1px 0 #000}
+.gt-police-bark{bottom:calc(env(safe-area-inset-bottom,0px) + 272px)}
+/* Desktop: the dispatch radio reads beside the radar (bottom-left), not over the player's body at the fire moment (critic N2). */
+.gt-dispatch{left:18px;transform:none;bottom:calc(env(safe-area-inset-bottom,0px) + 262px);max-width:300px;text-align:left;font-style:italic;color:#cfe3ff;font-size:13px}
+/* Lane E N25: on the desktop minimal HUD the street label (.gt-street-hud, bottom 260 px, 50 px tall) holds the same slot
+   above the radar, so a DISPATCH line arriving as you enter a district drew over it. Stack DISPATCH 8 px above it
+   while the label shows. Phone portrait/landscape place both elsewhere. */
+@media (min-width:701px){
+  body.gt-hud-minimal:not(.gt-phone-hud):not(.gt-landscape-hud):has(.gt-street-hud:not([hidden])) .gt-dispatch{bottom:calc(env(safe-area-inset-bottom,0px) + 318px)}
+}
+@media (max-width:700px){
+  .gt-police-bark{bottom:auto;top:calc(env(safe-area-inset-top,0px) + var(--gt-vitals-top,150px) + 64px)} /* just under the vitals + wanted stars (the HUD box is ~61 px with stars; +56 clipped them, lane E) */
+  .gt-dispatch{bottom:auto;top:calc(env(safe-area-inset-top,0px) + var(--gt-vitals-top,150px) + 90px)}
+  /* One message at a time (critic N2 on phone): the bark, DISPATCH and the centre toast all share the strip under the
+     vitals, and a two-line bark or a new star's DISPATCH overlapped the 'Lose the cops' hint (tools/_laneb-phone-msgs.mjs).
+     The toast (gameplay hint) wins over both captions, the bark over DISPATCH; the voiced audio still plays. */
+  body:has(.gt-toast:not(.gt-toast-out)) :is(.gt-police-bark,.gt-dispatch){visibility:hidden}
+  body:has(.gt-police-bark:not([hidden])) .gt-dispatch{visibility:hidden}
+}
+.gt-police-bark b,.gt-dispatch b{font-style:normal;font-weight:800;letter-spacing:.06em;margin-right:4px;padding:0 4px;color:#fff;background:#1c3f94}
+.gt-dispatch b{background:#3a3a3a}
+.gt-police-bark[hidden],.gt-dispatch[hidden]{display:none}

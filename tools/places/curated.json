@@ -1,0 +1,505 @@
+{
+ "note": "Hand-curated SF tech places for the living map (gtasf-jcxw). Agent-drafted from public knowledge; addresses are geocoded against DataSF EAS by tools/places/build.mts and unmatched rows are dropped. Founder skim welcome. Real names + logos, removed on request (takedown denylist). VC rows added 2026-10-07 only where the firm's own website lists the San Francisco street address.",
+ "places": [
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "kind": "lab",
+   "address": "1455 3rd St",
+   "website": "https://openai.com",
+   "blurb": "Makers of ChatGPT. Mission Bay HQ."
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "kind": "lab",
+   "address": "500 Howard St",
+   "website": "https://www.anthropic.com",
+   "blurb": "AI safety lab behind Claude."
+  },
+  {
+   "id": "scale-ai",
+   "name": "Scale AI",
+   "kind": "lab",
+   "address": "650 Townsend St",
+   "website": "https://scale.com",
+   "blurb": "Data for frontier models."
+  },
+  {
+   "id": "databricks",
+   "name": "Databricks",
+   "kind": "bigtech",
+   "address": "160 Spear St",
+   "website": "https://www.databricks.com",
+   "blurb": "The data and AI company."
+  },
+  {
+   "id": "salesforce",
+   "name": "Salesforce",
+   "kind": "bigtech",
+   "address": "415 Mission St",
+   "website": "https://www.salesforce.com",
+   "blurb": "The tallest building in town, and a CRM."
+  },
+  {
+   "id": "uber",
+   "name": "Uber",
+   "kind": "bigtech",
+   "address": "1725 3rd St",
+   "website": "https://www.uber.com",
+   "blurb": "Rides and deliveries. Mission Bay HQ."
+  },
+  {
+   "id": "lyft",
+   "name": "Lyft",
+   "kind": "bigtech",
+   "address": "185 Berry St",
+   "website": "https://www.lyft.com",
+   "blurb": "The pink-moustache rideshare, grown up."
+  },
+  {
+   "id": "airbnb",
+   "name": "Airbnb",
+   "kind": "bigtech",
+   "address": "888 Brannan St",
+   "website": "https://www.airbnb.com",
+   "blurb": "Started with air mattresses in SoMa."
+  },
+  {
+   "id": "dropbox",
+   "name": "Dropbox",
+   "kind": "bigtech",
+   "address": "1800 Owens St",
+   "website": "https://www.dropbox.com",
+   "blurb": "Your files, somewhere in Mission Bay."
+  },
+  {
+   "id": "pinterest",
+   "name": "Pinterest",
+   "kind": "bigtech",
+   "address": "505 Brannan St",
+   "website": "https://www.pinterest.com",
+   "blurb": "Boards, pins and ideas."
+  },
+  {
+   "id": "block",
+   "name": "Block",
+   "kind": "bigtech",
+   "address": "1455 Market St",
+   "website": "https://block.xyz",
+   "blurb": "Square, Cash App and friends."
+  },
+  {
+   "id": "github",
+   "name": "GitHub",
+   "kind": "bigtech",
+   "address": "88 Colin P Kelly Jr St",
+   "website": "https://github.com",
+   "blurb": "Where the code lives. Octocat lobby."
+  },
+  {
+   "id": "google-sf",
+   "name": "Google San Francisco",
+   "kind": "bigtech",
+   "address": "345 Spear St",
+   "website": "https://www.google.com",
+   "blurb": "Google's Embarcadero office."
+  },
+  {
+   "id": "meta-sf",
+   "name": "Meta San Francisco",
+   "kind": "bigtech",
+   "address": "181 Fremont St",
+   "website": "https://about.meta.com",
+   "blurb": "Meta's SoMa tower office."
+  },
+  {
+   "id": "microsoft-sf",
+   "name": "Microsoft San Francisco",
+   "kind": "bigtech",
+   "address": "555 California St",
+   "website": "https://www.microsoft.com",
+   "blurb": "Microsoft's Financial District office."
+  },
+  {
+   "id": "linkedin",
+   "name": "LinkedIn",
+   "kind": "bigtech",
+   "address": "222 2nd St",
+   "website": "https://www.linkedin.com",
+   "blurb": "Thrilled to announce an office in SoMa."
+  },
+  {
+   "id": "autodesk",
+   "name": "Autodesk",
+   "kind": "bigtech",
+   "address": "1 Market St",
+   "website": "https://www.autodesk.com",
+   "blurb": "Design software at One Market."
+  },
+  {
+   "id": "yelp",
+   "name": "Yelp",
+   "kind": "bigtech",
+   "address": "350 Mission St",
+   "website": "https://www.yelp.com",
+   "blurb": "Four stars, would review again."
+  },
+  {
+   "id": "twitch",
+   "name": "Twitch",
+   "kind": "bigtech",
+   "address": "350 Bush St",
+   "website": "https://www.twitch.tv",
+   "blurb": "Live streaming from Bush Street."
+  },
+  {
+   "id": "doordash",
+   "name": "DoorDash",
+   "kind": "bigtech",
+   "address": "303 2nd St",
+   "website": "https://www.doordash.com",
+   "blurb": "Your burrito, dashed."
+  },
+  {
+   "id": "instacart",
+   "name": "Instacart",
+   "kind": "bigtech",
+   "address": "50 Beale St",
+   "website": "https://www.instacart.com",
+   "blurb": "Groceries in under an hour."
+  },
+  {
+   "id": "figma",
+   "name": "Figma",
+   "kind": "bigtech",
+   "address": "760 Market St",
+   "website": "https://www.figma.com",
+   "blurb": "Design together, on Market Street."
+  },
+  {
+   "id": "discord",
+   "name": "Discord",
+   "kind": "bigtech",
+   "address": "444 De Haro St",
+   "website": "https://discord.com",
+   "blurb": "Where your servers hang out."
+  },
+  {
+   "id": "zendesk",
+   "name": "Zendesk",
+   "kind": "bigtech",
+   "address": "989 Market St",
+   "website": "https://www.zendesk.com",
+   "blurb": "Support tickets on Mid-Market."
+  },
+  {
+   "id": "okta",
+   "name": "Okta",
+   "kind": "bigtech",
+   "address": "100 1st St",
+   "website": "https://www.okta.com",
+   "blurb": "Identity, signed in."
+  },
+  {
+   "id": "asana",
+   "name": "Asana",
+   "kind": "bigtech",
+   "address": "633 Folsom St",
+   "website": "https://asana.com",
+   "blurb": "Work management, on Folsom."
+  },
+  {
+   "id": "samsara",
+   "name": "Samsara",
+   "kind": "bigtech",
+   "address": "1 De Haro St",
+   "website": "https://www.samsara.com",
+   "blurb": "Connected operations from Potrero."
+  },
+  {
+   "id": "notion",
+   "name": "Notion",
+   "kind": "startup",
+   "address": "2300 Harrison St",
+   "website": "https://www.notion.com",
+   "blurb": "The all-in-one workspace, in the Mission."
+  },
+  {
+   "id": "plaid",
+   "name": "Plaid",
+   "kind": "startup",
+   "address": "1098 Harrison St",
+   "website": "https://plaid.com",
+   "blurb": "Plumbing for fintech."
+  },
+  {
+   "id": "gusto",
+   "name": "Gusto",
+   "kind": "startup",
+   "address": "525 20th St",
+   "website": "https://gusto.com",
+   "blurb": "Payroll and benefits, Dogpatch."
+  },
+  {
+   "id": "rippling",
+   "name": "Rippling",
+   "kind": "startup",
+   "address": "55 2nd St",
+   "website": "https://www.rippling.com",
+   "blurb": "HR, IT and finance in one."
+  },
+  {
+   "id": "affirm",
+   "name": "Affirm",
+   "kind": "startup",
+   "address": "650 California St",
+   "website": "https://www.affirm.com",
+   "blurb": "Pay over time."
+  },
+  {
+   "id": "nextdoor",
+   "name": "Nextdoor",
+   "kind": "startup",
+   "address": "420 Taylor St",
+   "website": "https://nextdoor.com",
+   "blurb": "Have you seen this cat?"
+  },
+  {
+   "id": "splunk",
+   "name": "Splunk",
+   "kind": "bigtech",
+   "address": "270 Brannan St",
+   "website": "https://www.splunk.com",
+   "blurb": "Search your logs, SoMa."
+  },
+  {
+   "id": "unity",
+   "name": "Unity",
+   "kind": "bigtech",
+   "address": "30 3rd St",
+   "website": "https://unity.com",
+   "blurb": "The game engine company."
+  },
+  {
+   "id": "niantic",
+   "name": "Niantic",
+   "kind": "startup",
+   "address": "1 Ferry Building",
+   "website": "https://nianticlabs.com",
+   "blurb": "AR games from the Ferry Building.",
+   "at": [
+    37.79552,
+    -122.3937
+   ]
+  },
+  {
+   "id": "pagerduty",
+   "name": "PagerDuty",
+   "kind": "startup",
+   "address": "600 Townsend St",
+   "website": "https://www.pagerduty.com",
+   "blurb": "Wakes your on-call up."
+  },
+  {
+   "id": "south-park-commons",
+   "name": "South Park Commons",
+   "kind": "hackerhouse",
+   "address": "380 Brannan St",
+   "website": "https://www.southparkcommons.com",
+   "blurb": "A community for the -1 to 0 stage."
+  },
+  {
+   "id": "frontier-tower",
+   "name": "Frontier Tower",
+   "kind": "hackerhouse",
+   "address": "995 Market St",
+   "website": "https://frontiertower.io",
+   "blurb": "A vertical village for frontier tech."
+  },
+  {
+   "id": "shack15",
+   "name": "SHACK15",
+   "kind": "hackerhouse",
+   "address": "1 Ferry Building",
+   "website": "https://shack15.com",
+   "blurb": "Founders' club upstairs at the Ferry Building.",
+   "at": [
+    37.79552,
+    -122.3937
+   ]
+  },
+  {
+   "id": "founders-inc",
+   "name": "Founders, Inc.",
+   "kind": "accelerator",
+   "address": "2 Marina Blvd",
+   "website": "https://f.inc",
+   "blurb": "Builders' campus at Fort Mason.",
+   "at": [
+    37.80635,
+    -122.43123
+   ]
+  },
+  {
+   "id": "noisebridge",
+   "name": "Noisebridge",
+   "kind": "hackerhouse",
+   "address": "272 Capp St",
+   "website": "https://www.noisebridge.net",
+   "blurb": "Anarchist hackerspace in the Mission."
+  },
+  {
+   "id": "gray-area",
+   "name": "Gray Area",
+   "kind": "hackerhouse",
+   "address": "2665 Mission St",
+   "website": "https://grayarea.org",
+   "blurb": "Art and technology, in the old Grand Theater."
+  },
+  {
+   "id": "mox",
+   "name": "Mox",
+   "kind": "hackerhouse",
+   "address": "1680 Mission St",
+   "website": "https://moxsf.com",
+   "blurb": "Coworking and community for people working on AI."
+  },
+  {
+   "id": "internet-archive",
+   "name": "Internet Archive",
+   "kind": "lab",
+   "address": "300 Funston Ave",
+   "website": "https://archive.org",
+   "blurb": "The Wayback Machine, in a former church."
+  },
+  {
+   "id": "exploratorium",
+   "name": "Exploratorium",
+   "kind": "lab",
+   "address": "Pier 15",
+   "website": "https://www.exploratorium.edu",
+   "blurb": "Science museum on the Embarcadero.",
+   "at": [
+    37.80165,
+    -122.3975
+   ]
+  },
+  {
+   "id": "founders-fund",
+   "name": "Founders Fund",
+   "kind": "vc",
+   "address": "1 Letterman Dr",
+   "website": "https://foundersfund.com",
+   "blurb": "Venture capital in the Presidio.",
+   "at": [
+    37.79866,
+    -122.44917
+   ]
+  },
+  {
+   "id": "wikimedia",
+   "name": "Wikimedia Foundation",
+   "kind": "lab",
+   "address": "1 Montgomery St",
+   "website": "https://wikimediafoundation.org",
+   "blurb": "The people behind Wikipedia."
+  },
+  {
+   "id": "a16z",
+   "name": "Andreessen Horowitz",
+   "kind": "vc",
+   "address": "180 Townsend St",
+   "website": "https://a16z.com",
+   "blurb": "Software is eating the world. SF office."
+  },
+  {
+   "id": "greylock",
+   "name": "Greylock",
+   "kind": "vc",
+   "address": "140 New Montgomery St",
+   "website": "https://greylock.com",
+   "blurb": "Early-stage venture, SoMa office."
+  },
+  {
+   "id": "accel",
+   "name": "Accel",
+   "kind": "vc",
+   "address": "35 South Park St",
+   "website": "https://www.accel.com",
+   "blurb": "Early and growth venture on South Park."
+  },
+  {
+   "id": "index-ventures",
+   "name": "Index Ventures",
+   "kind": "vc",
+   "address": "139 Townsend St",
+   "website": "https://www.indexventures.com",
+   "blurb": "London and SF venture firm."
+  },
+  {
+   "id": "general-catalyst",
+   "name": "General Catalyst",
+   "kind": "vc",
+   "address": "75 Hawthorne St",
+   "website": "https://www.generalcatalyst.com",
+   "blurb": "Venture and transformation, SoMa."
+  },
+  {
+   "id": "benchmark",
+   "name": "Benchmark",
+   "kind": "vc",
+   "address": "140 New Montgomery St",
+   "website": "https://www.benchmark.com",
+   "blurb": "Five partners, equal splits."
+  },
+  {
+   "id": "first-round",
+   "name": "First Round Capital",
+   "kind": "vc",
+   "address": "921 Front St",
+   "website": "https://firstround.com",
+   "blurb": "Seed-stage venture by the waterfront."
+  },
+  {
+   "id": "crv",
+   "name": "CRV",
+   "kind": "vc",
+   "address": "52 Zoe St",
+   "website": "https://www.crv.com",
+   "blurb": "Early-stage venture on Zoe Street."
+  },
+  {
+   "id": "bessemer",
+   "name": "Bessemer Venture Partners",
+   "kind": "vc",
+   "address": "539 Bryant St",
+   "website": "https://www.bvp.com",
+   "blurb": "Venture since 1911. SoMa office."
+  },
+  {
+   "id": "ivp",
+   "name": "IVP",
+   "kind": "vc",
+   "address": "747 Front St",
+   "website": "https://www.ivp.com",
+   "blurb": "Later-stage venture, Front Street."
+  },
+  {
+   "id": "pear",
+   "name": "Pear VC",
+   "kind": "vc",
+   "address": "600 Townsend St",
+   "website": "https://pear.vc",
+   "blurb": "Pre-seed and seed partners."
+  },
+  {
+   "id": "nfx",
+   "name": "NFX",
+   "kind": "vc",
+   "address": "34 Page St",
+   "website": "https://www.nfx.com",
+   "blurb": "Network-effects seed fund, Hayes Valley."
+  }
+ ]
+}

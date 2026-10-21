@@ -1,0 +1,73 @@
+/* SA restyle (gtasf-v2-sa-restyle-tracker-ni5k): flat black modal, square corners, SA tokens; the
+ * always-visible ambient log below is already SA. CSS-only, classes preserved. */
+.gt-chat-dialog { box-sizing: border-box; width: min(560px, calc(100vw - 24px)); max-height: min(650px, calc(100dvh - 32px)); padding: 20px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0; color: var(--sa-menu-white, #fff); background: var(--sa-panel-bg-strong, rgba(0,0,0,.82)); font: 14px/1.45 var(--sa-sans, Arial, Helvetica, sans-serif); overflow: auto; box-shadow: none; }
+.gt-chat-dialog::backdrop { background: rgba(0,0,0,.66); }
+.gt-chat-dialog header { position: static; inset: auto; pointer-events: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.gt-chat-dialog h2 { margin: 0; font-size: 28px; text-transform: uppercase; letter-spacing: .01em; font-family: var(--sa-display, 'Arial Narrow Bold', 'Arial Narrow', Impact, sans-serif); color: var(--sa-title-gold, #f6a81e); -webkit-text-stroke: 3px var(--sa-ink, #000); paint-order: stroke fill; }
+.gt-chat-dialog label { display: block; margin-top: 14px; }
+.gt-chat-dialog select, .gt-chat-dialog textarea { display: block; box-sizing: border-box; width: 100%; max-width: 100%; margin-top: 5px; padding: 10px; border: 2px solid var(--sa-panel-edge, rgba(0,0,0,.9)); border-radius: 0; background: rgba(0,0,0,.45); color: var(--sa-menu-white, #fff); font: 16px/1.4 var(--sa-sans, Arial, sans-serif); }
+.gt-chat-dialog select:focus-visible, .gt-chat-dialog textarea:focus-visible { outline: 3px solid var(--sa-gold, #f0b429); outline-offset: 1px; }
+.gt-chat-dialog textarea { resize: vertical; min-height: 68px; max-height: 130px; }
+.gt-chat-dialog button { min-height: 40px; padding: 8px 14px; border: 2px solid var(--sa-ink, #000); border-radius: 0; color: var(--sa-ink, #000); background: var(--sa-gold, #f0b429); font-weight: 800; text-transform: uppercase; letter-spacing: .02em; cursor: pointer; }
+.gt-chat-dialog button:hover { background: #ffc746; }
+.gt-chat-dialog button:disabled { opacity: .55; cursor: default; }
+.gt-chat-dialog button:focus-visible { outline: 3px solid var(--sa-menu-white, #fff); outline-offset: 2px; }
+.gt-chat-dialog form { display: flex; align-items: stretch; gap: 8px; }
+.gt-chat-dialog form textarea { margin-top: 0; }
+.gt-chat-log { min-height: 100px; max-height: min(240px, 26dvh); overflow-y: auto; list-style: none; padding: 10px; border: 1px solid #78926d66; background: #06110c8a; }
+.gt-chat-log li { margin-bottom: 7px; overflow-wrap: anywhere; }
+.gt-chat-log strong { color: var(--sa-title-gold, #f6a81e); }
+.gt-chat-hint, .gt-chat-status { font-size: 12px; color: #d7d9cc; }
+.gt-chat-status { min-height: 18px; margin-bottom: 0; }
+.gt-chat-bubbles { position: fixed; inset: 0; pointer-events: none; z-index: 8; overflow: hidden; }
+.gt-chat-bubble { position: absolute; box-sizing: border-box; width: max-content; max-width: min(240px, 52vw); padding: 7px 11px; border: 1px solid #f5e5b5; border-radius: 10px; background: #fff6dcf2; box-shadow: 0 3px 0 #0c1a1688; color: #18201b; font: 13px/1.3 Arial, sans-serif; text-align: center; transform: translate(-50%, -100%); overflow-wrap: anywhere; }
+.gt-chat-bubble strong, .gt-chat-bubble span { display: block; }
+.gt-chat-bubble strong { font-size: 11px; color: #5b592a; margin-bottom: 2px; }
+.gt-chat-bubble[hidden] { display: none; }
+@media (max-width: 700px) { .gt-chat-dialog { padding: 14px; } .gt-chat-dialog header button { min-height: 44px; } }
+
+/* Always-visible SA ambient chat log + persistent hint (gtasf-osfm), bottom-left above the radar. */
+.gt-chat-ambient {
+  position: fixed; left: 14px; bottom: 236px; z-index: 7; max-width: min(46vw, 420px); pointer-events: none;
+  display: flex; flex-direction: column; gap: 3px;
+  font: 600 14px/1.3 'Arial Narrow Bold', 'Arial Narrow', Arial, sans-serif;
+}
+.gt-chat-ambient-lines {
+  display: flex; flex-direction: column; gap: 2px; opacity: 0; transition: opacity .6s ease .4s;
+}
+.gt-chat-ambient[data-active="true"] .gt-chat-ambient-lines { opacity: 1; transition: opacity .12s ease; }
+.gt-chat-ambient-line {
+  color: #fff; overflow-wrap: anywhere;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 2px 3px #000a;
+}
+.gt-chat-ambient-line strong { color: #f0b429; font-weight: 700; }
+.gt-chat-ambient-hint {
+  align-self: flex-start; margin: 4px 0 0; padding: 0; border: 0; background: none; cursor: pointer;
+  pointer-events: auto; color: #e3e3e3; opacity: .55; font: inherit; font-size: 12px; letter-spacing: .02em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.gt-chat-ambient-hint:hover { opacity: .9; }
+.gt-chat-ambient-hint:focus-visible { outline: 2px solid #efd473; outline-offset: 2px; opacity: 1; }
+/* Inline quick-chat input in the always-visible log (gtasf-6ofg). */
+.gt-chat-inline { align-self: flex-start; margin: 4px 0 0; pointer-events: auto; }
+.gt-chat-inline[hidden] { display: none; }
+.gt-chat-inline-input {
+  box-sizing: border-box; width: min(320px, 60vw); min-height: 30px; padding: 5px 9px;
+  border: 1px solid var(--sa-title-gold, #f6a81e); border-radius: 0; background: rgba(0,0,0,0.72);
+  color: #fff; font: 14px/1.2 Arial, sans-serif;
+}
+.gt-chat-inline-input:focus-visible { outline: 2px solid var(--sa-title-gold, #f6a81e); outline-offset: 1px; }
+.gt-chat-inline-input::placeholder { color: #b9c2b0; }
+@media (max-width: 700px) {
+  .gt-chat-ambient { bottom: auto; top: 96px; max-width: 64vw; }
+  /* On phones the hint is the primary tappable chat entry — a visible pill saying "Chat". */
+  .gt-chat-ambient-hint {
+    min-height: 40px; padding: 8px 14px; border-radius: 999px; opacity: 1; font-size: 0;
+    background: #233e33cc; border: 1px solid #627a6a; color: #fff9e5; font-weight: 700;
+  }
+  .gt-chat-ambient-hint::before { content: '💬 Chat'; font-size: 14px; }
+}
+
+
+.gt-chat-inline-status{margin:4px 0 0;padding:4px 7px;max-width:min(320px,60vw);box-sizing:border-box;background:#000b;color:#fff;font:600 12px/1.4 Arial,sans-serif;overflow-wrap:anywhere}
+.gt-chat-inline-status[hidden]{display:none}

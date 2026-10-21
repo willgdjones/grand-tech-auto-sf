@@ -1,0 +1,4 @@
+{
+  "625 2nd Street, San Francisco, CA, 94107, US": { "lat": 37.7818, "lon": -122.3939, "precision": "address" },
+  "100 Example St, San Francisco, CA": { "lat": 37.7767, "lon": -122.4241, "precision": "venue" }
+}

@@ -1,0 +1,10 @@
+{
+  "maxUsd": 100,
+  "maxGenerations": 3000,
+  "usdPerCredit": 0.01,
+  "pricingBasis": "Conservative standard/Starter monthly and smallest prepaid pack rate: $15 / 1500 CU. Pro ($45 / 5000) and Max ($75 / 10000) are cheaper. No discounted or free-credit assumption.",
+  "pricingSource": "https://www.scenario.com/pricing",
+  "pricingApi": "https://api.cloud.scenario.com/v1/oscu/prices",
+  "verifiedAt": "2026-10-03T05:33:00Z",
+  "maxCredits": 10000
+}
